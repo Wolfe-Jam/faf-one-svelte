@@ -274,8 +274,8 @@
 	}
 	
 	.smiley-dot {
-		width: 1.1em;
-		height: 1.1em;
+		width: 0.7em;
+		height: 0.7em;
 		display: inline-block;
 		vertical-align: middle;
 		margin-bottom: 0.1em;

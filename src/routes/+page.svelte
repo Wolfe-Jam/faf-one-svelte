@@ -12,25 +12,32 @@
 	
 	let isLoaded = $state(false);
 	let showSplash = $state(true);
-	let splashPhase = $state('zoom-in'); // 'zoom-in', 'display', 'zoom-out'
+	let showF1 = $state(false);
+	let showA = $state(false);
+	let showF2 = $state(false);
 	
 	onMount(() => {
-		// Phase 1: Star Wars zoom in from huge (1.5s)
-		// Phase 2: Display at normal size (2-3s as requested)
+		// Phase 1: Logo zooms in (1s)
+		// Phase 2: Show "f" (0.5s after zoom)
 		setTimeout(() => {
-			splashPhase = 'display';
+			showF1 = true;
 		}, 1500);
 		
-		// Phase 3: Zoom out to dot (1s)
+		// Phase 3: Show "a" (0.5s after first f)
 		setTimeout(() => {
-			splashPhase = 'zoom-out';
-		}, 4000);
+			showA = true;
+		}, 2000);
 		
-		// Phase 4: Hide splash and show content
+		// Phase 4: Show second "f" (0.5s after a)
+		setTimeout(() => {
+			showF2 = true;
+		}, 2500);
+		
+		// Phase 5: Hide splash and show content
 		setTimeout(() => {
 			showSplash = false;
 			isLoaded = true;
-		}, 5000);
+		}, 4000);
 	});
 </script>
 
@@ -40,12 +47,15 @@
 </svelte:head>
 
 {#if showSplash}
-<div class="splash-screen" data-phase={splashPhase}>
+<div class="splash-screen">
 	<div class="splash-container">
-		<!-- The smiley that becomes the dot -->
 		<div class="splash-content">
+			<!-- The smiley/dot -->
 			<img src="/orange-smiley.svg" alt="." class="smiley-splash" />
-			<span class="faf-text">faf</span>
+			<!-- Letters appear one by one -->
+			<span class="letter" class:show={showF1}>f</span>
+			<span class="letter" class:show={showA}>a</span>
+			<span class="letter" class:show={showF2}>f</span>
 		</div>
 	</div>
 </div>
@@ -106,105 +116,81 @@
 		justify-content: center;
 		font-size: 8rem;
 		font-weight: 900;
-		color: var(--faf-dark);
 		position: relative;
+		gap: 0;
 	}
 	
-	/* The smiley that becomes the dot */
+	/* The smiley that zooms in to become the dot */
 	.smiley-splash {
-		width: 100px;
-		height: 100px;
+		width: 60px;
+		height: 60px;
 		filter: drop-shadow(0 0 40px rgba(255, 107, 53, 0.8));
-		transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
 		display: inline-block;
 		vertical-align: middle;
+		margin-right: -0.1em;
+		animation: smileyZoomIn 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 	}
 	
-	/* The "faf" text */
-	.faf-text {
+	/* Each letter of "faf" */
+	.letter {
+		color: var(--faf-white);
 		opacity: 0;
-		margin-left: -0.1em;
+		transform: translate(0, 20px);
+		transition: all 0.4s ease-out;
 		letter-spacing: -0.02em;
+		display: inline-block;
+		position: relative;
+		top: -1.65rem;
+		font-size: 8.8rem;
+		line-height: 1;
+		vertical-align: baseline;
 	}
 	
-	/* Phase 1: Smiley starts HUGE */
-	[data-phase="zoom-in"] .smiley-splash {
-		transform: scale(8);
+	.letter:first-of-type {
+		margin-left: 1.25rem;
+	}
+	
+	.letter.show {
 		opacity: 1;
-		animation: smileyZoomIn 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-	}
-	
-	[data-phase="zoom-in"] .faf-text {
-		opacity: 0;
-	}
-	
-	/* Phase 2: Display as dot with "faf" */
-	[data-phase="display"] .smiley-splash {
-		transform: scale(1);
-		opacity: 1;
-	}
-	
-	[data-phase="display"] .faf-text {
-		animation: fadeIn 0.5s ease-out forwards;
-	}
-	
-	/* Phase 3: Everything fades out */
-	[data-phase="zoom-out"] .splash-content {
-		animation: fadeOut 1s ease-out forwards;
+		transform: translate(0, 0);
 	}
 	
 	@keyframes smileyZoomIn {
 		0% {
-			transform: scale(8);
+			transform: scale(10);
+			opacity: 0;
+		}
+		50% {
 			opacity: 1;
 		}
 		100% {
 			transform: scale(1);
 			opacity: 1;
-		}
-	}
-	
-	@keyframes fadeIn {
-		0% {
-			opacity: 0;
-		}
-		100% {
-			opacity: 1;
-		}
-	}
-	
-	@keyframes fadeOut {
-		0% {
-			opacity: 1;
-			transform: scale(1);
-		}
-		100% {
-			opacity: 0;
-			transform: scale(0.8);
 		}
 	}
 	
 	/* Mobile adjustments */
 	@media (max-width: 768px) {
 		.splash-content {
-			font-size: 5rem;
+			font-size: 4rem;
 		}
 		
 		.smiley-splash {
-			width: 60px;
-			height: 60px;
-		}
-		
-		[data-phase="zoom-in"] .smiley-splash {
-			transform: scale(5);
+			width: 40px;
+			height: 40px;
 		}
 		
 		@keyframes smileyZoomIn {
 			0% {
-				transform: scale(5);
+				transform: scale(8);
+				opacity: 0;
+			}
+			50% {
+				opacity: 1;
 			}
 			100% {
 				transform: scale(1);
+				opacity: 1;
 			}
 		}
 	}
