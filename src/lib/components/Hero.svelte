@@ -36,11 +36,6 @@
 <section class="hero">
 	<div class="container">
 		<div class="hero-content" class:visible={isVisible}>
-			<!-- Logo -->
-			<div class="logo-wrapper">
-				<img src="/faf-logo.png" alt=".faf" class="logo" />
-			</div>
-			
 			<!-- Main Title - MASSIVE -->
 			<div bind:this={titleRef} class="title-wrapper">
 				<h1 class="main-title">
@@ -228,7 +223,7 @@
 		justify-content: center;
 		position: relative;
 		background: var(--faf-cream);
-		padding: 4rem 0;
+		padding: 2rem 0 4rem 0;
 	}
 	
 	.container {
@@ -249,17 +244,6 @@
 	.hero-content.visible {
 		opacity: 1;
 		transform: translateY(0);
-	}
-	
-	.logo-wrapper {
-		margin-bottom: 2rem;
-		animation: fadeIn 0.6s ease-out;
-	}
-	
-	.logo {
-		width: 80px;
-		height: 80px;
-		filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.1));
 	}
 	
 	.title-wrapper {
@@ -283,42 +267,24 @@
 	}
 	
 	.dot-smiley {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		vertical-align: middle;
+		display: inline-block;
+		vertical-align: baseline;
 		position: relative;
-		margin-right: -0.1em;
+		margin-right: 0.1em;
 	}
 	
 	.smiley-dot {
-		width: 0.8em;
-		height: 0.8em;
-		animation: colorCycle 4s infinite;
-		filter: drop-shadow(0 0 20px currentColor);
+		width: 1.1em;
+		height: 1.1em;
+		display: inline-block;
+		vertical-align: middle;
+		margin-bottom: 0.1em;
+		filter: drop-shadow(0 0 20px rgba(255, 107, 53, 0.5));
 		transition: transform 0.3s ease;
 	}
 	
 	.smiley-dot:hover {
-		transform: scale(1.2) rotate(10deg);
-	}
-	
-	@keyframes colorCycle {
-		0% {
-			filter: hue-rotate(0deg) drop-shadow(0 0 20px #FF6B35);
-		}
-		25% {
-			filter: hue-rotate(-20deg) drop-shadow(0 0 20px #000);
-		}
-		50% {
-			filter: hue-rotate(180deg) drop-shadow(0 0 20px #00ffff);
-		}
-		75% {
-			filter: hue-rotate(120deg) drop-shadow(0 0 20px #00bf63);
-		}
-		100% {
-			filter: hue-rotate(360deg) drop-shadow(0 0 20px #FF6B35);
-		}
+		transform: scale(1.1) rotate(10deg);
 	}
 	
 	.subtitle {
