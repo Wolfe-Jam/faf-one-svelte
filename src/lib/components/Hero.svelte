@@ -1,6 +1,8 @@
 <script>
 	import { onMount } from 'svelte';
 	import FafLogo from '$lib/components/FafLogo.svelte';
+	import ScrollRevealText from '$lib/components/ScrollRevealText.svelte';
+	import TypewriterText from '$lib/components/TypewriterText.svelte';
 	
 	// Removed scrollY prop - not needed
 	
@@ -40,7 +42,7 @@
 			<!-- Main Title - MASSIVE -->
 			<div bind:this={titleRef} class="title-wrapper">
 				<div class="main-logo">
-					<FafLogo size="huge" color="black" />
+					<FafLogo size="medium" color="black" />
 				</div>
 				<div class="subtitle">
 					<span class="bold">F</span>oundational 
@@ -54,33 +56,53 @@
 				⚡ <span class="emoji">🧡</span> <span class="tagline-underline">The JPEG for AI</span> <span class="emoji">🩵</span> ⚡
 			</div>
 			
-			<!-- Claude Quote - Authority -->
-			<div class="claude-quote">
-				"It's so logical if it didn't exist, AI would have built it itself" — Claude
-			</div>
-			
-			<!-- Authority Statement - WEIGHT -->
-			<div class="authority-statement">
-				<div>The AI Context MCP approved by Anthropic</div>
-				<div>The AI Chrome Extension, LIVE and approved by Google,</div>
-				<div><em>Ready, and waiting for Claude-beta and Gemini</em></div>
-			</div>
-			
-			<!-- THE Message -->
-			<div class="core-message">
-				<h2>AI context needed a file format, it got one— .faf</h2>
-			</div>
-			
-			<!-- Killer Quotes -->
-			<div class="killer-quotes">
-				<div class="quote-item">
-					<span class="quote-text">"package.json wasn't built for this, .faf was"</span> <span class="quote-author-black">— .faf Inventor</span>
+			<!-- BLOCK 1: Claude Quote -->
+			<ScrollRevealText threshold={0.5} delay={0}>
+				<div class="text-block claude-quote">
+					{#if isVisible}
+						<TypewriterText 
+							text={"\"It's so logical if it didn't exist, AI would have built it itself\" — Claude"}
+							speed={30}
+							delay={200}
+						/>
+					{:else}
+						<span style="opacity: 0">"It's so logical if it didn't exist, AI would have built it itself" — Claude</span>
+					{/if}
 				</div>
-				<div class="quote-item">
-					<span class="quote-text">"package.json gives me a list of dependencies,<br>
-					.faf shows me how to use them"</span> <span class="quote-author">— Claude Code (Anthropic)</span>
+			</ScrollRevealText>
+			
+			<!-- BLOCK 2: Authority Statements -->
+			<ScrollRevealText threshold={0.5} delay={0}>
+				<div class="text-block authority-statement">
+					<div>The AI Context MCP approved by Anthropic</div>
+					<div>The AI Chrome Extension, LIVE and approved by Google,</div>
+					<div><em>Ready, and waiting for Claude-beta and Gemini</em></div>
 				</div>
-			</div>
+			</ScrollRevealText>
+			
+			<!-- BLOCK 3: Core Message -->
+			<ScrollRevealText threshold={0.5} delay={0}>
+				<div class="text-block core-message">
+					<h2>AI context needed a file format, it got one— .faf</h2>
+				</div>
+			</ScrollRevealText>
+			
+			<!-- BLOCK 4: Inventor Quote -->
+			<ScrollRevealText threshold={0.5} delay={0}>
+				<div class="text-block quote-item">
+					<p>"package.json wasn't built for this, .faf was"</p>
+					<span class="quote-author">— .faf Inventor</span>
+				</div>
+			</ScrollRevealText>
+			
+			<!-- BLOCK 5: Claude Code Quote -->
+			<ScrollRevealText threshold={0.5} delay={0}>
+				<div class="text-block quote-item">
+					<p>"package.json gives me a list of dependencies,<br/>.faf shows me how to use them"</p>
+					<span class="quote-author">— Claude Code (Anthropic)</span>
+				</div>
+			</ScrollRevealText>
+			
 			
 			<!-- Authority Badges -->
 			<div class="authority-badges">
@@ -193,7 +215,7 @@
 					<span class="btn-icon">🧡⚡️</span>
 					WEB - Fafdev.tools
 				</a>
-				<a href="#mcp-setup" class="btn btn-orange btn-large">
+				<a href="https://modelcontextprotocol.io/quickstart" target="_blank" rel="noopener noreferrer" class="btn btn-orange btn-large">
 					<span class="btn-icon">🤖</span>
 					MCP Setup
 				</a>
@@ -218,11 +240,12 @@
 <style>
 	.hero {
 		display: flex;
-		align-items: center;
+		align-items: flex-start;
 		justify-content: center;
 		position: relative;
 		background: var(--faf-cream);
 		padding: 2rem 0 4rem 0;
+		min-height: 100vh;
 	}
 	
 	.container {
@@ -253,7 +276,7 @@
 	.main-logo {
 		display: flex;
 		justify-content: center;
-		margin-bottom: 1rem;
+		margin-bottom: 0.5rem;
 	}
 	
 	.subtitle {
@@ -261,7 +284,8 @@
 		font-family: 'Roboto Condensed', sans-serif;
 		color: var(--faf-gray);
 		letter-spacing: 0.1em;
-		margin-top: 1rem;
+		margin-top: -1.5rem;
+		margin-bottom: 3rem;
 	}
 	
 	.subtitle .bold {
@@ -274,7 +298,7 @@
 		font-size: 2.5rem;
 		font-weight: 700;
 		color: var(--faf-dark);
-		margin: 3rem 0 2rem;
+		margin: 6rem 0 4rem;
 		animation: slideInUp 0.7s ease-out 0.2s backwards;
 	}
 	
@@ -282,7 +306,7 @@
 		text-decoration: underline;
 		text-decoration-thickness: 3px;
 		text-underline-offset: 4px;
-		text-decoration-color: var(--faf-orange);
+		text-decoration-color: var(--faf-black);
 	}
 	
 	.claude-quote {
@@ -293,7 +317,7 @@
 		margin: 2rem 0;
 		padding: 1.5rem;
 		border-left: 4px solid var(--faf-orange);
-		background: rgba(255, 107, 53, 0.05);
+		background: rgba(0, 243, 255, 0.05);
 		animation: slideInUp 0.7s ease-out 0.3s backwards;
 	}
 	
@@ -330,19 +354,70 @@
 		letter-spacing: -0.01em;
 	}
 	
+	/* Text blocks with scroll reveal */
+	.text-block {
+		margin: 2.5rem 0;
+		padding: 1.5rem 0;
+		min-height: 100px;
+	}
+	
+	/* Inventor quotes specific styling */
+	.inventor-quotes {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		align-items: center;
+		margin: 3rem 0;
+	}
+	
+	.inventor-quotes .quote-item {
+		text-align: center;
+		max-width: 700px;
+	}
+	
+	.inventor-quotes .quote-item p {
+		font-size: 1.25rem;
+		font-style: italic;
+		color: var(--faf-gray-dark);
+		margin-bottom: 0.5rem;
+		line-height: 1.6;
+		font-weight: 500;
+	}
+	
+	.inventor-quotes .quote-author {
+		font-size: 1rem;
+		color: var(--faf-orange);
+		font-weight: 600;
+		font-family: 'Roboto Mono', monospace;
+		display: block;
+		margin-top: 0.5rem;
+	}
+	
 	.killer-quotes {
 		margin: 3rem 0;
 		animation: slideInUp 0.7s ease-out 0.45s backwards;
 	}
 	
-	.quote-item {
-		font-family: 'Roboto Mono', monospace;
-		font-size: 1.25rem;
-		color: var(--faf-orange);
+	.text-block.quote-item {
 		text-align: center;
-		margin: 1.5rem 0;
-		font-weight: 600;
+		max-width: 700px;
+		margin: 0 auto;
+	}
+	
+	.text-block.quote-item p {
+		font-size: 1.25rem;
+		font-style: italic;
+		color: var(--faf-gray-dark);
+		margin-bottom: 0.5rem;
 		line-height: 1.6;
+		font-weight: 600;
+	}
+	
+	.text-block.quote-item .quote-author {
+		font-size: 1rem;
+		color: var(--faf-orange);
+		font-weight: 700;
+		font-style: normal;
 	}
 	
 	.quote-text {

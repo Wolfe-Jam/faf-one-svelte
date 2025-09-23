@@ -6,6 +6,7 @@
 		size = 'medium',
 		color = 'white',
 		animated = false,
+		animationStyle = 'fade', // 'fade' or 'scroll'
 		animationDelay = 1500,
 		showLettersDelay = 500,
 		dotColor = 'orange',
@@ -76,9 +77,9 @@
 		
 		{#if !dotOnly}
 			<!-- Letters appear one by one -->
-			<span class="letter" class:show={showF1}>f</span>
-			<span class="letter" class:show={showA}>a</span>
-			<span class="letter" class:show={showF2}>f</span>
+			<span class="letter letter-{animationStyle}" class:show={showF1}>f</span>
+			<span class="letter letter-{animationStyle}" class:show={showA}>a</span>
+			<span class="letter letter-{animationStyle}" class:show={showF2}>f</span>
 		{/if}
 	</span>
 </div>
