@@ -18,19 +18,24 @@
 	});
 	
 	const navItems = [
+		{ label: 'About', href: '/about' },
 		{ label: 'Features', href: '#features' },
 		{ label: 'Demo', href: '#demo' },
 		{ label: 'Journey', href: '#journey' },
 		{ label: 'Pricing', href: '#pricing' },
-		{ label: 'Docs', href: '#docs' }
+		{ label: 'Docs', href: '/docs' }
 	];
 	
-	function smoothScroll(e, href) {
-		e.preventDefault();
-		const target = document.querySelector(href);
-		if (target) {
-			target.scrollIntoView({ behavior: 'smooth' });
+	function handleNavClick(e, href) {
+		// If it's an anchor link (starts with #), smooth scroll
+		if (href.startsWith('#')) {
+			e.preventDefault();
+			const target = document.querySelector(href);
+			if (target) {
+				target.scrollIntoView({ behavior: 'smooth' });
+			}
 		}
+		// For regular links, just close mobile menu
 		isMobileMenuOpen = false;
 	}
 	
@@ -51,7 +56,7 @@
 				<a 
 					href={item.href} 
 					class="nav-link"
-					onclick={(e) => smoothScroll(e, item.href)}
+					onclick={(e) => handleNavClick(e, item.href)}
 				>
 					{item.label}
 				</a>
