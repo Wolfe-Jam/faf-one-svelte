@@ -41,10 +41,12 @@
 
 {#if showSplash}
 <div class="splash-screen" data-phase={splashPhase}>
-	<div class="splash-image-wrapper">
-		<img src="/faf-jpeg-for-ai.png" alt=".faf - The JPEG for AI" class="splash-image" />
-		<img src="/orange-smiley.svg" alt="." class="smiley-splash" />
-		<div class="dot"></div>
+	<div class="splash-container">
+		<!-- The smiley that becomes the dot -->
+		<div class="splash-content">
+			<img src="/orange-smiley.svg" alt="." class="smiley-splash" />
+			<span class="faf-text">faf</span>
+		</div>
 	</div>
 </div>
 {/if}
@@ -89,7 +91,7 @@
 		overflow: hidden;
 	}
 	
-	.splash-image-wrapper {
+	.splash-container {
 		position: relative;
 		width: 100%;
 		height: 100%;
@@ -98,148 +100,111 @@
 		justify-content: center;
 	}
 	
-	.splash-image {
-		position: absolute;
-		width: 600px;
-		height: 600px;
-		object-fit: contain;
-		opacity: 1;
-		transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-	}
-	
-	/* Phase 1: Zoom in from huge (Star Wars style - starts filling screen) */
-	[data-phase="zoom-in"] .splash-image {
-		transform: scale(10);
-		opacity: 1;
-		animation: zoomIn 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-	}
-	
-	/* Phase 2: Display at normal size */
-	[data-phase="display"] .splash-image {
-		transform: scale(1);
-		opacity: 1;
-		filter: drop-shadow(0 0 40px rgba(255, 107, 53, 0.5));
-	}
-	
-	/* Phase 3: Zoom out to dot */
-	[data-phase="zoom-out"] .splash-image {
-		animation: zoomToDot 1s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+	.splash-content {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 8rem;
+		font-weight: 900;
+		color: var(--faf-dark);
+		position: relative;
 	}
 	
 	/* The smiley that becomes the dot */
 	.smiley-splash {
-		position: absolute;
-		width: 60px;
-		height: 60px;
+		width: 100px;
+		height: 100px;
+		filter: drop-shadow(0 0 40px rgba(255, 107, 53, 0.8));
+		transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+		display: inline-block;
+		vertical-align: middle;
+	}
+	
+	/* The "faf" text */
+	.faf-text {
 		opacity: 0;
-		transform: scale(0);
-		filter: drop-shadow(0 0 30px rgba(255, 107, 53, 0.9));
-		transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+		margin-left: -0.1em;
+		letter-spacing: -0.02em;
 	}
 	
-	/* The dot (period) that appears at the end */
-	.dot {
-		position: absolute;
-		width: 12px;
-		height: 12px;
-		background: #FF6B35;
-		border-radius: 50%;
+	/* Phase 1: Smiley starts HUGE */
+	[data-phase="zoom-in"] .smiley-splash {
+		transform: scale(8);
+		opacity: 1;
+		animation: smileyZoomIn 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+	}
+	
+	[data-phase="zoom-in"] .faf-text {
 		opacity: 0;
-		transform: scale(0);
-		box-shadow: 0 0 20px rgba(255, 107, 53, 0.8);
 	}
 	
-	[data-phase="zoom-out"] .smiley-splash {
-		animation: appearSmiley 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-		animation-delay: 0.3s;
+	/* Phase 2: Display as dot with "faf" */
+	[data-phase="display"] .smiley-splash {
+		transform: scale(1);
+		opacity: 1;
 	}
 	
-	[data-phase="zoom-out"] .dot {
-		animation: appearDot 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-		animation-delay: 0.6s;
-		display: none; /* Hide regular dot when smiley is shown */
+	[data-phase="display"] .faf-text {
+		animation: fadeIn 0.5s ease-out forwards;
 	}
 	
-	@keyframes zoomIn {
+	/* Phase 3: Everything fades out */
+	[data-phase="zoom-out"] .splash-content {
+		animation: fadeOut 1s ease-out forwards;
+	}
+	
+	@keyframes smileyZoomIn {
 		0% {
-			transform: scale(10);
-			opacity: 1;
-			filter: blur(0);
-		}
-		30% {
+			transform: scale(8);
 			opacity: 1;
 		}
 		100% {
 			transform: scale(1);
 			opacity: 1;
-			filter: drop-shadow(0 0 40px rgba(255, 107, 53, 0.5));
 		}
 	}
 	
-	@keyframes zoomToDot {
+	@keyframes fadeIn {
 		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+	
+	@keyframes fadeOut {
+		0% {
+			opacity: 1;
 			transform: scale(1);
-			opacity: 1;
-			filter: drop-shadow(0 0 40px rgba(255, 107, 53, 0.5));
 		}
 		100% {
-			transform: scale(0);
 			opacity: 0;
-			filter: none;
-		}
-	}
-	
-	@keyframes appearSmiley {
-		0% {
-			transform: scale(0) rotate(0deg);
-			opacity: 0;
-		}
-		50% {
-			transform: scale(2) rotate(180deg);
-			opacity: 1;
-		}
-		100% {
-			transform: scale(1) rotate(360deg);
-			opacity: 1;
-		}
-	}
-	
-	@keyframes appearDot {
-		0% {
-			transform: scale(0);
-			opacity: 0;
-		}
-		50% {
-			transform: scale(1.5);
-			opacity: 1;
-		}
-		100% {
-			transform: scale(1);
-			opacity: 1;
+			transform: scale(0.8);
 		}
 	}
 	
 	/* Mobile adjustments */
 	@media (max-width: 768px) {
-		.splash-image {
-			width: 300px;
-			height: 300px;
+		.splash-content {
+			font-size: 5rem;
 		}
 		
-		[data-phase="zoom-in"] .splash-image {
+		.smiley-splash {
+			width: 60px;
+			height: 60px;
+		}
+		
+		[data-phase="zoom-in"] .smiley-splash {
 			transform: scale(5);
 		}
 		
-		@keyframes zoomIn {
+		@keyframes smileyZoomIn {
 			0% {
 				transform: scale(5);
-				opacity: 1;
-				filter: blur(0);
 			}
 			100% {
 				transform: scale(1);
-				opacity: 1;
-				filter: drop-shadow(0 0 30px rgba(255, 107, 53, 0.5));
 			}
 		}
 	}
