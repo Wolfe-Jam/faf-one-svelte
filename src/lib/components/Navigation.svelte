@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+	import FafLogo from '$lib/components/FafLogo.svelte';
 	
 	let isMobileMenuOpen = $state(false);
 	let isScrolled = $state(false);
@@ -46,10 +47,9 @@
 
 <nav class="navigation" class:scrolled={isScrolled}>
 	<div class="nav-container">
-		<div class="nav-brand">
-			<img src="/faf-logo.png" alt=".faf" class="nav-logo" />
-			<span class="nav-title">.faf</span>
-		</div>
+		<a href="/" class="nav-brand">
+			<FafLogo size="tiny" color="black" />
+		</a>
 		
 		<div class="nav-menu" class:open={isMobileMenuOpen}>
 			{#each navItems as item}
@@ -108,18 +108,12 @@
 	.nav-brand {
 		display: flex;
 		align-items: center;
-		gap: 0.75rem;
+		text-decoration: none;
+		transition: transform 0.3s ease;
 	}
 	
-	.nav-logo {
-		width: 32px;
-		height: 32px;
-	}
-	
-	.nav-title {
-		font-size: 1.5rem;
-		font-weight: 900;
-		color: var(--faf-black);
+	.nav-brand:hover {
+		transform: scale(1.05);
 	}
 	
 	.nav-menu {

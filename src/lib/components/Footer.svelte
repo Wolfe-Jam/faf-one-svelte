@@ -1,4 +1,5 @@
 <script>
+	import FafLogo from '$lib/components/FafLogo.svelte';
 	const currentYear = new Date().getFullYear();
 </script>
 
@@ -7,7 +8,7 @@
 		<div class="footer-grid">
 			<div class="footer-brand">
 				<div class="footer-logo">
-					<span class="logo-text">.faf</span>
+					<FafLogo size="small" color="orange" />
 					<span class="logo-tagline">The JPEG for AI™</span>
 				</div>
 				<p class="footer-mission">NO BS. No FAFfing About.</p>
@@ -105,14 +106,8 @@
 	.footer-logo {
 		display: flex;
 		flex-direction: column;
-		gap: 0.25rem;
-	}
-	
-	.logo-text {
-		font-size: 2rem;
-		font-weight: 900;
-		color: var(--faf-orange);
-		letter-spacing: -0.02em;
+		gap: 0.5rem;
+		align-items: flex-start;
 	}
 	
 	.logo-tagline {

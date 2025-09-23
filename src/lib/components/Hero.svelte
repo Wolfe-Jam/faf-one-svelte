@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+	import FafLogo from '$lib/components/FafLogo.svelte';
 	
 	// Removed scrollY prop - not needed
 	
@@ -38,11 +39,9 @@
 		<div class="hero-content" class:visible={isVisible}>
 			<!-- Main Title - MASSIVE -->
 			<div bind:this={titleRef} class="title-wrapper">
-				<h1 class="main-title">
-					<span class="dot-smiley">
-						<img src="/orange-smiley.svg" alt="." class="smiley-dot" />
-					</span>faf
-				</h1>
+				<div class="main-logo">
+					<FafLogo size="huge" color="black" />
+				</div>
 				<div class="subtitle">
 					<span class="bold">F</span>oundational 
 					<span class="bold">A</span>I-context 
@@ -251,40 +250,10 @@
 		animation: slideInUp 0.7s ease-out 0.1s backwards;
 	}
 	
-	.main-title {
-		font-size: clamp(5rem, 12vw, 9rem);
-		font-weight: 900;
-		font-family: 'Inter', sans-serif;
-		letter-spacing: -0.04em;
-		margin: 0;
-		color: var(--faf-dark);
-		line-height: 0.9;
-	}
-	
-	.dot {
-		color: var(--faf-orange);
-		-webkit-text-fill-color: var(--faf-orange);
-	}
-	
-	.dot-smiley {
-		display: inline-block;
-		vertical-align: baseline;
-		position: relative;
-		margin-right: 0.1em;
-	}
-	
-	.smiley-dot {
-		width: 0.7em;
-		height: 0.7em;
-		display: inline-block;
-		vertical-align: middle;
-		margin-bottom: 0.1em;
-		filter: drop-shadow(0 0 20px rgba(255, 107, 53, 0.5));
-		transition: transform 0.3s ease;
-	}
-	
-	.smiley-dot:hover {
-		transform: scale(1.1) rotate(10deg);
+	.main-logo {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 1rem;
 	}
 	
 	.subtitle {

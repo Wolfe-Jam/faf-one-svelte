@@ -1,0 +1,10 @@
+<svg width="400" height="150" viewBox="0 0 400 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Orange smiley dot -->
+  <circle cx="50" cy="85" r="25" fill="#FF6B35"/>
+  <circle cx="42" cy="78" r="3" fill="#000000"/>
+  <circle cx="58" cy="78" r="3" fill="#000000"/>
+  <path d="M 40 90 Q 50 96 60 90" stroke="#000000" stroke-width="2" stroke-linecap="round" fill="none"/>
+  
+  <!-- "faf" text -->
+  <text x="100" y="100" font-family="Inter, sans-serif" font-size="80" font-weight="900" fill="#FFFFFF" letter-spacing="-2">faf</text>
+</svg>
