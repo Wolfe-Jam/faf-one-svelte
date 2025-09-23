@@ -562,12 +562,19 @@
 	.testing-stats {
 		margin: 3rem -2rem;
 		padding: 3rem 2rem;
-		background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
+		background: linear-gradient(135deg, 
+			#4a4a4a 0%, 
+			#2c3e50 20%, 
+			#0a0a0a 50%, 
+			#2c3e50 80%, 
+			#4a4a4a 100%
+		);
 		border-radius: 20px;
-		box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+		box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 		animation: slideInUp 0.7s ease-out 0.35s backwards;
 		position: relative;
 		overflow: hidden;
+		border: 1px solid rgba(255, 255, 255, 0.05);
 	}
 	
 	.testing-stats::before {
@@ -578,6 +585,23 @@
 		right: 0;
 		height: 3px;
 		background: linear-gradient(90deg, var(--faf-orange) 0%, var(--faf-cyan-dark) 50%, var(--faf-green) 100%);
+	}
+	
+	.testing-stats::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.03) 50%, transparent 100%);
+		animation: steelSheen 3s ease-in-out infinite;
+		pointer-events: none;
+	}
+	
+	@keyframes steelSheen {
+		0% { left: -100%; }
+		100% { left: 100%; }
 	}
 	
 	.testing-title {
