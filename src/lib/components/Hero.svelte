@@ -42,12 +42,19 @@
 			<!-- Main Title - MASSIVE -->
 			<div bind:this={titleRef} class="title-wrapper">
 				<div class="main-logo">
-					<FafLogo size="medium" color="black" />
+					<FafLogo size="large" color="black" />
 				</div>
 				<div class="subtitle">
-					<span class="bold">F</span>oundational 
-					<span class="bold">A</span>I-context 
-					<span class="bold">F</span>ormat
+					Professional AI Context Management
+				</div>
+				<div class="features-tagline">
+					<span class="feature-item">⚡ Lightning Fast</span>
+					<span class="separator">•</span>
+					<span class="feature-item">🔄 Eternal-Sync™</span>
+					<span class="separator">•</span>
+					<span class="feature-item">🛡️ Disaster Recovery</span>
+					<span class="separator">•</span>
+					<span class="feature-item">🔒 Bank-Grade Secure</span>
 				</div>
 			</div>
 			
