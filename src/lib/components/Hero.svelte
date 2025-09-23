@@ -80,10 +80,14 @@
 				</div>
 			</ScrollRevealText>
 			
-			<!-- BLOCK 3: Core Message -->
+			<!-- BLOCK 3: Core Message with Visual -->
 			<ScrollRevealText threshold={0.5} delay={0}>
 				<div class="text-block core-message">
 					<h2>AI context needed a file format, it got one— .faf</h2>
+					<div class="transformation-visual">
+						<img src="/faf-jpeg-for-ai.png" alt="From development chaos to clean .faf format - the JPEG for AI" class="jpeg-for-ai-img" />
+					</div>
+					<p class="classic-tagline">Stop faffing about with context — use .faf — no excuses left</p>
 				</div>
 			</ScrollRevealText>
 			
@@ -106,10 +110,10 @@
 			
 			<!-- Authority Badges -->
 			<div class="authority-badges">
-				<div class="badge-item badge-mcp">
+				<a href="https://github.com/fafdev/mcp-server" class="badge-item badge-mcp" target="_blank" rel="noopener">
 					<img src="/mcp-logo.png" alt="Model Context Protocol" class="mcp-logo" />
 					<span class="badge-text">Model Context Protocol<br><small>Open-sourced by Anthropic</small></span>
-				</div>
+				</a>
 				<a href="https://chrome.google.com/webstore/detail/faf" class="badge-item badge-chrome" target="_blank" rel="noopener">
 					<img src="/chrome-web-store-badge-medium.png" alt="Available in the Chrome Web Store" class="chrome-badge-img" />
 				</a>
@@ -215,9 +219,9 @@
 					<span class="btn-icon">🧡⚡️</span>
 					WEB - Fafdev.tools
 				</a>
-				<a href="https://modelcontextprotocol.io/quickstart" target="_blank" rel="noopener noreferrer" class="btn btn-orange btn-large">
+				<a href="https://github.com/modelcontextprotocol/servers" target="_blank" rel="noopener noreferrer" class="btn btn-orange btn-large">
 					<span class="btn-icon">🤖</span>
-					MCP Setup
+					MCP Registry
 				</a>
 				<a href="https://fafcli.dev" class="btn btn-dark btn-large">
 					<span class="btn-icon">📺</span>
@@ -352,6 +356,47 @@
 		color: var(--faf-dark);
 		text-align: center;
 		letter-spacing: -0.01em;
+		margin-bottom: 2rem;
+	}
+	
+	.transformation-visual {
+		display: flex;
+		justify-content: center;
+		margin: 3rem 0;
+	}
+	
+	.jpeg-for-ai-img {
+		width: 100%;
+		max-width: 900px;
+		height: auto;
+		border-radius: 12px;
+		box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+	
+	.jpeg-for-ai-img:hover {
+		transform: scale(1.02);
+		box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+	}
+	
+	.classic-tagline {
+		font-size: 1.75rem;
+		font-weight: 700;
+		color: var(--faf-black);
+		text-align: center;
+		margin-top: 3rem;
+		font-style: italic;
+		letter-spacing: -0.02em;
+		position: relative;
+		padding: 0 1rem;
+	}
+	
+	.classic-tagline::before,
+	.classic-tagline::after {
+		content: "—";
+		color: var(--faf-orange);
+		margin: 0 0.5rem;
+		font-weight: 400;
 	}
 	
 	/* Text blocks with scroll reveal */
@@ -474,6 +519,13 @@
 	
 	.badge-mcp {
 		padding: 0.75rem 1.25rem;
+		cursor: pointer;
+		text-decoration: none;
+		color: inherit;
+	}
+	
+	.badge-mcp:hover {
+		transform: translateY(-2px);
 	}
 	
 	.badge-mcp:hover .mcp-logo {
@@ -510,7 +562,8 @@
 	.testing-stats {
 		margin: 3rem 0;
 		padding: 2rem;
-		background: linear-gradient(135deg, rgba(255, 107, 53, 0.03) 0%, rgba(0, 255, 255, 0.03) 100%);
+		background: var(--faf-white);
+		border: 2px solid var(--faf-black);
 		border-radius: 16px;
 		animation: slideInUp 0.7s ease-out 0.35s backwards;
 	}
@@ -540,12 +593,25 @@
 		display: block;
 		font-size: 2.5rem;
 		font-weight: 900;
-		color: var(--faf-black);
 		line-height: 1;
 		margin-bottom: 0.5rem;
-		background: linear-gradient(135deg, var(--faf-orange) 0%, var(--faf-cyan) 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
+	}
+	
+	/* Different color for each stat */
+	.stat-item:nth-child(1) .stat-number {
+		color: var(--faf-black);
+	}
+	
+	.stat-item:nth-child(2) .stat-number {
+		color: var(--faf-cyan-dark);
+	}
+	
+	.stat-item:nth-child(3) .stat-number {
+		color: #00C851; /* Green */
+	}
+	
+	.stat-item:nth-child(4) .stat-number {
+		color: var(--faf-orange);
 	}
 	
 	.stat-label {
@@ -629,7 +695,7 @@
 	}
 	
 	.gemini-item .author-name {
-		color: #00838F; /* Dark cyan */
+		color: var(--faf-cyan-dark); /* Using our great cyan #00d4d4 */
 	}
 	
 	.pathways {
@@ -751,7 +817,7 @@
 	
 	.cursor {
 		animation: blink 1s steps(1) infinite;
-		color: var(--faf-cyan);
+		color: var(--faf-cyan-dark);
 	}
 	
 	@keyframes blink {
@@ -774,7 +840,7 @@
 	}
 	
 	.score-cyan {
-		color: var(--faf-cyan);
+		color: var(--faf-cyan-dark);
 		font-weight: 700;
 	}
 	
@@ -864,6 +930,14 @@
 		.testing-stats {
 			grid-template-columns: repeat(2, 1fr);
 			gap: 1rem;
+		}
+		
+		.jpeg-for-ai-img {
+			max-width: 100%;
+		}
+		
+		.transformation-visual {
+			margin: 2rem 0;
 		}
 		
 		.testimonial-grid {
