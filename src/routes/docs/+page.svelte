@@ -96,7 +96,7 @@ pnpm add -g faf-cli</code></pre>
 			<h3>MCP Server</h3>
 			<div class="code-block">
 				<pre><code># Clone and setup
-git clone https://github.com/faf-mcp
+git clone https://github.com/Wolfe-Jam
 cd faf-mcp
 npm install
 npm run build</code></pre>
@@ -332,7 +332,7 @@ const stats = await FAF.stats('./project.faf');`}</code></pre>
 		</section>
 		
 		<div class="docs-footer">
-			<p>Need help? <a href="/support">Contact Support</a> or check our <a href="https://github.com/faf-cli" target="_blank">GitHub</a></p>
+			<p>Need help? <a href="/support">Contact Support</a> or check our <a href="https://github.com/Wolfe-Jam" target="_blank">GitHub</a></p>
 		</div>
 	</main>
 </div>

@@ -198,7 +198,7 @@
 					<span class="icon">📚</span>
 					<span>Documentation</span>
 				</a>
-				<a href="https://github.com/Wolfe-Jam/faf-one-svelte" class="contact-card">
+				<a href="https://github.com/Wolfe-Jam" class="contact-card">
 					<span class="icon">🐙</span>
 					<span>GitHub</span>
 				</a>

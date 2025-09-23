@@ -276,7 +276,7 @@
 			</div>
 			
 			<div class="social-links">
-				<a href="https://github.com/faf-cli" target="_blank" class="social-link">GitHub</a>
+				<a href="https://github.com/Wolfe-Jam" target="_blank" class="social-link">GitHub</a>
 				<a href="https://twitter.com/faf_format" target="_blank" class="social-link">Twitter</a>
 			</div>
 			

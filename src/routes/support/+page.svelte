@@ -56,7 +56,7 @@
 				<div class="card-icon">📚</div>
 				<h2>Documentation</h2>
 				<p>Guides, tutorials, API docs</p>
-				<a href="https://github.com/faf-cli" 
+				<a href="https://github.com/Wolfe-Jam" 
 				   target="_blank" 
 				   class="support-link">
 					View Docs →

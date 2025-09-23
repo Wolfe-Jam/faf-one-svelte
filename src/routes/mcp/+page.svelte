@@ -133,7 +133,7 @@
 						<a href="https://modelcontextprotocol.io/quickstart" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
 							View Official MCP Docs
 						</a>
-						<a href="https://github.com/fafdev/mcp-server" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+						<a href="https://github.com/Wolfe-Jam" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
 							View on GitHub
 						</a>
 					</div>
