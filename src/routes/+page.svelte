@@ -15,22 +15,22 @@
 	let splashPhase = $state('zoom-in'); // 'zoom-in', 'display', 'zoom-out'
 	
 	onMount(() => {
-		// Phase 1: Zoom in animation (1s)
-		// Phase 2: Display at normal size (1.5s)
+		// Phase 1: Star Wars zoom in from huge (1.5s)
+		// Phase 2: Display at normal size (2-3s as requested)
 		setTimeout(() => {
 			splashPhase = 'display';
-		}, 1000);
+		}, 1500);
 		
-		// Phase 3: Zoom out to dot (0.5s)
+		// Phase 3: Zoom out to dot (1s)
 		setTimeout(() => {
 			splashPhase = 'zoom-out';
-		}, 2500);
+		}, 4000);
 		
 		// Phase 4: Hide splash and show content
 		setTimeout(() => {
 			showSplash = false;
 			isLoaded = true;
-		}, 3000);
+		}, 5000);
 	});
 </script>
 
@@ -43,6 +43,7 @@
 <div class="splash-screen" data-phase={splashPhase}>
 	<div class="splash-image-wrapper">
 		<img src="/faf-jpeg-for-ai.png" alt=".faf - The JPEG for AI" class="splash-image" />
+		<img src="/orange-smiley.svg" alt="." class="smiley-splash" />
 		<div class="dot"></div>
 	</div>
 </div>
@@ -106,11 +107,11 @@
 		transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 	}
 	
-	/* Phase 1: Zoom in from huge */
+	/* Phase 1: Zoom in from huge (Star Wars style - starts filling screen) */
 	[data-phase="zoom-in"] .splash-image {
-		transform: scale(3);
-		opacity: 0;
-		animation: zoomIn 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+		transform: scale(10);
+		opacity: 1;
+		animation: zoomIn 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 	}
 	
 	/* Phase 2: Display at normal size */
@@ -122,7 +123,18 @@
 	
 	/* Phase 3: Zoom out to dot */
 	[data-phase="zoom-out"] .splash-image {
-		animation: zoomToDot 0.5s cubic-bezier(0.4, 0, 1, 1) forwards;
+		animation: zoomToDot 1s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+	}
+	
+	/* The smiley that becomes the dot */
+	.smiley-splash {
+		position: absolute;
+		width: 60px;
+		height: 60px;
+		opacity: 0;
+		transform: scale(0);
+		filter: drop-shadow(0 0 30px rgba(255, 107, 53, 0.9));
+		transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 	}
 	
 	/* The dot (period) that appears at the end */
@@ -137,25 +149,30 @@
 		box-shadow: 0 0 20px rgba(255, 107, 53, 0.8);
 	}
 	
-	[data-phase="zoom-out"] .dot {
-		animation: appearDot 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+	[data-phase="zoom-out"] .smiley-splash {
+		animation: appearSmiley 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 		animation-delay: 0.3s;
+	}
+	
+	[data-phase="zoom-out"] .dot {
+		animation: appearDot 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+		animation-delay: 0.6s;
+		display: none; /* Hide regular dot when smiley is shown */
 	}
 	
 	@keyframes zoomIn {
 		0% {
-			transform: scale(3);
-			opacity: 0;
-			filter: blur(10px);
+			transform: scale(10);
+			opacity: 1;
+			filter: blur(0);
 		}
-		50% {
-			opacity: 0.8;
-			filter: blur(2px);
+		30% {
+			opacity: 1;
 		}
 		100% {
 			transform: scale(1);
 			opacity: 1;
-			filter: blur(0) drop-shadow(0 0 40px rgba(255, 107, 53, 0.5));
+			filter: drop-shadow(0 0 40px rgba(255, 107, 53, 0.5));
 		}
 	}
 	
@@ -169,6 +186,21 @@
 			transform: scale(0);
 			opacity: 0;
 			filter: none;
+		}
+	}
+	
+	@keyframes appearSmiley {
+		0% {
+			transform: scale(0) rotate(0deg);
+			opacity: 0;
+		}
+		50% {
+			transform: scale(2) rotate(180deg);
+			opacity: 1;
+		}
+		100% {
+			transform: scale(1) rotate(360deg);
+			opacity: 1;
 		}
 	}
 	
@@ -195,19 +227,19 @@
 		}
 		
 		[data-phase="zoom-in"] .splash-image {
-			transform: scale(2);
+			transform: scale(5);
 		}
 		
 		@keyframes zoomIn {
 			0% {
-				transform: scale(2);
-				opacity: 0;
-				filter: blur(10px);
+				transform: scale(5);
+				opacity: 1;
+				filter: blur(0);
 			}
 			100% {
 				transform: scale(1);
 				opacity: 1;
-				filter: blur(0) drop-shadow(0 0 30px rgba(255, 107, 53, 0.5));
+				filter: drop-shadow(0 0 30px rgba(255, 107, 53, 0.5));
 			}
 		}
 	}

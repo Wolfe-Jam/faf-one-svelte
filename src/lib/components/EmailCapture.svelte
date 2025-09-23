@@ -24,9 +24,7 @@
 					type: 'founders'
 				});
 				localStorage.setItem('faf-subscribers', JSON.stringify(subscribers));
-				console.log('📧 Email saved locally as backup:', email);
-				console.log('⚠️ Formspree not configured - emails only saving locally');
-				console.log('To retrieve all emails, run: JSON.parse(localStorage.getItem("faf-subscribers"))');
+				// Email saved locally as backup
 			} else {
 				// Send to Formspree AND save locally as backup
 				const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
@@ -53,7 +51,7 @@
 					sentToFormspree: true
 				});
 				localStorage.setItem('faf-subscribers', JSON.stringify(subscribers));
-				console.log('✅ Email sent to Formspree AND backed up locally:', email);
+				// Email sent to Formspree AND backed up locally
 			}
 			
 			// Show success
@@ -67,7 +65,7 @@
 			}, 5000);
 		} catch (error) {
 			status = 'error';
-			console.error('Email submission error:', error);
+			// Handle email submission error silently
 		} finally {
 			isSubmitting = false;
 		}

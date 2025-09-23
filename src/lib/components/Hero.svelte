@@ -44,7 +44,9 @@
 			<!-- Main Title - MASSIVE -->
 			<div bind:this={titleRef} class="title-wrapper">
 				<h1 class="main-title">
-					<span class="dot">.</span>faf
+					<span class="dot-smiley">
+						<img src="/orange-smiley.svg" alt="." class="smiley-dot" />
+					</span>faf
 				</h1>
 				<div class="subtitle">
 					<span class="bold">F</span>oundational 
@@ -55,7 +57,7 @@
 			
 			<!-- Tagline - BOLD -->
 			<div bind:this={subtitleRef} class="tagline">
-				⚡ <span class="emoji">🧡</span> The JPEG for AI <span class="emoji">🩵</span> ⚡
+				⚡ <span class="emoji">🧡</span> <span class="tagline-underline">The JPEG for AI</span> <span class="emoji">🩵</span> ⚡
 			</div>
 			
 			<!-- Claude Quote - Authority -->
@@ -280,6 +282,45 @@
 		-webkit-text-fill-color: var(--faf-orange);
 	}
 	
+	.dot-smiley {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		vertical-align: middle;
+		position: relative;
+		margin-right: -0.1em;
+	}
+	
+	.smiley-dot {
+		width: 0.8em;
+		height: 0.8em;
+		animation: colorCycle 4s infinite;
+		filter: drop-shadow(0 0 20px currentColor);
+		transition: transform 0.3s ease;
+	}
+	
+	.smiley-dot:hover {
+		transform: scale(1.2) rotate(10deg);
+	}
+	
+	@keyframes colorCycle {
+		0% {
+			filter: hue-rotate(0deg) drop-shadow(0 0 20px #FF6B35);
+		}
+		25% {
+			filter: hue-rotate(-20deg) drop-shadow(0 0 20px #000);
+		}
+		50% {
+			filter: hue-rotate(180deg) drop-shadow(0 0 20px #00ffff);
+		}
+		75% {
+			filter: hue-rotate(120deg) drop-shadow(0 0 20px #00bf63);
+		}
+		100% {
+			filter: hue-rotate(360deg) drop-shadow(0 0 20px #FF6B35);
+		}
+	}
+	
 	.subtitle {
 		font-size: 1.5rem;
 		font-family: 'Roboto Condensed', sans-serif;
@@ -300,6 +341,13 @@
 		color: var(--faf-dark);
 		margin: 3rem 0 2rem;
 		animation: slideInUp 0.7s ease-out 0.2s backwards;
+	}
+	
+	.tagline-underline {
+		text-decoration: underline;
+		text-decoration-thickness: 3px;
+		text-underline-offset: 4px;
+		text-decoration-color: var(--faf-orange);
 	}
 	
 	.claude-quote {
