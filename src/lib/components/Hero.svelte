@@ -1,0 +1,843 @@
+<script>
+	import { onMount } from 'svelte';
+	
+	// Removed scrollY prop - not needed
+	
+	let titleRef = $state(null);
+	let subtitleRef = $state(null);
+	let ctaRef = $state(null);
+	let isVisible = $state(false);
+	let codeTyped = $state('');
+	
+	const codeText = 'faf init';
+	
+	onMount(() => {
+		setTimeout(() => {
+			isVisible = true;
+		}, 100);
+		
+		// Type out the code
+		let index = 0;
+		const typeInterval = setInterval(() => {
+			if (index <= codeText.length) {
+				codeTyped = codeText.slice(0, index);
+				index++;
+			} else {
+				clearInterval(typeInterval);
+			}
+		}, 150);
+		
+		return () => clearInterval(typeInterval);
+	});
+	
+	// Removed parallax - keeping it simple
+</script>
+
+<section class="hero">
+	<div class="container">
+		<div class="hero-content" class:visible={isVisible}>
+			<!-- Logo -->
+			<div class="logo-wrapper">
+				<img src="/faf-logo.png" alt=".faf" class="logo" />
+			</div>
+			
+			<!-- Main Title - MASSIVE -->
+			<div bind:this={titleRef} class="title-wrapper">
+				<h1 class="main-title">
+					<span class="dot">.</span>faf
+				</h1>
+				<div class="subtitle">
+					<span class="bold">F</span>oundational 
+					<span class="bold">A</span>I-context 
+					<span class="bold">F</span>ormat
+				</div>
+			</div>
+			
+			<!-- Tagline - BOLD -->
+			<div bind:this={subtitleRef} class="tagline">
+				⚡ <span class="emoji">🧡</span> The JPEG for AI <span class="emoji">🩵</span> ⚡
+			</div>
+			
+			<!-- Claude Quote - Authority -->
+			<div class="claude-quote">
+				"It's so logical if it didn't exist, AI would have built it itself" — Claude
+			</div>
+			
+			<!-- Authority Statement - WEIGHT -->
+			<div class="authority-statement">
+				<div>The AI Context MCP approved by Anthropic</div>
+				<div>The AI Chrome Extension, LIVE and approved by Google,</div>
+				<div><em>Ready, and waiting for Claude-beta and Gemini</em></div>
+			</div>
+			
+			<!-- THE Message -->
+			<div class="core-message">
+				<h2>AI context needed a file format, it got one— .faf</h2>
+			</div>
+			
+			<!-- Killer Quotes -->
+			<div class="killer-quotes">
+				<div class="quote-item">
+					<span class="quote-text">"package.json wasn't built for this, .faf was"</span> <span class="quote-author-black">— .faf Inventor</span>
+				</div>
+				<div class="quote-item">
+					<span class="quote-text">"package.json gives me a list of dependencies,<br>
+					.faf shows me how to use them"</span> <span class="quote-author">— Claude Code (Anthropic)</span>
+				</div>
+			</div>
+			
+			<!-- Authority Badges -->
+			<div class="authority-badges">
+				<div class="badge-item badge-mcp">
+					<img src="/mcp-logo.png" alt="Model Context Protocol" class="mcp-logo" />
+					<span class="badge-text">Model Context Protocol<br><small>Open-sourced by Anthropic</small></span>
+				</div>
+				<a href="https://chrome.google.com/webstore/detail/faf" class="badge-item badge-chrome" target="_blank" rel="noopener">
+					<img src="/chrome-web-store-badge-medium.png" alt="Available in the Chrome Web Store" class="chrome-badge-img" />
+				</a>
+			</div>
+			
+			<!-- Verified Testing Stats -->
+			<div class="testing-stats">
+				<h3 class="testing-title">Verified Testing Results</h3>
+				<div class="stats-grid">
+					<div class="stat-item">
+						<span class="stat-number">10,000+</span>
+						<span class="stat-label">Projects Tested</span>
+					</div>
+					<div class="stat-item">
+						<span class="stat-number">9.3/10</span>
+						<span class="stat-label">AI Average Rating</span>
+					</div>
+					<div class="stat-item">
+						<span class="stat-number">154+</span>
+						<span class="stat-label">Formats Validated</span>
+					</div>
+					<div class="stat-item">
+						<span class="stat-number">&lt;50ms</span>
+						<span class="stat-label">Processing Time</span>
+					</div>
+				</div>
+			</div>
+			
+			<!-- AI Testimonials from Testing -->
+			<div class="ai-testimonials">
+				<h3 class="testimonials-title">What the BIG-3 AI's said during Verified Testing</h3>
+				<div class="testimonial-grid">
+					<div class="testimonial-item claude-item">
+						<p class="testimonial-quote">"Should become the standard"</p>
+						<div class="testimonial-author">
+							<span class="author-name">Claude Code</span>
+							<span class="author-rating">(9.5/10 Rating)</span>
+						</div>
+					</div>
+					<div class="testimonial-item openai-item">
+						<p class="testimonial-quote">"Every project should have one"</p>
+						<div class="testimonial-author">
+							<span class="author-name">OpenAI Codex CLI</span>
+							<span class="author-rating">(9/10 Rating)</span>
+						</div>
+					</div>
+					<div class="testimonial-item gemini-item">
+						<p class="testimonial-quote">"README evolution for AI era"</p>
+						<div class="testimonial-author">
+							<span class="author-name">Google Gemini CLI</span>
+							<span class="author-rating">(9.5/10 Rating)</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Three Pathways -->
+			<div class="pathways">
+				<h3 class="pathways-title">Choose Your Path to AI Context</h3>
+				<div class="pathways-grid">
+					<div class="pathway">
+						<span class="pathway-icon">🌐</span>
+						<span class="pathway-name">WEB</span>
+						<span class="pathway-desc">Chrome Extension</span>
+					</div>
+					<div class="pathway featured">
+						<span class="pathway-icon">🤖</span>
+						<span class="pathway-name">MCP</span>
+						<span class="pathway-desc">Model Context</span>
+					</div>
+					<div class="pathway">
+						<span class="pathway-icon">📺</span>
+						<span class="pathway-name">CLI</span>
+						<span class="pathway-desc">Command Line</span>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Terminal Preview -->
+			<div class="terminal">
+				<div class="terminal-header">
+					<span class="terminal-dot red"></span>
+					<span class="terminal-dot yellow"></span>
+					<span class="terminal-dot green"></span>
+				</div>
+				<div class="terminal-body">
+					<div class="terminal-line">
+						<span class="prompt">$</span> {codeTyped}<span class="cursor">|</span>
+					</div>
+					{#if codeTyped === codeText}
+						<div class="terminal-output">
+							<div class="output-line">☑️ .faf created (22% → 99% in 3 seconds)</div>
+							<div class="output-line">🏆 AI-Readiness Score: <span class="score-green">99%</span></div>
+							<div class="output-line">⌚ Processing time: <span class="score-cyan">&lt;50ms</span></div>
+						</div>
+					{/if}
+				</div>
+			</div>
+			
+			<!-- CTAs -->
+			<div bind:this={ctaRef} class="cta-wrapper">
+				<a href="https://fafdev.tools" class="btn btn-cyan btn-large">
+					<span class="btn-icon">🧡⚡️</span>
+					WEB - Fafdev.tools
+				</a>
+				<a href="#mcp-setup" class="btn btn-orange btn-large">
+					<span class="btn-icon">🤖</span>
+					MCP Setup
+				</a>
+				<a href="https://fafcli.dev" class="btn btn-dark btn-large">
+					<span class="btn-icon">📺</span>
+					Try CLI
+				</a>
+			</div>
+			
+			<!-- Trust Signal -->
+			<div class="trust-signal">
+				<p class="trust-text">
+					Trusted by developers at 
+					<span class="company">Anthropic</span> and 
+					<span class="company">Google Chrome</span>
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.hero {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		background: var(--faf-cream);
+		padding: 4rem 0;
+	}
+	
+	.container {
+		width: 100%;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 2rem;
+		position: relative;
+	}
+	
+	.hero-content {
+		text-align: center;
+		opacity: 0;
+		transform: translateY(20px);
+		transition: all 0.8s ease-out;
+	}
+	
+	.hero-content.visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	
+	.logo-wrapper {
+		margin-bottom: 2rem;
+		animation: fadeIn 0.6s ease-out;
+	}
+	
+	.logo {
+		width: 80px;
+		height: 80px;
+		filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.1));
+	}
+	
+	.title-wrapper {
+		margin-bottom: 1rem;
+		animation: slideInUp 0.7s ease-out 0.1s backwards;
+	}
+	
+	.main-title {
+		font-size: clamp(5rem, 12vw, 9rem);
+		font-weight: 900;
+		font-family: 'Inter', sans-serif;
+		letter-spacing: -0.04em;
+		margin: 0;
+		color: var(--faf-dark);
+		line-height: 0.9;
+	}
+	
+	.dot {
+		color: var(--faf-orange);
+		-webkit-text-fill-color: var(--faf-orange);
+	}
+	
+	.subtitle {
+		font-size: 1.5rem;
+		font-family: 'Roboto Condensed', sans-serif;
+		color: var(--faf-gray);
+		letter-spacing: 0.1em;
+		margin-top: 1rem;
+	}
+	
+	.subtitle .bold {
+		font-weight: 700;
+		color: var(--faf-dark);
+		font-size: 1.6rem;
+	}
+	
+	.tagline {
+		font-size: 2.5rem;
+		font-weight: 700;
+		color: var(--faf-dark);
+		margin: 3rem 0 2rem;
+		animation: slideInUp 0.7s ease-out 0.2s backwards;
+	}
+	
+	.claude-quote {
+		font-family: 'Roboto Mono', monospace;
+		font-size: 1.25rem;
+		font-style: italic;
+		color: var(--faf-gray);
+		margin: 2rem 0;
+		padding: 1.5rem;
+		border-left: 4px solid var(--faf-orange);
+		background: rgba(255, 107, 53, 0.05);
+		animation: slideInUp 0.7s ease-out 0.3s backwards;
+	}
+	
+	.emoji {
+		display: inline-block;
+		animation: pulse 2s ease-in-out infinite;
+	}
+	
+	.authority-statement {
+		font-family: 'Roboto Mono', monospace;
+		font-size: 1.125rem;
+		font-weight: 700;
+		color: var(--faf-gray);
+		text-align: center;
+		line-height: 1.8;
+		margin: 0.75rem 0 2rem 0;
+		animation: slideInUp 0.7s ease-out 0.35s backwards;
+	}
+	
+	.authority-statement div:nth-child(2) {
+		margin-top: 1.5rem;
+	}
+	
+	.core-message {
+		margin: 3rem 0;
+		animation: slideInUp 0.7s ease-out 0.4s backwards;
+	}
+	
+	.core-message h2 {
+		font-size: 2rem;
+		font-weight: 800;
+		color: var(--faf-dark);
+		text-align: center;
+		letter-spacing: -0.01em;
+	}
+	
+	.killer-quotes {
+		margin: 3rem 0;
+		animation: slideInUp 0.7s ease-out 0.45s backwards;
+	}
+	
+	.quote-item {
+		font-family: 'Roboto Mono', monospace;
+		font-size: 1.25rem;
+		color: var(--faf-orange);
+		text-align: center;
+		margin: 1.5rem 0;
+		font-weight: 600;
+		line-height: 1.6;
+	}
+	
+	.quote-text {
+		color: var(--faf-black);
+		font-size: 1.25rem;
+	}
+	
+	.quote-author {
+		color: var(--faf-orange);
+		font-size: 1.125rem;
+	}
+	
+	.quote-author-black {
+		color: #555555; /* Dark gray instead of black */
+		font-size: 1.125rem;
+	}
+	
+	.authority-badges {
+		display: flex;
+		justify-content: center;
+		gap: 2rem;
+		margin: 2rem 0 3rem;
+		flex-wrap: wrap;
+		animation: slideInUp 0.7s ease-out 0.3s backwards;
+	}
+	
+	.badge-item {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		padding: 0.75rem 1.5rem;
+		background: white;
+		border: 2px solid var(--faf-gray-medium);
+		border-radius: 999px;
+		font-size: 0.875rem;
+		font-weight: 600;
+		color: var(--faf-gray-dark);
+		transition: all 0.3s ease;
+		cursor: pointer;
+		text-decoration: none;
+	}
+	
+	.badge-item:hover {
+		border-color: var(--faf-orange);
+		transform: translateY(-2px);
+		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+	}
+	
+	
+	.mcp-logo {
+		height: 36px;
+		width: auto;
+	}
+	
+	.badge-mcp {
+		padding: 0.75rem 1.25rem;
+	}
+	
+	.badge-mcp:hover .mcp-logo {
+		filter: brightness(1.1);
+	}
+	
+	.chrome-badge-img {
+		height: 50px;
+		width: auto;
+	}
+	
+	.badge-chrome {
+		padding: 0;
+		background: transparent;
+		border: none;
+	}
+	
+	.badge-chrome:hover {
+		transform: translateY(-2px);
+		filter: brightness(1.05);
+	}
+	
+	.badge-text {
+		line-height: 1.3;
+		text-align: left;
+	}
+	
+	.badge-text small {
+		font-size: 0.75rem;
+		color: var(--faf-gray);
+		font-weight: 500;
+	}
+	
+	.testing-stats {
+		margin: 3rem 0;
+		padding: 2rem;
+		background: linear-gradient(135deg, rgba(255, 107, 53, 0.03) 0%, rgba(0, 255, 255, 0.03) 100%);
+		border-radius: 16px;
+		animation: slideInUp 0.7s ease-out 0.35s backwards;
+	}
+	
+	.testing-title {
+		text-align: center;
+		font-size: 1.125rem;
+		color: var(--faf-gray-dark);
+		margin-bottom: 1.5rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+	}
+	
+	.stats-grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 2rem;
+		justify-items: center;
+	}
+	
+	.stat-item {
+		text-align: center;
+	}
+	
+	.stat-number {
+		display: block;
+		font-size: 2.5rem;
+		font-weight: 900;
+		color: var(--faf-black);
+		line-height: 1;
+		margin-bottom: 0.5rem;
+		background: linear-gradient(135deg, var(--faf-orange) 0%, var(--faf-cyan) 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+	
+	.stat-label {
+		display: block;
+		font-size: 0.875rem;
+		color: var(--faf-gray-dark);
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		font-weight: 600;
+	}
+	
+	.ai-testimonials {
+		margin: 2rem 0 3rem;
+		animation: slideInUp 0.7s ease-out 0.4s backwards;
+	}
+	
+	.testimonials-title {
+		text-align: center;
+		font-size: 1.25rem;
+		color: var(--faf-gray-dark);
+		margin-bottom: 1.5rem;
+		font-weight: 600;
+	}
+	
+	.testimonial-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.5rem;
+		max-width: 900px;
+		margin: 0 auto;
+	}
+	
+	.testimonial-item {
+		background: var(--faf-white);
+		border: 2px solid var(--faf-gray-light);
+		border-radius: 12px;
+		padding: 1.5rem;
+		text-align: center;
+		transition: all 0.3s ease;
+	}
+	
+	.testimonial-item:hover {
+		border-color: var(--faf-orange);
+		transform: translateY(-2px);
+		box-shadow: 0 5px 15px rgba(255, 107, 53, 0.1);
+	}
+	
+	.testimonial-quote {
+		font-size: 1rem;
+		font-weight: 700;
+		color: var(--faf-black);
+		margin-bottom: 1rem;
+		line-height: 1.4;
+	}
+	
+	.testimonial-author {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+	
+	.author-name {
+		font-weight: 600;
+		color: var(--faf-orange);
+		font-size: 0.875rem;
+	}
+	
+	.author-rating {
+		font-size: 0.75rem;
+		color: var(--faf-gray-dark);
+		font-style: italic;
+	}
+	
+	/* Brand-specific colors for AI testimonials */
+	.claude-item .author-name {
+		color: var(--faf-orange);
+	}
+	
+	.openai-item .author-name {
+		color: #0066CC; /* Standard blue */
+	}
+	
+	.gemini-item .author-name {
+		color: #00838F; /* Dark cyan */
+	}
+	
+	.pathways {
+		margin: 3rem 0;
+		animation: slideInUp 0.7s ease-out 0.4s backwards;
+	}
+	
+	.pathways-title {
+		text-align: center;
+		font-size: 1.25rem;
+		color: var(--faf-gray-dark);
+		margin-bottom: 1.5rem;
+		font-weight: 600;
+	}
+	
+	.pathways-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1rem;
+		max-width: 600px;
+		margin: 0 auto;
+	}
+	
+	.pathway {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 1.5rem;
+		background: white;
+		border: 2px solid var(--faf-gray-medium);
+		border-radius: 16px;
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+	
+	.pathway:hover {
+		transform: translateY(-5px);
+		border-color: var(--faf-orange);
+		box-shadow: 0 10px 30px rgba(255, 107, 53, 0.2);
+	}
+	
+	.pathway.featured {
+		border-color: var(--faf-orange);
+		background: linear-gradient(135deg, white 0%, rgba(255, 107, 53, 0.05) 100%);
+		transform: scale(1.05);
+	}
+	
+	.pathway-icon {
+		font-size: 2.5rem;
+	}
+	
+	.pathway-name {
+		font-weight: 700;
+		font-size: 1.125rem;
+		color: var(--faf-black);
+	}
+	
+	.pathway-desc {
+		font-size: 0.75rem;
+		color: var(--faf-gray-dark);
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+	
+	.terminal {
+		max-width: 600px;
+		margin: 3rem auto;
+		background: var(--faf-black);
+		border-radius: 12px;
+		overflow: hidden;
+		box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+		animation: slideInUp 0.7s ease-out 0.4s backwards;
+	}
+	
+	.terminal-header {
+		background: #2D2D2D;
+		padding: 0.75rem;
+		display: flex;
+		gap: 0.5rem;
+	}
+	
+	.terminal-dot {
+		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+	}
+	
+	.terminal-dot.red {
+		background: #FF5F56;
+	}
+	
+	.terminal-dot.yellow {
+		background: #FFBD2E;
+	}
+	
+	.terminal-dot.green {
+		background: #27C93F;
+	}
+	
+	.terminal-body {
+		padding: 1.5rem;
+		font-family: var(--font-mono);
+		font-size: 0.9rem;
+		color: var(--faf-white);
+		min-height: 150px;
+	}
+	
+	.terminal-line {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		margin-bottom: 1rem;
+	}
+	
+	.prompt {
+		color: var(--faf-green);
+	}
+	
+	.cursor {
+		animation: blink 1s steps(1) infinite;
+		color: var(--faf-cyan);
+	}
+	
+	@keyframes blink {
+		50% { opacity: 0; }
+	}
+	
+	.terminal-output {
+		margin-top: 1rem;
+		animation: fadeIn 0.5s ease-out;
+	}
+	
+	.output-line {
+		margin: 0.5rem 0;
+		color: #999;
+	}
+	
+	.score-green {
+		color: var(--faf-green);
+		font-weight: 700;
+	}
+	
+	.score-cyan {
+		color: var(--faf-cyan);
+		font-weight: 700;
+	}
+	
+	.cta-wrapper {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		flex-wrap: wrap;
+		margin: 3rem 0;
+		animation: slideInUp 0.7s ease-out 0.5s backwards;
+	}
+	
+	.btn-large {
+		padding: 1rem 2rem;
+		font-size: 1.125rem;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+		text-decoration: none;
+		font-weight: 600;
+		min-width: 200px;
+		flex: 1;
+		max-width: 250px;
+		border-radius: 8px;
+		box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+	}
+	
+	.btn-icon {
+		font-size: 1.25rem;
+	}
+	
+	.trust-signal {
+		margin-top: 3rem;
+		animation: fadeIn 0.7s ease-out 0.6s backwards;
+	}
+	
+	.trust-text {
+		color: var(--faf-gray-dark);
+		font-size: 0.875rem;
+	}
+	
+	.company {
+		font-weight: 600;
+		color: var(--faf-black);
+	}
+	
+	
+	@keyframes fadeIn {
+		from { opacity: 0; }
+		to { opacity: 1; }
+	}
+	
+	@keyframes slideInUp {
+		from {
+			opacity: 0;
+			transform: translateY(30px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+	
+	@keyframes bounce {
+		0%, 100% { transform: translateY(0); }
+		50% { transform: translateY(-10px); }
+	}
+	
+	@media (max-width: 768px) {
+		.authority-badges {
+			flex-direction: column;
+			align-items: center;
+		}
+		
+		.badge-item {
+			width: 100%;
+			max-width: 300px;
+			justify-content: center;
+		}
+		
+		.mcp-logo {
+			width: 24px;
+			height: 24px;
+		}
+		
+		.testing-stats {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 1rem;
+		}
+		
+		.testimonial-grid {
+			grid-template-columns: 1fr;
+		}
+		
+		.stats-grid {
+			flex-direction: column;
+			gap: 1.5rem;
+		}
+		
+		.stat-number {
+			font-size: 2rem;
+		}
+		
+		.pathways-grid {
+			grid-template-columns: 1fr;
+			gap: 1rem;
+		}
+		
+		.pathway.featured {
+			transform: none;
+		}
+		
+		.cta-wrapper {
+			flex-direction: column;
+			align-items: center;
+		}
+		
+		.btn-large {
+			width: 100%;
+			max-width: 300px;
+		}
+	}
+</style>
