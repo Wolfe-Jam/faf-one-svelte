@@ -77,7 +77,7 @@
 		<div class="capture-content">
 			<h2 class="capture-title">🧡 Lock In Your Founders Rate</h2>
 			<p class="capture-subtitle">
-				Be among the first 100 to get <strong>$9/year forever</strong><br>
+				Be among the first 100 to get <strong>$9/month FOUNDER or $100/year LEGENDS</strong><br>
 				<span class="limited">Limited slots remaining</span>
 			</p>
 			
