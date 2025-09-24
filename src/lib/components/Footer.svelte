@@ -24,7 +24,7 @@
 				<ul>
 					<li><a href="https://www.fafcli.dev/" target="_blank">.faf CLI</a></li>
 					<li><a href="https://chromewebstore.google.com/detail/lnecebepmpjpilldfmndnaofbfjkjlkm" target="_blank">Chrome Extension</a></li>
-					<li><a href="https://github.com/Wolfe-Jam" target="_blank">MCP Server</a></li>
+					<li><a href="https://github.com/Wolfe-Jam/faf" target="_blank">MCP Server</a></li>
 					<li><a href="/docs">Documentation</a></li>
 				</ul>
 			</div>
