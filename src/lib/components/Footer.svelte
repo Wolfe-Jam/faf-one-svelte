@@ -22,7 +22,7 @@
 			<div class="footer-column">
 				<h4>Product</h4>
 				<ul>
-					<li><a href="https://github.com/Wolfe-Jam" target="_blank">.faf CLI</a></li>
+					<li><a href="https://www.fafcli.dev/" target="_blank">.faf CLI</a></li>
 					<li><a href="https://github.com/Wolfe-Jam" target="_blank">Chrome Extension</a></li>
 					<li><a href="https://github.com/Wolfe-Jam" target="_blank">MCP Server</a></li>
 					<li><a href="/docs">Documentation</a></li>

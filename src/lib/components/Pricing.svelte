@@ -106,12 +106,12 @@
 								<div style="width: 100%;">
 									<div class="stripe-button-wrapper" style="width: 100%;">
 										{@html `<stripe-buy-button
-											buy-button-id="buy_btn_1SAgaZRt8WbJblnRMz9XKYis"
+											buy-button-id="buy_btn_1SAisLRt8WbJblnRQzarT8jS"
 											publishable-key="pk_live_51RsYPuRt8WbJblnRhd7gwvTqkNie5A5GhGotKYbdYj6R18PtKzDpObayQdpUQ7sjSMt4b0381Je2yyphYot6ELYR00D50NnmJt"
 										></stripe-buy-button>`}
 									</div>
-									<div style="text-align: center; font-size: 0.9rem; font-weight: 600; color: var(--faf-gray-dark); margin-top: 0.5rem;">
-										$20/month - Monthly flexibility
+									<div style="text-align: center; font-size: 0.9rem; font-weight: 900; color: var(--faf-black); margin-top: 0.5rem;">
+										LIMITED 🧡 WIN/WIN DEAL
 									</div>
 								</div>
 
@@ -127,6 +127,9 @@
 
 								<!-- $100/year Green Button -->
 								<div style="width: 100%;">
+									<div style="text-align: center; font-size: 1.3rem; font-weight: 900; color: var(--faf-black); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">
+										LEGENDS ONLY
+									</div>
 									<div class="stripe-button-wrapper" style="width: 100%;">
 										{@html `<stripe-buy-button
 											buy-button-id="buy_btn_1SAMYLRt8WbJblnRL4SoZiDY"
@@ -134,7 +137,7 @@
 										></stripe-buy-button>`}
 									</div>
 									<div style="text-align: center; font-size: 1rem; font-weight: 700; color: var(--faf-black); margin-top: 0.5rem;">
-										$100 ANNUAL 🏆 SAVE $140!
+										$100 ANNUAL 🏆 ($8.33/month)
 									</div>
 								</div>
 							</div>
