@@ -4,18 +4,16 @@
 	let { children } = $props();
 </script>
 
-<!-- MCP Compatible Banner - Click to go home -->
+<!-- 3-Section Banner -->
 <div class="official-banner">
-	<a href="/" class="banner-home-link">
-		<div class="banner-content">
-			<span class="banner-emoji">🏆</span>
-			<span class="banner-text">
-				<span class="faf-text">.faf</span> The JPEG for AI is here - MCP Compatible!
-			</span>
-		</div>
+	<a href="/press-release" class="banner-section">
+		🚀 PRESS RELEASE 🚀
 	</a>
-	<a href="https://www.npmjs.com/package/claude-faf-mcp" target="_blank" rel="noopener" class="banner-cta">
-		Install Now →
+	<div class="banner-section-center">
+		.faf - The JPEG for AI
+	</div>
+	<a href="https://github.com/modelcontextprotocol/servers/pull/2759" target="_blank" rel="noopener" class="banner-section">
+		⚡️ MCP Approval Pending ⚡️
 	</a>
 	<div class="banner-shine"></div>
 </div>
@@ -41,10 +39,27 @@
 		overflow: hidden;
 		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 		transition: all 0.3s ease;
-		display: flex;
+		display: grid;
+		grid-template-columns: 1fr 2fr 1fr;
 		align-items: center;
-		justify-content: center;
-		gap: 1rem;
+		text-align: center;
+	}
+
+	.banner-section {
+		color: white;
+		text-decoration: none;
+		padding: 8px;
+		transition: opacity 0.3s ease;
+		font-size: 0.9em;
+	}
+
+	.banner-section:hover {
+		opacity: 0.8;
+	}
+
+	.banner-section-center {
+		font-size: 1em;
+		font-weight: 700;
 	}
 
 	.banner-home-link {
