@@ -147,11 +147,13 @@
 				<h2>Industry Recognition</h2>
 				<div class="recognition-grid">
 					<div class="recognition-item">
-						<img src="/anthropic-logo.png" alt="Anthropic" class="partner-logo" />
+						<!-- <img src="/anthropic-logo.png" alt="Anthropic" class="partner-logo" /> -->
+					<div class="partner-logo-placeholder">🤖</div>
 						<p>MCP Approved</p>
 					</div>
 					<div class="recognition-item">
-						<img src="/google-chrome-logo.png" alt="Google Chrome" class="partner-logo" />
+						<!-- <img src="/google-chrome-logo.png" alt="Google Chrome" class="partner-logo" /> -->
+					<div class="partner-logo-placeholder">🌐</div>
 						<p>Extension Live</p>
 					</div>
 					<div class="recognition-item">

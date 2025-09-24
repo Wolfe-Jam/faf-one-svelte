@@ -428,16 +428,7 @@
 		gap: 0.75rem;
 		margin-top: 1rem;
 	}
-	
-	.divider-text {
-		text-align: center;
-		color: var(--faf-gray-dark);
-		font-size: 0.875rem;
-		font-weight: 600;
-		margin: 0.25rem 0;
-		opacity: 0.7;
-	}
-	
+
 	.btn-block {
 		width: 100%;
 		text-align: center;

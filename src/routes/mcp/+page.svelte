@@ -68,7 +68,7 @@
 							<div class="step-content">
 								<h3>Install .faf MCP Server</h3>
 								<div class="code-block">
-									<code>npm install -g @faf/mcp-server</code>
+									<code>npm install -g claude-faf-mcp</code>
 								</div>
 							</div>
 						</div>

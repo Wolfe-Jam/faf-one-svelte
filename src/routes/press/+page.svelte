@@ -105,7 +105,7 @@
 				<div class="achievement-icon">☑️</div>
 				<div class="achievement-content">
 					<h3>CLI Tool</h3>
-					<p>Universal command-line interface: npm install -g @faf/cli</p>
+					<p>Universal command-line interface: npm install -g claude-faf-mcp</p>
 				</div>
 			</div>
 			

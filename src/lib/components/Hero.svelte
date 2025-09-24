@@ -91,9 +91,12 @@
 			<ScrollRevealText threshold={0.5} delay={0}>
 				<div class="text-block core-message">
 					<h2>AI context needed a file format, it got one— .faf</h2>
+					{#if false}
+					<!-- TODO: Add faf-jpeg-for-ai.png to static folder -->
 					<div class="transformation-visual">
 						<img src="/faf-jpeg-for-ai.png" alt="From development chaos to clean .faf format - the JPEG for AI" class="jpeg-for-ai-img" />
 					</div>
+					{/if}
 					<p class="classic-tagline">Stop faffing about with context — use .faf — no excuses left</p>
 				</div>
 			</ScrollRevealText>
@@ -125,7 +128,31 @@
 					<img src="/chrome-web-store-badge-medium.png" alt="Available in the Chrome Web Store" class="chrome-badge-img" />
 				</a>
 			</div>
+
+			<!-- Official MCP Registry Badges -->
+			<div class="official-badges">
+				<h3 class="official-badges-title">Official MCP Format</h3>
+				<div class="badges-row">
+					<a href="https://github.com/modelcontextprotocol/servers" class="official-badge" target="_blank" rel="noopener">
+						☑️ MCP Official Registry
+					</a>
+					<a href="https://npmjs.com/package/claude-faf-mcp" class="official-badge" target="_blank" rel="noopener">
+						📦 NPM Package
+					</a>
+				</div>
+			</div>
 			
+			<!-- Live NPM Stats -->
+			<div class="live-npm-stats">
+				<div class="npm-badge">
+					<span class="npm-icon">📦</span>
+					<div class="npm-content">
+						<span class="npm-number">240+</span>
+						<span class="npm-label">NPM Downloads & Growing!</span>
+					</div>
+				</div>
+			</div>
+
 			<!-- Verified Testing Stats -->
 			<div class="testing-stats">
 				<h3 class="testing-title">Verified Testing Results</h3>
@@ -517,7 +544,93 @@
 		color: var(--faf-gray);
 		font-weight: 500;
 	}
-	
+
+	.official-badges {
+		margin: 2rem 0;
+		text-align: center;
+		animation: slideInUp 0.7s ease-out 0.35s backwards;
+	}
+
+	.official-badges-title {
+		font-size: 1.125rem;
+		font-weight: 700;
+		color: var(--faf-black);
+		margin-bottom: 1rem;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+	}
+
+	.badges-row {
+		display: flex;
+		justify-content: center;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+
+	.official-badge {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.75rem 1.5rem;
+		background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+		color: white;
+		border-radius: 999px;
+		font-weight: 600;
+		font-size: 0.9rem;
+		text-decoration: none;
+		transition: all 0.3s ease;
+		box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+	}
+
+	.official-badge:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+		filter: brightness(1.1);
+	}
+
+	.live-npm-stats {
+		display: flex;
+		justify-content: center;
+		margin: 2rem 0;
+		animation: slideInUp 0.7s ease-out 0.35s backwards;
+	}
+
+	.npm-badge {
+		display: inline-flex;
+		align-items: center;
+		gap: 1rem;
+		padding: 1rem 2rem;
+		background: linear-gradient(135deg, #FF6B35 0%, #FF914D 100%);
+		color: white;
+		border-radius: 999px;
+		font-weight: 700;
+		box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+		animation: pulse 2s ease-in-out infinite;
+	}
+
+	.npm-icon {
+		font-size: 2rem;
+	}
+
+	.npm-content {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.npm-number {
+		font-size: 1.75rem;
+		font-weight: 900;
+		line-height: 1;
+	}
+
+	.npm-label {
+		font-size: 0.875rem;
+		opacity: 0.95;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
 	.testing-stats {
 		margin: 3rem -2rem;
 		padding: 3rem 2rem;

@@ -60,7 +60,7 @@
 				
 				<div class="code-block">
 					<pre><code># Install globally
-npm install -g faf-cli
+npm install -g claude-faf-mcp
 
 # Create your first .faf
 faf init my-project
@@ -78,13 +78,13 @@ faf init .</code></pre>
 			<h3>CLI Installation</h3>
 			<div class="code-block">
 				<pre><code># NPM
-npm install -g faf-cli
+npm install -g claude-faf-mcp
 
 # Yarn
-yarn global add faf-cli
+yarn global add claude-faf-mcp
 
 # PNPM
-pnpm add -g faf-cli</code></pre>
+pnpm add -g claude-faf-mcp</code></pre>
 			</div>
 			
 			<h3>Chrome Extension</h3>

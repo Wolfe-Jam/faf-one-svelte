@@ -9,8 +9,8 @@
 	const steps = [
 		{
 			icon: '⚡',
-			title: 'Install faf-cli',
-			command: 'npm install -g faf-cli',
+			title: 'Install claude-faf-mcp',
+			command: 'npm install -g claude-faf-mcp',
 			description: '30 seconds. One command. That\'s it.',
 			time: '30 sec'
 		},
@@ -25,7 +25,7 @@
 			icon: '📊',
 			title: 'Check your score',
 			command: 'faf score',
-			description: 'See your AI-readiness instantly. Watch it climb.',
+			description: 'See your AI-Readiness instantly. Watch it climb.',
 			time: '1 sec'
 		},
 		{
@@ -39,7 +39,7 @@
 			icon: '🎉',
 			title: 'You\'re done!',
 			command: 'faf validate',
-			description: 'Your project is now 99% AI-ready. Forever.',
+			description: 'Your project is now 99% AI-Ready. Forever.',
 			time: 'Done!'
 		}
 	];
@@ -99,7 +99,7 @@
 			<div class="header">
 				<h2 class="section-title">Solo Dev? Start Here 👇</h2>
 				<p class="section-subtitle">
-					From zero to AI-ready in under 2 minutes. No BS. No complexity.
+					From zero to AI-Ready in under 2 minutes. No BS. No complexity.
 				</p>
 				<div class="value-banner">
 					<div class="value-item">
