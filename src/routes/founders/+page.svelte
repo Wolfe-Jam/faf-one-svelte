@@ -30,7 +30,7 @@
 
 <svelte:head>
 	<title>Founders Circle - .faf Format</title>
-	<meta name="description" content="Join the .faf Founders Circle - lock in $100/year forever (91% off regular pricing)">
+	<meta name="description" content="Join the .faf Founders Circle - FOUNDER $9/month WIN/WIN or LEGENDS $100/year with 🏆 badge">
 	<script async src="https://js.stripe.com/v3/buy-button.js"></script>
 </svelte:head>
 
@@ -39,7 +39,7 @@
 		<div class="hero-badge">🏆 FOUNDERS CIRCLE</div>
 		<h1>Be Part of History</h1>
 		<p class="hero-subtitle">
-			Lock in <span class="highlight">$100/year forever</span> while others pay $100/month
+			<span class="highlight">$9/month FOUNDER</span> or <span class="highlight">$100/year LEGENDS 🏆</span>
 		</p>
 		<div class="spots-counter">
 			<div class="spots-number">{spotsRemaining}</div>
@@ -54,8 +54,8 @@
 		<div class="benefits-grid">
 			<div class="benefit-card">
 				<div class="benefit-icon">💰</div>
-				<h3>91% OFF Forever</h3>
-				<p>$100/year locked in for life<br/>Never pay the regular $100/month</p>
+				<h3>WIN/WIN Pricing</h3>
+				<p>FOUNDER $9/month<br/>LEGENDS $100/year with 🏆 badge</p>
 			</div>
 			
 			<div class="benefit-card">
@@ -205,28 +205,39 @@
 				GENUINE WIN/WIN - VERY LIMITED - WHEN IT'S GONE IT'S GONE
 			</div>
 			
-			<h2>Lock In Your Founders Rate Now</h2>
+			<h2>Choose Your Path</h2>
 			<p class="cta-subtitle">
 				Only {spotsRemaining} spots remaining • {countdown}
 			</p>
-			
+
 			<div class="pricing-comparison">
 				<div class="price-box">
-					<div class="price-label">Regular Price</div>
-					<div class="price-value strike">$100/month</div>
+					<div class="price-label">FOUNDER</div>
+					<div class="price-value">$9/month</div>
+					<div class="price-save">LIMITED WIN/WIN 🧡</div>
 				</div>
 				<div class="price-box featured">
-					<div class="price-label">Founders Price</div>
-					<div class="price-value">$100/year</div>
-					<div class="price-save">Save $1,100/year</div>
+					<div class="price-label">LEGENDS ONLY</div>
+					<div class="price-value">$100/year 🏆</div>
+					<div class="price-save">Includes badge + priority</div>
 				</div>
 			</div>
-			
-			<div class="stripe-button-container">
-				{@html `<stripe-buy-button
-					buy-button-id="buy_btn_1SAMYLRt8WbJblnRL4SoZiDY"
-					publishable-key="pk_live_51RsYPuRt8WbJblnRhd7gwvTqkNie5A5GhGotKYbdYj6R18PtKzDpObayQdpUQ7sjSMt4b0381Je2yyphYot6ELYR00D50NnmJt"
-				></stripe-buy-button>`}
+
+			<div class="stripe-buttons-row">
+				<div class="stripe-button-wrapper">
+					<div class="button-label">FOUNDER</div>
+					{@html `<stripe-buy-button
+						buy-button-id="buy_btn_1SAisLRt8WbJblnRQzarT8jS"
+						publishable-key="pk_live_51RsYPuRt8WbJblnRhd7gwvTqkNie5A5GhGotKYbdYj6R18PtKzDpObayQdpUQ7sjSMt4b0381Je2yyphYot6ELYR00D50NnmJt"
+					></stripe-buy-button>`}
+				</div>
+				<div class="stripe-button-wrapper">
+					<div class="button-label">LEGENDS 🏆</div>
+					{@html `<stripe-buy-button
+						buy-button-id="buy_btn_1SAMYLRt8WbJblnRL4SoZiDY"
+						publishable-key="pk_live_51RsYPuRt8WbJblnRhd7gwvTqkNie5A5GhGotKYbdYj6R18PtKzDpObayQdpUQ7sjSMt4b0381Je2yyphYot6ELYR00D50NnmJt"
+					></stripe-buy-button>`}
+				</div>
 			</div>
 			
 			<p class="guarantee">
@@ -593,20 +604,31 @@
 		margin-bottom: 0.5rem;
 	}
 	
-	.price-value.strike {
-		text-decoration: line-through;
-		opacity: 0.5;
-	}
-	
 	.price-save {
 		font-size: 0.875rem;
 		font-weight: 600;
 	}
 	
-	.stripe-button-container {
-		margin: 2rem 0;
+	.stripe-buttons-row {
+		margin: 2rem auto;
 		display: flex;
 		justify-content: center;
+		gap: 2rem;
+		max-width: 600px;
+	}
+
+	.stripe-button-wrapper {
+		flex: 1;
+	}
+
+	.button-label {
+		text-align: center;
+		font-weight: 900;
+		font-size: 0.875rem;
+		margin-bottom: 0.5rem;
+		color: var(--faf-black);
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
 	}
 	
 	.guarantee {

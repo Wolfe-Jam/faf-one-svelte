@@ -170,12 +170,4 @@
 		}
 	}
 	
-	/* Responsive adjustments */
-	@media (max-width: 768px) {
-		.faf-logo[data-responsive="true"] {
-			--dot-size: calc(var(--dot-size) * 0.7);
-			--font-size: calc(var(--font-size) * 0.7);
-			--gap: calc(var(--gap) * 0.8);
-		}
-	}
 </style>

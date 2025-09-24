@@ -299,11 +299,6 @@
 		margin-bottom: 3rem;
 	}
 	
-	.subtitle .bold {
-		font-weight: 700;
-		color: var(--faf-dark);
-		font-size: 1.6rem;
-	}
 	
 	.tagline {
 		font-size: 2.5rem;
@@ -413,42 +408,7 @@
 		min-height: 100px;
 	}
 	
-	/* Inventor quotes specific styling */
-	.inventor-quotes {
-		display: flex;
-		flex-direction: column;
-		gap: 2rem;
-		align-items: center;
-		margin: 3rem 0;
-	}
 	
-	.inventor-quotes .quote-item {
-		text-align: center;
-		max-width: 700px;
-	}
-	
-	.inventor-quotes .quote-item p {
-		font-size: 1.25rem;
-		font-style: italic;
-		color: var(--faf-gray-dark);
-		margin-bottom: 0.5rem;
-		line-height: 1.6;
-		font-weight: 500;
-	}
-	
-	.inventor-quotes .quote-author {
-		font-size: 1rem;
-		color: var(--faf-orange);
-		font-weight: 600;
-		font-family: 'Roboto Mono', monospace;
-		display: block;
-		margin-top: 0.5rem;
-	}
-	
-	.killer-quotes {
-		margin: 3rem 0;
-		animation: slideInUp 0.7s ease-out 0.45s backwards;
-	}
 	
 	.text-block.quote-item {
 		text-align: center;
@@ -472,20 +432,12 @@
 		font-style: normal;
 	}
 	
-	.quote-text {
-		color: var(--faf-black);
-		font-size: 1.25rem;
-	}
 	
 	.quote-author {
 		color: var(--faf-orange);
 		font-size: 1.125rem;
 	}
 	
-	.quote-author-black {
-		color: #555555; /* Dark gray instead of black */
-		font-size: 1.125rem;
-	}
 	
 	.authority-badges {
 		display: flex;

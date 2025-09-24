@@ -384,33 +384,13 @@
 		line-height: 1;
 	}
 	
-	.period {
-		color: var(--faf-gray-dark);
-		font-size: 1rem;
-	}
 	
-	.original-price {
-		text-decoration: line-through;
-		color: var(--faf-gray-dark);
-		font-size: 1.5rem;
-		margin-right: 0.5rem;
-	}
 	
 	.plan-description {
 		color: var(--faf-gray-dark);
 		font-size: 0.875rem;
 	}
 	
-	.savings-badge {
-		background: var(--faf-green);
-		color: var(--faf-white);
-		padding: 0.5rem 1rem;
-		border-radius: 999px;
-		font-size: 0.875rem;
-		font-weight: 600;
-		display: inline-block;
-		margin-top: 1rem;
-	}
 	
 	.features {
 		list-style: none;
@@ -465,46 +445,6 @@
 		text-decoration: none;
 	}
 	
-	.btn-secondary {
-		background: var(--faf-white);
-		color: var(--faf-black);
-		border: 2px solid var(--faf-black);
-		padding: 0.75rem 1.5rem;
-		font-weight: 600;
-		font-size: 1rem;
-		border-radius: 8px;
-		cursor: pointer;
-		transition: all 0.2s ease;
-	}
-	
-	.btn-secondary:hover {
-		background: var(--faf-black);
-		color: var(--faf-white);
-		transform: translateY(-2px);
-	}
-
-	.legends-button {
-		display: block;
-		width: 100%;
-		padding: 1.2rem 2rem;
-		background: linear-gradient(135deg, var(--faf-orange) 0%, #ff8c42 100%);
-		color: var(--faf-white);
-		text-decoration: none;
-		border-radius: 8px;
-		font-weight: 900;
-		font-size: 1.3rem;
-		text-align: center;
-		transition: all 0.3s ease;
-		box-shadow: 0 6px 20px rgba(255, 107, 53, 0.3);
-		text-transform: uppercase;
-		letter-spacing: 1px;
-	}
-
-	.legends-button:hover {
-		transform: translateY(-3px);
-		box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
-		background: linear-gradient(135deg, #ff8c42 0%, var(--faf-orange) 100%);
-	}
 	
 	.stripe-button-wrapper {
 		display: flex;

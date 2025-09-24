@@ -157,12 +157,6 @@
 		font-weight: 500;
 	}
 	
-	.section-subtitle strong {
-		font-weight: 900;
-		color: var(--faf-orange);
-		font-size: 1.75rem;
-	}
-	
 	.interlude {
 		font-size: 2rem;
 		font-weight: 900;

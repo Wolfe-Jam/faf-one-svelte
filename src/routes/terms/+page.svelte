@@ -31,16 +31,19 @@
 
 		<section>
 			<h2>3. Founders Circle Subscription</h2>
-			<p><strong>Pricing:</strong> $9/year for Founders Circle members (limited time)</p>
+			<p><strong>FOUNDER Pricing:</strong> $9/month (limited time WIN/WIN deal)</p>
+			<p><strong>LEGENDS Pricing:</strong> $100/year (includes 🏆 badge)</p>
 			<p><strong>Benefits:</strong></p>
 			<ul>
-				<li>Full access to .faf toolkit</li>
+				<li>Full access to .faf CLI toolkit</li>
+				<li>Chrome Extension Pro features</li>
+				<li>MCP Server integration</li>
 				<li>Unlimited projects</li>
 				<li>Priority support</li>
 				<li>All future updates</li>
 				<li>Direct creator access</li>
 			</ul>
-			<p><strong>Billing:</strong> Annual subscription, auto-renewing. Cancel anytime via Customer Portal.</p>
+			<p><strong>Billing:</strong> Monthly or annual subscription, auto-renewing. Cancel anytime via Customer Portal.</p>
 		</section>
 
 		<section>

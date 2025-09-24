@@ -245,22 +245,6 @@
 		align-items: center;
 	}
 	
-	.checkout-link {
-		display: inline-block;
-		padding: 0.5rem 1.5rem;
-		background: var(--faf-white);
-		color: var(--faf-green);
-		border-radius: 6px;
-		text-decoration: none;
-		font-weight: 700;
-		transition: all 0.2s ease;
-	}
-	
-	.checkout-link:hover {
-		transform: scale(1.05);
-		box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-	}
-	
 	.stripe-checkout-wrapper {
 		margin-top: 1rem;
 		display: flex;
