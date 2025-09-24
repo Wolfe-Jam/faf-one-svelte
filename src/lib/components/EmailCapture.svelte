@@ -213,18 +213,21 @@
 		cursor: pointer;
 		transition: all 0.2s ease;
 		white-space: nowrap;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 	}
-	
+
 	.submit-btn:hover:not(:disabled) {
 		background: #ff5722;
 		border-color: #ff5722;
 		transform: translateY(-2px);
-		box-shadow: 0 4px 8px rgba(255, 107, 53, 0.3);
+		box-shadow: 0 6px 12px rgba(255, 107, 53, 0.4);
 	}
-	
+
 	.submit-btn:disabled {
-		opacity: 0.6;
+		opacity: 0.5;
 		cursor: not-allowed;
+		background: #ccc;
+		border-color: #ccc;
 	}
 	
 	.status {
