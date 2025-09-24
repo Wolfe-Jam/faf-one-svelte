@@ -213,7 +213,7 @@
 							</ul>
 						</div>
 						<div class="enterprise-cta">
-							<button class="btn btn-ghost">Contact Sales</button>
+							<a href="mailto:enterprise@faf.one?subject=Enterprise%20Inquiry" class="btn btn-ghost">Contact Sales</a>
 						</div>
 					</div>
 				</div>

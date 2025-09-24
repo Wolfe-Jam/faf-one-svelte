@@ -4,114 +4,115 @@
 </script>
 
 <svelte:head>
-	<title>Support | .faf - The JPEG for AI</title>
+	<title>Support | .faf Format</title>
 </svelte:head>
 
 <Navigation />
 
 <main class="support-page">
 	<div class="container">
-		<h1>🧡 Support Center</h1>
-		<p class="subtitle">Real humans. Real help. NO BS.</p>
-		
+		<div class="support-header">
+			<h1>🛟 Support Center</h1>
+			<p class="subtitle">We're here to help you succeed with .faf</p>
+		</div>
+
 		<div class="support-grid">
-			<!-- Email Support -->
-			<div class="support-card primary">
+			<!-- Quick Help -->
+			<div class="support-card">
+				<div class="card-icon">⚡</div>
+				<h3>Quick Help</h3>
+				<ul>
+					<li><a href="/docs">Documentation</a></li>
+					<li><a href="/docs#faq">FAQ</a></li>
+					<li><a href="https://github.com/Wolfe-Jam/faf/issues" target="_blank">Known Issues</a></li>
+				</ul>
+			</div>
+
+			<!-- Contact Options -->
+			<div class="support-card">
 				<div class="card-icon">📧</div>
-				<h2>Email Support</h2>
-				<p>Get help from our team</p>
-				<a href="mailto:support@faf.one" class="support-link">
-					support@faf.one
-				</a>
-				<p class="response-time">Response within 24 hours</p>
+				<h3>Contact Us</h3>
+				<p>Email: <a href="mailto:support@faf.one">support@faf.one</a></p>
+				<p>Response time: Within 24 hours</p>
+				<p class="priority-note">🏆 LEGENDS get priority support</p>
 			</div>
 
-			<!-- Founders Direct -->
-			<div class="support-card premium">
-				<div class="badge-premium">FOUNDERS ONLY</div>
-				<div class="card-icon">🏆</div>
-				<h2>Creator Direct</h2>
-				<p>Direct line to the creator</p>
-				<a href="mailto:faf@wolfejam.dev" class="support-link">
-					faf@wolfejam.dev
-				</a>
-				<p class="response-time">Priority response</p>
-			</div>
-
-			<!-- Customer Portal -->
+			<!-- Community -->
 			<div class="support-card">
-				<div class="card-icon">⚙️</div>
-				<h2>Manage Account</h2>
-				<p>Billing, invoices, subscription</p>
-				<a href="https://billing.stripe.com/p/login/4gM3cx1NPbfo42Lab6bV600" 
-				   target="_blank" 
-				   class="support-link">
-					Customer Portal →
-				</a>
-				<p class="response-time">Self-service 24/7</p>
-			</div>
-
-			<!-- Documentation -->
-			<div class="support-card">
-				<div class="card-icon">📚</div>
-				<h2>Documentation</h2>
-				<p>Guides, tutorials, API docs</p>
-				<a href="https://github.com/Wolfe-Jam" 
-				   target="_blank" 
-				   class="support-link">
-					View Docs →
-				</a>
-				<p class="response-time">Always up-to-date</p>
+				<div class="card-icon">🤝</div>
+				<h3>Community</h3>
+				<ul>
+					<li><a href="https://github.com/Wolfe-Jam/faf/discussions" target="_blank">GitHub Discussions</a></li>
+					<li><a href="https://discord.gg/fafformat" target="_blank">Discord Server</a></li>
+					<li><a href="https://x.com/wolfe_jam" target="_blank">X (Twitter)</a></li>
+				</ul>
 			</div>
 		</div>
 
-		<section class="faq">
-			<h2>Frequently Asked Questions</h2>
-			
-			<div class="faq-item">
-				<h3>How do I get started with .faf?</h3>
-				<p>Run <code>npx faf init</code> in your project directory. The CLI will guide you through creating your first .faf file in under 3 minutes.</p>
+		<div class="common-issues">
+			<h2>Common Issues & Solutions</h2>
+
+			<div class="issue-item">
+				<h3>🔴 CLI not found after installation</h3>
+				<p><strong>Solution:</strong> Make sure npm's global bin directory is in your PATH:</p>
+				<div class="code-block">
+					<pre><code>npm config get prefix
+export PATH=$PATH:$(npm config get prefix)/bin</code></pre>
+				</div>
 			</div>
 
-			<div class="faq-item">
-				<h3>What's included in Founders Circle?</h3>
-				<p>Everything! Full toolkit, unlimited projects, Context-Mirroring™, priority support, and all future updates. Lock in $9/year forever (normally $100).</p>
+			<div class="issue-item">
+				<h3>🔴 .faf file not being recognized</h3>
+				<p><strong>Solution:</strong> Ensure your .faf file is valid YAML:</p>
+				<div class="code-block">
+					<pre><code>faf validate
+# Or check online at yamllint.com</code></pre>
+				</div>
 			</div>
 
-			<div class="faq-item">
-				<h3>Can I cancel anytime?</h3>
-				<p>Yes! Cancel anytime via the Customer Portal. Your access continues until the end of your billing period. 30-day money-back guarantee.</p>
+			<div class="issue-item">
+				<h3>🔴 Chrome Extension not detecting .faf</h3>
+				<p><strong>Solution:</strong> Refresh the page and ensure the extension has permissions for the site.</p>
 			</div>
+		</div>
 
-			<div class="faq-item">
-				<h3>Does .faf work with all AI tools?</h3>
-				<p>Yes! The format is universal. Officially integrated with Claude (MCP), ChatGPT, Cursor, and more. Works with any tool that reads YAML/Markdown.</p>
-			</div>
-
-			<div class="faq-item">
-				<h3>Is my project data private?</h3>
-				<p>100% yes. Your .faf files stay in your project. We never see your code or project details. The format runs locally.</p>
-			</div>
-
-			<div class="faq-item">
-				<h3>What's Context-Mirroring™?</h3>
-				<p>Bi-directional sync between .faf and CLAUDE.md files. Updates in 40ms. Your AI context stays perfect automatically.</p>
-			</div>
-		</section>
-
-		<section class="contact-form">
+		<div class="contact-form">
 			<h2>Send Us a Message</h2>
-			<p>Need help? Have feedback? Just want to say hi? 🧡</p>
-			
-			<div class="form-notice">
-				<p>📧 For fastest response, email <a href="mailto:support@faf.one">support@faf.one</a> directly.</p>
-			</div>
-		</section>
+			<form action="https://formspree.io/f/xyzwolfe" method="POST">
+				<div class="form-group">
+					<label for="name">Name</label>
+					<input type="text" id="name" name="name" required>
+				</div>
 
-		<div class="support-footer">
-			<h3>Our Support Promise</h3>
-			<p>Real humans. Real answers. No runaround. NO BS.</p>
-			<p>We're here to help you succeed with .faf</p>
+				<div class="form-group">
+					<label for="email">Email</label>
+					<input type="email" id="email" name="email" required>
+				</div>
+
+				<div class="form-group">
+					<label for="subject">Subject</label>
+					<select id="subject" name="subject" required>
+						<option value="">Select a topic...</option>
+						<option value="technical">Technical Issue</option>
+						<option value="billing">Billing Question</option>
+						<option value="feature">Feature Request</option>
+						<option value="enterprise">Enterprise Inquiry</option>
+						<option value="other">Other</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label for="message">Message</label>
+					<textarea id="message" name="message" rows="6" required></textarea>
+				</div>
+
+				<button type="submit" class="btn-submit">Send Message →</button>
+			</form>
+		</div>
+
+		<div class="emergency-banner">
+			<h3>🚨 Urgent Issue?</h3>
+			<p>LEGENDS and Enterprise customers can reach us directly at <strong>priority@faf.one</strong></p>
 		</div>
 	</div>
 </main>
@@ -120,74 +121,50 @@
 
 <style>
 	.support-page {
-		min-height: calc(100vh - 200px);
-		padding: 4rem 0;
+		padding: 6rem 0 4rem;
+		min-height: 100vh;
 		background: var(--faf-white);
 	}
 
-	.container {
-		max-width: 1000px;
-		margin: 0 auto;
-		padding: 0 2rem;
+	.support-header {
+		text-align: center;
+		margin-bottom: 3rem;
 	}
 
-	h1 {
+	.support-header h1 {
 		font-size: 3rem;
 		margin-bottom: 1rem;
 		color: var(--faf-black);
-		text-align: center;
 	}
 
 	.subtitle {
-		text-align: center;
 		font-size: 1.25rem;
 		color: var(--faf-gray-dark);
-		margin-bottom: 3rem;
 	}
 
 	.support-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		grid-template-columns: repeat(3, 1fr);
 		gap: 2rem;
 		margin-bottom: 4rem;
+		max-width: 1000px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	.support-card {
 		background: var(--faf-white);
-		border: 2px solid var(--faf-gray-light);
+		border: 2px solid var(--faf-gray-medium);
 		border-radius: 12px;
 		padding: 2rem;
 		text-align: center;
 		transition: all 0.3s ease;
-		position: relative;
 	}
 
 	.support-card:hover {
-		transform: translateY(-4px);
-		box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-	}
-
-	.support-card.primary {
 		border-color: var(--faf-orange);
-		background: linear-gradient(135deg, var(--faf-white) 0%, #fff5f0 100%);
-	}
-
-	.support-card.premium {
-		border-color: var(--faf-black);
-		background: linear-gradient(135deg, var(--faf-white) 0%, #f9f9f9 100%);
-	}
-
-	.badge-premium {
-		position: absolute;
-		top: 1rem;
-		right: 1rem;
-		background: var(--faf-black);
-		color: var(--faf-white);
-		padding: 0.25rem 0.75rem;
-		border-radius: 20px;
-		font-size: 0.75rem;
-		font-weight: 700;
-		letter-spacing: 0.05em;
+		transform: translateY(-3px);
+		box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 	}
 
 	.card-icon {
@@ -195,128 +172,167 @@
 		margin-bottom: 1rem;
 	}
 
-	.support-card h2 {
-		font-size: 1.5rem;
-		margin-bottom: 0.5rem;
+	.support-card h3 {
+		margin-bottom: 1rem;
 		color: var(--faf-black);
 	}
 
-	.support-card p {
-		color: var(--faf-gray-dark);
-		margin-bottom: 1rem;
+	.support-card ul {
+		list-style: none;
+		padding: 0;
 	}
 
-	.support-link {
-		display: inline-block;
+	.support-card li {
+		margin: 0.5rem 0;
+	}
+
+	.support-card a {
 		color: var(--faf-orange);
-		font-weight: 700;
-		font-size: 1.125rem;
 		text-decoration: none;
-		padding: 0.5rem 1rem;
-		border: 2px solid var(--faf-orange);
-		border-radius: 8px;
-		transition: all 0.2s ease;
+		font-weight: 600;
 	}
 
-	.support-link:hover {
-		background: var(--faf-orange);
-		color: var(--faf-white);
-		transform: scale(1.05);
-	}
-
-	.response-time {
-		margin-top: 1rem;
-		font-size: 0.875rem;
-		color: var(--faf-gray-dark);
-		font-style: italic;
-	}
-
-	.faq {
-		margin-bottom: 4rem;
-	}
-
-	.faq h2 {
-		font-size: 2rem;
-		margin-bottom: 2rem;
-		color: var(--faf-orange);
-		text-align: center;
-	}
-
-	.faq-item {
-		margin-bottom: 2rem;
-		padding: 1.5rem;
-		background: linear-gradient(135deg, #f9f9f9 0%, var(--faf-white) 100%);
-		border-radius: 8px;
-		border-left: 4px solid var(--faf-orange);
-	}
-
-	.faq-item h3 {
-		font-size: 1.25rem;
-		margin-bottom: 0.75rem;
-		color: var(--faf-black);
-	}
-
-	.faq-item p {
-		line-height: 1.7;
-	}
-
-	code {
-		background: var(--faf-black);
-		color: var(--faf-white);
-		padding: 0.25rem 0.5rem;
-		border-radius: 4px;
-		font-family: var(--font-mono);
-	}
-
-	.contact-form {
-		text-align: center;
-		margin-bottom: 3rem;
-	}
-
-	.contact-form h2 {
-		font-size: 2rem;
-		margin-bottom: 1rem;
-		color: var(--faf-orange);
-	}
-
-	.form-notice {
-		background: linear-gradient(135deg, #fff5f0 0%, var(--faf-white) 100%);
-		border: 2px solid var(--faf-orange);
-		border-radius: 8px;
-		padding: 1.5rem;
-		margin-top: 1.5rem;
-	}
-
-	.form-notice a {
-		color: var(--faf-orange);
-		font-weight: 700;
-		text-decoration: none;
-	}
-
-	.form-notice a:hover {
+	.support-card a:hover {
 		text-decoration: underline;
 	}
 
-	.support-footer {
-		text-align: center;
-		padding-top: 3rem;
-		border-top: 2px solid var(--faf-gray-light);
+	.priority-note {
+		margin-top: 1rem;
+		padding: 0.5rem;
+		background: linear-gradient(135deg, #fff5f0 0%, white 100%);
+		border-radius: 8px;
+		color: var(--faf-orange);
+		font-weight: 600;
 	}
 
-	.support-footer h3 {
-		font-size: 1.5rem;
+	.common-issues {
+		max-width: 800px;
+		margin: 0 auto 4rem;
+	}
+
+	.common-issues h2 {
+		font-size: 2rem;
+		margin-bottom: 2rem;
+		text-align: center;
+		color: var(--faf-black);
+	}
+
+	.issue-item {
+		background: #f9f9f9;
+		border-radius: 12px;
+		padding: 1.5rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.issue-item h3 {
 		margin-bottom: 1rem;
 		color: var(--faf-black);
 	}
 
-	.support-footer p {
-		color: var(--faf-gray-dark);
+	.code-block {
+		background: var(--faf-black);
+		color: var(--faf-white);
+		padding: 1rem;
+		border-radius: 8px;
+		margin: 1rem 0;
+		overflow-x: auto;
+	}
+
+	.code-block pre {
+		margin: 0;
+		font-family: var(--font-mono);
+		font-size: 0.9rem;
+	}
+
+	.contact-form {
+		max-width: 600px;
+		margin: 0 auto 3rem;
+		background: var(--faf-white);
+		border: 2px solid var(--faf-gray-medium);
+		border-radius: 12px;
+		padding: 2rem;
+	}
+
+	.contact-form h2 {
+		margin-bottom: 1.5rem;
+		text-align: center;
+		color: var(--faf-black);
+	}
+
+	.form-group {
+		margin-bottom: 1.5rem;
+	}
+
+	.form-group label {
+		display: block;
 		margin-bottom: 0.5rem;
+		font-weight: 600;
+		color: var(--faf-black);
+	}
+
+	.form-group input,
+	.form-group select,
+	.form-group textarea {
+		width: 100%;
+		padding: 0.75rem;
+		border: 1px solid var(--faf-gray-medium);
+		border-radius: 8px;
+		font-size: 1rem;
+		transition: border-color 0.2s ease;
+	}
+
+	.form-group input:focus,
+	.form-group select:focus,
+	.form-group textarea:focus {
+		outline: none;
+		border-color: var(--faf-orange);
+	}
+
+	.btn-submit {
+		width: 100%;
+		padding: 1rem;
+		background: var(--faf-orange);
+		color: var(--faf-white);
+		border: none;
+		border-radius: 8px;
+		font-size: 1.125rem;
+		font-weight: 700;
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+
+	.btn-submit:hover {
+		background: #ff5a20;
+		transform: translateY(-2px);
+		box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+	}
+
+	.emergency-banner {
+		background: linear-gradient(135deg, var(--faf-black) 0%, #1a1a1a 100%);
+		color: var(--faf-white);
+		padding: 2rem;
+		border-radius: 12px;
+		text-align: center;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.emergency-banner h3 {
+		margin-bottom: 1rem;
+		font-size: 1.5rem;
+	}
+
+	.emergency-banner strong {
+		color: var(--faf-orange);
 	}
 
 	@media (max-width: 768px) {
 		.support-grid {
 			grid-template-columns: 1fr;
+		}
+
+		.support-header h1 {
+			font-size: 2rem;
 		}
 	}
 </style>
