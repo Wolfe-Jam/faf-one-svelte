@@ -133,10 +133,10 @@
 			</div>
 			
 			<div class="cta-section">
-				<button class="btn btn-primary">
-					Try Live Demo
-				</button>
-				<p class="cta-note">No installation required</p>
+				<a href="https://youtu.be/a8cxAqb8ytc?si=TEVlTTubFqJbSPFG" target="_blank" class="btn btn-primary">
+					▶️ Watch Video Demo
+				</a>
+				<p class="cta-note">See .faf in action on YouTube</p>
 			</div>
 		</div>
 	</div>
