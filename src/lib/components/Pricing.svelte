@@ -101,22 +101,42 @@
 							<li>✅ All future updates</li>
 						</ul>
 						<div class="button-group">
-							<div class="stripe-button-wrapper">
-								{@html `<stripe-buy-button
-									buy-button-id="buy_btn_1SAMYLRt8WbJblnRL4SoZiDY"
-									publishable-key="pk_live_51RsYPuRt8WbJblnRhd7gwvTqkNie5A5GhGotKYbdYj6R18PtKzDpObayQdpUQ7sjSMt4b0381Je2yyphYot6ELYR00D50NnmJt"
-								></stripe-buy-button>`}
-							</div>
-							<div style="text-align: center; margin-top: -0.5rem; margin-bottom: 1rem; font-size: 1rem; font-weight: 700; color: var(--faf-black);">
-								$100 ANNUAL 🏆 FOUNDERS CIRCLE
-							</div>
-						</div>
-						<div style="text-align: center; margin: 1.5rem 0; padding: 1rem; background: linear-gradient(135deg, #f0fff4 0%, var(--faf-white) 100%); border-radius: 8px; border: 2px solid var(--faf-green);">
-							<div style="font-size: 1.25rem; font-weight: 900; color: var(--faf-black); margin-bottom: 0.5rem;">
-								⚡ .FAF Delivers Instantly
-							</div>
-							<div style="font-size: 1rem; font-weight: 700; color: var(--faf-green);">
-								GET LOCKED-IN NOW
+							<div style="display: flex; flex-direction: column; gap: 1.5rem; width: 100%;">
+								<!-- $20/month Black Button -->
+								<div style="width: 100%;">
+									<div class="stripe-button-wrapper" style="width: 100%;">
+										{@html `<stripe-buy-button
+											buy-button-id="buy_btn_1SAgaZRt8WbJblnRMz9XKYis"
+											publishable-key="pk_live_51RsYPuRt8WbJblnRhd7gwvTqkNie5A5GhGotKYbdYj6R18PtKzDpObayQdpUQ7sjSMt4b0381Je2yyphYot6ELYR00D50NnmJt"
+										></stripe-buy-button>`}
+									</div>
+									<div style="text-align: center; font-size: 0.9rem; font-weight: 600; color: var(--faf-gray-dark); margin-top: 0.5rem;">
+										$20/month - Monthly flexibility
+									</div>
+								</div>
+
+								<!-- Green FAF Delivers Box -->
+								<div style="text-align: center; padding: 1rem; background: linear-gradient(135deg, #f0fff4 0%, var(--faf-white) 100%); border-radius: 8px; border: 2px solid var(--faf-green);">
+									<div style="font-size: 1.25rem; font-weight: 900; color: var(--faf-black); margin-bottom: 0.5rem;">
+										⚡ .FAF Delivers Instantly
+									</div>
+									<div style="font-size: 1rem; font-weight: 700; color: var(--faf-green);">
+										GET LOCKED-IN NOW
+									</div>
+								</div>
+
+								<!-- $100/year Green Button -->
+								<div style="width: 100%;">
+									<div class="stripe-button-wrapper" style="width: 100%;">
+										{@html `<stripe-buy-button
+											buy-button-id="buy_btn_1SAMYLRt8WbJblnRL4SoZiDY"
+											publishable-key="pk_live_51RsYPuRt8WbJblnRhd7gwvTqkNie5A5GhGotKYbdYj6R18PtKzDpObayQdpUQ7sjSMt4b0381Je2yyphYot6ELYR00D50NnmJt"
+										></stripe-buy-button>`}
+									</div>
+									<div style="text-align: center; font-size: 1rem; font-weight: 700; color: var(--faf-black); margin-top: 0.5rem;">
+										$100 ANNUAL 🏆 SAVE $140!
+									</div>
+								</div>
 							</div>
 						</div>
 						<p class="urgency-text">
@@ -458,6 +478,29 @@
 		background: var(--faf-black);
 		color: var(--faf-white);
 		transform: translateY(-2px);
+	}
+
+	.legends-button {
+		display: block;
+		width: 100%;
+		padding: 1.2rem 2rem;
+		background: linear-gradient(135deg, var(--faf-orange) 0%, #ff8c42 100%);
+		color: var(--faf-white);
+		text-decoration: none;
+		border-radius: 8px;
+		font-weight: 900;
+		font-size: 1.3rem;
+		text-align: center;
+		transition: all 0.3s ease;
+		box-shadow: 0 6px 20px rgba(255, 107, 53, 0.3);
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+
+	.legends-button:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+		background: linear-gradient(135deg, #ff8c42 0%, var(--faf-orange) 100%);
 	}
 	
 	.stripe-button-wrapper {
