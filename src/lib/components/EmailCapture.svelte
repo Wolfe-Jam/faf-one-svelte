@@ -102,13 +102,18 @@
 				
 				{#if status === 'success'}
 					<div class="status success">
-						☑️ Spot secured! Complete your Founders membership:
+						<div class="success-header">
+							☑️ Perfect! Your spot is secured.
+							<button class="close-btn" on:click={() => { status = null; }}>×</button>
+						</div>
+						<p class="success-message">Ready to become a LEGEND?</p>
 						<div class="stripe-checkout-wrapper">
 							{@html `<stripe-buy-button
 								buy-button-id="buy_btn_1SAMYLRt8WbJblnRL4SoZiDY"
 								publishable-key="pk_live_51RsYPuRt8WbJblnRhd7gwvTqkNie5A5GhGotKYbdYj6R18PtKzDpObayQdpUQ7sjSMt4b0381Je2yyphYot6ELYR00D50NnmJt"
 							></stripe-buy-button>`}
 						</div>
+						<p class="success-note">Choose $9/month FOUNDER or $100/year LEGENDS 🏆</p>
 					</div>
 				{:else if status === 'error'}
 					<div class="status error">
@@ -239,13 +244,59 @@
 	}
 	
 	.status.success {
-		background: var(--faf-green);
-		color: var(--faf-white);
+		background: #f0f9ff;
+		color: #333;
 		border: 2px solid var(--faf-green);
+		padding: 1.5rem;
 		display: flex;
 		flex-direction: column;
-		gap: 0.75rem;
+		gap: 1rem;
 		align-items: center;
+		max-width: 500px;
+		margin: 1.5rem auto;
+		position: relative;
+	}
+
+	.success-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		font-weight: 700;
+		color: var(--faf-green);
+	}
+
+	.close-btn {
+		background: none;
+		border: none;
+		font-size: 1.5rem;
+		color: #999;
+		cursor: pointer;
+		padding: 0;
+		width: 30px;
+		height: 30px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		transition: background 0.2s;
+	}
+
+	.close-btn:hover {
+		background: rgba(0, 0, 0, 0.1);
+	}
+
+	.success-message {
+		font-size: 1.2rem;
+		font-weight: 600;
+		color: var(--faf-orange);
+		margin: 0;
+	}
+
+	.success-note {
+		font-size: 0.9rem;
+		color: #666;
+		margin: 0;
 	}
 	
 	.stripe-checkout-wrapper {
