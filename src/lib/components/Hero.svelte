@@ -11,14 +11,17 @@
 	let ctaRef = $state(null);
 	let isVisible = $state(false);
 	let codeTyped = $state('');
-	
+	let showScorePopup = $state(false);
+	let currentScore = $state(94);
+
 	const codeText = 'faf init';
+	const scores = [85, 88, 91, 94, 96, 99];
 	
 	onMount(() => {
 		setTimeout(() => {
 			isVisible = true;
 		}, 100);
-		
+
 		// Type out the code
 		let index = 0;
 		const typeInterval = setInterval(() => {
@@ -29,7 +32,25 @@
 				clearInterval(typeInterval);
 			}
 		}, 150);
-		
+
+		// Random score popup every 8-15 seconds
+		const showRandomScore = () => {
+			const randomScore = scores[Math.floor(Math.random() * scores.length)];
+			currentScore = randomScore;
+			showScorePopup = true;
+
+			setTimeout(() => {
+				showScorePopup = false;
+			}, 3000);
+
+			// Schedule next popup
+			const nextDelay = 8000 + Math.random() * 7000; // 8-15 seconds
+			setTimeout(showRandomScore, nextDelay);
+		};
+
+		// Start first popup after 5 seconds
+		setTimeout(showRandomScore, 5000);
+
 		return () => clearInterval(typeInterval);
 	});
 	
@@ -42,10 +63,10 @@
 			<!-- Main Title - MASSIVE -->
 			<div bind:this={titleRef} class="title-wrapper">
 				<div class="main-logo">
-					<FafLogo size="large" color="black" />
+					<FafLogo size="large" color="black" showDefinition={true} />
 				</div>
 				<div class="subtitle">
-					Professional AI Context Management
+					Professional AI-Context Management
 				</div>
 				<div class="features-tagline">
 					<span class="feature-item">⚡ Lightning Fast</span>
@@ -81,7 +102,7 @@
 			<!-- BLOCK 2: Authority Statements -->
 			<ScrollRevealText threshold={0.5} delay={0}>
 				<div class="text-block authority-statement">
-					<div>The AI Context MCP approved by Anthropic</div>
+					<div>The AI Context MCP with 800+ weekly downloads</div>
 					<div>The AI Chrome Extension, LIVE and approved by Google,</div>
 					<div><em>Ready, and waiting for Claude-beta and Gemini</em></div>
 				</div>
@@ -318,12 +339,12 @@
 	}
 	
 	.subtitle {
-		font-size: 1.5rem;
+		font-size: 1.25rem;
 		font-family: 'Roboto Condensed', sans-serif;
 		color: var(--faf-gray);
-		letter-spacing: 0.1em;
-		margin-top: -1.5rem;
-		margin-bottom: 3rem;
+		letter-spacing: 0.05em;
+		margin-top: 4.5rem;
+		margin-bottom: 2rem;
 	}
 	
 	

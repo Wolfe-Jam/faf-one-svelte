@@ -128,7 +128,7 @@
 					<div class="timeline-year">2024</div>
 					<div class="timeline-content">
 						<h4>.faf Launch</h4>
-						<p>MCP approved by Anthropic, Chrome Extension live, 10,000+ projects tested</p>
+						<p>MCP with 800+ weekly downloads, Chrome Extension live, 10,000+ projects tested</p>
 					</div>
 				</div>
 			</div>
@@ -191,7 +191,7 @@
 			</div>
 			
 			<div class="testimonial">
-				<p>"MCP approved, Chrome Extension ready, everything just works. This is championship stuff."</p>
+				<p>"MCP with 800+ downloads, Chrome Extension ready, everything just works. This is championship stuff."</p>
 				<div class="testimonial-author">- Technical Architect</div>
 			</div>
 		</div>

@@ -5,7 +5,7 @@
 
 <svelte:head>
 	<title>MCP - Model Context Protocol | .faf</title>
-	<meta name="description" content="Set up the .faf Model Context Protocol (MCP) approved by Anthropic. Direct AI integration for Claude Desktop." />
+	<meta name="description" content="Set up the .faf Model Context Protocol (MCP) with 800+ weekly downloads. Direct AI integration for Claude Desktop." />
 </svelte:head>
 
 <div class="mcp-page">
@@ -15,7 +15,7 @@
 				<FafLogo size="small" color="black" />
 			</div>
 			<h1 class="page-title">Model Context Protocol</h1>
-			<p class="subtitle">Direct AI Integration • Approved by Anthropic</p>
+			<p class="subtitle">Direct AI Integration • 800+ Weekly Downloads</p>
 		</div>
 	</section>
 

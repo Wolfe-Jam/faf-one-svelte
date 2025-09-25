@@ -11,7 +11,8 @@
 		showLettersDelay = 500,
 		dotColor = 'orange',
 		className = '',
-		dotOnly = false
+		dotOnly = false,
+		showDefinition = false
 	} = $props();
 	
 	// Size presets
@@ -64,24 +65,29 @@
 </script>
 
 <div class="faf-logo {className}" style="--dot-size: {sizeConfig.dot}px; --font-size: {sizeConfig.font}rem; --gap: {sizeConfig.gap}rem; --lift: {sizeConfig.lift}rem; --text-color: {textColor}; --dot-color: {dotColorValue};">
-	<span class="logo-content">
-		<!-- The smiley/dot -->
-		<img 
-			src="/orange-smiley.svg" 
-			alt="." 
-			class="smiley-dot"
-			class:animated={animated}
-			class:visible={dotVisible}
-			style="color: {dotColorValue}; fill: {dotColorValue};"
-		/>
-		
-		{#if !dotOnly}
-			<!-- Letters appear one by one -->
-			<span class="letter letter-{animationStyle}" class:show={showF1}>f</span>
-			<span class="letter letter-{animationStyle}" class:show={showA}>a</span>
-			<span class="letter letter-{animationStyle}" class:show={showF2}>f</span>
+	<div class="logo-wrapper">
+		<span class="logo-content">
+			<!-- The smiley/dot -->
+			<img
+				src="/orange-smiley.svg"
+				alt="."
+				class="smiley-dot"
+				class:animated={animated}
+				class:visible={dotVisible}
+				style="color: {dotColorValue}; fill: {dotColorValue};"
+			/>
+
+			{#if !dotOnly}
+				<!-- Letters appear one by one -->
+				<span class="letter letter-{animationStyle}" class:show={showF1}>f</span>
+				<span class="letter letter-{animationStyle}" class:show={showA}>a</span>
+				<span class="letter letter-{animationStyle}" class:show={showF2}>f</span>
+			{/if}
+		</span>
+		{#if showDefinition}
+			<div class="definition">Foundational AI-context Format</div>
 		{/if}
-	</span>
+	</div>
 </div>
 
 <style>
@@ -92,13 +98,36 @@
 		font-weight: 900;
 		position: relative;
 	}
-	
+
+	.logo-wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
 	.logo-content {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		gap: 0;
 		position: relative;
+	}
+
+	.definition {
+		width: auto;
+		white-space: nowrap;
+		font-size: 0.85rem;
+		font-weight: 700;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: var(--text-color);
+		opacity: 0.85;
+		margin-top: -2rem;
+		margin-left: calc(var(--dot-size) + var(--gap));
+		line-height: 1;
+		text-align: left;
+		font-family: 'Roboto Condensed', sans-serif;
 	}
 	
 	/* The smiley dot */

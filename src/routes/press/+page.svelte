@@ -97,7 +97,7 @@
 				<div class="achievement-icon">☑️</div>
 				<div class="achievement-content">
 					<h3>MCP Integration</h3>
-					<p>Anthropic-approved Model Context Protocol for Claude Desktop</p>
+					<p>Model Context Protocol with 800+ weekly downloads for Claude Desktop</p>
 				</div>
 			</div>
 			

@@ -104,7 +104,7 @@
 					<div class="status success">
 						<div class="success-header">
 							☑️ Perfect! Your spot is secured.
-							<button class="close-btn" on:click={() => { status = null; }}>×</button>
+							<button class="close-btn" onclick={() => { status = null; }}>×</button>
 						</div>
 						<p class="success-message">Ready to become a LEGEND?</p>
 						<div class="stripe-checkout-wrapper">
