@@ -29,8 +29,8 @@
 </script>
 
 <svelte:head>
-	<title>Founders Circle - .faf Format</title>
-	<meta name="description" content="Join the .faf Founders Circle - FOUNDER $9/month WIN/WIN or LEGENDS $100/year with 🏆 badge">
+	<title>Join the Movement - Get Dot.FAFfed</title>
+	<meta name="description" content="Are you dot.faffed? Join the movement. Context-first, championship thinking, AI|Human balance. Race to win with AI.">
 	<script async src="https://js.stripe.com/v3/buy-button.js"></script>
 </svelte:head>
 
@@ -40,56 +40,75 @@
 
 <div class="founders-hero">
 	<div class="container">
-		<div class="hero-badge">🏆 FOUNDERS CIRCLE</div>
-		<h1>Be Part of History</h1>
+		<div class="hero-badge">🏆 JOIN THE MOVEMENT 🏆</div>
+		<h1>Are You Dot.FAFfed?</h1>
 		<p class="hero-subtitle">
-			<span class="highlight">$9/month FOUNDER</span> or <span class="highlight">$100/year LEGENDS 🏆</span>
+			<span class="highlight">Context-First</span> 🧡 <span class="highlight">Championship Thinking</span> 🏆 <span class="highlight">AI|Human Balance</span> 🥵
 		</p>
-		<div class="spots-counter">
-			<div class="spots-number">{spotsRemaining}</div>
-			<div class="spots-label">Spots Remaining</div>
+		<div class="racing-banner">
+			<span class="race-text">🏎️ RACE TO WIN WITH AI ⚡ NO FAFFING ABOUT 🏁</span>
 		</div>
 	</div>
 </div>
 
+<section class="community-section">
+	<div class="container">
+		<h2>🤝 The Context-First Community</h2>
+		<div class="community-intro">
+			<p class="community-statement">"Once you're dot.faffed, you help others get dot.faffed"</p>
+			<p>No matter if you use CLI, MCP, Chrome Extension, or all three. Beginner or expert. Everyone shares tips, tricks, and victories.</p>
+		</div>
+
+		<div class="community-grid">
+			<div class="community-card">
+				<div class="community-icon">🏆</div>
+				<h3>CLI Champions</h3>
+				<p>Share automation scripts, workflows, and command-line magic. From <code>faf init</code> to advanced scoring.</p>
+			</div>
+
+			<div class="community-card">
+				<div class="community-icon">🤖</div>
+				<h3>MCP Masters</h3>
+				<p>30+ tools expertise. Help others configure Claude, share server setups, troubleshoot together.</p>
+			</div>
+
+			<div class="community-card">
+				<div class="community-icon">🌐</div>
+				<h3>Web Warriors</h3>
+				<p>fafdev.tools, AI|HUMAN Balance, Chrome Extension tips. Master the web-based context game.</p>
+			</div>
+
+			<div class="community-card full-width">
+				<div class="community-icon">🏆</div>
+				<h3>Everyone Wins Together</h3>
+				<p><strong>No gatekeeping. No "RTFM". No judgment.</strong><br/>
+				Whether you're dot.faffing your first project or your 500th, the community has your back.<br/>
+				We all race to win with AI - and we help each other cross the finish line.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
 <section class="founders-benefits">
 	<div class="container">
-		<h2>🧡 Founders Benefits</h2>
+		<h2>🏎️ What You Actually Get</h2>
 		<div class="benefits-grid">
 			<div class="benefit-card">
-				<div class="benefit-icon">💰</div>
-				<h3>WIN/WIN Pricing</h3>
-				<p>FOUNDER $9/month<br/>LEGENDS $100/year with 🏆 badge</p>
+				<div class="benefit-icon">🤝</div>
+				<h3>Community Access</h3>
+				<p>Join dot.faffers sharing tips across CLI, MCP, and Extension</p>
 			</div>
-			
-			<div class="benefit-card">
-				<div class="benefit-icon">🔒</div>
-				<h3>Price Protection</h3>
-				<p>Your rate never increases<br/>Guaranteed forever pricing</p>
-			</div>
-			
+
 			<div class="benefit-card">
 				<div class="benefit-icon">⚡</div>
-				<h3>Priority Support</h3>
-				<p>Direct access to the team<br/>Fastest response times</p>
+				<h3>Priority Everything</h3>
+				<p>Support, features, updates - you're first in line, always</p>
 			</div>
-			
+
 			<div class="benefit-card">
-				<div class="benefit-icon">🎯</div>
-				<h3>Early Access</h3>
-				<p>First to get new features<br/>Beta access to everything</p>
-			</div>
-			
-			<div class="benefit-card">
-				<div class="benefit-icon">🏅</div>
-				<h3>Founders Badge</h3>
-				<p>Recognition in our community<br/>Special Founders status</p>
-			</div>
-			
-			<div class="benefit-card">
-				<div class="benefit-icon">🗳️</div>
-				<h3>Feature Voting</h3>
-				<p>Shape the product roadmap<br/>Your voice matters most</p>
+				<div class="benefit-icon">🏆</div>
+				<h3>Recognition</h3>
+				<p>Founder badge ($9) or LEGEND status ($100) - earned, not bought</p>
 			</div>
 		</div>
 	</div>
@@ -98,49 +117,29 @@
 <section class="founders-story">
 	<div class="container">
 		<div class="story-content">
-			<h2>The .faf Story</h2>
-			<p class="story-lead">
-				From .iff on the Commodore Amiga to .faf - The JPEG for AI™
-			</p>
-			
-			<div class="timeline">
-				<div class="timeline-item">
-					<div class="timeline-year">1985</div>
-					<div class="timeline-content">
-						<h4>The Beginning</h4>
-						<p>Started with .iff format on Commodore Amiga - learning how formats shape technology</p>
-					</div>
+			<h2>Why We're Different</h2>
+
+			<div class="truth-bombs">
+				<div class="truth-item">
+					<h4>❌ No VC Funding</h4>
+					<p>We're not burning investor money. We built this ourselves over thousands of hours. User-funded means we answer to you, not a board.</p>
 				</div>
-				
-				<div class="timeline-item">
-					<div class="timeline-year">1990s</div>
-					<div class="timeline-content">
-						<h4>Carpet Industry</h4>
-						<p>Developed complex color and simulation formats for industrial applications</p>
-					</div>
+
+				<div class="truth-item">
+					<h4>❌ No Marketing BS</h4>
+					<p>Every stat is real. 3,077 downloads (CLI 🏆 1,942 vs MCP 🤖 1,125+), 9.3/10 AI rating, 20min → 3min. No fluff.</p>
 				</div>
-				
-				<div class="timeline-item">
-					<div class="timeline-year">2020s</div>
-					<div class="timeline-content">
-						<h4>AI Revolution</h4>
-						<p>Recognized the context problem - AI needs a standard format like images got JPEG</p>
-					</div>
+
+				<div class="truth-item">
+					<h4>❌ No Hidden Costs</h4>
+					<p>The software is free. Forever. Paying is optional. We're transparent about everything because trust is our foundation.</p>
 				</div>
-				
-				<div class="timeline-item">
-					<div class="timeline-year">2024</div>
-					<div class="timeline-content">
-						<h4>.faf Launch</h4>
-						<p>MCP with 800+ weekly downloads, Chrome Extension live, 10,000+ projects tested</p>
-					</div>
+
+				<div class="truth-item">
+					<h4>☑️ Just Great Software</h4>
+					<p>40 years of format expertise. From .iff on Commodore Amiga to .faf for AI. This is what we do. This is all we do.</p>
 				</div>
 			</div>
-			
-			<p class="story-conclusion">
-				<strong>This isn't just another tool.</strong> This is THE format standard for AI - 
-				built on 40 years of format expertise and thousands of hours of development.
-			</p>
 		</div>
 	</div>
 </section>
@@ -182,21 +181,21 @@
 
 <section class="founders-testimonials">
 	<div class="container">
-		<h2>Early Adopters</h2>
+		<h2>Voices from the Community</h2>
 		<div class="testimonials-grid">
 			<div class="testimonial">
-				<p>"Finally, someone solved the context problem properly. This is what we've been waiting for."</p>
-				<div class="testimonial-author">- Senior Developer, Fortune 500</div>
+				<p>"Started with CLI, now running all three. The community helped me set up MCP in 10 minutes. Dot.faffed for life."</p>
+				<div class="testimonial-author">- CLI Warrior turned Full Stack</div>
 			</div>
-			
+
 			<div class="testimonial">
-				<p>"The 20 minutes to 3 minutes isn't marketing - it's literally what happens. Game changer."</p>
-				<div class="testimonial-author">- AI Team Lead, Startup</div>
+				<p>"Chrome Extension user here. Got help from MCP folks on context extraction. This community doesn't care what tool you use, just that you win."</p>
+				<div class="testimonial-author">- Extension Expert</div>
 			</div>
-			
+
 			<div class="testimonial">
-				<p>"MCP with 800+ downloads, Chrome Extension ready, everything just works. This is championship stuff."</p>
-				<div class="testimonial-author">- Technical Architect</div>
+				<p>"20min → 3min is real. But the community teaching me HOW to optimize? Priceless. We all race together."</p>
+				<div class="testimonial-author">- Newly Dot.FAFfed Developer</div>
 			</div>
 		</div>
 	</div>
@@ -317,28 +316,26 @@
 		font-weight: 700;
 	}
 	
-	.spots-counter {
-		display: inline-block;
-		background: white;
-		color: var(--faf-black);
-		padding: 2rem;
+	.racing-banner {
+		margin-top: 2rem;
+		padding: 1rem 2rem;
+		background: var(--faf-orange);
 		border-radius: 12px;
-		box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+		display: inline-block;
+		animation: pulse 2s ease-in-out infinite;
 	}
-	
-	.spots-number {
-		font-size: 3rem;
+
+	.race-text {
 		font-weight: 900;
-		color: var(--faf-orange);
-		line-height: 1;
-		margin-bottom: 0.5rem;
-	}
-	
-	.spots-label {
+		font-size: 1.125rem;
+		color: white;
+		letter-spacing: 0.05em;
 		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		font-weight: 700;
-		font-size: 0.875rem;
+	}
+
+	@keyframes pulse {
+		0%, 100% { transform: scale(1); }
+		50% { transform: scale(1.02); }
 	}
 	
 	.founders-benefits {
@@ -353,6 +350,92 @@
 		color: var(--faf-black);
 	}
 	
+	.community-section {
+		padding: 4rem 0;
+		background: linear-gradient(135deg, #f8f8f8 0%, white 100%);
+	}
+
+	.community-intro {
+		max-width: 800px;
+		margin: 0 auto 3rem;
+		text-align: center;
+	}
+
+	.community-statement {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: var(--faf-orange);
+		margin-bottom: 1rem;
+		font-style: italic;
+	}
+
+	.community-intro p:last-child {
+		font-size: 1.125rem;
+		color: #444;
+		line-height: 1.6;
+	}
+
+	.community-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2rem;
+	}
+
+	.community-card {
+		background: white;
+		padding: 2rem;
+		border-radius: 12px;
+		text-align: center;
+		border: 2px solid var(--faf-orange);
+		transition: all 0.3s ease;
+	}
+
+	.community-card:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 10px 30px rgba(255, 107, 53, 0.2);
+	}
+
+	.community-card.full-width {
+		grid-column: 1 / -1;
+		background: var(--faf-black);
+		color: white;
+		border-color: var(--faf-orange);
+	}
+
+	.community-icon {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+	}
+
+	.community-card h3 {
+		font-size: 1.25rem;
+		margin-bottom: 0.75rem;
+		color: var(--faf-black);
+		font-weight: 700;
+	}
+
+	.community-card.full-width h3 {
+		color: var(--faf-orange);
+	}
+
+	.community-card p {
+		color: #555;
+		line-height: 1.5;
+	}
+
+	.community-card.full-width p {
+		color: #ccc;
+	}
+
+	.community-card code {
+		background: var(--faf-cream);
+		color: var(--faf-orange);
+		padding: 0.2em 0.4em;
+		border-radius: 4px;
+		font-family: var(--font-mono);
+		font-size: 0.9em;
+	}
+
 	.benefits-grid {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
@@ -666,6 +749,7 @@
 	}
 	
 	@media (max-width: 968px) {
+		.community-grid,
 		.benefits-grid,
 		.stats-grid,
 		.testimonials-grid {

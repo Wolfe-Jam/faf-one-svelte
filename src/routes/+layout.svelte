@@ -1,8 +1,11 @@
 <script>
 	import '../app.css';
+	import SideNav from '$lib/components/SideNav.svelte';
 
 	let { children } = $props();
 </script>
+
+<SideNav />
 
 <!-- 3-Section Banner -->
 <div class="official-banner">
@@ -10,7 +13,7 @@
 		🚀 PRESS RELEASE 🚀
 	</a>
 	<div class="banner-section-center">
-		🎉 1,600+ Downloads! • .faf - The JPEG for AI
+		🏎️ 3,077 Downloads! • CLI: 1,942 🏆 vs MCP: 1,125 🤖
 	</div>
 	<a href="https://github.com/modelcontextprotocol/servers/pull/2759" target="_blank" rel="noopener" class="banner-section">
 		⚡️ MCP #2759 Pending ⚡️
@@ -35,7 +38,7 @@
 		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 		position: sticky;
 		top: 0;
-		z-index: 1000;
+		z-index: 900;
 		overflow: hidden;
 		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 		transition: all 0.3s ease;
