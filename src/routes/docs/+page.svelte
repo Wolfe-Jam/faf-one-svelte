@@ -14,6 +14,10 @@
 	<meta name="description" content="Complete documentation for .faf format - setup, usage, and API reference">
 </svelte:head>
 
+<div class="back-nav">
+	<a href="/" class="back-button">← Back to Home</a>
+</div>
+
 <div class="docs-layout">
 	<aside class="docs-sidebar">
 		<div class="sidebar-header">
@@ -89,15 +93,15 @@ pnpm add -g claude-faf-mcp</code></pre>
 			
 			<h3>Chrome Extension</h3>
 			<p>Install directly from the Chrome Web Store:</p>
-			<a href="https://chrome.google.com/webstore/detail/faf" class="btn-docs" target="_blank">
+			<a href="https://chromewebstore.google.com/detail/lnecebepmpjpilldfmndnaofbfjkjlkm" class="btn-docs" target="_blank">
 				Install Chrome Extension →
 			</a>
 			
 			<h3>MCP Server</h3>
 			<div class="code-block">
 				<pre><code># Clone and setup
-git clone https://github.com/Wolfe-Jam
-cd faf-mcp
+git clone https://github.com/Wolfe-Jam/faf
+cd faf
 npm install
 npm run build</code></pre>
 			</div>
@@ -332,12 +336,36 @@ const stats = await FAF.stats('./project.faf');`}</code></pre>
 		</section>
 		
 		<div class="docs-footer">
-			<p>Need help? <a href="/support">Contact Support</a> or check our <a href="https://github.com/Wolfe-Jam" target="_blank">GitHub</a></p>
+			<p>Need help? <a href="/support">Contact Support</a> or check our <a href="https://github.com/Wolfe-Jam/faf" target="_blank">GitHub</a></p>
 		</div>
 	</main>
 </div>
 
 <style>
+	.back-nav {
+		padding: 1rem 2rem;
+		background: var(--faf-white);
+		border-bottom: 1px solid var(--faf-light-gray);
+	}
+
+	.back-button {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		color: var(--faf-dark);
+		text-decoration: none;
+		font-weight: 600;
+		padding: 0.5rem 1rem;
+		border-radius: 8px;
+		transition: all 0.3s ease;
+	}
+
+	.back-button:hover {
+		background: var(--faf-cream);
+		color: var(--faf-orange);
+		transform: translateX(-2px);
+	}
+
 	.docs-layout {
 		display: grid;
 		grid-template-columns: 250px 1fr;

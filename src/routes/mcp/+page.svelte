@@ -8,6 +8,10 @@
 	<meta name="description" content="Set up the .faf Model Context Protocol (MCP) with 800+ weekly downloads. Direct AI integration for Claude Desktop." />
 </svelte:head>
 
+<div class="back-nav">
+	<a href="/" class="back-button">← Back to Home</a>
+</div>
+
 <div class="mcp-page">
 	<section class="hero-section">
 		<div class="container">
@@ -133,7 +137,7 @@
 						<a href="https://modelcontextprotocol.io/quickstart" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
 							View Official MCP Docs
 						</a>
-						<a href="https://github.com/Wolfe-Jam" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+						<a href="https://github.com/Wolfe-Jam/faf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
 							View on GitHub
 						</a>
 					</div>
@@ -144,6 +148,30 @@
 </div>
 
 <style>
+	.back-nav {
+		padding: 1rem 2rem;
+		background: var(--faf-white);
+		border-bottom: 1px solid var(--faf-light-gray);
+	}
+
+	.back-button {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		color: var(--faf-dark);
+		text-decoration: none;
+		font-weight: 600;
+		padding: 0.5rem 1rem;
+		border-radius: 8px;
+		transition: all 0.3s ease;
+	}
+
+	.back-button:hover {
+		background: var(--faf-cream);
+		color: var(--faf-orange);
+		transform: translateX(-2px);
+	}
+
 	.mcp-page {
 		min-height: 100vh;
 		background: var(--faf-cream);
