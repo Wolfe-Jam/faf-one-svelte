@@ -3,6 +3,7 @@
 	import FafLogo from '$lib/components/FafLogo.svelte';
 	import ScrollRevealText from '$lib/components/ScrollRevealText.svelte';
 	import TypewriterText from '$lib/components/TypewriterText.svelte';
+	import DownloadCounter from '$lib/components/DownloadCounter.svelte';
 	
 	// Removed scrollY prop - not needed
 	
@@ -163,15 +164,9 @@
 				</div>
 			</div>
 			
-			<!-- Live NPM Stats -->
+			<!-- Live NPM Stats with Animated Counter -->
 			<div class="live-npm-stats">
-				<div class="npm-badge">
-					<span class="npm-icon">📦</span>
-					<div class="npm-content">
-						<span class="npm-number">1,600+</span>
-						<span class="npm-label">NPM Downloads & Growing!</span>
-					</div>
-				</div>
+				<DownloadCounter />
 			</div>
 
 			<!-- Verified Testing Stats -->
