@@ -236,8 +236,8 @@
 			<div class="timeline-entry">
 				<div class="timeline-date">Q3 2024</div>
 				<div class="timeline-event">
-					<h4>MCP Approval</h4>
-					<p>Anthropic approves official Model Context Protocol server</p>
+					<h4>MCP Server Launch</h4>
+					<p>Released MCP server for Claude Desktop - 3000+ total downloads (PR #2759 pending)</p>
 				</div>
 			</div>
 			
