@@ -1,19 +1,20 @@
 <script>
 	import '../app.css';
+	import DownloadCounter from '$lib/components/DownloadCounter.svelte';
 
 	let { children } = $props();
 </script>
 
 <!-- 3-Section Banner -->
 <div class="official-banner">
-	<a href="/press-release" class="banner-section">
-		🚀 PRESS RELEASE 🚀
-	</a>
+	<div class="banner-section">
+		<DownloadCounter />
+	</div>
 	<div class="banner-section-center">
 		.faf - The JPEG for AI
 	</div>
 	<a href="https://github.com/modelcontextprotocol/servers/pull/2759" target="_blank" rel="noopener" class="banner-section">
-		⚡️ MCP Approval Pending ⚡️
+		⚡️ MCP #2759 Pending ⚡️
 	</a>
 	<div class="banner-shine"></div>
 </div>
