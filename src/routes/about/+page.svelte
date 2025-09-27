@@ -238,7 +238,7 @@
 					<div class="recognition-item">
 						<!-- <img src="/anthropic-logo.png" alt="Anthropic" class="partner-logo" /> -->
 					<div class="partner-logo-placeholder">🤖</div>
-						<p>MCP Approved</p>
+						<p>MCP w/30+ Tools</p>
 					</div>
 					<div class="recognition-item">
 						<!-- <img src="/google-chrome-logo.png" alt="Google Chrome" class="partner-logo" /> -->

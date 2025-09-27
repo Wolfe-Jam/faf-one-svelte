@@ -13,7 +13,7 @@
 				</div>
 				<p class="footer-mission">NO BS. No FAFfing About.</p>
 				<div class="footer-stats">
-					<div class="stat">☑️ MCP Approved</div>
+					<div class="stat">☑️ MCP w/30+ Tools</div>
 					<div class="stat">☑️ Chrome Extension LIVE</div>
 					<div class="stat">☑️ 10,000+ Projects</div>
 				</div>
