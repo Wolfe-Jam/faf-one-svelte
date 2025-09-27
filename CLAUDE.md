@@ -47,5 +47,63 @@
 - Status: Championship grade performance
 - All features must work properly before claiming they do
 
+## 🏁 GOLDEN RULES - Professional Standards
+
+### Git Commit Protocol (REQUIRED)
+**Every commit must follow this exact format:**
+```
+<type>: <what changed>
+
+- <specific change 1>
+- <specific change 2>
+```
+
+**Types:** `fix:` `feat:` `docs:` `refactor:` `chore:` `test:`
+
+**Examples:**
+- `fix: Update PR reference to #2759`
+- `feat: Add discussions link to navigation`
+- `docs: Correct download statistics`
+
+**NEVER:**
+- No exclamation marks
+- No emotion or excitement
+- No marketing language
+- No "finally" or "at last"
+- No false claims about approval
+
+### NPM Publish Protocol (APPROVAL REQUIRED)
+**Before ANY npm publish:**
+1. Get explicit approval from wolfejam
+2. Verify all claims are factual
+3. Update version following semver
+4. Test in isolation first
+5. Use boring release notes
+
+**Release note format:**
+```
+v1.2.3
+
+- Fix: Corrected dependency issue
+- Feat: Added new command option
+- Docs: Updated installation guide
+```
+
+### The Professional Standard
+- **Boring is good**
+- **Facts only**
+- **Trust is everything**
+- **If Anthropic reads it, would they approve?**
+- **When in doubt, make it more boring**
+
+### Critical: Publishing & Committing
+- **Git commits**: Follow protocol or don't commit
+- **NPM publishes**: Require explicit approval
+- **False claims**: Could kill PR #2759
+- **Trust violations**: Unforgivable
+
+Remember: We're playing at the level where Anthropic might actually merge our PR. Act like it.
+
 ---
 *This is serious work, not marketing fluff. Treat it with respect.*
+*Professional. Boring. Trusted.*
