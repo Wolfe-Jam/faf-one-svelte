@@ -103,12 +103,12 @@
 			color: "var(--faf-green)"
 		},
 		{
-			title: "Officially Approved",
+			title: "Live in Production",
 			icon: "🏆",
 			content: [
-				"🤖 Anthropic MCP APPROVED",
+				"🤖 MCP Server with 1,125+ downloads",
 				"🌐 Google Chrome EXTENSION LIVE",
-				"The only format trusted by the leaders"
+				"Trusted by developers worldwide"
 			],
 			score: "✓",
 			scoreLabel: "Enterprise Ready",
