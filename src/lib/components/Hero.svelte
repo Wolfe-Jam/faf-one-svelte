@@ -168,7 +168,7 @@
 				<div class="npm-badge">
 					<span class="npm-icon">📦</span>
 					<div class="npm-content">
-						<span class="npm-number">240+</span>
+						<span class="npm-number">1,600+</span>
 						<span class="npm-label">NPM Downloads & Growing!</span>
 					</div>
 				</div>
