@@ -16,7 +16,7 @@
 
 <div class="press-hero">
 	<div class="container">
-		<h1>📣 Press Kit</h1>
+		<h1>📣 Press Release</h1>
 		<p class="subtitle">Everything you need to cover .faf - The JPEG for AI™</p>
 	</div>
 </div>
