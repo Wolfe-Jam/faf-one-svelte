@@ -18,6 +18,9 @@
 	<div class="container">
 		<h1>📣 Press Kit</h1>
 		<p class="subtitle">Everything you need to cover .faf - The JPEG for AI™</p>
+		<div class="press-release-link">
+			<a href="/press-release" class="btn-press-release">📄 View Latest Press Release →</a>
+		</div>
 	</div>
 </div>
 
@@ -137,30 +140,30 @@
 		<h2>Quotes</h2>
 		<div class="quotes-grid">
 			<div class="quote-card">
-				<h3>The Problem</h3>
+				<h3>The Reality</h3>
 				<blockquote>
-					"Every AI conversation starts with 20 minutes of context setup. That's 85% waste. 
-					.faf reduces this to 3 minutes. It's not just an improvement - it's a paradigm shift."
+					"99% of projects have sh*t AI context and we solved it. .faf gives AI the complete picture -
+					project structure, dependencies, intent, everything. It's the difference between AI guessing and AI knowing."
 				</blockquote>
-				<cite>- Founder Statement</cite>
+				<cite>- James Wolfe, Founder</cite>
 			</div>
-			
+
 			<div class="quote-card">
-				<h3>The Vision</h3>
+				<h3>The Approach</h3>
 				<blockquote>
-					"JPEG didn't ask permission to become the image standard. It just solved the problem 
-					better than anything else. That's what .faf does for AI context."
+					"We're not selling software - we're establishing a format standard. JPEG didn't charge per image.
+					MP3 didn't charge per song. .faf won't charge per context. Standards win by adoption, not monetization."
 				</blockquote>
-				<cite>- Product Philosophy</cite>
+				<cite>- James Wolfe, Founder</cite>
 			</div>
-			
+
 			<div class="quote-card">
 				<h3>The Impact</h3>
 				<blockquote>
-					"20 minutes down to 3 minutes. 99% AI-valid context. Every single time. 
-					The real value: AI finally works with correct information. Project success metrics dramatically improve when AI does what it's good at."
+					"3000+ developers, 800 weekly downloads, zero marketing spend. Why? Because when something
+					actually works, developers tell each other. .faf isn't a nice-to-have, it's a must-have."
 				</blockquote>
-				<cite>- Performance Metrics</cite>
+				<cite>- James Wolfe, Founder</cite>
 			</div>
 		</div>
 	</div>
@@ -329,6 +332,22 @@
 		font-size: 3rem;
 		margin-bottom: 1rem;
 		font-weight: 900;
+	}
+
+	.press-release-link {
+		margin-top: 2rem;
+	}
+
+	.btn-press-release {
+		display: inline-block;
+		padding: 0.75rem 2rem;
+		background: var(--faf-orange);
+		color: white;
+		text-decoration: none;
+		font-weight: 700;
+		border-radius: 8px;
+		transition: all 0.3s ease;
+		font-size: 1.125rem;
 	}
 	
 	.subtitle {

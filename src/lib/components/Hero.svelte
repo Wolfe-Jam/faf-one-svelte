@@ -103,7 +103,7 @@
 			<!-- BLOCK 2: Authority Statements -->
 			<ScrollRevealText threshold={0.5} delay={0}>
 				<div class="text-block authority-statement">
-					<div>The AI Context MCP with 1,000+ downloads and growing</div>
+					<div>The AI Context MCP with 1,100+ downloads and growing</div>
 					<div>The AI Chrome Extension, LIVE and approved by Google,</div>
 					<div><em>Ready, and waiting for Claude-beta and Gemini</em></div>
 				</div>
@@ -156,7 +156,7 @@
 				<h3 class="official-badges-title">Official MCP Format</h3>
 				<div class="badges-row">
 					<a href="https://github.com/modelcontextprotocol/servers" class="official-badge" target="_blank" rel="noopener">
-						☑️ MCP Official Registry
+						☑️ MCP Registry (PR #2759 Pending)
 					</a>
 					<a href="https://npmjs.com/package/claude-faf-mcp" class="official-badge" target="_blank" rel="noopener">
 						📦 NPM Package
