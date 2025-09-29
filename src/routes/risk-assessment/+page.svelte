@@ -166,9 +166,9 @@
 					AI-Calculated Timeline Impact
 					<span class="input-help">Smart multiplier based on context quality (automatically adjusts)</span>
 				</label>
-				<div class="multiplier-display">
-					<div class="multiplier-value">{impactMultiplier}x slower</div>
-					<div class="multiplier-impact">{delayDays} days late</div>
+				<div class="multiplier-display" style="background: {delayDays > 0 ? 'linear-gradient(135deg, #ff4444 0%, #cc0000 100%)' : 'linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%)'}">
+					<div class="multiplier-value">{impactMultiplier}x {impactMultiplier > 1 ? 'slower' : 'speed'}</div>
+					<div class="multiplier-impact">{delayDays > 0 ? delayDays + ' days late' : 'ON TIME!'}</div>
 				</div>
 				<div class="multiplier-scale">
 					<div class="scale-item" class:active={aiContext >= 95}>100%→1x</div>
