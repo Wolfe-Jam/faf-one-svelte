@@ -10,13 +10,32 @@
 	let aiContext = $state(defaults.aiContext);
 	let projectWeeks = $state(defaults.projectWeeks);
 	let weeklyBurn = $state(defaults.weeklyBurn);
-	let impactMultiplier = $state(defaults.impactMultiplier);
+
+	// Smart multiplier that adjusts based on context
+	// 100% context = 1x (no delay)
+	// 90% context = 1.2x
+	// 75% context = 1.5x
+	// 50% context = 2x
+	// 25% context = 3x
+	// 10% context = 5x
+	// 0% context = 10x
+	const impactMultiplier = $derived(() => {
+		if (aiContext >= 95) return 1.0;
+		if (aiContext >= 90) return 1.2;
+		if (aiContext >= 75) return 1.5;
+		if (aiContext >= 60) return 1.75;
+		if (aiContext >= 50) return 2.0;
+		if (aiContext >= 40) return 2.5;
+		if (aiContext >= 30) return 3.0;
+		if (aiContext >= 20) return 4.0;
+		if (aiContext >= 10) return 5.0;
+		return 10.0;
+	}());
 
 	function resetToDefaults() {
 		aiContext = defaults.aiContext;
 		projectWeeks = defaults.projectWeeks;
 		weeklyBurn = defaults.weeklyBurn;
-		impactMultiplier = defaults.impactMultiplier;
 	}
 
 	// Calculations
@@ -143,27 +162,21 @@
 			</div>
 
 			<div class="input-group">
-				<label for="multiplier">
-					Timeline Impact Multiplier: {impactMultiplier}x
-					<span class="input-help">How much does poor context multiply timeline? (2x is conservative)</span>
+				<label>
+					AI-Calculated Timeline Impact
+					<span class="input-help">Smart multiplier based on context quality (automatically adjusts)</span>
 				</label>
-				<input
-					type="range"
-					id="multiplier"
-					bind:value={impactMultiplier}
-					min="1.5"
-					max="10"
-					step="0.5"
-					class="timeline-slider"
-				/>
-				<div class="slider-scale">
-					<span>1.5x</span>
-					<span>2x</span>
-					<span>3x</span>
-					<span>5x</span>
-					<span>10x</span>
+				<div class="multiplier-display">
+					<div class="multiplier-value">{impactMultiplier}x slower</div>
+					<div class="multiplier-impact">{delayDays} days late</div>
 				</div>
-				<div class="input-value">{delayDays} days late</div>
+				<div class="multiplier-scale">
+					<div class="scale-item" class:active={aiContext >= 95}>100%→1x</div>
+					<div class="scale-item" class:active={aiContext >= 75 && aiContext < 95}>75%→1.5x</div>
+					<div class="scale-item" class:active={aiContext >= 50 && aiContext < 75}>50%→2x</div>
+					<div class="scale-item" class:active={aiContext >= 25 && aiContext < 50}>25%→3x</div>
+					<div class="scale-item" class:active={aiContext < 25}>10%→5x+</div>
+				</div>
 			</div>
 
 			<div class="context-preview">
@@ -497,56 +510,50 @@
 		box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 	}
 
-	.timeline-slider {
-		-webkit-appearance: none;
-		appearance: none;
-		width: 100%;
-		height: 8px;
-		background: #ff4444 !important;
-		border-radius: 5px;
-		outline: none;
-		opacity: 1;
-		transition: opacity 0.2s;
-		cursor: pointer;
-	}
-
-	.timeline-slider:hover {
-		opacity: 0.9;
-	}
-
-	.timeline-slider::-webkit-slider-thumb {
-		-webkit-appearance: none;
-		appearance: none;
-		width: 24px;
-		height: 24px;
-		background: white;
-		border: 3px solid #ff4444 !important;
-		border-radius: 50%;
-		cursor: pointer;
-	}
-
-	.timeline-slider::-moz-range-thumb {
-		width: 24px;
-		height: 24px;
-		background: white;
-		border: 3px solid #ff4444 !important;
-		border-radius: 50%;
-		cursor: pointer;
-	}
-
-	.slider-scale {
+	.multiplier-display {
 		display: flex;
 		justify-content: space-between;
-		font-size: 0.75rem;
-		color: #666;
-		margin-top: -0.5rem;
-		margin-bottom: 0.75rem;
-		font-weight: 600;
+		align-items: center;
+		padding: 1rem;
+		background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
+		border-radius: 8px;
+		margin: 1rem 0;
+		color: white;
 	}
 
-	.slider-scale span:nth-child(2) {
-		color: var(--faf-black);
+	.multiplier-value {
+		font-size: 1.75rem;
+		font-weight: 900;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	.multiplier-impact {
+		font-size: 1.25rem;
 		font-weight: 700;
+		opacity: 0.95;
+	}
+
+	.multiplier-scale {
+		display: flex;
+		gap: 0.5rem;
+		margin-top: 0.5rem;
+	}
+
+	.scale-item {
+		padding: 0.25rem 0.5rem;
+		background: #f0f0f0;
+		border-radius: 4px;
+		font-size: 0.75rem;
+		font-weight: 600;
+		color: #999;
+		transition: all 0.2s ease;
+	}
+
+	.scale-item.active {
+		background: var(--faf-black);
+		color: white;
+		transform: scale(1.1);
 	}
 
 	.input-value {
