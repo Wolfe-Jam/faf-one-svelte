@@ -158,6 +158,27 @@
 				<div class="input-value">+{Math.round((actualWeeks - projectWeeks) * 5)} days</div>
 			</div>
 
+			<div class="context-preview">
+				<h4>What {aiContext}% AI Context Really Means:</h4>
+				<p>
+					{#if aiContext >= 90}
+						Building exactly what was designed. Team is in flow state. Shipping championship code.
+					{:else if aiContext >= 75}
+						Mostly on track. Some re-explanation needed. Quality holding steady.
+					{:else if aiContext >= 60}
+						Starting to cut corners. Re-explaining requirements weekly. Quality slipping.
+					{:else if aiContext >= 50}
+						Half the context = double the confusion. Building the wrong thing efficiently. Team frustration rising.
+					{:else if aiContext >= 30}
+						Major gaps in understanding. Endless rework cycles. Good developers considering leaving.
+					{:else if aiContext >= 20}
+						Nobody remembers the original goal. Complete chaos. Team morale critical.
+					{:else}
+						Project death spiral. Complete restart needed. Reputation destroyed.
+					{/if}
+				</p>
+			</div>
+
 		</div>
 
 		<div class="risk-results">
@@ -671,6 +692,31 @@
 	.btn-responsible:hover {
 		transform: translateY(-2px);
 		box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+	}
+
+	.context-preview {
+		margin-top: 1.5rem;
+		padding: 1rem;
+		background: #f0f0f0;
+		border-radius: 8px;
+		border-left: 4px solid var(--faf-orange);
+	}
+
+	.context-preview h4 {
+		margin: 0 0 0.5rem 0;
+		color: var(--faf-black);
+		font-size: 0.9rem;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		font-weight: 700;
+	}
+
+	.context-preview p {
+		margin: 0;
+		color: #666;
+		font-style: italic;
+		font-size: 0.95rem;
+		line-height: 1.4;
 	}
 
 	.context-stories {
