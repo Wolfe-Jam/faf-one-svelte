@@ -154,6 +154,7 @@
 					min="1.5"
 					max="10"
 					step="0.5"
+					class="timeline-slider"
 				/>
 				<div class="input-value">+{Math.round((actualWeeks - projectWeeks) * 5)} days</div>
 			</div>
@@ -487,6 +488,18 @@
 		cursor: pointer;
 		border-radius: 50%;
 		box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+	}
+
+	.timeline-slider {
+		background: #ff4444 !important;
+	}
+
+	.timeline-slider::-webkit-slider-thumb {
+		border: 3px solid #ff4444 !important;
+	}
+
+	.timeline-slider::-moz-range-thumb {
+		border: 3px solid #ff4444 !important;
 	}
 
 	.input-value {
