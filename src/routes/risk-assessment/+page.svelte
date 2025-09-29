@@ -62,7 +62,7 @@
 	// Quality mapping
 	const getQuality = (context) => {
 		if (context >= 100) return { level: 'Best Possible', emoji: '🏆', color: 'var(--faf-orange)' }; // FAF Orange - ONLY at 100%
-		if (context >= 90) return { level: 'Excellent', emoji: '🌟', color: '#228B22' }; // Green
+		if (context >= 90) return { level: 'Excellent', emoji: '🌟', color: 'var(--faf-green)' }; // FAF Green
 		if (context >= 80) return { level: 'Very Good', emoji: '💪', color: '#333' }; // Dark grey
 		if (context >= 70) return { level: 'Good', emoji: '👍', color: '#555' }; // Medium grey
 		if (context >= 60) return { level: 'Fair', emoji: '😐', color: '#666' }; // Grey
