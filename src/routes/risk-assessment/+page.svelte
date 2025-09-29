@@ -185,7 +185,7 @@
 
 			<div class="comparison-grid">
 				<div class="comparison-card current">
-					<h3>Current State ({aiContext}% Context)</h3>
+					<h3>Current State ({aiContext}% AI Context)</h3>
 					<div class="stat-row">
 						<span class="label">Timeline:</span>
 						<span class="value bad">{actualDays} days</span>
@@ -208,7 +208,7 @@
 				</div>
 
 				<div class="comparison-card optimal">
-					<h3>With .faf (100% Context)</h3>
+					<h3>With .faf (100% AI Context)</h3>
 					<div class="stat-row">
 						<span class="label">Timeline:</span>
 						<span class="value good">{plannedDays} days ✅</span>
@@ -232,7 +232,10 @@
 			</div>
 
 			<div class="impact-summary">
-				<h3>The REAL Cost at {aiContext}% Context</h3>
+				<div class="cost-headline">
+					<span class="cost-label">The REAL Cost at {aiContext}% AI Context:</span>
+					<span class="cost-number">${costOverrun > 0 ? '+' + costOverrun.toLocaleString() : '0'}</span>
+				</div>
 				<div class="impact-grid">
 					<div class="impact-item">
 						<span class="impact-emoji">💰</span>
@@ -273,7 +276,7 @@
 	</div>
 
 	<div class="context-stories">
-		<h3>What {aiContext}% Context Really Means:</h3>
+		<h3>What {aiContext}% AI Context Really Means:</h3>
 		<div class="story-text">
 			{#if aiContext >= 90}
 				Building exactly what was designed. Team is in flow state. Shipping championship code.
@@ -579,10 +582,27 @@
 		margin-bottom: 2rem;
 	}
 
-	.impact-summary h3 {
-		margin: 0 0 1.5rem 0;
-		text-align: center;
+	.cost-headline {
+		display: flex;
+		align-items: baseline;
+		gap: 1rem;
+		margin-bottom: 2rem;
+		padding-bottom: 1.5rem;
+		border-bottom: 2px solid var(--faf-orange);
+	}
+
+	.cost-label {
 		font-size: 1.25rem;
+		font-weight: 600;
+		opacity: 0.9;
+	}
+
+	.cost-number {
+		font-size: 3.5rem;
+		font-weight: 900;
+		color: var(--faf-orange);
+		font-family: var(--font-mono);
+		line-height: 1;
 	}
 
 	.impact-grid {
@@ -654,12 +674,14 @@
 	}
 
 	.context-stories {
-		margin-top: 2rem;
+		margin-top: 3rem;
 		padding: 2rem;
-		background: white;
-		border: 2px solid #e0e0e0;
+		background: #f8f8f8;
 		border-radius: 12px;
 		text-align: center;
+		max-width: 1200px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	.context-stories h3 {
