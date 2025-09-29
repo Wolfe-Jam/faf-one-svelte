@@ -791,13 +791,27 @@
 	.context-stories {
 		margin-top: 3rem;
 		padding: 3rem 2rem;
-		background: linear-gradient(135deg, #0a0a0a 0%, #2a2a2a 50%, #0a0a0a 100%);
+		background: linear-gradient(135deg, #000000 0%, #3a3a3a 50%, #000000 100%);
 		border-radius: 12px;
 		text-align: center;
 		max-width: 1200px;
 		margin-left: auto;
 		margin-right: auto;
-		border: 1px solid #333;
+		border: 2px solid #444;
+		box-shadow: 0 4px 20px rgba(0,0,0,0.5), inset 0 2px 10px rgba(255,255,255,0.05);
+		position: relative;
+		overflow: hidden;
+	}
+
+	.context-stories:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 1px;
+		background: linear-gradient(90deg, transparent, #666, transparent);
+		opacity: 0.5;
 	}
 
 	.context-stories h3 {
