@@ -161,10 +161,15 @@
 							{Math.round(successRate)}%
 						</span>
 					</div>
-				</div>
-				<p class="meter-label">
 					{#if successRate >= 90}
-						Professional Grade (10% real-world buffer)
+						<div class="buffer-indicator">
+							<span class="buffer-text">10%</span>
+						</div>
+					{/if}
+				</div>
+				<p class="meter-label" class:highlight-buffer={successRate >= 90}>
+					{#if successRate >= 90}
+						Professional Grade <span class="buffer-explanation">(10% real-world buffer)</span>
 					{:else if successRate > 80}
 						Professional Grade
 					{:else if successRate > 60}
@@ -395,6 +400,7 @@
 		border-radius: 20px;
 		overflow: hidden;
 		margin-bottom: 0.5rem;
+		position: relative;
 	}
 
 	.meter-fill {
@@ -416,6 +422,71 @@
 		color: #666;
 		font-size: 0.875rem;
 		font-style: italic;
+		transition: all 0.3s ease;
+	}
+
+	.meter-label.highlight-buffer {
+		position: relative;
+	}
+
+	.buffer-indicator {
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		width: 10%;
+		background: repeating-linear-gradient(
+			45deg,
+			transparent,
+			transparent 3px,
+			rgba(255, 255, 255, 0.2) 3px,
+			rgba(255, 255, 255, 0.2) 6px
+		);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-left: 2px dashed white;
+	}
+
+	.buffer-indicator::after {
+		content: '';
+		position: absolute;
+		bottom: -20px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 1px;
+		height: 15px;
+		background: var(--faf-orange);
+		animation: pulse 2s infinite;
+	}
+
+	.buffer-text {
+		color: white;
+		font-weight: 700;
+		font-size: 0.75rem;
+		text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+	}
+
+	.buffer-explanation {
+		background: var(--faf-orange);
+		color: white;
+		padding: 0.125rem 0.5rem;
+		border-radius: 4px;
+		font-weight: 700;
+		font-style: normal;
+		animation: highlight 2s infinite;
+		display: inline-block;
+		margin-left: 0.25rem;
+	}
+
+	@keyframes pulse {
+		0%, 100% { opacity: 1; }
+		50% { opacity: 0.5; }
+	}
+
+	@keyframes highlight {
+		0%, 100% { transform: scale(1); }
+		50% { transform: scale(1.05); }
 	}
 
 	.comparison-grid {
