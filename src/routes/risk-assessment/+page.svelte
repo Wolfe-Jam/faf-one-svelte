@@ -165,30 +165,48 @@
 						<li>Building exactly what was designed</li>
 						<li>Team is in flow state</li>
 						<li>Shipping championship code</li>
+						<li>AI augments productivity effectively</li>
+						<li>Predictable delivery timeline</li>
 					{:else if aiContext >= 75}
 						<li>Mostly on track</li>
 						<li>Some re-explanation needed</li>
 						<li>Quality holding steady</li>
+						<li>Minor inefficiencies creeping in</li>
+						<li>Still manageable with effort</li>
 					{:else if aiContext >= 60}
 						<li>Starting to cut corners</li>
 						<li>Re-explaining requirements weekly</li>
 						<li>Quality slipping</li>
+						<li>AI making occasional mistakes</li>
+						<li>Timeline starting to stretch</li>
 					{:else if aiContext >= 50}
+						<li>You are literally flipping a coin with AI</li>
 						<li>Half the context = double the confusion</li>
 						<li>Building the wrong thing efficiently</li>
 						<li>Team frustration rising</li>
+						<li>AI WILL make mistakes, not might</li>
+						<li>Setup for delays and incorrect code</li>
 					{:else if aiContext >= 30}
 						<li>Major gaps in understanding</li>
 						<li>Endless rework cycles</li>
 						<li>Good developers considering leaving</li>
+						<li>AI is now a liability, not an asset</li>
+						<li>Project failure becoming likely</li>
+						<li>Every sprint is a crisis</li>
 					{:else if aiContext >= 20}
 						<li>Nobody remembers the original goal</li>
 						<li>Complete chaos</li>
 						<li>Team morale critical</li>
+						<li>AI actively making things worse</li>
+						<li>Burning money with no progress</li>
+						<li>Technical debt out of control</li>
 					{:else}
 						<li>Project death spiral</li>
 						<li>Complete restart needed</li>
 						<li>Reputation destroyed</li>
+						<li>AI is generating garbage</li>
+						<li>Team has given up</li>
+						<li>Failure is guaranteed</li>
 					{/if}
 				</ul>
 			</div>
