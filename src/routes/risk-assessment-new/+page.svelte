@@ -7,18 +7,34 @@
 	// Default values
 	const defaults = {
 		aiContext: 55,
-		projectWeeks: 12,
-		weeklyBurn: 18000
+		projectDuration: 12,
+		projectCost: 18000
 	};
 
 	let aiContext = $state(defaults.aiContext);
-	let projectWeeks = $state(defaults.projectWeeks);
-	let weeklyBurn = $state(defaults.weeklyBurn);
+	let projectDuration = $state(defaults.projectDuration);
+	let projectCost = $state(defaults.projectCost);
+	let costMode = $state('weekly'); // 'weekly' or 'hourly'
+	let hoursPerWeek = $state(40);
+
+	// Calculate weekly burn and total base cost from inputs
+	const weeklyBurn = $derived(
+		costMode === 'weekly' ? projectCost :
+		projectCost * hoursPerWeek // hourly rate * hours per week
+	);
+
+	const baseTotalCost = $derived(
+		costMode === 'weekly' ? projectCost * projectDuration :
+		projectCost * hoursPerWeek * projectDuration // hourly * hours/week * weeks
+	);
+
+	const projectWeeks = $derived(projectDuration);
 
 	function resetToDefaults() {
 		aiContext = defaults.aiContext;
-		projectWeeks = defaults.projectWeeks;
-		weeklyBurn = defaults.weeklyBurn;
+		projectDuration = defaults.projectDuration;
+		projectCost = defaults.projectCost;
+		costMode = 'weekly';
 	}
 
 	// Smart multiplier calculation
@@ -41,8 +57,8 @@
 	const actualDays = $derived(actualWeeks * 5);
 	const plannedDays = $derived(projectWeeks * 5);
 	const delayDays = $derived(actualDays - plannedDays);
-	const actualCost = $derived(actualWeeks * weeklyBurn);
-	const plannedCost = $derived(projectWeeks * weeklyBurn);
+	const actualCost = $derived(Math.round(baseTotalCost * contextFactor));
+	const plannedCost = $derived(baseTotalCost);
 	const costOverrun = $derived(actualCost - plannedCost);
 
 	// Success metrics
@@ -76,24 +92,71 @@
 
 <div class="risk-hero">
 	<div class="container">
-		<h1>🎯 Project Risk Assessment</h1>
+		<h1>☑️  Project Risk Assessment</h1>
 		<p class="subtitle">The REAL Cost of Inferior Context</p>
-		<p class="tagline">If you're responsible for a software project and not using .faf...<br>how responsible are you?</p>
+		<p class="tagline">If you're responsible for a software project and not using .faf...<br>how responsible are you being?</p>
 	</div>
 </div>
 
 <div class="risk-container">
+	<!-- Simple Input Section -->
+	<div class="simple-inputs">
+		<div class="input-pill black-pill">
+			<label>PROJECT DURATION</label>
+			<div class="pill-value">
+				<input
+					type="number"
+					id="duration"
+					bind:value={projectDuration}
+					min="1"
+					max="52"
+					step="1"
+				/>
+				<span>weeks</span>
+			</div>
+		</div>
+
+		<div class="input-pill white-pill">
+			<div class="pill-value">
+				<span>$</span>
+				<input
+					type="number"
+					id="cost"
+					bind:value={projectCost}
+					min="1000"
+					step="1000"
+				/>
+				<div class="rate-toggle">
+					<button
+						class="toggle-btn"
+						class:active={costMode === 'hourly'}
+						onclick={() => costMode = 'hourly'}
+					>
+						hourly
+					</button>
+					<button
+						class="toggle-btn"
+						class:active={costMode === 'weekly'}
+						onclick={() => costMode = 'weekly'}
+					>
+						weekly
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<div class="risk-grid">
 		<!-- Left Column - Inputs -->
 		<div class="risk-inputs">
 			<div class="inputs-header">
-				<h2>Your Project Parameters</h2>
-				<button onclick={resetToDefaults} class="reset-button">Reset to Model Project</button>
+				<h2>AI Context Quality %</h2>
+				<button onclick={resetToDefaults} class="reset-button">Reset to Defaults</button>
 			</div>
 
 			<RiskSlider
-				label="AI Context Quality"
-				helpText="Current context retention (50% is typical)"
+				label="AI Context Quality %"
+				helpText="Current context retention (50% is typical without .faf)"
 				bind:value={aiContext}
 				min={10}
 				max={100}
@@ -106,28 +169,6 @@
 				<span>Status Quo</span>
 				<span>With .faf →</span>
 			</div>
-
-			<RiskSlider
-				label="Project Timeline (weeks)"
-				helpText="Original project duration"
-				bind:value={projectWeeks}
-				min={1}
-				max={52}
-				step={1}
-				displayValue="{projectWeeks} weeks"
-				color="gray"
-			/>
-
-			<RiskSlider
-				label="Weekly Project Cost"
-				helpText="Team cost per week (includes overhead)"
-				bind:value={weeklyBurn}
-				min={5000}
-				max={100000}
-				step={5000}
-				displayValue="${weeklyBurn.toLocaleString()}"
-				color="orange"
-			/>
 
 			<div class="multiplier-section">
 				<label>
@@ -287,6 +328,160 @@
 		max-width: 1200px;
 		margin: 0 auto;
 		padding: 2rem;
+	}
+
+	/* Simple Input Section */
+	.simple-inputs {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1px;
+		margin-bottom: 2rem;
+		background: #e0e0e0;
+		border-radius: 50px;
+		overflow: hidden;
+	}
+
+	.input-pill {
+		padding: 1rem 2rem;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.input-pill label {
+		font-size: 0.875rem;
+		font-weight: 700;
+		letter-spacing: 0.1em;
+		opacity: 0.7;
+	}
+
+	.black-pill {
+		background: var(--faf-black);
+		color: white;
+		border-radius: 30px 0 0 30px;
+	}
+
+	.white-pill {
+		background: white;
+		color: var(--faf-black);
+		border-radius: 0 30px 30px 0;
+	}
+
+	.pill-value {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		font-size: 1.75rem;
+		font-weight: 700;
+	}
+
+	.pill-value input {
+		background: rgba(255, 255, 255, 0.1);
+		border: 2px solid rgba(255, 255, 255, 0.2);
+		outline: none;
+		font-size: 1.75rem;
+		font-weight: 700;
+		font-family: var(--font-mono);
+		width: 140px;
+		color: inherit;
+		text-align: center;
+		border-radius: 8px;
+		padding: 0.25rem;
+		transition: all 0.2s ease;
+	}
+
+	.pill-value input:hover {
+		background: rgba(255, 255, 255, 0.15);
+		border-color: rgba(255, 255, 255, 0.3);
+	}
+
+	.pill-value input:focus {
+		background: rgba(255, 255, 255, 0.2);
+		border-color: rgba(255, 255, 255, 0.5);
+	}
+
+	.black-pill input {
+		color: white !important;
+		-webkit-text-fill-color: white !important;
+	}
+
+	.black-pill input::placeholder {
+		color: rgba(255, 255, 255, 0.5);
+	}
+
+	.black-pill input::-webkit-inner-spin-button,
+	.black-pill input::-webkit-outer-spin-button {
+		opacity: 1;
+		height: 30px;
+		width: 20px;
+		cursor: pointer;
+		filter: invert(1);
+	}
+
+	.white-pill input {
+		color: var(--faf-black);
+		background: rgba(0, 0, 0, 0.05);
+		border-color: rgba(0, 0, 0, 0.1);
+	}
+
+	.white-pill input:hover {
+		background: rgba(0, 0, 0, 0.08);
+		border-color: rgba(0, 0, 0, 0.2);
+	}
+
+	.white-pill input:focus {
+		background: rgba(0, 0, 0, 0.1);
+		border-color: rgba(0, 0, 0, 0.3);
+	}
+
+	.white-pill input::-webkit-inner-spin-button,
+	.white-pill input::-webkit-outer-spin-button {
+		opacity: 1;
+		height: 30px;
+		width: 20px;
+		cursor: pointer;
+	}
+
+	.pill-value span {
+		opacity: 0.6;
+		font-size: 1rem;
+		font-weight: 500;
+	}
+
+	.unit {
+		opacity: 0.6;
+		font-size: 1rem;
+		font-weight: 500;
+	}
+
+	.rate-toggle {
+		display: flex;
+		gap: 4px;
+		background: #f0f0f0;
+		padding: 3px;
+		border-radius: 20px;
+	}
+
+	.toggle-btn {
+		padding: 0.4rem 1rem;
+		border: none;
+		background: transparent;
+		color: #666;
+		font-size: 0.875rem;
+		font-weight: 600;
+		cursor: pointer;
+		border-radius: 18px;
+		transition: all 0.15s ease;
+		text-transform: lowercase;
+	}
+
+	.toggle-btn:hover {
+		color: #666;
+	}
+
+	.toggle-btn.active {
+		background: var(--faf-black);
+		color: white;
 	}
 
 	.risk-grid {
@@ -687,6 +882,28 @@
 
 		.impact-grid {
 			grid-template-columns: 1fr;
+		}
+
+		.simple-inputs {
+			grid-template-columns: 1fr;
+			border-radius: 25px;
+		}
+
+		.black-pill {
+			border-radius: 25px 25px 0 0;
+		}
+
+		.white-pill {
+			border-radius: 0 0 25px 25px;
+		}
+
+		.pill-value {
+			font-size: 1.125rem;
+		}
+
+		.pill-value input {
+			font-size: 1.125rem;
+			width: 70px;
 		}
 	}
 </style>
