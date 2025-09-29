@@ -1,18 +1,18 @@
 <script>
 	let { context = 50 } = $props();
 
-	const quality = $derived(() => {
-		if (context >= 100) return { level: 'Best Possible', emoji: '🏆', color: 'var(--faf-orange)' };
-		if (context >= 90) return { level: 'Excellent', emoji: '🌟', color: 'var(--faf-green)' };
-		if (context >= 80) return { level: 'Very Good', emoji: '💪', color: '#333' };
-		if (context >= 70) return { level: 'Good', emoji: '👍', color: '#555' };
-		if (context >= 60) return { level: 'Fair', emoji: '😐', color: '#666' };
-		if (context >= 50) return { level: 'Compromised', emoji: '⚠️', color: '#777' };
-		if (context >= 40) return { level: 'Poor', emoji: '⛔', color: '#999' };
-		if (context >= 30) return { level: 'Critical', emoji: '🚨', color: '#aaa' };
-		if (context >= 20) return { level: 'Failing', emoji: '💀', color: '#bbb' };
-		return { level: 'Disaster', emoji: '☠️', color: '#ccc' };
-	}());
+	const quality = $derived(
+		context >= 100 ? { level: 'Best Possible', emoji: '🏆', color: 'var(--faf-orange)' } :
+		context >= 90 ? { level: 'Excellent', emoji: '🌟', color: 'var(--faf-green)' } :
+		context >= 80 ? { level: 'Very Good', emoji: '💪', color: '#333' } :
+		context >= 70 ? { level: 'Good', emoji: '👍', color: '#555' } :
+		context >= 60 ? { level: 'Fair', emoji: '😐', color: '#666' } :
+		context >= 50 ? { level: 'Compromised', emoji: '⚠️', color: '#777' } :
+		context >= 40 ? { level: 'Poor', emoji: '⛔', color: '#999' } :
+		context >= 30 ? { level: 'Critical', emoji: '🚨', color: '#aaa' } :
+		context >= 20 ? { level: 'Failing', emoji: '💀', color: '#bbb' } :
+		{ level: 'Disaster', emoji: '☠️', color: '#ccc' }
+	);
 </script>
 
 <div class="quality-indicator" style="background: {quality.color}">

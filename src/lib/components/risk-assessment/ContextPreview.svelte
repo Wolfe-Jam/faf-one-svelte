@@ -3,32 +3,32 @@
 
 	const isInferior = $derived(aiContext < 90);
 
-	const bullets = $derived(() => {
-		if (aiContext >= 90) return [
+	const bullets = $derived(
+		aiContext >= 90 ? [
 			"Building exactly what was designed",
 			"Team is in flow state",
 			"Shipping championship code",
 			"AI augments productivity effectively",
 			"Predictable delivery timeline",
 			{ text: "PROJECT SUCCESS", isLast: true }
-		];
-		if (aiContext >= 75) return [
+		] :
+		aiContext >= 75 ? [
 			"Mostly on track",
 			"Some re-explanation needed",
 			"Quality holding steady",
 			"Minor inefficiencies creeping in",
 			"Still manageable with effort",
 			{ text: "RISKY BUT POSSIBLE", isLast: true }
-		];
-		if (aiContext >= 60) return [
+		] :
+		aiContext >= 60 ? [
 			"Starting to cut corners",
 			"Re-explaining requirements weekly",
 			"Quality slipping",
 			"AI making occasional mistakes",
 			"Timeline starting to stretch",
 			{ text: "DELAYS GUARANTEED", isLast: true }
-		];
-		if (aiContext >= 50) return [
+		] :
+		aiContext >= 50 ? [
 			"You are literally flipping a coin with AI",
 			"Half the context = double the confusion",
 			"Building the wrong thing efficiently",
@@ -36,8 +36,8 @@
 			"AI WILL make mistakes, not might",
 			"Setup for delays and incorrect code",
 			{ text: "PROJECT FAILURE", isLast: true }
-		];
-		if (aiContext >= 30) return [
+		] :
+		aiContext >= 30 ? [
 			"Major gaps in understanding",
 			"Endless rework cycles",
 			"Good developers considering leaving",
@@ -45,8 +45,8 @@
 			"Project failure becoming likely",
 			"Every sprint is a crisis",
 			{ text: "PROJECT FAILURE", isLast: true }
-		];
-		if (aiContext >= 20) return [
+		] :
+		aiContext >= 20 ? [
 			"Nobody remembers the original goal",
 			"Complete chaos",
 			"Team morale critical",
@@ -54,8 +54,7 @@
 			"Burning money with no progress",
 			"Technical debt out of control",
 			{ text: "PROJECT FAILURE", isLast: true }
-		];
-		return [
+		] : [
 			"Project death spiral",
 			"Complete restart needed",
 			"Reputation destroyed",
@@ -63,8 +62,8 @@
 			"Team has given up",
 			"Failure is guaranteed",
 			{ text: "PROJECT FAILURE", isLast: true }
-		];
-	}());
+		]
+	);
 </script>
 
 <div class="context-preview">
