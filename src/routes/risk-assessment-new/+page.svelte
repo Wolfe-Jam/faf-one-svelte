@@ -152,7 +152,7 @@
 				<div class="meter-container">
 					<div
 						class="meter-fill"
-						style="width: {successRate}%; background: {successRate >= 90 ? 'var(--faf-green)' : successRate > 70 ? 'var(--faf-black)' : successRate > 50 ? '#666' : successRate > 30 ? '#999' : '#ff4444'}"
+						style="width: {successRate}%; background: {successRate >= 90 ? 'var(--faf-green)' : successRate > 70 ? 'var(--faf-black)' : successRate > 50 ? '#666' : successRate > 30 ? '#999' : '#ff4444'}; border-radius: {successRate >= 90 ? '20px 0 0 20px' : '20px'}"
 					>
 						<span
 							class="meter-text"
@@ -435,48 +435,69 @@
 		top: 0;
 		bottom: 0;
 		width: 10%;
-		background: repeating-linear-gradient(
-			45deg,
-			transparent,
-			transparent 3px,
-			rgba(255, 255, 255, 0.2) 3px,
-			rgba(255, 255, 255, 0.2) 6px
-		);
+		background: var(--faf-black);
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		border-left: 2px dashed white;
+		border-left: none;
+		border-radius: 0 20px 20px 0;
 	}
 
 	.buffer-indicator::after {
 		content: '';
 		position: absolute;
-		bottom: -20px;
+		bottom: -25px;
 		left: 50%;
 		transform: translateX(-50%);
-		width: 1px;
-		height: 15px;
-		background: var(--faf-orange);
+		width: 2px;
+		height: 20px;
+		background: var(--faf-black);
+		animation: pulse 2s infinite;
+		box-shadow: 0 0 4px rgba(0,0,0,0.2);
+	}
+
+	.buffer-indicator::before {
+		content: '';
+		position: absolute;
+		bottom: -45px;
+		left: 0;
+		right: 0;
+		height: 2px;
+		background: linear-gradient(90deg, transparent, var(--faf-black), transparent);
 		animation: pulse 2s infinite;
 	}
 
 	.buffer-text {
 		color: white;
-		font-weight: 700;
-		font-size: 0.75rem;
+		font-weight: 900;
+		font-size: 1rem;
 		text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 	}
 
 	.buffer-explanation {
-		background: var(--faf-orange);
+		background: var(--faf-black);
 		color: white;
-		padding: 0.125rem 0.5rem;
-		border-radius: 4px;
+		padding: 0.25rem 0.75rem;
+		border-radius: 6px;
 		font-weight: 700;
 		font-style: normal;
 		animation: highlight 2s infinite;
 		display: inline-block;
-		margin-left: 0.25rem;
+		margin-left: 0.5rem;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+		position: relative;
+	}
+
+	.buffer-explanation::before {
+		content: '';
+		position: absolute;
+		top: -15px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 2px;
+		height: 12px;
+		background: var(--faf-black);
+		animation: pulse 2s infinite;
 	}
 
 	@keyframes pulse {
