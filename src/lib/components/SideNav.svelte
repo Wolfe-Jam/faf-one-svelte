@@ -45,7 +45,7 @@
 
 <nav class="side-nav" class:open={isOpen} onmouseenter={handleMouseEnter} onmouseleave={handleMouseLeave}>
 	<div class="nav-header">
-		<h3>🏆 .faf Navigation</h3>
+		<h3>.faf Menu</h3>
 	</div>
 
 	<div class="nav-section">
@@ -57,8 +57,9 @@
 
 	<div class="nav-section">
 		<h4>Products</h4>
-		<a href="https://www.fafcli.dev/" target="_blank">⚡ CLI</a>
+		<a href="https://www.fafcli.dev/" target="_blank">📺 CLI</a>
 		<a href="/mcp" onclick={() => isOpen = false}>🤖 MCP Server</a>
+		<a href="https://fafdev.tools/" target="_blank">🧰 Web Tools</a>
 		<a href="https://chromewebstore.google.com/detail/lnecebepmpjpilldfmndnaofbfjkjlkm" target="_blank">🌐 Chrome Extension</a>
 	</div>
 
@@ -68,6 +69,7 @@
 		<a href="/support" onclick={() => isOpen = false}>🛟 Software Club</a>
 		<a href="/founders" onclick={() => isOpen = false}>🏆 Join Movement</a>
 		<a href="/calculator" onclick={() => isOpen = false}>🧮 ROI Calculator</a>
+		<a href="/risk-assessment" onclick={() => isOpen = false}>🎯 Risk Assessment</a>
 	</div>
 
 	<div class="nav-section">
@@ -76,11 +78,6 @@
 		<a href="/press" onclick={() => isOpen = false}>📰 Press Kit</a>
 		<a href="/terms" onclick={() => isOpen = false}>📜 Terms</a>
 		<a href="/privacy" onclick={() => isOpen = false}>🔒 Privacy</a>
-	</div>
-
-	<div class="nav-footer">
-		<p class="tagline">The JPEG for AI™</p>
-		<p class="motto">No FAFfing About</p>
 	</div>
 </nav>
 
@@ -91,7 +88,7 @@
 <style>
 	.menu-trigger {
 		position: fixed;
-		top: 1rem;
+		top: 0.5rem;
 		left: 1rem;
 		z-index: 1001;
 		background: var(--faf-orange);
@@ -134,6 +131,7 @@
 		padding: 2rem 1.5rem 1rem;
 		border-bottom: 2px solid var(--faf-orange);
 		margin-bottom: 1rem;
+		text-align: center;
 	}
 
 	.nav-header h3 {
@@ -175,31 +173,6 @@
 		background: rgba(255, 107, 53, 0.1);
 		color: var(--faf-orange);
 		transform: translateX(5px);
-	}
-
-	.nav-footer {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		padding: 1.5rem;
-		border-top: 1px solid #333;
-		text-align: center;
-	}
-
-	.tagline {
-		margin: 0 0 0.5rem 0;
-		color: var(--faf-orange);
-		font-weight: 700;
-		font-size: 0.875rem;
-	}
-
-	.motto {
-		margin: 0;
-		color: #666;
-		font-size: 0.75rem;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
 	}
 
 	.overlay {

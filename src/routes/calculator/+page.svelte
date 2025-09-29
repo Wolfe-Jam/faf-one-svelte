@@ -2,13 +2,13 @@
 	let teamSize = $state(5);
 	let hoursPerWeek = $state(10);
 	let hourlyRate = $state(75);
-	let contextSwitches = $state(20);
+	let contextSwitches = $state(5);
 	
 	// Real calculations based on actual metrics
 	const minutesSaved = $derived(hoursPerWeek * 60 * 0.85); // 85% time saved (20 min to 3 min = 85% reduction)
 	const weeklySavings = $derived((minutesSaved / 60) * hourlyRate * teamSize);
 	const yearlySavings = $derived(weeklySavings * 52);
-	const contextTimeSaved = $derived(contextSwitches * 15 * teamSize * 52); // 15 min per context switch
+	const contextTimeSaved = $derived(contextSwitches * 5 * 15 * teamSize * 52); // 5 days/week, 15 min per context switch
 	const totalSavings = $derived(yearlySavings + (contextTimeSaved / 60 * hourlyRate));
 	const roi = $derived((totalSavings / 100) * 100); // $100 annual cost
 </script>
@@ -80,16 +80,16 @@
 			
 			<div class="input-group">
 				<label for="switches">
-					Context Switches/Week
-					<span class="input-help">Times you re-explain project context</span>
+					Context Switches/Day
+					<span class="input-help">Times you re-explain project context per day</span>
 				</label>
-				<input 
-					type="range" 
+				<input
+					type="range"
 					id="switches"
 					bind:value={contextSwitches}
-					min="5" 
-					max="100" 
-					step="5"
+					min="1"
+					max="20"
+					step="1"
 				/>
 				<div class="input-value">{contextSwitches} times</div>
 			</div>
@@ -249,12 +249,70 @@
 		width: 100%;
 		margin: 1rem 0;
 	}
+
+	/* Custom slider colors using IDs */
+	#team-size {
+		-webkit-appearance: none;
+		appearance: none;
+		height: 8px;
+		background: #1a1a1a;
+		border-radius: 5px;
+		outline: none;
+	}
+
+	#hours {
+		-webkit-appearance: none;
+		appearance: none;
+		height: 8px;
+		background: #2ECC71;
+		border-radius: 5px;
+		outline: none;
+	}
+
+	#rate {
+		-webkit-appearance: none;
+		appearance: none;
+		height: 8px;
+		background: #FF5252;
+		border-radius: 5px;
+		outline: none;
+	}
+
+	#switches {
+		-webkit-appearance: none;
+		appearance: none;
+		height: 8px;
+		background: #0CC0DF;
+		border-radius: 5px;
+		outline: none;
+	}
+
+	/* Style the slider thumb */
+	input[type="range"]::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		appearance: none;
+		width: 20px;
+		height: 20px;
+		background: white;
+		border: 2px solid currentColor;
+		cursor: pointer;
+		border-radius: 50%;
+	}
+
+	input[type="range"]::-moz-range-thumb {
+		width: 20px;
+		height: 20px;
+		background: white;
+		border: 2px solid currentColor;
+		cursor: pointer;
+		border-radius: 50%;
+	}
 	
 	.input-value {
 		text-align: right;
 		font-size: 1.25rem;
 		font-weight: 700;
-		color: var(--faf-orange);
+		color: var(--faf-black);
 		font-family: var(--font-mono);
 	}
 	
