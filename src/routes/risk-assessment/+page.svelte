@@ -791,12 +791,13 @@
 	.context-stories {
 		margin-top: 3rem;
 		padding: 3rem 2rem;
-		background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+		background: linear-gradient(135deg, #0a0a0a 0%, #2a2a2a 50%, #0a0a0a 100%);
 		border-radius: 12px;
 		text-align: center;
 		max-width: 1200px;
 		margin-left: auto;
 		margin-right: auto;
+		border: 1px solid #333;
 	}
 
 	.context-stories h3 {
