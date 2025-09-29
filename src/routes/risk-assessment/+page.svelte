@@ -76,8 +76,8 @@
 <div class="risk-hero">
 	<div class="container">
 		<h1>🎯 Project Risk Assessment</h1>
-		<p class="subtitle">The REAL Cost of Context</p>
-		<p class="tagline">If you're responsible for a software project and not using .faf... how responsible are you?</p>
+		<p class="subtitle">The REAL Cost of Inferior Context</p>
+		<p class="tagline">If you're responsible for a software project and not using .faf...<br>how responsible are you?</p>
 	</div>
 </div>
 
@@ -112,7 +112,7 @@
 
 			<div class="input-group">
 				<label for="weeks">
-					Planned Timeline
+					Project Timeline (weeks)
 					<span class="input-help">Original project duration</span>
 				</label>
 				<input
@@ -169,7 +169,9 @@
 					</div>
 				</div>
 				<p class="meter-label">
-					{#if successRate > 80}
+					{#if successRate >= 90}
+						Professional Grade (10% real-world buffer)
+					{:else if successRate > 80}
 						Professional Grade
 					{:else if successRate > 60}
 						Rolling the Dice
