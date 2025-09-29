@@ -791,7 +791,7 @@
 	.context-stories {
 		margin-top: 3rem;
 		padding: 3rem 2rem;
-		background: linear-gradient(135deg, #000000 0%, #3a3a3a 50%, #000000 100%);
+		background: linear-gradient(90deg, #2a2a2a 0%, #000000 50%, #2a2a2a 100%);
 		border-radius: 12px;
 		text-align: center;
 		max-width: 1200px;
