@@ -144,7 +144,7 @@
 
 			<div class="input-group">
 				<label for="multiplier">
-					Timeline Impact (days)
+					Timeline Impact Multiplier: {impactMultiplier}x
 					<span class="input-help">How much does poor context multiply timeline? (2x is conservative)</span>
 				</label>
 				<input
@@ -156,6 +156,13 @@
 					step="0.5"
 					class="timeline-slider"
 				/>
+				<div class="slider-scale">
+					<span>1.5x</span>
+					<span>2x</span>
+					<span>3x</span>
+					<span>5x</span>
+					<span>10x</span>
+				</div>
 				<div class="input-value">{delayDays} days late</div>
 			</div>
 
@@ -525,6 +532,21 @@
 		border: 3px solid #ff4444 !important;
 		border-radius: 50%;
 		cursor: pointer;
+	}
+
+	.slider-scale {
+		display: flex;
+		justify-content: space-between;
+		font-size: 0.75rem;
+		color: #666;
+		margin-top: -0.5rem;
+		margin-bottom: 0.75rem;
+		font-weight: 600;
+	}
+
+	.slider-scale span:nth-child(2) {
+		color: var(--faf-black);
+		font-weight: 700;
 	}
 
 	.input-value {
