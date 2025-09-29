@@ -768,13 +768,13 @@
 		flex-direction: column;
 		justify-content: space-between;
 		flex: 1;
-		gap: 0.35rem;
+		gap: 0.75rem;
 	}
 
 	.context-preview li {
 		color: #444;
 		font-size: 0.875rem;
-		line-height: 1.3;
+		line-height: 1.5;
 		position: relative;
 		padding-left: 1.5rem;
 		font-weight: 500;
