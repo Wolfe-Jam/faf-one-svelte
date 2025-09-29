@@ -152,11 +152,11 @@
 				<div class="meter-container">
 					<div
 						class="meter-fill"
-						style="width: {successRate}%; background: {successRate > 70 ? 'var(--faf-black)' : successRate > 50 ? '#666' : '#ccc'}"
+						style="width: {successRate}%; background: {successRate >= 90 ? 'var(--faf-green)' : successRate > 70 ? 'var(--faf-black)' : successRate > 50 ? '#666' : '#ccc'}"
 					>
 						<span
 							class="meter-text"
-							style="color: {successRate >= 90 ? '#4CAF50' : successRate < 50 ? '#FF6B6B' : 'white'}"
+							style="color: white"
 						>
 							{Math.round(successRate)}%
 						</span>
