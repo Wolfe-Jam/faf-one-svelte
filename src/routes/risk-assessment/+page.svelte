@@ -156,7 +156,7 @@
 					step="0.5"
 					class="timeline-slider"
 				/>
-				<div class="input-value">{Math.round((actualWeeks - projectWeeks) * 5)} days late</div>
+				<div class="input-value">{delayDays} days late</div>
 			</div>
 
 			<div class="context-preview">
