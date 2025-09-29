@@ -160,23 +160,37 @@
 
 			<div class="context-preview">
 				<h4>What {aiContext}% AI Context Really Means:</h4>
-				<p>
+				<ul>
 					{#if aiContext >= 90}
-						Building exactly what was designed. Team is in flow state. Shipping championship code.
+						<li>Building exactly what was designed</li>
+						<li>Team is in flow state</li>
+						<li>Shipping championship code</li>
 					{:else if aiContext >= 75}
-						Mostly on track. Some re-explanation needed. Quality holding steady.
+						<li>Mostly on track</li>
+						<li>Some re-explanation needed</li>
+						<li>Quality holding steady</li>
 					{:else if aiContext >= 60}
-						Starting to cut corners. Re-explaining requirements weekly. Quality slipping.
+						<li>Starting to cut corners</li>
+						<li>Re-explaining requirements weekly</li>
+						<li>Quality slipping</li>
 					{:else if aiContext >= 50}
-						Half the context = double the confusion. Building the wrong thing efficiently. Team frustration rising.
+						<li>Half the context = double the confusion</li>
+						<li>Building the wrong thing efficiently</li>
+						<li>Team frustration rising</li>
 					{:else if aiContext >= 30}
-						Major gaps in understanding. Endless rework cycles. Good developers considering leaving.
+						<li>Major gaps in understanding</li>
+						<li>Endless rework cycles</li>
+						<li>Good developers considering leaving</li>
 					{:else if aiContext >= 20}
-						Nobody remembers the original goal. Complete chaos. Team morale critical.
+						<li>Nobody remembers the original goal</li>
+						<li>Complete chaos</li>
+						<li>Team morale critical</li>
 					{:else}
-						Project death spiral. Complete restart needed. Reputation destroyed.
+						<li>Project death spiral</li>
+						<li>Complete restart needed</li>
+						<li>Reputation destroyed</li>
 					{/if}
-				</p>
+				</ul>
 			</div>
 
 		</div>
@@ -711,12 +725,27 @@
 		font-weight: 700;
 	}
 
-	.context-preview p {
+	.context-preview ul {
 		margin: 0;
+		padding-left: 1.5rem;
+		list-style: none;
+	}
+
+	.context-preview li {
 		color: #666;
-		font-style: italic;
 		font-size: 0.95rem;
-		line-height: 1.4;
+		line-height: 1.6;
+		margin-bottom: 0.25rem;
+		position: relative;
+		padding-left: 1rem;
+	}
+
+	.context-preview li:before {
+		content: "•";
+		color: var(--faf-orange);
+		font-weight: bold;
+		position: absolute;
+		left: 0;
 	}
 
 	.context-stories {
