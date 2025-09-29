@@ -47,6 +47,108 @@
 - Status: Championship grade performance
 - All features must work properly before claiming they do
 
+## 🎨 Svelte Blueprint Prototyping - Our Design Methodology
+
+**Blueprint first, Svelte second.**
+
+When creating new features or pages:
+1. **Design Phase**: Create the prototype using HTML/CSS first
+   - Design FOR Svelte (plan component boundaries)
+   - Identify where state will live
+   - Plan prop flow and component hierarchy
+   - Keep CSS organized for easy component extraction
+2. **Implementation Phase**: Translate blueprint to Svelte
+   - Extract components as planned
+   - Move CSS to component scope
+   - Add state and reactivity
+   - No figuring out design during implementation
+
+This prevents:
+- 850+ line CSS soup files
+- Emergency refactoring sessions
+- Scope creep from "let's just do it"
+- Mixing design decisions with implementation
+
+## 🏪 GALLERY-SVELTE Component Marketplace
+
+**Location**: `/Users/wolfejam/GALLERY-SVELTE`
+
+All components with monetizable value should be earmarked for GALLERY-SVELTE inclusion.
+
+### Current Candidates from this project:
+1. **RiskSlider** - Customizable slider with color themes and display values
+2. **Pill Input Design** - Black/white contrasting input pills (Duration | Cost)
+3. **Success Meter** - With 10% buffer visualization
+4. **ImpactDisplay** - Multiplier and delay days display
+5. **ComparisonCard** - Before/after comparison cards
+6. **ContextPreview** - Dynamic bullet point preview based on percentage
+7. **QualityIndicator** - Emoji + color-coded quality levels
+
+### Process for G-S preparation:
+- Keep components generic and reusable
+- Document props clearly
+- Remove project-specific logic
+- Include example usage
+- Consider theming/customization options
+
+### Immediate Marketplace Opportunities
+
+**Established Marketplaces for Svelte Components:**
+1. **Gumroad** - Direct sales, keep 90%+, instant setup
+2. **UI8.net** - Premium UI marketplace, good for component packs
+3. **Creative Market** - Design-focused, good for stylish components
+4. **CodeCanyon** (Envato) - Massive audience, 50-70% revenue share
+5. **GitHub Sponsors** - Sponsor-only private repos with components
+6. **Lemon Squeezy** - Modern, developer-friendly, good analytics
+
+**Pricing Strategy:**
+- **Individual Components**: $15-29 (RiskSlider, QualityIndicator)
+- **Component Pairs**: $39-49 (Pill Inputs + Success Meter)
+- **Full Risk Assessment Kit**: $79-99 (all 7 components)
+- **Developer License**: 3x single license
+- **Team/Agency License**: 10x single license
+
+**Quick Launch Strategy:**
+1. Bundle the Risk Assessment components as "Risk Dashboard Kit"
+2. Create a demo site on Vercel/Netlify
+3. List on Gumroad TODAY (lowest friction)
+4. Then expand to CodeCanyon (biggest audience)
+5. Use revenue to fund GALLERY-SVELTE launch
+
+**Why these will sell:**
+- Svelte is hot, component ecosystem still growing
+- Our components are production-tested
+- Clean, modern design with real business use cases
+- FAF brand credibility (once established)
+
+### Alternative: Direct G-S Launch Strategy
+
+**No-Brainer Subscription Model:**
+- **$19/month** - Access to entire component library
+- **$199/year** - Annual discount (10 months price)
+- **$499 lifetime** - One-time purchase option
+
+**Zero-Cost Marketing Strategy:**
+1. **r/sveltejs** - "Show HN" style post with free starter component
+2. **Svelte Discord** - Share in #showcase channel
+3. **Twitter/X** - Tag @sveltejs and Rich Harris
+4. **Dev.to** - "Building Production Svelte Components" article series
+5. **Svelte Society** - Submit to component directory
+6. **GitHub** - Public repo with README linking to G-S
+
+**Market Research Approach:**
+- Launch with 10-15 solid components
+- Add 2-3 new components monthly based on user requests
+- Include source code + TypeScript definitions
+- Offer Figma/design files for premium tier
+
+**Why This Wins:**
+- No marketplace fees (100% revenue)
+- Direct relationship with customers
+- Recurring revenue > one-time sales
+- Community-driven = free marketing
+- First-mover advantage in Svelte component subscriptions
+
 ## 🏁 GOLDEN RULES - Professional Standards
 
 ### Git Commit Protocol (REQUIRED)

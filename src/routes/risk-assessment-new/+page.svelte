@@ -8,32 +8,25 @@
 	const defaults = {
 		aiContext: 55,
 		projectDuration: 12,
-		projectCost: 18000
+		weeklyBurn: 18000
 	};
 
 	let aiContext = $state(defaults.aiContext);
 	let projectDuration = $state(defaults.projectDuration);
-	let projectCost = $state(defaults.projectCost);
+	let weeklyBurn = $state(defaults.weeklyBurn);
+
+	// For the pill input display
+	let projectCost = $state(18000);
 	let costMode = $state('weekly'); // 'weekly' or 'hourly'
-	let hoursPerWeek = $state(40);
-
-	// Calculate weekly burn and total base cost from inputs
-	const weeklyBurn = $derived(
-		costMode === 'weekly' ? projectCost :
-		projectCost * hoursPerWeek // hourly rate * hours per week
-	);
-
-	const baseTotalCost = $derived(
-		costMode === 'weekly' ? projectCost * projectDuration :
-		projectCost * hoursPerWeek * projectDuration // hourly * hours/week * weeks
-	);
 
 	const projectWeeks = $derived(projectDuration);
+	const baseTotalCost = $derived(weeklyBurn * projectDuration);
 
 	function resetToDefaults() {
 		aiContext = defaults.aiContext;
 		projectDuration = defaults.projectDuration;
-		projectCost = defaults.projectCost;
+		weeklyBurn = defaults.weeklyBurn;
+		projectCost = defaults.weeklyBurn;
 		costMode = 'weekly';
 	}
 
@@ -151,7 +144,7 @@
 		<div class="risk-inputs">
 			<div class="inputs-header">
 				<h2>AI Context Quality %</h2>
-				<button onclick={resetToDefaults} class="reset-button">Reset to Defaults</button>
+				<button onclick={resetToDefaults} class="reset-button">Use Example</button>
 			</div>
 
 			<RiskSlider
@@ -169,6 +162,28 @@
 				<span>Status Quo</span>
 				<span>With .faf →</span>
 			</div>
+
+			<RiskSlider
+				label="Project Timeline (weeks)"
+				helpText="Original project duration"
+				bind:value={projectDuration}
+				min={1}
+				max={52}
+				step={1}
+				displayValue="{projectDuration} weeks"
+				color="gray"
+			/>
+
+			<RiskSlider
+				label="Weekly Project Cost"
+				helpText="Team cost per week (includes overhead)"
+				bind:value={weeklyBurn}
+				min={5000}
+				max={100000}
+				step={5000}
+				displayValue="${weeklyBurn.toLocaleString()}"
+				color="orange"
+			/>
 
 			<div class="multiplier-section">
 				<label>
@@ -505,7 +520,7 @@
 		align-items: center;
 		margin-bottom: 2rem;
 		padding-bottom: 1rem;
-		border-bottom: 2px solid var(--faf-orange);
+		border-bottom: 2px solid var(--faf-green);
 	}
 
 	.inputs-header h2 {
@@ -516,7 +531,7 @@
 
 	.reset-button {
 		padding: 0.5rem 1rem;
-		background: var(--faf-orange);
+		background: var(--faf-green);
 		color: white;
 		border: none;
 		border-radius: 6px;
@@ -527,7 +542,7 @@
 
 	.reset-button:hover {
 		transform: translateY(-2px);
-		box-shadow: 0 4px 8px rgba(255, 107, 53, 0.3);
+		box-shadow: 0 4px 8px rgba(34, 139, 34, 0.3);
 	}
 
 	.context-labels {
