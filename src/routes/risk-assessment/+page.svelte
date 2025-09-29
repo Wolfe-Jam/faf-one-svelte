@@ -159,7 +159,7 @@
 			</div>
 
 			<div class="context-preview">
-				<h4>What {aiContext}% AI Context Really Means:</h4>
+				<h4>💣 What {aiContext < 90 ? 'Inferior' : ''} AI Context Really Means:</h4>
 				<ul>
 					{#if aiContext >= 90}
 						<li>Building exactly what was designed</li>
@@ -167,18 +167,21 @@
 						<li>Shipping championship code</li>
 						<li>AI augments productivity effectively</li>
 						<li>Predictable delivery timeline</li>
+						<li>Ultimately, PROJECT SUCCESS</li>
 					{:else if aiContext >= 75}
 						<li>Mostly on track</li>
 						<li>Some re-explanation needed</li>
 						<li>Quality holding steady</li>
 						<li>Minor inefficiencies creeping in</li>
 						<li>Still manageable with effort</li>
+						<li>Ultimately, RISKY BUT POSSIBLE</li>
 					{:else if aiContext >= 60}
 						<li>Starting to cut corners</li>
 						<li>Re-explaining requirements weekly</li>
 						<li>Quality slipping</li>
 						<li>AI making occasional mistakes</li>
 						<li>Timeline starting to stretch</li>
+						<li>Ultimately, DELAYS GUARANTEED</li>
 					{:else if aiContext >= 50}
 						<li>You are literally flipping a coin with AI</li>
 						<li>Half the context = double the confusion</li>
@@ -186,6 +189,7 @@
 						<li>Team frustration rising</li>
 						<li>AI WILL make mistakes, not might</li>
 						<li>Setup for delays and incorrect code</li>
+						<li>Ultimately, PROJECT FAILURE</li>
 					{:else if aiContext >= 30}
 						<li>Major gaps in understanding</li>
 						<li>Endless rework cycles</li>
@@ -193,6 +197,7 @@
 						<li>AI is now a liability, not an asset</li>
 						<li>Project failure becoming likely</li>
 						<li>Every sprint is a crisis</li>
+						<li>Ultimately, PROJECT FAILURE</li>
 					{:else if aiContext >= 20}
 						<li>Nobody remembers the original goal</li>
 						<li>Complete chaos</li>
@@ -200,6 +205,7 @@
 						<li>AI actively making things worse</li>
 						<li>Burning money with no progress</li>
 						<li>Technical debt out of control</li>
+						<li>Ultimately, PROJECT FAILURE</li>
 					{:else}
 						<li>Project death spiral</li>
 						<li>Complete restart needed</li>
@@ -207,6 +213,7 @@
 						<li>AI is generating garbage</li>
 						<li>Team has given up</li>
 						<li>Failure is guaranteed</li>
+						<li>Ultimately, PROJECT FAILURE</li>
 					{/if}
 				</ul>
 			</div>
@@ -727,13 +734,16 @@
 	}
 
 	.context-preview {
-		margin-top: 0.75rem;
-		padding: 1.25rem;
+		margin-top: 1rem;
+		padding: 1.5rem;
 		background: linear-gradient(135deg, #fff 0%, #f8f8f8 100%);
 		border-radius: 12px;
 		border: 2px solid #e0e0e0;
 		box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 		transition: all 0.3s ease;
+		min-height: 180px;
+		display: flex;
+		flex-direction: column;
 	}
 
 	.context-preview:hover {
@@ -742,34 +752,29 @@
 	}
 
 	.context-preview h4 {
-		margin: 0 0 0.75rem 0;
+		margin: 0 0 1rem 0;
 		color: var(--faf-orange);
 		font-size: 0.875rem;
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
 		font-weight: 800;
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-	}
-
-	.context-preview h4:before {
-		content: "⚡";
-		font-size: 1.1rem;
 	}
 
 	.context-preview ul {
 		margin: 0;
 		padding-left: 0;
 		list-style: none;
-		display: grid;
-		gap: 0.4rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		flex: 1;
+		gap: 0.35rem;
 	}
 
 	.context-preview li {
 		color: #444;
 		font-size: 0.875rem;
-		line-height: 1.4;
+		line-height: 1.3;
 		position: relative;
 		padding-left: 1.5rem;
 		font-weight: 500;
@@ -781,6 +786,21 @@
 		font-weight: bold;
 		position: absolute;
 		left: 0;
+		font-size: 1rem;
+	}
+
+	.context-preview li:last-child {
+		margin-top: auto;
+		padding-top: 0.5rem;
+		border-top: 1px solid #e0e0e0;
+		font-weight: 800;
+		color: var(--faf-black);
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	.context-preview li:last-child:before {
+		content: "⚠️";
 		font-size: 1rem;
 	}
 
