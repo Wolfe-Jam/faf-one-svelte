@@ -336,24 +336,8 @@
 	</div>
 
 	<div class="context-stories">
-		<h3>What {aiContext}% AI Context Really Means:</h3>
-		<div class="story-text">
-			{#if aiContext >= 90}
-				Building exactly what was designed. Team is in flow state. Shipping championship code.
-			{:else if aiContext >= 75}
-				Mostly on track. Some re-explanation needed. Quality holding steady.
-			{:else if aiContext >= 60}
-				Starting to cut corners. Re-explaining requirements weekly. Quality slipping.
-			{:else if aiContext >= 50}
-				Half the context = double the confusion. Building the wrong thing efficiently. Team frustration rising.
-			{:else if aiContext >= 30}
-				Major gaps in understanding. Endless rework cycles. Good developers considering leaving.
-			{:else if aiContext >= 20}
-				Nobody remembers the original goal. Complete chaos. Team morale critical.
-			{:else}
-				Project death spiral. Complete restart needed. Reputation destroyed.
-			{/if}
-		</div>
+		<h3>Some decisions in tech are easy.</h3>
+		<div class="story-text">Using .faf for Context Management is one of them.</div>
 	</div>
 </div>
 
@@ -806,8 +790,8 @@
 
 	.context-stories {
 		margin-top: 3rem;
-		padding: 2rem;
-		background: #f8f8f8;
+		padding: 3rem 2rem;
+		background: var(--faf-black);
 		border-radius: 12px;
 		text-align: center;
 		max-width: 1200px;
@@ -817,14 +801,17 @@
 
 	.context-stories h3 {
 		margin: 0 0 1rem 0;
-		color: var(--faf-black);
+		color: white;
+		font-size: 2.5rem;
+		font-weight: 900;
+		line-height: 1.2;
 	}
 
 	.story-text {
-		font-size: 1.125rem;
-		color: #666;
-		font-style: italic;
-		line-height: 1.6;
+		font-size: 1.75rem;
+		color: var(--faf-orange);
+		font-weight: 700;
+		line-height: 1.4;
 	}
 
 	@media (max-width: 968px) {
