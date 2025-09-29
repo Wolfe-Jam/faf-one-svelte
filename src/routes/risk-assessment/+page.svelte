@@ -627,21 +627,25 @@
 	}
 
 	.cost-headline {
-		display: flex;
-		align-items: baseline;
-		gap: 1rem;
-		margin-bottom: 2rem;
-		padding-bottom: 1.5rem;
+		display: block;
+		margin-bottom: 1.5rem;
+		padding-bottom: 1rem;
 		border-bottom: 2px solid var(--faf-orange);
 	}
 
 	.cost-label {
-		font-size: 1.25rem;
-		font-weight: 600;
-		opacity: 0.9;
+		display: block;
+		font-size: 0.875rem;
+		font-weight: 700;
+		color: #999;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		margin-bottom: 0.5rem;
+		opacity: 1;
 	}
 
 	.cost-number {
+		display: block;
 		font-size: 3.5rem;
 		font-weight: 900;
 		color: var(--faf-orange);
