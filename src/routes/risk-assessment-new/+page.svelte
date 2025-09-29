@@ -152,7 +152,7 @@
 				<div class="meter-container">
 					<div
 						class="meter-fill"
-						style="width: {successRate}%; background: {successRate >= 90 ? 'var(--faf-green)' : successRate > 70 ? 'var(--faf-black)' : successRate > 50 ? '#666' : '#ccc'}"
+						style="width: {successRate}%; background: {successRate >= 90 ? 'var(--faf-green)' : successRate > 70 ? 'var(--faf-black)' : successRate > 50 ? '#666' : successRate > 30 ? '#999' : '#ff4444'}"
 					>
 						<span
 							class="meter-text"
