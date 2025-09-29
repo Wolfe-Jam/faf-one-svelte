@@ -491,15 +491,40 @@
 	}
 
 	.timeline-slider {
+		-webkit-appearance: none;
+		appearance: none;
+		width: 100%;
+		height: 8px;
 		background: #ff4444 !important;
+		border-radius: 5px;
+		outline: none;
+		opacity: 1;
+		transition: opacity 0.2s;
+		cursor: pointer;
+	}
+
+	.timeline-slider:hover {
+		opacity: 0.9;
 	}
 
 	.timeline-slider::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		appearance: none;
+		width: 24px;
+		height: 24px;
+		background: white;
 		border: 3px solid #ff4444 !important;
+		border-radius: 50%;
+		cursor: pointer;
 	}
 
 	.timeline-slider::-moz-range-thumb {
+		width: 24px;
+		height: 24px;
+		background: white;
 		border: 3px solid #ff4444 !important;
+		border-radius: 50%;
+		cursor: pointer;
 	}
 
 	.input-value {
