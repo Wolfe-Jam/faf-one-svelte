@@ -19,18 +19,18 @@
 	// 25% context = 3x
 	// 10% context = 5x
 	// 0% context = 10x
-	const impactMultiplier = $derived(() => {
-		if (aiContext >= 95) return 1.0;
-		if (aiContext >= 90) return 1.2;
-		if (aiContext >= 75) return 1.5;
-		if (aiContext >= 60) return 1.75;
-		if (aiContext >= 50) return 2.0;
-		if (aiContext >= 40) return 2.5;
-		if (aiContext >= 30) return 3.0;
-		if (aiContext >= 20) return 4.0;
-		if (aiContext >= 10) return 5.0;
-		return 10.0;
-	}());
+	const impactMultiplier = $derived(
+		aiContext >= 95 ? 1.0 :
+		aiContext >= 90 ? 1.2 :
+		aiContext >= 75 ? 1.5 :
+		aiContext >= 60 ? 1.75 :
+		aiContext >= 50 ? 2.0 :
+		aiContext >= 40 ? 2.5 :
+		aiContext >= 30 ? 3.0 :
+		aiContext >= 20 ? 4.0 :
+		aiContext >= 10 ? 5.0 :
+		10.0
+	);
 
 	function resetToDefaults() {
 		aiContext = defaults.aiContext;
