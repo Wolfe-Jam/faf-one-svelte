@@ -901,7 +901,7 @@
 
 	.story-text {
 		font-size: 1.75rem;
-		color: var(--faf-orange);
+		color: var(--faf-green);
 		font-weight: 700;
 		line-height: 1.4;
 	}
