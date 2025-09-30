@@ -288,13 +288,13 @@
 			<div class="impact-summary">
 				<div class="cost-headline">
 					<span class="cost-label">The REAL Cost at {aiContext}% AI Context:</span>
-					<span class="cost-number">${costOverrun > 0 ? '+' + costOverrun.toLocaleString() : '0'}</span>
+					<span class="cost-number">{costOverrun > 0 ? '+$' + costOverrun.toLocaleString() : '$0'}</span>
 				</div>
 				<div class="impact-grid">
 					<div class="impact-item">
 						<span class="impact-emoji">💰</span>
 						<span class="impact-label">Extra Cost</span>
-						<span class="impact-value">${costOverrun > 0 ? '+' + costOverrun.toLocaleString() : '0'}</span>
+						<span class="impact-value">{costOverrun > 0 ? '+$' + costOverrun.toLocaleString() + ' Over' : '$0'}</span>
 					</div>
 					<div class="impact-item">
 						<span class="impact-emoji">⏰</span>
@@ -784,7 +784,7 @@
 		display: block;
 		font-size: 3.5rem;
 		font-weight: 900;
-		color: var(--faf-orange);
+		color: #ff4444;
 		font-family: var(--font-mono);
 		line-height: 1;
 	}
@@ -818,7 +818,7 @@
 		display: block;
 		font-size: 1.125rem;
 		font-weight: 900;
-		color: var(--faf-orange);
+		color: #ff4444;
 		font-family: var(--font-mono);
 	}
 
