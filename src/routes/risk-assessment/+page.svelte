@@ -847,7 +847,7 @@
 	.btn-responsible {
 		display: inline-block;
 		padding: 1rem 2rem;
-		background: var(--faf-orange);
+		background: var(--faf-green);
 		color: white;
 		text-decoration: none;
 		border-radius: 8px;
@@ -858,7 +858,7 @@
 
 	.btn-responsible:hover {
 		transform: translateY(-2px);
-		box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+		box-shadow: 0 4px 12px rgba(34, 139, 34, 0.3);
 	}
 
 	/* Context Stories */

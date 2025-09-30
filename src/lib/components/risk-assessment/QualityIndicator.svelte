@@ -2,7 +2,7 @@
 	let { context = 50 } = $props();
 
 	const quality = $derived(
-		context >= 100 ? { level: 'Best Possible', emoji: '🏆', color: 'var(--faf-orange)' } :
+		context >= 100 ? { level: 'Best Possible', emoji: '🏆', color: 'var(--faf-green)' } :
 		context >= 90 ? { level: 'Excellent', emoji: '🌟', color: 'var(--faf-green)' } :
 		context >= 80 ? { level: 'Very Good', emoji: '💪', color: '#333' } :
 		context >= 70 ? { level: 'Good', emoji: '👍', color: '#555' } :
