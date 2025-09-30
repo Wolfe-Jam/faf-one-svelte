@@ -288,13 +288,13 @@
 			<div class="impact-summary">
 				<div class="cost-headline">
 					<span class="cost-label">The REAL Cost at {aiContext}% AI Context:</span>
-					<span class="cost-number">{costOverrun > 0 ? '+$' + costOverrun.toLocaleString() : '$0'}</span>
+					<span class="cost-number" style="color: {costOverrun > 0 ? '#ff4444' : 'white'}">{costOverrun > 0 ? '+$' + costOverrun.toLocaleString() : '$0'}</span>
 				</div>
 				<div class="impact-grid">
 					<div class="impact-item">
 						<span class="impact-emoji">💰</span>
 						<span class="impact-label">Extra Cost</span>
-						<span class="impact-value">{costOverrun > 0 ? '+$' + costOverrun.toLocaleString() + ' Over' : '$0'}</span>
+						<span class="impact-value" style="color: {costOverrun > 0 ? '#ff4444' : 'white'}">{costOverrun > 0 ? '+$' + costOverrun.toLocaleString() + ' Over' : '$0'}</span>
 					</div>
 					<div class="impact-item">
 						<span class="impact-emoji">⏰</span>
@@ -659,6 +659,8 @@
 		font-size: 0.875rem;
 		font-style: italic;
 		transition: all 0.3s ease;
+		position: relative;
+		min-height: 3rem;
 	}
 
 	.meter-label.highlight-buffer {
@@ -721,7 +723,11 @@
 		display: inline-block;
 		margin-left: 0.5rem;
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-		position: relative;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		margin-top: 0.5rem;
+		white-space: nowrap;
 	}
 
 	.buffer-explanation::before {
@@ -766,7 +772,7 @@
 		display: block;
 		margin-bottom: 1.5rem;
 		padding-bottom: 1rem;
-		border-bottom: 2px solid var(--faf-orange);
+		border-bottom: 2px solid white;
 	}
 
 	.cost-label {
