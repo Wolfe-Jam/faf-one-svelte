@@ -6,17 +6,31 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "test": "npm run check && npm run type-check",
+    "deploy": "npm run test && npm run build && vercel --prod"
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "^3.0.0",
     "@sveltejs/kit": "^2.0.0",
     "@sveltejs/vite-plugin-svelte": "^4.0.0",
     "svelte": "^5.0.0",
+    "svelte-check": "^4.3.2",
+    "tslib": "^2.8.1",
+    "typescript": "^5.9.2",
     "vite": "^5.0.0"
   },
-  "description": "FAF.ONE - The JPEG for AI | Foundational AI-context Format - Professional AI-Context Management",
-  "keywords": ["faf", "ai-context", "context-mirroring"],
+  "description": "FAF.ONE - Project DNA ✨ for ANY AI | Foundational AI-context Format - Professional AI-Context Management",
+  "keywords": [
+    "faf",
+    "ai-context",
+    "context-mirroring"
+  ],
   "author": "wolfejam",
   "license": "MIT"
 }

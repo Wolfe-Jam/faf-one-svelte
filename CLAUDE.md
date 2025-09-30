@@ -5,10 +5,21 @@
 
 **No fake team numbers, no made-up testimonials, no inflated statistics. Just the real, hard-earned achievements that took thousands of hours to build.**
 
+## 🏁 .faf Promise
+**"We'll get you to the starting line. Whether you win the race is on you."**
+
+.faf ensures 90% technical success rate:
+- Code ships on time
+- AI builds the right thing
+- Budget stays on track
+- Technical debt manageable
+
+What .faf can't fix: bad ideas, poor timing, weak marketing, no product-market fit
+
 ## Project Overview
 - **Project**: faf.one website
 - **Stack**: SvelteKit with Svelte 5 runes
-- **Purpose**: The official format authority for .faf - The JPEG for AI
+- **Purpose**: The official format authority for .faf - Project DNA ✨ for ANY AI
 
 ## Real Achievements Only
 - ☑️ MCP (Model Context Protocol) with 800+ weekly downloads
@@ -29,7 +40,7 @@
 - **Approved emojis**: 🧡 ⚡️ 🏁 🏆 🏎️ 🍊 ⌚ ☑️ (use ☑️ not ✅ wherever possible)
 - **Format**: YAML and 🍜 noodles for AI, converts to markdown/TXT for humans
 - **Brand Name**: Always `.faf` (lowercase) when referring to the format
-- **Tagline Style**: "The JPEG for AI™" - ALWAYS white, bold, and underlined for maximum impact
+- **Tagline Style**: "Project DNA ✨ for ANY AI" - ALWAYS white, bold, and underlined for maximum impact
 - **Tagline Alignment**: Can be left-aligned or right-aligned, but NEVER centered
 
 ## Development Rules - TRUST IS EVERYTHING

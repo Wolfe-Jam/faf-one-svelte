@@ -69,7 +69,7 @@
 		<a href="/support" onclick={() => isOpen = false}>🛟 Software Club</a>
 		<a href="/founders" onclick={() => isOpen = false}>🏆 Join Movement</a>
 		<a href="/calculator" onclick={() => isOpen = false}>🧮 ROI Calculator</a>
-		<a href="/risk-assessment" onclick={() => isOpen = false}>🎯 Risk Assessment</a>
+		<a href="/risk-assessment" onclick={() => isOpen = false}>☑️ Risk Assessment</a>
 	</div>
 
 	<div class="nav-section">

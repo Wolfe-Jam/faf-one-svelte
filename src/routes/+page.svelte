@@ -59,18 +59,32 @@
 </script>
 
 <svelte:head>
-	<title>.faf = The JPEG for AI | FAST, TRUSTED 🧡⚡️</title>
+	<title>.faf = Project DNA ✨ for ANY AI | FAST, TRUSTED 🧡⚡️</title>
 	<script async src="https://js.stripe.com/v3/buy-button.js"></script>
 </svelte:head>
 
 {#if showSplash}
-<div class="splash-screen" onclick={() => {
-	showSplash = false;
-	isLoaded = true;
-	if (browser) {
-		sessionStorage.setItem('faf-visited', 'true');
-	}
-}}>
+<button
+	class="splash-screen"
+	onclick={() => {
+		showSplash = false;
+		isLoaded = true;
+		if (browser) {
+			sessionStorage.setItem('faf-visited', 'true');
+		}
+	}}
+	onkeydown={(e) => {
+		if (e.key === 'Enter' || e.key === ' ' || e.key === 'Escape') {
+			showSplash = false;
+			isLoaded = true;
+			if (browser) {
+				sessionStorage.setItem('faf-visited', 'true');
+			}
+		}
+	}}
+	type="button"
+	aria-label="Skip splash screen"
+>
 	<div class="splash-container">
 		<FafLogo
 			size="medium"
@@ -80,7 +94,7 @@
 		/>
 		<p class="skip-hint">Press ESC or click to skip</p>
 	</div>
-</div>
+</button>
 {/if}
 
 <Navigation />
@@ -122,6 +136,18 @@
 		z-index: 9999;
 		overflow: hidden;
 		cursor: pointer;
+		border: none;
+		padding: 0;
+		margin: 0;
+		font: inherit;
+		color: inherit;
+		text-align: inherit;
+		outline: none;
+	}
+
+	.splash-screen:focus {
+		outline: 2px solid var(--faf-orange);
+		outline-offset: -2px;
 	}
 
 	.splash-container {

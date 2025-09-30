@@ -4,9 +4,18 @@
 	import ScrollRevealText from '$lib/components/ScrollRevealText.svelte';
 	import TypewriterText from '$lib/components/TypewriterText.svelte';
 	import DownloadCounter from '$lib/components/DownloadCounter.svelte';
+	import HeroStats from '$lib/components/hero/HeroStats.svelte';
+	import HeroTestimonials from '$lib/components/hero/HeroTestimonials.svelte';
+	import HeroScorePopup from '$lib/components/hero/HeroScorePopup.svelte';
+	import HeroQuotes from '$lib/components/hero/HeroQuotes.svelte';
+	import HeroPathways from '$lib/components/hero/HeroPathways.svelte';
+	import HeroPartners from '$lib/components/hero/HeroPartners.svelte';
+	import HeroBadges from '$lib/components/hero/HeroBadges.svelte';
+	import '$lib/styles/hero.css';
 	
-	// Removed scrollY prop - not needed
-	
+	// Animation control
+	let shouldAnimate = $state(true);
+
 	let titleRef = $state(null);
 	let subtitleRef = $state(null);
 	let ctaRef = $state(null);
@@ -17,22 +26,69 @@
 
 	const codeText = 'faf init';
 	const scores = [85, 88, 91, 94, 96, 99];
-	
-	onMount(() => {
-		setTimeout(() => {
-			isVisible = true;
-		}, 100);
 
-		// Type out the code
-		let index = 0;
-		const typeInterval = setInterval(() => {
-			if (index <= codeText.length) {
-				codeTyped = codeText.slice(0, index);
-				index++;
-			} else {
-				clearInterval(typeInterval);
-			}
-		}, 150);
+	// Check if animations should run
+	function checkAnimationPreference() {
+		const ANIMATION_COOLDOWN = 30 * 60 * 1000; // 30 minutes
+		const lastAnimated = localStorage.getItem('faf_last_animated');
+		const visitCount = parseInt(localStorage.getItem('faf_visit_count') || '0');
+
+		// Always animate for new users or special cases
+		if (!lastAnimated || visitCount === 0) {
+			return true;
+		}
+
+		// Check if enough time has passed
+		const timeSinceLastAnimation = Date.now() - parseInt(lastAnimated);
+		if (timeSinceLastAnimation > ANIMATION_COOLDOWN) {
+			return true;
+		}
+
+		// Show animation every 5th visit
+		if (visitCount % 5 === 0) {
+			return true;
+		}
+
+		// Check for campaign/direct link (UTM parameters)
+		const urlParams = new URLSearchParams(window.location.search);
+		if (urlParams.has('utm_source') || urlParams.has('ref')) {
+			return true;
+		}
+
+		return false;
+	}
+
+	onMount(() => {
+		// Update visit count
+		const visitCount = parseInt(localStorage.getItem('faf_visit_count') || '0') + 1;
+		localStorage.setItem('faf_visit_count', visitCount.toString());
+
+		// Check if we should animate
+		shouldAnimate = checkAnimationPreference();
+
+		if (shouldAnimate) {
+			localStorage.setItem('faf_last_animated', Date.now().toString());
+			setTimeout(() => {
+				isVisible = true;
+			}, 100);
+		} else {
+			// Skip animations, show content immediately
+			isVisible = true;
+			codeTyped = codeText;
+		}
+
+		// Type out the code (only if animating)
+		if (shouldAnimate) {
+			let index = 0;
+			const typeInterval = setInterval(() => {
+				if (index <= codeText.length) {
+					codeTyped = codeText.slice(0, index);
+					index++;
+				} else {
+					clearInterval(typeInterval);
+				}
+			}, 150);
+		}
 
 		// Random score popup every 8-15 seconds
 		const showRandomScore = () => {
@@ -60,7 +116,7 @@
 
 <section class="hero">
 	<div class="container">
-		<div class="hero-content" class:visible={isVisible}>
+		<div class="hero-content" class:visible={isVisible} class:no-animate={!shouldAnimate}>
 			<!-- Main Title - MASSIVE -->
 			<div bind:this={titleRef} class="title-wrapper">
 				<div class="main-logo">
@@ -82,87 +138,15 @@
 			
 			<!-- Tagline - BOLD -->
 			<div bind:this={subtitleRef} class="tagline">
-				⚡ <span class="emoji">🧡</span> <span class="tagline-underline">The JPEG for AI</span> <span class="emoji">🩵</span> ⚡
+				<span class="tagline-underline">Project DNA ✨ for ANY AI</span>
 			</div>
 			
-			<!-- BLOCK 1: Claude Quote -->
-			<ScrollRevealText threshold={0.5} delay={0}>
-				<div class="text-block claude-quote">
-					{#if isVisible}
-						<TypewriterText 
-							text={"\"It's so logical if it didn't exist, AI would have built it itself\" — Claude"}
-							speed={30}
-							delay={200}
-						/>
-					{:else}
-						<span style="opacity: 0">"It's so logical if it didn't exist, AI would have built it itself" — Claude</span>
-					{/if}
-				</div>
-			</ScrollRevealText>
-			
-			<!-- BLOCK 2: Authority Statements -->
-			<ScrollRevealText threshold={0.5} delay={0}>
-				<div class="text-block authority-statement">
-					<div>The AI Context MCP with 1,100+ downloads and growing</div>
-					<div>The AI Chrome Extension, LIVE and approved by Google,</div>
-					<div><em>Ready, and waiting for Claude-beta and Gemini</em></div>
-				</div>
-			</ScrollRevealText>
-			
-			<!-- BLOCK 3: Core Message with Visual -->
-			<ScrollRevealText threshold={0.5} delay={0}>
-				<div class="text-block core-message">
-					<h2>AI context needed a file format, it got one— .faf</h2>
-					{#if false}
-					<!-- TODO: Add faf-jpeg-for-ai.png to static folder -->
-					<div class="transformation-visual">
-						<img src="/faf-jpeg-for-ai.png" alt="From development chaos to clean .faf format - the JPEG for AI" class="jpeg-for-ai-img" />
-					</div>
-					{/if}
-					<p class="classic-tagline">Stop faffing about with context — use .faf — no excuses left</p>
-				</div>
-			</ScrollRevealText>
-			
-			<!-- BLOCK 4: Inventor Quote -->
-			<ScrollRevealText threshold={0.5} delay={0}>
-				<div class="text-block quote-item">
-					<p>"package.json wasn't built for this, .faf was"</p>
-					<span class="quote-author">— .faf Inventor</span>
-				</div>
-			</ScrollRevealText>
-			
-			<!-- BLOCK 5: Claude Code Quote -->
-			<ScrollRevealText threshold={0.5} delay={0}>
-				<div class="text-block quote-item">
-					<p>"package.json gives me a list of dependencies,<br/>.faf shows me how to use them"</p>
-					<span class="quote-author">— Claude Code (Anthropic)</span>
-				</div>
-			</ScrollRevealText>
+			<!-- Quotes Section -->
+			<HeroQuotes {isVisible} />
 			
 			
-			<!-- Authority Badges -->
-			<div class="authority-badges">
-				<a href="https://github.com/Wolfe-Jam" class="badge-item badge-mcp" target="_blank" rel="noopener">
-					<img src="/mcp-logo.png" alt="Model Context Protocol" class="mcp-logo" />
-					<span class="badge-text">Model Context Protocol<br><small>Open-sourced by Anthropic</small></span>
-				</a>
-				<a href="https://chrome.google.com/webstore/detail/faf" class="badge-item badge-chrome" target="_blank" rel="noopener">
-					<img src="/chrome-web-store-badge-medium.png" alt="Available in the Chrome Web Store" class="chrome-badge-img" />
-				</a>
-			</div>
-
-			<!-- Official MCP Registry Badges -->
-			<div class="official-badges">
-				<h3 class="official-badges-title">Official MCP Format</h3>
-				<div class="badges-row">
-					<a href="https://github.com/modelcontextprotocol/servers" class="official-badge" target="_blank" rel="noopener">
-						☑️ MCP Registry (PR #2759 Pending)
-					</a>
-					<a href="https://npmjs.com/package/claude-faf-mcp" class="official-badge" target="_blank" rel="noopener">
-						📦 NPM Package
-					</a>
-				</div>
-			</div>
+			<!-- Badges Section -->
+			<HeroBadges />
 			
 			<!-- Live NPM Stats with Animated Counter -->
 			<div class="live-npm-stats">
@@ -172,96 +156,14 @@
 			<!-- Verified Testing Stats -->
 			<div class="testing-stats">
 				<h3 class="testing-title">Verified Testing Results</h3>
-				<div class="stats-grid">
-					<div class="stat-item">
-						<span class="stat-number">10,000+</span>
-						<span class="stat-label">Projects Tested</span>
-					</div>
-					<div class="stat-item">
-						<span class="stat-number">9.3/10</span>
-						<span class="stat-label">AI Average Rating</span>
-					</div>
-					<div class="stat-item">
-						<span class="stat-number">154+</span>
-						<span class="stat-label">Formats Validated</span>
-					</div>
-					<div class="stat-item">
-						<span class="stat-number">&lt;50ms</span>
-						<span class="stat-label">Processing Time</span>
-					</div>
-				</div>
+				<HeroStats />
 			</div>
 			
 			<!-- AI Testimonials from Testing -->
-			<div class="ai-testimonials">
-				<h3 class="testimonials-title">What the BIG-3 AI's said during Verified Testing</h3>
-				<div class="testimonial-grid">
-					<div class="testimonial-item claude-item">
-						<p class="testimonial-quote">"Should become the standard"</p>
-						<div class="testimonial-author">
-							<span class="author-name">Claude Code</span>
-							<span class="author-rating">(9.5/10 Rating)</span>
-						</div>
-					</div>
-					<div class="testimonial-item openai-item">
-						<p class="testimonial-quote">"Every project should have one"</p>
-						<div class="testimonial-author">
-							<span class="author-name">OpenAI Codex CLI</span>
-							<span class="author-rating">(9/10 Rating)</span>
-						</div>
-					</div>
-					<div class="testimonial-item gemini-item">
-						<p class="testimonial-quote">"README evolution for AI era"</p>
-						<div class="testimonial-author">
-							<span class="author-name">Google Gemini CLI</span>
-							<span class="author-rating">(9.5/10 Rating)</span>
-						</div>
-					</div>
-				</div>
-			</div>
+			<HeroTestimonials />
 			
-			<!-- Three Pathways -->
-			<div class="pathways">
-				<h3 class="pathways-title">Choose Your Path to AI Context</h3>
-				<div class="pathways-grid">
-					<div class="pathway">
-						<span class="pathway-icon">🌐</span>
-						<span class="pathway-name">WEB</span>
-						<span class="pathway-desc">Chrome Extension</span>
-					</div>
-					<div class="pathway featured">
-						<span class="pathway-icon">🤖</span>
-						<span class="pathway-name">MCP</span>
-						<span class="pathway-desc">Model Context</span>
-					</div>
-					<div class="pathway">
-						<span class="pathway-icon">📺</span>
-						<span class="pathway-name">CLI</span>
-						<span class="pathway-desc">Command Line</span>
-					</div>
-				</div>
-			</div>
-			
-			<!-- Terminal Preview -->
-			<div class="terminal">
-				<div class="terminal-header">
-					<span class="terminal-dot red"></span>
-					<span class="terminal-dot yellow"></span>
-					<span class="terminal-dot green"></span>
-				</div>
-				<div class="terminal-body">
-					<div class="terminal-line">
-						<span class="prompt">$</span> {codeTyped}<span class="cursor">|</span>
-					</div>
-					{#if codeTyped === codeText}
-						<div class="terminal-output">
-							<div class="output-line">☑️ .faf created (22% → 99% in 3 seconds)</div>
-							<div class="output-line">🏆 AI-Readiness Score: <span class="score-green">99%</span></div>
-							<div class="output-line">⌚ Processing time: <span class="score-cyan">&lt;50ms</span></div>
-						</div>
-					{/if}
-				</div>
-			</div>
+			<!-- Pathways and Terminal -->
+			<HeroPathways {codeTyped} {codeText} />
 			
 			<!-- CTAs -->
 			<div bind:this={ctaRef} class="cta-wrapper">
@@ -279,16 +181,13 @@
 				</a>
 			</div>
 			
-			<!-- Trust Signal -->
-			<div class="trust-signal">
-				<p class="trust-text">
-					Trusted by developers at 
-					<span class="company">Anthropic</span> and 
-					<span class="company">Google Chrome</span>
-				</p>
-			</div>
+			<!-- Partners -->
+			<HeroPartners />
 		</div>
 	</div>
+
+	<!-- Score Popup -->
+	<HeroScorePopup show={showScorePopup} score={currentScore} />
 </section>
 
 <style>
@@ -445,164 +344,12 @@
 	}
 	
 	/* Text blocks with scroll reveal */
-	.text-block {
-		margin: 2.5rem 0;
-		padding: 1.5rem 0;
-		min-height: 100px;
-	}
+	/* Text block and quote styles moved to HeroQuotes.svelte */
 	
 	
-	
-	.text-block.quote-item {
-		text-align: center;
-		max-width: 700px;
-		margin: 0 auto;
-	}
-	
-	.text-block.quote-item p {
-		font-size: 1.25rem;
-		font-style: italic;
-		color: var(--faf-gray-dark);
-		margin-bottom: 0.5rem;
-		line-height: 1.6;
-		font-weight: 600;
-	}
-	
-	.text-block.quote-item .quote-author {
-		font-size: 1rem;
-		color: var(--faf-orange);
-		font-weight: 700;
-		font-style: normal;
-	}
-	
-	
-	.quote-author {
-		color: var(--faf-orange);
-		font-size: 1.125rem;
-	}
-	
-	
-	.authority-badges {
-		display: flex;
-		justify-content: center;
-		gap: 2rem;
-		margin: 2rem 0 3rem;
-		flex-wrap: wrap;
-		animation: slideInUp 0.7s ease-out 0.3s backwards;
-	}
-	
-	.badge-item {
-		display: flex;
-		align-items: center;
-		gap: 0.75rem;
-		padding: 0.75rem 1.5rem;
-		background: white;
-		border: 2px solid var(--faf-gray-medium);
-		border-radius: 999px;
-		font-size: 0.875rem;
-		font-weight: 600;
-		color: var(--faf-gray-dark);
-		transition: all 0.3s ease;
-		cursor: pointer;
-		text-decoration: none;
-	}
-	
-	.badge-item:hover {
-		border-color: var(--faf-orange);
-		transform: translateY(-2px);
-		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-	}
-	
-	
-	.mcp-logo {
-		height: 36px;
-		width: auto;
-	}
-	
-	.badge-mcp {
-		padding: 0.75rem 1.25rem;
-		cursor: pointer;
-		text-decoration: none;
-		color: inherit;
-	}
-	
-	.badge-mcp:hover {
-		transform: translateY(-2px);
-	}
-	
-	.badge-mcp:hover .mcp-logo {
-		filter: brightness(1.1);
-	}
-	
-	.chrome-badge-img {
-		height: 50px;
-		width: auto;
-	}
-	
-	.badge-chrome {
-		padding: 0;
-		background: transparent;
-		border: none;
-	}
-	
-	.badge-chrome:hover {
-		transform: translateY(-2px);
-		filter: brightness(1.05);
-	}
-	
-	.badge-text {
-		line-height: 1.3;
-		text-align: left;
-	}
-	
-	.badge-text small {
-		font-size: 0.75rem;
-		color: var(--faf-gray);
-		font-weight: 500;
-	}
+	/* Badge styles moved to HeroBadges.svelte */
 
-	.official-badges {
-		margin: 2rem 0;
-		text-align: center;
-		animation: slideInUp 0.7s ease-out 0.35s backwards;
-	}
-
-	.official-badges-title {
-		font-size: 1.125rem;
-		font-weight: 700;
-		color: var(--faf-black);
-		margin-bottom: 1rem;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-	}
-
-	.badges-row {
-		display: flex;
-		justify-content: center;
-		gap: 1rem;
-		flex-wrap: wrap;
-	}
-
-	.official-badge {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.5rem;
-		padding: 0.75rem 1.5rem;
-		background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
-		color: white;
-		border-radius: 999px;
-		font-weight: 600;
-		font-size: 0.9rem;
-		text-decoration: none;
-		transition: all 0.3s ease;
-		box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
-	}
-
-	.official-badge:hover {
-		transform: translateY(-2px);
-		box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
-		filter: brightness(1.1);
-	}
+	/* Official badge styles moved to HeroBadges.svelte */
 
 	.live-npm-stats {
 		display: flex;
@@ -834,151 +581,7 @@
 		color: var(--faf-cyan-dark); /* Using our great cyan #00d4d4 */
 	}
 	
-	.pathways {
-		margin: 3rem 0;
-		animation: slideInUp 0.7s ease-out 0.4s backwards;
-	}
-	
-	.pathways-title {
-		text-align: center;
-		font-size: 1.25rem;
-		color: var(--faf-gray-dark);
-		margin-bottom: 1.5rem;
-		font-weight: 600;
-	}
-	
-	.pathways-grid {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 1rem;
-		max-width: 600px;
-		margin: 0 auto;
-	}
-	
-	.pathway {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 0.5rem;
-		padding: 1.5rem;
-		background: white;
-		border: 2px solid var(--faf-gray-medium);
-		border-radius: 16px;
-		cursor: pointer;
-		transition: all 0.3s ease;
-	}
-	
-	.pathway:hover {
-		transform: translateY(-5px);
-		border-color: var(--faf-orange);
-		box-shadow: 0 10px 30px rgba(255, 107, 53, 0.2);
-	}
-	
-	.pathway.featured {
-		border-color: var(--faf-orange);
-		background: linear-gradient(135deg, white 0%, rgba(255, 107, 53, 0.05) 100%);
-		transform: scale(1.05);
-	}
-	
-	.pathway-icon {
-		font-size: 2.5rem;
-	}
-	
-	.pathway-name {
-		font-weight: 700;
-		font-size: 1.125rem;
-		color: var(--faf-black);
-	}
-	
-	.pathway-desc {
-		font-size: 0.75rem;
-		color: var(--faf-gray-dark);
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
-	}
-	
-	.terminal {
-		max-width: 600px;
-		margin: 3rem auto;
-		background: var(--faf-black);
-		border-radius: 12px;
-		overflow: hidden;
-		box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-		animation: slideInUp 0.7s ease-out 0.4s backwards;
-	}
-	
-	.terminal-header {
-		background: #2D2D2D;
-		padding: 0.75rem;
-		display: flex;
-		gap: 0.5rem;
-	}
-	
-	.terminal-dot {
-		width: 12px;
-		height: 12px;
-		border-radius: 50%;
-	}
-	
-	.terminal-dot.red {
-		background: #FF5F56;
-	}
-	
-	.terminal-dot.yellow {
-		background: #FFBD2E;
-	}
-	
-	.terminal-dot.green {
-		background: #27C93F;
-	}
-	
-	.terminal-body {
-		padding: 1.5rem;
-		font-family: var(--font-mono);
-		font-size: 0.9rem;
-		color: var(--faf-white);
-		min-height: 150px;
-	}
-	
-	.terminal-line {
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-		margin-bottom: 1rem;
-	}
-	
-	.prompt {
-		color: var(--faf-green);
-	}
-	
-	.cursor {
-		animation: blink 1s steps(1) infinite;
-		color: var(--faf-cyan-dark);
-	}
-	
-	@keyframes blink {
-		50% { opacity: 0; }
-	}
-	
-	.terminal-output {
-		margin-top: 1rem;
-		animation: fadeIn 0.5s ease-out;
-	}
-	
-	.output-line {
-		margin: 0.5rem 0;
-		color: #999;
-	}
-	
-	.score-green {
-		color: var(--faf-green);
-		font-weight: 700;
-	}
-	
-	.score-cyan {
-		color: var(--faf-cyan-dark);
-		font-weight: 700;
-	}
+	/* Pathways and terminal styles moved to HeroPathways.svelte */
 	
 	.cta-wrapper {
 		display: flex;
@@ -1009,59 +612,20 @@
 		font-size: 1.25rem;
 	}
 	
-	.trust-signal {
-		margin-top: 3rem;
-		animation: fadeIn 0.7s ease-out 0.6s backwards;
-	}
-	
-	.trust-text {
-		color: var(--faf-gray-dark);
-		font-size: 0.875rem;
-	}
-	
-	.company {
-		font-weight: 600;
-		color: var(--faf-black);
-	}
+	/* Trust signal styles moved to HeroPartners.svelte */
 	
 	
-	@keyframes fadeIn {
-		from { opacity: 0; }
-		to { opacity: 1; }
-	}
-	
-	@keyframes slideInUp {
-		from {
-			opacity: 0;
-			transform: translateY(30px);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
-	}
-	
-	@keyframes bounce {
-		0%, 100% { transform: translateY(0); }
-		50% { transform: translateY(-10px); }
+	/* Animations are now in hero.css */
+
+	/* Disable animations when not needed */
+	.no-animate * {
+		animation-duration: 0s !important;
+		animation-delay: 0s !important;
+		transition-duration: 0s !important;
 	}
 	
 	@media (max-width: 768px) {
-		.authority-badges {
-			flex-direction: column;
-			align-items: center;
-		}
-		
-		.badge-item {
-			width: 100%;
-			max-width: 300px;
-			justify-content: center;
-		}
-		
-		.mcp-logo {
-			width: 24px;
-			height: 24px;
-		}
+		/* Badge media queries moved to HeroBadges.svelte */
 		
 		.testing-stats {
 			grid-template-columns: repeat(2, 1fr);

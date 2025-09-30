@@ -1,0 +1,375 @@
+/* =================================================================
+   HERO SECTION - Shared Styles for All Hero Components
+   ================================================================= */
+
+/* =================================================================
+   CSS Variables - FAF Brand Colors
+   ================================================================= */
+:root {
+	/* Primary Brand Colors */
+	--faf-orange: #FF6B35;
+	--faf-cream: #FFF8F0;
+	--faf-black: #1A1A1A;
+	--faf-white: #FFFFFF;
+
+	/* Secondary Colors */
+	--faf-cyan-dark: #00d4d4;
+	--faf-green: #00C851;
+	--faf-dark: #333333;
+
+	/* Grays */
+	--faf-gray: #999999;
+	--faf-gray-dark: #666666;
+	--faf-gray-medium: #E0E0E0;
+	--faf-gray-light: #F5F5F5;
+
+	/* Font Stacks */
+	--font-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+	--font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* =================================================================
+   Common Animations
+   ================================================================= */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes slideInUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes slideInDown {
+	from {
+		opacity: 0;
+		transform: translateY(-30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes bounce {
+	0%, 100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-10px);
+	}
+}
+
+@keyframes pulse {
+	0%, 100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+	50% {
+		transform: scale(1.05);
+		opacity: 0.9;
+	}
+}
+
+@keyframes blink {
+	0%, 50% {
+		opacity: 1;
+	}
+	51%, 100% {
+		opacity: 0;
+	}
+}
+
+@keyframes steelSheen {
+	0% {
+		left: -100%;
+	}
+	100% {
+		left: 100%;
+	}
+}
+
+/* =================================================================
+   Common Button Styles
+   ================================================================= */
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.75rem 1.5rem;
+	font-weight: 600;
+	border-radius: 8px;
+	text-decoration: none;
+	transition: all 0.3s ease;
+	cursor: pointer;
+	border: 2px solid transparent;
+}
+
+.btn:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.btn-orange {
+	background: var(--faf-orange);
+	color: white;
+	border-color: var(--faf-orange);
+}
+
+.btn-orange:hover {
+	background: #ff8c5e;
+	border-color: #ff8c5e;
+}
+
+.btn-cyan {
+	background: var(--faf-cyan-dark);
+	color: white;
+	border-color: var(--faf-cyan-dark);
+}
+
+.btn-cyan:hover {
+	background: #00e5e5;
+	border-color: #00e5e5;
+}
+
+.btn-outline {
+	background: transparent;
+	border: 2px solid var(--faf-orange);
+	color: var(--faf-orange);
+}
+
+.btn-outline:hover {
+	background: var(--faf-orange);
+	color: white;
+}
+
+.btn-large {
+	padding: 1rem 2rem;
+	font-size: 1.125rem;
+}
+
+/* =================================================================
+   Common Text Styles
+   ================================================================= */
+.hero-title {
+	font-size: 3rem;
+	font-weight: 900;
+	color: var(--faf-black);
+	line-height: 1.1;
+	margin: 0;
+}
+
+.hero-subtitle {
+	font-size: 1.25rem;
+	color: var(--faf-gray-dark);
+	line-height: 1.5;
+	margin: 1rem 0;
+}
+
+.section-title {
+	font-size: 2rem;
+	font-weight: 700;
+	color: var(--faf-black);
+	margin-bottom: 1.5rem;
+	text-align: center;
+}
+
+.accent-text {
+	color: var(--faf-orange);
+	font-weight: 700;
+}
+
+/* =================================================================
+   Common Container Styles
+   ================================================================= */
+.hero-container {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2rem;
+}
+
+.card {
+	background: white;
+	border-radius: 16px;
+	padding: 2rem;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+	transition: all 0.3s ease;
+}
+
+.card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.glass-card {
+	background: rgba(255, 255, 255, 0.95);
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* =================================================================
+   Common Grid Layouts
+   ================================================================= */
+.grid-3 {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 2rem;
+}
+
+.grid-4 {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 2rem;
+}
+
+@media (max-width: 992px) {
+	.grid-4 {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 768px) {
+	.grid-3 {
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+
+	.grid-4 {
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+}
+
+/* =================================================================
+   Common Badge Styles
+   ================================================================= */
+.badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.5rem 1rem;
+	background: var(--faf-gray-light);
+	border-radius: 999px;
+	font-size: 0.875rem;
+	font-weight: 600;
+	transition: all 0.3s ease;
+}
+
+.badge-orange {
+	background: var(--faf-orange);
+	color: white;
+}
+
+.badge-success {
+	background: var(--faf-green);
+	color: white;
+}
+
+/* =================================================================
+   Common Utility Classes
+   ================================================================= */
+.text-center {
+	text-align: center;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+.mt-5 { margin-top: 3rem; }
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+.mb-5 { margin-bottom: 3rem; }
+
+.opacity-50 { opacity: 0.5; }
+.opacity-70 { opacity: 0.7; }
+.opacity-90 { opacity: 0.9; }
+
+/* =================================================================
+   Mobile Responsive Utilities
+   ================================================================= */
+@media (max-width: 768px) {
+	.hero-title {
+		font-size: 2rem;
+	}
+
+	.hero-subtitle {
+		font-size: 1rem;
+	}
+
+	.section-title {
+		font-size: 1.5rem;
+	}
+
+	.hero-container {
+		padding: 1rem;
+	}
+
+	.card {
+		padding: 1.5rem;
+	}
+
+	.hide-mobile {
+		display: none;
+	}
+}
+
+@media (min-width: 769px) {
+	.hide-desktop {
+		display: none;
+	}
+}
+
+/* =================================================================
+   Animation Utilities
+   ================================================================= */
+.animate-fadeIn {
+	animation: fadeIn 0.5s ease-out;
+}
+
+.animate-slideInUp {
+	animation: slideInUp 0.7s ease-out;
+}
+
+.animate-bounce {
+	animation: bounce 2s ease-in-out infinite;
+}
+
+.animate-pulse {
+	animation: pulse 2s ease-in-out infinite;
+}
+
+/* Animation delays */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+
+/* Fill mode to prevent flashing */
+.animation-backwards {
+	animation-fill-mode: backwards;
+}

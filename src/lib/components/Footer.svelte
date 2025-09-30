@@ -9,7 +9,7 @@
 			<div class="footer-brand">
 				<div class="footer-logo">
 					<FafLogo size="small" color="orange" />
-					<span class="logo-tagline">The JPEG for AI™</span>
+					<span class="logo-tagline">Project DNA ✨ for ANY AI</span>
 				</div>
 				<p class="footer-mission">NO BS. No FAFfing About.</p>
 				<div class="footer-stats">

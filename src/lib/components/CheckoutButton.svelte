@@ -1,6 +1,10 @@
-<script>
-	export let email = '';
-	export let variant = 'primary';
+<script lang="ts">
+	import type { CheckoutButtonProps } from '$lib/types';
+
+	let {
+		email = '',
+		variant = 'primary' as 'primary' | 'secondary'
+	}: Partial<CheckoutButtonProps> = $props();
 	
 	// Stripe Payment Link - LIVE! 
 	const STRIPE_PAYMENT_LINK = 'https://buy.stripe.com/test_bIY6oJ5Yx8328tq3cc'; // ✅ Connected to Stripe
