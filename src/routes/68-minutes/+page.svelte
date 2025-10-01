@@ -55,7 +55,7 @@
 		</p>
 		<p style="color: var(--faf-orange); font-style: italic; font-weight: 600;">
 			And yes, 68 is my birth year (1968) and my favorite number.<br/>
-			The universe has a sense of humor. ✨
+			The universe has a sense of humor. 🍊✨
 		</p>
 
 		<h2>Try it yourself</h2>
