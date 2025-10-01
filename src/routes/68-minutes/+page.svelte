@@ -1,6 +1,19 @@
 <svelte:head>
 	<title>68 Minutes: B&W to Technicolor | FAF CLI</title>
 	<meta name="description" content="B&W-to-color TVs took ~20 years. We transformed our CLI in 68 minutes." />
+
+	<!-- Open Graph / Social Media -->
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="68 Minutes: B&W to Technicolor" />
+	<meta property="og:description" content=".faf Project DNA ✨ for ANY AI - B&W-to-color TVs took ~20 years. We transformed our CLI in 68 minutes. ⚡" />
+	<meta property="og:image" content="https://www.faf.one/images/68-minutes-og.png" />
+	<meta property="og:url" content="https://www.faf.one/68-minutes" />
+
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="68 Minutes: B&W to Technicolor" />
+	<meta name="twitter:description" content=".faf Project DNA ✨ for ANY AI - B&W-to-color TVs took ~20 years. We transformed our CLI in 68 minutes. ⚡" />
+	<meta name="twitter:image" content="https://www.faf.one/images/68-minutes-og.png" />
 </svelte:head>
 
 <div class="back-nav">
