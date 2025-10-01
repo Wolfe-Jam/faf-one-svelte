@@ -119,7 +119,6 @@
 						<img src="/faf-jpeg-for-ai.png" alt="From development chaos to clean .faf format - the JPEG for AI" class="jpeg-for-ai-img" />
 					</div>
 					{/if}
-					<p class="classic-tagline">Stop faffing about with context — use .faf — no excuses left</p>
 				</div>
 			</ScrollRevealText>
 			

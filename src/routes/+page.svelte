@@ -114,6 +114,11 @@
 		<Pricing />
 	</div>
 	<EmailCapture />
+
+	<div class="final-cta">
+		<p class="classic-tagline">Stop faffing about with context — use .faf — no excuses left</p>
+	</div>
+
 	<Footer />
 </main>
 
@@ -181,5 +186,26 @@
 	/* Add scroll padding for anchor links */
 	[id] {
 		scroll-margin-top: 80px; /* Extra space when scrolling to sections */
+	}
+
+	.final-cta {
+		text-align: center;
+		padding: 4rem 2rem;
+		background: var(--faf-cream);
+	}
+
+	.classic-tagline {
+		font-family: var(--font-mono);
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: var(--faf-black);
+		margin: 0;
+		letter-spacing: -0.02em;
+	}
+
+	@media (max-width: 768px) {
+		.classic-tagline {
+			font-size: 1.125rem;
+		}
 	}
 </style>
