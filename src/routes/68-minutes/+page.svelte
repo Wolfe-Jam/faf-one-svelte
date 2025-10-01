@@ -67,7 +67,7 @@
 		</p>
 		<div style="margin: 2rem 0;">
 			<a href="https://www.npmjs.com/package/faf-cli" target="_blank" class="cta" style="margin-right: 1rem;">View on NPM →</a>
-			<a href="https://github.com/Wolfe-Jam/faf-cli" target="_blank" class="cta">GitHub →</a>
+			<a href="https://github.com/Wolfe-Jam/faf" target="_blank" class="cta">GitHub →</a>
 		</div>
 
 		<hr class="divider">
