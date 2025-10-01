@@ -84,7 +84,7 @@
 			<h2>📧 Media Contact</h2>
 			<div class="contact-card">
 				<p><strong>Email:</strong> support@faf.one</p>
-				<p><strong>GitHub:</strong> <a href="https://github.com/Wolfe-Jam" target="_blank">@Wolfe-Jam</a></p>
+				<p><strong>GitHub:</strong> <a href="https://github.com/Wolfe-Jam/faf" target="_blank">@Wolfe-Jam</a></p>
 				<p><strong>Website:</strong> <a href="https://faf.one">faf.one</a></p>
 			</div>
 		</section>

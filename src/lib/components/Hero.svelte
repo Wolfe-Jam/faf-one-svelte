@@ -142,7 +142,7 @@
 			
 			<!-- Authority Badges -->
 			<div class="authority-badges">
-				<a href="https://github.com/Wolfe-Jam" class="badge-item badge-mcp" target="_blank" rel="noopener">
+				<a href="https://github.com/Wolfe-Jam/faf" class="badge-item badge-mcp" target="_blank" rel="noopener">
 					<img src="/mcp-logo.png" alt="Model Context Protocol" class="mcp-logo" />
 					<span class="badge-text">Model Context Protocol<br><small>Open-sourced by Anthropic</small></span>
 				</a>

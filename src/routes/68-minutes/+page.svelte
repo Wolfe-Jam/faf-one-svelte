@@ -72,7 +72,7 @@
 
 		<hr class="divider">
 
-		<p style="text-align: center;">Made with 🧡 by <a href="https://github.com/Wolfe-Jam" target="_blank" style="color: var(--faf-orange); text-decoration: none; font-weight: 600;">wolfejam</a></p>
+		<p style="text-align: center;">Made with 🧡 by <a href="https://github.com/Wolfe-Jam/faf" target="_blank" style="color: var(--faf-orange); text-decoration: none; font-weight: 600;">wolfejam</a></p>
 	</div>
 </article>
 
