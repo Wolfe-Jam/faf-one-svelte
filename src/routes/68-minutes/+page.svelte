@@ -120,7 +120,7 @@
 	}
 
 	.animated-title {
-		animation: fadeToOrange 3s ease-in-out forwards;
+		animation: fadeToOrange 6s ease-in-out forwards;
 	}
 
 	@keyframes fadeToOrange {
