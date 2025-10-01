@@ -184,18 +184,18 @@
 		<h2>Voices from the Community</h2>
 		<div class="testimonials-grid">
 			<div class="testimonial">
-				<p>"Started with CLI, now running all three. The community helped me set up MCP in 10 minutes. Dot.faffed for life."</p>
-				<div class="testimonial-author">- CLI Warrior turned Full Stack</div>
+				<p>"Personally I love the tool (and started it) but I think the analogy with a jpg is weak and more likely to be a bit confusing for people as I'd say it's more well known for compression and images and risks some confusion."</p>
+				<div class="testimonial-author">- Community Contributor</div>
 			</div>
 
 			<div class="testimonial">
-				<p>"Chrome Extension user here. Got help from MCP folks on context extraction. This community doesn't care what tool you use, just that you win."</p>
-				<div class="testimonial-author">- Extension Expert</div>
+				<p>"📌 If the goal is clarity across non-technical audiences, I'd cut JPEG entirely. Pick DNA (techy but universal) or Recipe (friendly + concrete)."</p>
+				<div class="testimonial-author">- Early Adopter</div>
 			</div>
 
 			<div class="testimonial">
-				<p>"20min → 3min is real. But the community teaching me HOW to optimize? Priceless. We all race together."</p>
-				<div class="testimonial-author">- Newly Dot.FAFfed Developer</div>
+				<p>"What you're trying to sell is a portable blueprint — a lightweight representation of something larger more complex. Blueprint: A small, rollable sheet that encodes the whole building. DNA: A tiny strand that encodes the entire organism."</p>
+				<div class="testimonial-author">- Developer Advocate</div>
 			</div>
 		</div>
 	</div>
