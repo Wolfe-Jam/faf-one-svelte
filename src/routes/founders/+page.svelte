@@ -190,8 +190,8 @@
 			</div>
 
 			<div class="testimonial">
-				<p>"📌 If the goal is clarity across non-technical audiences, I'd cut JPEG entirely. Pick DNA (techy but universal) or Recipe (friendly + concrete)."</p>
-				<div class="testimonial-author">- Early Adopter</div>
+				<p>"that was fast.. heck yeah now i have a 95% and i'm back to good grades!"</p>
+				<div class="testimonial-author">- First-Time User (went from 52% to 95%)</div>
 			</div>
 
 			<div class="testimonial">
