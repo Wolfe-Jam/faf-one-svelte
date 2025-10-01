@@ -54,7 +54,7 @@
 			68 minutes from disaster to triumph. From monochrome mess to full-color glory.
 		</p>
 		<p style="color: var(--faf-orange); font-style: italic; font-weight: 600;">
-			And yes, 68 is my birth year (1968) and my favorite number.
+			And yes, 68 is my birth year (1968) and my favorite number.<br/>
 			The universe has a sense of humor. ✨
 		</p>
 
