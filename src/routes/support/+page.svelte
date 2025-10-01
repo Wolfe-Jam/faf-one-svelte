@@ -12,7 +12,7 @@
 <main class="support-page">
 	<div class="container">
 		<div class="support-header">
-			<h1>🛟 Software Club</h1>
+			<h1>🤖 Software Club</h1>
 			<p class="subtitle">Features • Ideas • Bugs • No faff to join</p>
 		</div>
 

@@ -588,19 +588,19 @@
 		align-items: center;
 		gap: 0.5rem;
 		padding: 0.75rem 1.5rem;
-		background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+		background: var(--faf-black);
 		color: white;
 		border-radius: 999px;
 		font-weight: 600;
 		font-size: 0.9rem;
 		text-decoration: none;
 		transition: all 0.3s ease;
-		box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 	}
 
 	.official-badge:hover {
 		transform: translateY(-2px);
-		box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+		box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 		filter: brightness(1.1);
 	}
 
@@ -616,11 +616,11 @@
 		align-items: center;
 		gap: 1rem;
 		padding: 1rem 2rem;
-		background: linear-gradient(135deg, #FF6B35 0%, #FF914D 100%);
+		background: var(--faf-black);
 		color: white;
 		border-radius: 999px;
 		font-weight: 700;
-		box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 		animation: pulse 2s ease-in-out infinite;
 	}
 

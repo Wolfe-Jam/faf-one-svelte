@@ -122,7 +122,13 @@
 				
 				<div class="result-card">
 					<div class="result-label">Payback Period</div>
-					<div class="result-value">{Math.round(100 / (totalSavings / 365))} days</div>
+					<div class="result-value">
+						{#if (100 / (totalSavings / 365)) < 1}
+							{Math.round((100 / (totalSavings / 365)) * 24)} hours
+						{:else}
+							{Math.round(100 / (totalSavings / 365))} days
+						{/if}
+					</div>
 				</div>
 			</div>
 			

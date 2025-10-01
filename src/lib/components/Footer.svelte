@@ -3,13 +3,13 @@
 	const currentYear = new Date().getFullYear();
 </script>
 
-<footer class="footer">
+<footer class="footer" id="footer">
 	<div class="container">
 		<div class="footer-grid">
 			<div class="footer-brand">
 				<div class="footer-logo">
 					<FafLogo size="small" color="orange" />
-					<span class="logo-tagline">The JPEG for AI™</span>
+					<span class="logo-tagline">Project DNA ✨ for ANY AI</span>
 				</div>
 				<p class="footer-mission">NO BS. No FAFfing About.</p>
 				<div class="footer-stats">
@@ -32,6 +32,7 @@
 			<div class="footer-column">
 				<h4>Resources</h4>
 				<ul>
+					<li><a href="https://fafdev.tools/welcome.html" target="_blank">Links</a></li>
 					<li><a href="/support">Support</a></li>
 					<li><a href="/calculator">ROI Calculator</a></li>
 					<li><a href="https://billing.stripe.com/p/login/4gM3cx1NPbfo42Lab6bV600" target="_blank">Customer Portal</a></li>

@@ -4,20 +4,9 @@
 	
 	let isMobileMenuOpen = $state(false);
 	let isScrolled = $state(false);
-	
-	onMount(() => {
-		const handleScroll = () => {
-			isScrolled = window.scrollY > 50;
-		};
-		
-		window.addEventListener('scroll', handleScroll);
-		handleScroll(); // Check initial state
-		
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
-	});
-	
+	let showFooterButton = $state(false);
+	let isAtBottom = $state(false);
+
 	const navItems = [
 		{ label: 'About', href: '/about' },
 		{ label: 'Features', href: '#features' },
@@ -26,6 +15,26 @@
 		{ label: 'Pricing', href: '#pricing' },
 		{ label: 'Docs', href: '/docs' }
 	];
+
+	onMount(() => {
+		const handleScroll = () => {
+			isScrolled = window.scrollY > 50;
+			showFooterButton = window.scrollY > 500;
+
+			// Check if at bottom (within 100px of bottom)
+			const scrollHeight = document.documentElement.scrollHeight;
+			const scrollTop = window.scrollY;
+			const clientHeight = window.innerHeight;
+			isAtBottom = scrollHeight - scrollTop - clientHeight < 100;
+		};
+
+		window.addEventListener('scroll', handleScroll);
+		handleScroll();
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	});
 	
 	function handleNavClick(e, href) {
 		// If it's an anchor link (starts with #), smooth scroll
@@ -42,6 +51,17 @@
 	
 	function toggleMobileMenu() {
 		isMobileMenuOpen = !isMobileMenuOpen;
+	}
+
+	function scrollToFooter() {
+		const footer = document.querySelector('#footer');
+		if (footer) {
+			footer.scrollIntoView({ behavior: 'smooth' });
+		}
+	}
+
+	function scrollToTop() {
+		window.scrollTo({ top: 0, behavior: 'smooth' });
 	}
 </script>
 
@@ -77,6 +97,16 @@
 		</button>
 	</div>
 </nav>
+
+{#if showFooterButton}
+	<button
+		class="footer-button"
+		onclick={isAtBottom ? scrollToTop : scrollToFooter}
+		aria-label={isAtBottom ? "Scroll to top" : "Scroll to footer"}
+	>
+		{isAtBottom ? '⏫' : '⏬'}
+	</button>
+{/if}
 
 <style>
 	.navigation {
@@ -246,6 +276,54 @@
 			padding-top: 1rem;
 			width: 100%;
 			justify-content: center;
+		}
+	}
+
+	.footer-button {
+		position: fixed;
+		bottom: 2rem;
+		right: 2rem;
+		width: 3.5rem;
+		height: 3.5rem;
+		background: var(--faf-black);
+		color: white;
+		border: none;
+		border-radius: 50%;
+		font-size: 1.5rem;
+		cursor: pointer;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+		transition: all 0.3s ease;
+		z-index: 99;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		animation: fadeIn 0.3s ease;
+	}
+
+	.footer-button:hover {
+		transform: translateY(2px);
+		box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+		background: var(--faf-orange);
+	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(10px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@media (max-width: 768px) {
+		.footer-button {
+			bottom: 1.5rem;
+			right: 1.5rem;
+			width: 3rem;
+			height: 3rem;
+			font-size: 1.25rem;
 		}
 	}
 </style>
