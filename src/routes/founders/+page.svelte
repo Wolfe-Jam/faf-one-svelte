@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
-	
+	import Footer from '$lib/components/Footer.svelte';
+
 	let spotsRemaining = $state(73); // 100 - 27 early adopters
 	let countdown = $state('');
 	
@@ -249,6 +250,8 @@
 		</div>
 	</div>
 </section>
+
+<Footer />
 
 <style>
 	.back-nav {
