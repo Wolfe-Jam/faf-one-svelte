@@ -195,8 +195,8 @@
 			</div>
 
 			<div class="testimonial">
-				<p>"What you're trying to sell is a portable blueprint — a lightweight representation of something larger more complex. Blueprint: A small, rollable sheet that encodes the whole building. DNA: A tiny strand that encodes the entire organism."</p>
-				<div class="testimonial-author">- Developer Advocate</div>
+				<p>"🔗 Bi-Sync Engine... Files synchronized! Perfect harmony achieved! 💎 Technical Credit 💎 +1 +4 points... I got sent this 🏆 icon (proving what user had done!)"</p>
+				<div class="testimonial-author">- Power User (bi-sync master)</div>
 			</div>
 		</div>
 	</div>
