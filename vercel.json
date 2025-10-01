@@ -1,6 +1,19 @@
 {
   "outputDirectory": "build",
   "buildCommand": "npm run build",
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.faf.one"
+        }
+      ],
+      "destination": "https://faf.one/$1",
+      "permanent": true
+    }
+  ],
   "routes": [
     { "handle": "filesystem" },
     { "src": "/(.*)", "dest": "/index.html" }
