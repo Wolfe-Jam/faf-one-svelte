@@ -120,67 +120,18 @@
 	}
 
 	.animated-title {
-		background: linear-gradient(90deg,
-			#000 0%,
-			#000 100%
-		);
-		background-clip: text;
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 200% 100%;
-		animation: bwToColor 4s ease-in-out forwards;
+		animation: fadeToOrange 3s ease-in-out forwards;
 	}
 
-	@keyframes bwToColor {
+	@keyframes fadeToOrange {
 		0% {
-			background: linear-gradient(90deg, #000 0%, #000 100%);
-			background-clip: text;
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
+			color: #888;
 		}
-		40% {
-			background: linear-gradient(90deg, #000 0%, #000 100%);
-			background-clip: text;
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-		}
-		60% {
-			background: linear-gradient(90deg,
-				#00CED1 0%,
-				#1E90FF 25%,
-				#FF6B35 50%,
-				#FF914D 75%,
-				#FFA500 100%
-			);
-			background-clip: text;
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-			background-size: 200% 100%;
-			background-position: 0% 0%;
+		33% {
+			color: #000;
 		}
 		100% {
-			background: linear-gradient(90deg,
-				#00CED1 0%,
-				#1E90FF 25%,
-				#FF6B35 50%,
-				#FF914D 75%,
-				#FFA500 100%
-			);
-			background-clip: text;
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-			background-size: 200% 100%;
-			background-position: 100% 0%;
-			animation: colorSweep 3s ease-in-out infinite;
-		}
-	}
-
-	@keyframes colorSweep {
-		0%, 100% {
-			background-position: 0% 0%;
-		}
-		50% {
-			background-position: 100% 0%;
+			color: var(--faf-orange);
 		}
 	}
 
