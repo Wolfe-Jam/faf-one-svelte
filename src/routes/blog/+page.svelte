@@ -6,7 +6,7 @@
 			date: 'October 1, 2025',
 			timestamp: '2025-10-01',
 			excerpt: 'B&W-to-color TVs took ~20 years. We transformed our CLI in 68 minutes.',
-			emoji: '⚡️',
+			emoji: '📺🌈',
 			category: 'Story'
 		},
 		{
