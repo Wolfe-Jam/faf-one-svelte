@@ -82,7 +82,7 @@
 			
 			<!-- Tagline - BOLD -->
 			<div bind:this={subtitleRef} class="tagline">
-				⚡ <span class="emoji">🧡</span> <span class="tagline-underline">Project DNA ✨ for ANY AI</span> <span class="emoji">🩵</span> ⚡
+				⚡ <span class="emoji">🧡</span> <span class="tagline-underline">The JPEG for AI</span> <span class="emoji">🩵</span> ⚡
 			</div>
 			
 			<!-- BLOCK 1: Claude Quote -->
