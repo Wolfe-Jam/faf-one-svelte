@@ -10,7 +10,7 @@
 <article class="press-release">
 	<div class="container">
 		<h1 class="animated-title">68 Minutes</h1>
-		<div class="subtitle">B&W-to-Color TVs took ~20 years...<br/>We did it in CLI in 68 minutes ⚡️</div>
+		<div class="subtitle">B&W-to-Color TVs took ~20 years...<br/>We did it for our CLI in 68 minutes ⚡️</div>
 
 		<div class="date">October 1, 2025 • 8:13am → 9:21am EST</div>
 
