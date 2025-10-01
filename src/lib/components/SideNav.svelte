@@ -74,7 +74,7 @@
 
 	<div class="nav-section">
 		<h4>Resources</h4>
-		<a href="/press-center" onclick={() => isOpen = false}>📰 Press Center</a>
+		<a href="/blog" onclick={() => isOpen = false}>📝 Blog & Press</a>
 		<a href="/press" onclick={() => isOpen = false}>📦 Press Kit</a>
 		<a href="/terms" onclick={() => isOpen = false}>📜 Terms</a>
 		<a href="/privacy" onclick={() => isOpen = false}>🔒 Privacy</a>
