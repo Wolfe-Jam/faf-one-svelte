@@ -336,7 +336,7 @@ const stats = await FAF.stats('./project.faf');`}</code></pre>
 		</section>
 		
 		<div class="docs-footer">
-			<p>Need help? <a href="/support">Contact Support</a> or check our <a href="https://github.com/Wolfe-Jam/faf" target="_blank">GitHub</a></p>
+			<p>Need help? <a href="/support">Contact Support</a> or check our <a href="https://github.com/Wolfe-Jam/faf" target="_blank">⭐ GitHub</a></p>
 		</div>
 	</main>
 </div>
