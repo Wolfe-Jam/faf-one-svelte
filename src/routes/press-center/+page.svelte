@@ -70,7 +70,7 @@
 					<span>MCP on NPM</span>
 				</a>
 				<a href="https://github.com/Wolfe-Jam/faf" target="_blank" class="quick-link">
-					<span class="link-emoji">💻</span>
+					<span class="link-emoji">⭐</span>
 					<span>GitHub Repository</span>
 				</a>
 				<a href="https://chromewebstore.google.com/detail/lnecebepmpjpilldfmndnaofbfjkjlkm" target="_blank" class="quick-link">
