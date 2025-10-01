@@ -160,7 +160,7 @@
 					<a href="https://npmjs.com/package/claude-faf-mcp" class="official-badge" target="_blank" rel="noopener">
 						📦 NPM Package
 					</a>
-					<a href="https://npmjs.com/package/faf" class="official-badge cli-badge" target="_blank" rel="noopener">
+					<a href="https://www.npmjs.com/package/faf-cli" class="official-badge cli-badge" target="_blank" rel="noopener">
 						<span class="cli-icon">⚡️</span><span class="cli-text">CLI</span>
 					</a>
 				</div>
