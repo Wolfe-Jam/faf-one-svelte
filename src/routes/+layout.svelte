@@ -13,7 +13,7 @@
 		🚀 PRESS RELEASE 🚀
 	</a>
 	<div class="banner-section-center">
-		🏎️ 3,077 Downloads! • CLI: 1,942 🏆 vs MCP: 1,125 🤖
+		🏎️ 4,100+ Downloads • CLI: 2.4k 🏆 vs MCP: 1.6k 🤖
 	</div>
 	<a href="https://github.com/modelcontextprotocol/servers/pull/2759" target="_blank" rel="noopener" class="banner-section">
 		⚡️ MCP #2759 Pending ⚡️
