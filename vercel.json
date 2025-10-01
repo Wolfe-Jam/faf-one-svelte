@@ -2,5 +2,8 @@
   "outputDirectory": "build",
   "buildCommand": "npm run build",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }
