@@ -160,6 +160,9 @@
 					<a href="https://npmjs.com/package/claude-faf-mcp" class="official-badge" target="_blank" rel="noopener">
 						📦 NPM Package
 					</a>
+					<a href="https://npmjs.com/package/faf" class="official-badge cli-badge" target="_blank" rel="noopener">
+						<span class="cli-icon">⚡️</span><span class="cli-text">CLI</span>
+					</a>
 				</div>
 			</div>
 			
@@ -601,6 +604,10 @@
 		transform: translateY(-2px);
 		box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 		filter: brightness(1.1);
+	}
+
+	.cli-text {
+		color: var(--faf-cyan);
 	}
 
 	.live-npm-stats {
