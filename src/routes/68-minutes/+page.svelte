@@ -9,7 +9,7 @@
 
 <article class="press-release">
 	<div class="container">
-		<h1>68 Minutes</h1>
+		<h1 class="animated-title">68 Minutes</h1>
 		<div class="subtitle">B&W-to-Color TVs took ~20 years...<br/>We did it in CLI in 68 minutes ⚡️</div>
 
 		<div class="date">October 1, 2025 • 8:13am → 9:21am EST</div>
@@ -117,6 +117,71 @@
 		margin-bottom: 0.5rem;
 		color: var(--faf-black);
 		font-weight: 900;
+	}
+
+	.animated-title {
+		background: linear-gradient(90deg,
+			#000 0%,
+			#000 100%
+		);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 200% 100%;
+		animation: bwToColor 4s ease-in-out forwards;
+	}
+
+	@keyframes bwToColor {
+		0% {
+			background: linear-gradient(90deg, #000 0%, #000 100%);
+			background-clip: text;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+		40% {
+			background: linear-gradient(90deg, #000 0%, #000 100%);
+			background-clip: text;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+		60% {
+			background: linear-gradient(90deg,
+				#00CED1 0%,
+				#1E90FF 25%,
+				#FF6B35 50%,
+				#FF914D 75%,
+				#FFA500 100%
+			);
+			background-clip: text;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-size: 200% 100%;
+			background-position: 0% 0%;
+		}
+		100% {
+			background: linear-gradient(90deg,
+				#00CED1 0%,
+				#1E90FF 25%,
+				#FF6B35 50%,
+				#FF914D 75%,
+				#FFA500 100%
+			);
+			background-clip: text;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-size: 200% 100%;
+			background-position: 100% 0%;
+			animation: colorSweep 3s ease-in-out infinite;
+		}
+	}
+
+	@keyframes colorSweep {
+		0%, 100% {
+			background-position: 0% 0%;
+		}
+		50% {
+			background-position: 100% 0%;
+		}
 	}
 
 	h2 {
