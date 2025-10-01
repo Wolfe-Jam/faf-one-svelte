@@ -32,7 +32,7 @@
 
 <article class="blog">
 	<div class="container">
-		<h1>Blog & Press</h1>
+		<h1><span class="blog-text">Blog</span> <span class="ampersand">&</span> <span class="press-text">Press</span></h1>
 		<div class="subtitle">Stories, press releases, and updates from the FAF team</div>
 
 		<div class="posts-grid">
@@ -97,6 +97,18 @@
 		font-weight: 900;
 	}
 
+	.blog-text {
+		color: var(--faf-orange);
+	}
+
+	.ampersand {
+		color: var(--faf-black);
+	}
+
+	.press-text {
+		color: var(--faf-black);
+	}
+
 	.subtitle {
 		font-size: 1.2rem;
 		color: #666;
@@ -134,15 +146,23 @@
 
 	.post-category {
 		display: inline-block;
-		background: var(--faf-orange);
 		color: white;
 		padding: 0.25rem 0.75rem;
-		border-radius: 4px;
+		border-radius: 20px;
 		font-size: 0.875rem;
 		font-weight: 600;
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
 		margin-bottom: 1rem;
+	}
+
+	.post-card[href*="68-minutes"] .post-category,
+	.post-card[href*="story"] .post-category {
+		background: var(--faf-orange);
+	}
+
+	.post-card[href*="press-release"] .post-category {
+		background: var(--faf-black);
 	}
 
 	.post-card h2 {
