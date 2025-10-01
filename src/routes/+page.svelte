@@ -16,45 +16,53 @@
 	let showSplash = $state(true);
 
 	onMount(() => {
-		// Check if user has already visited (session-based to reset on new browser session)
-		if (browser && sessionStorage.getItem('faf-visited')) {
-			// Skip animation if already visited during this session
+		// Check if user has already visited
+		const hasVisited = browser && (
+			sessionStorage.getItem('faf-visited') ||
+			localStorage.getItem('faf-visited')
+		);
+
+		if (hasVisited) {
+			// Skip animation if already visited
 			showSplash = false;
 			isLoaded = true;
-		} else {
-			// First visit in this session - show animation
-			const animationTimeout = setTimeout(() => {
-				showSplash = false;
-				isLoaded = true;
-				if (browser) {
-					sessionStorage.setItem('faf-visited', 'true');
-				}
-			}, 4000);
-
-			// Allow skipping with Escape key or clicking
-			const skipAnimation = () => {
-				clearTimeout(animationTimeout);
-				showSplash = false;
-				isLoaded = true;
-				if (browser) {
-					sessionStorage.setItem('faf-visited', 'true');
-				}
-			};
-
-			const handleKeydown = (e) => {
-				if (e.key === 'Escape' || e.key === ' ' || e.key === 'Enter') {
-					skipAnimation();
-				}
-			};
-
-			window.addEventListener('keydown', handleKeydown);
-
-			// Cleanup
-			return () => {
-				clearTimeout(animationTimeout);
-				window.removeEventListener('keydown', handleKeydown);
-			};
+			return;
 		}
+
+		// First visit - show animation
+		const animationTimeout = setTimeout(() => {
+			showSplash = false;
+			isLoaded = true;
+			if (browser) {
+				sessionStorage.setItem('faf-visited', 'true');
+				localStorage.setItem('faf-visited', 'true');
+			}
+		}, 4000);
+
+		// Allow skipping with Escape key or clicking
+		const skipAnimation = () => {
+			clearTimeout(animationTimeout);
+			showSplash = false;
+			isLoaded = true;
+			if (browser) {
+				sessionStorage.setItem('faf-visited', 'true');
+				localStorage.setItem('faf-visited', 'true');
+			}
+		};
+
+		const handleKeydown = (e) => {
+			if (e.key === 'Escape' || e.key === ' ' || e.key === 'Enter') {
+				skipAnimation();
+			}
+		};
+
+		window.addEventListener('keydown', handleKeydown);
+
+		// Cleanup
+		return () => {
+			clearTimeout(animationTimeout);
+			window.removeEventListener('keydown', handleKeydown);
+		};
 	});
 </script>
 
@@ -69,6 +77,7 @@
 	isLoaded = true;
 	if (browser) {
 		sessionStorage.setItem('faf-visited', 'true');
+		localStorage.setItem('faf-visited', 'true');
 	}
 }}>
 	<div class="splash-container">
