@@ -52,6 +52,7 @@
 		<h4>Main</h4>
 		<a href="/" onclick={() => isOpen = false}>🏠 Home</a>
 		<a href="/about" onclick={() => isOpen = false}>📖 About</a>
+		<a href="/blog" onclick={() => isOpen = false}>📝 Blog & Press</a>
 		<a href="/docs" onclick={() => isOpen = false}>📚 Documentation</a>
 	</div>
 
@@ -74,7 +75,6 @@
 
 	<div class="nav-section">
 		<h4>Resources</h4>
-		<a href="/blog" onclick={() => isOpen = false}>📝 Blog & Press</a>
 		<a href="/press" onclick={() => isOpen = false}>📦 Press Kit</a>
 		<a href="/terms" onclick={() => isOpen = false}>📜 Terms</a>
 		<a href="/privacy" onclick={() => isOpen = false}>🔒 Privacy</a>
