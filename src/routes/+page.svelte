@@ -206,7 +206,7 @@
 		display: inline-block;
 		border-radius: 4px;
 		opacity: 0;
-		animation: fadeInUp 1s ease-out 0.3s forwards;
+		animation: fadeInUp 1s ease-out 4.3s forwards;
 	}
 
 	@keyframes fadeInUp {
