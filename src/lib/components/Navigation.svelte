@@ -284,13 +284,13 @@
 		right: 2rem;
 		width: 3.5rem;
 		height: 3.5rem;
-		background: var(--faf-black);
+		background: rgba(0, 0, 0, 0.6);
 		color: white;
 		border: none;
 		border-radius: 50%;
 		font-size: 1.5rem;
 		cursor: pointer;
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 		transition: all 0.3s ease;
 		z-index: 99;
 		display: flex;
