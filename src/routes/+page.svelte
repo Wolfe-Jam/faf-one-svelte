@@ -205,6 +205,19 @@
 		letter-spacing: -0.02em;
 		display: inline-block;
 		border-radius: 4px;
+		opacity: 0;
+		animation: fadeInUp 1s ease-out 0.3s forwards;
+	}
+
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
 	}
 
 	@media (max-width: 768px) {
