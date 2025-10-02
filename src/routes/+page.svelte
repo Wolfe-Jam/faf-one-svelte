@@ -199,7 +199,7 @@
 		font-size: 1.5rem;
 		font-weight: 700;
 		color: var(--faf-black);
-		background: rgba(0, 229, 229, 0.5);
+		background: rgba(0, 229, 229, 0.4);
 		padding: 0.5rem 1rem;
 		margin: 0;
 		letter-spacing: -0.02em;
