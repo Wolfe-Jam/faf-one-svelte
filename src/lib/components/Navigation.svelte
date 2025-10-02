@@ -4,7 +4,7 @@
 	
 	let isMobileMenuOpen = $state(false);
 	let isScrolled = $state(false);
-	let showFooterButton = $state(false);
+	let showFooterButton = $state(true);
 	let isAtBottom = $state(false);
 
 	const navItems = [
@@ -19,7 +19,6 @@
 	onMount(() => {
 		const handleScroll = () => {
 			isScrolled = window.scrollY > 50;
-			showFooterButton = window.scrollY > 500;
 
 			// Check if at bottom (within 100px of bottom)
 			const scrollHeight = document.documentElement.scrollHeight;
