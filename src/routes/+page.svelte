@@ -190,7 +190,7 @@
 
 	.final-cta {
 		text-align: center;
-		padding: 4rem 2rem;
+		padding: 2rem 2rem 4rem;
 		background: var(--faf-cream);
 	}
 
@@ -199,8 +199,12 @@
 		font-size: 1.5rem;
 		font-weight: 700;
 		color: var(--faf-black);
+		background: var(--faf-cyan);
+		padding: 0.5rem 1rem;
 		margin: 0;
 		letter-spacing: -0.02em;
+		display: inline-block;
+		border-radius: 4px;
 	}
 
 	@media (max-width: 768px) {
