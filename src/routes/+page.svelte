@@ -16,10 +16,23 @@
 	let showSplash = $state(true);
 
 	onMount(() => {
-		// Always show animation
+		// Check if user has already visited
+		const hasVisited = browser && sessionStorage.getItem('faf-visited');
+
+		if (hasVisited) {
+			// Skip animation if already visited
+			showSplash = false;
+			isLoaded = true;
+			return;
+		}
+
+		// First visit - show animation
 		const animationTimeout = setTimeout(() => {
 			showSplash = false;
 			isLoaded = true;
+			if (browser) {
+				sessionStorage.setItem('faf-visited', 'true');
+			}
 		}, 4000);
 
 		// Allow skipping with Escape key or clicking
@@ -27,6 +40,9 @@
 			clearTimeout(animationTimeout);
 			showSplash = false;
 			isLoaded = true;
+			if (browser) {
+				sessionStorage.setItem('faf-visited', 'true');
+			}
 		};
 
 		const handleKeydown = (e) => {
