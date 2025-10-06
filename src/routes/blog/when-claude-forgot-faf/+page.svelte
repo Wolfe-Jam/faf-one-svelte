@@ -37,7 +37,8 @@
 	<article class="post-content">
 		<section class="intro">
 			<p class="lead">
-				We built FAF CLI together—Claude and I—across thousands of conversations.
+				We built FAF CLI together—Claude and I—across thousands of hours, hundreds of conversations,
+				untold sessions, tens of thousands of lines of code, hundreds of builds, and over 14,000 tests.
 				It's a tool designed to give AI perfect project context instantly.
 			</p>
 			<p class="lead">
@@ -63,8 +64,8 @@
 			</p>
 			<p>
 				Claude was analyzing the FAF CLI codebase—a <strong>100% TypeScript strict</strong> project
-				we'd built together across hundreds of conversations. Yet without the <code>.faf</code> file,
-				I had no idea what the project was.
+				with tens of thousands of lines of code, hundreds of builds, and over 14,000 tests. Yet without the <code>.faf</code> file,
+				Claude had no idea what the project was.
 			</p>
 
 			<div class="visual-block">
@@ -79,7 +80,9 @@
 				</p>
 			</div>
 
-			<h2>The Journey: 12% → 89% in 344 Milliseconds</h2>
+			<h2>The MIRACLE of .FAF</h2>
+
+			<h3>The Journey: 12% → 89% in 344 Milliseconds</h3>
 
 			<div class="visual-block">
 				<h3>The Transformation</h3>
@@ -244,10 +247,12 @@ faf log</code></pre>
 				<code>.faf</code> works with <strong>every AI tool</strong>:
 			</p>
 			<ul>
-				<li>Claude Desktop (via MCP server)</li>
-				<li>ChatGPT</li>
+				<li>Claude Code</li>
 				<li>Google Gemini</li>
+				<li>OpenAI Codex CLI</li>
 				<li>Cursor</li>
+				<li>ChatGPT</li>
+				<li>Claude Desktop (MCP Server available)</li>
 				<li>Any tool that can read YAML or markdown</li>
 			</ul>
 		</section>
@@ -295,19 +300,21 @@ faf log</code></pre>
 		</section>
 
 		<section class="join">
-			<h2>Join 3000+ Developers</h2>
+			<h2>Join 7,700+ Developers</h2>
 			<p>
-				Developers worldwide use <code>.faf</code> to accelerate their AI workflows:
+				Stop wasting time explaining your project to AI. Get championship-grade context instantly:
 			</p>
 			<ul>
-				<li>30 seconds replaces 20 minutes of context explanation</li>
-				<li>Works with every AI tool</li>
-				<li>100% free and open source</li>
-				<li>No vendor lock-in</li>
+				<li><strong>40x faster</strong> - 30 seconds vs 20 minutes manual context</li>
+				<li><strong>8x faster with human input</strong> - 2 minute allowance to balance and perfect the context</li>
+				<li><strong>Context-Mirroring</strong> - bi-directional instant-sync between AI and human understanding</li>
+				<li><strong>Context-Commitment</strong> - continuity across sessions, teams, and time</li>
+				<li><strong>Works everywhere</strong> - any AI, any tool, any stack, any language, any project, any time, anywhere</li>
+				<li><strong>100% free and open source</strong> - no lock-in, ever</li>
+				<li><strong>Universal format</strong> - share context across any AI, team, or tool</li>
 			</ul>
 			<p>
-				Share your projects, get help, and learn best practices in our
-				<a href="https://github.com/Wolfe-Jam/faf/discussions" target="_blank">community discussions</a>.
+				<strong>Questions? Bug reports? Feature requests?</strong> Open an issue on <a href="https://github.com/Wolfe-Jam/faf/issues" target="_blank">GitHub</a>.
 			</p>
 		</section>
 
