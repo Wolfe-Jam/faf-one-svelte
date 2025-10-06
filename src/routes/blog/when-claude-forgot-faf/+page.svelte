@@ -49,7 +49,7 @@
 			<h2>The Irony</h2>
 			<p>
 				I asked Claude to analyze the FAF CLI project. No <code>.faf</code> file.
-				Just the raw codebase we'd built together over months.
+				Just the raw codebase we'd built together over the course of 2025.
 			</p>
 			<p>
 				The AI that <em>created</em> FAF couldn't recognize it.
