@@ -1,10 +1,9 @@
 <script>
 	import { onMount } from 'svelte';
-	
+
 	let isVisible = $state(false);
 	let sectionRef = $state(null);
-	let timeLeft = $state({ hours: 47, minutes: 59, seconds: 59 });
-	
+
 	onMount(() => {
 		const observer = new IntersectionObserver(
 			(entries) => {
@@ -16,30 +15,15 @@
 			},
 			{ threshold: 0.2 }
 		);
-		
+
 		if (sectionRef) {
 			observer.observe(sectionRef);
 		}
-		
-		// Countdown timer
-		const interval = setInterval(() => {
-			if (timeLeft.seconds > 0) {
-				timeLeft.seconds--;
-			} else if (timeLeft.minutes > 0) {
-				timeLeft.minutes--;
-				timeLeft.seconds = 59;
-			} else if (timeLeft.hours > 0) {
-				timeLeft.hours--;
-				timeLeft.minutes = 59;
-				timeLeft.seconds = 59;
-			}
-		}, 1000);
-		
+
 		return () => {
 			if (sectionRef) {
 				observer.unobserve(sectionRef);
 			}
-			clearInterval(interval);
 		};
 	});
 </script>
@@ -47,192 +31,191 @@
 <section bind:this={sectionRef} class="pricing">
 	<div class="container">
 		<div class="content" class:visible={isVisible}>
-			<div class="early-bird-banner">
-				<span class="banner-icon">🔥</span>
-				<span class="banner-text">Founders Pricing - Lock in Forever!</span>
-				<div class="countdown">
-					<span class="time">{String(timeLeft.hours).padStart(2, '0')}</span>:
-					<span class="time">{String(timeLeft.minutes).padStart(2, '0')}</span>:
-					<span class="time">{String(timeLeft.seconds).padStart(2, '0')}</span>
-				</div>
-			</div>
-			
-			<h2 class="section-title">Simple, Honest Pricing</h2>
+			<h2 class="section-title">Built on Trust, Not Hype</h2>
 			<p class="section-subtitle">
-				Join now and lock in these prices forever. No surprises.
+				The CLI is free for all developers.<br/>
+				Premium features and Teams coming soon, when they're championship-ready.<br/>
+				We have Enterprise Ready features to test with ANY Enterprise who wants dive in!
 			</p>
-			
+
 			<div class="pricing-wrapper">
-				<div class="pricing-grid-two">
-					<!-- Pro Plan -->
-					<div class="pricing-card featured">
-						<div class="popular-badge">LIMITED TIME</div>
+				<div class="pricing-grid">
+					<!-- FOUNDERS - Orange -->
+					<div class="pricing-card founders-card">
+						<div class="coming-badge orange-badge">LOCK IN NOW</div>
 						<div class="card-header">
-							<h3 class="plan-name">PRO</h3>
-							<div class="price">
-								<div style="display: flex; align-items: baseline; justify-content: center; gap: 0.25rem; text-decoration: line-through; opacity: 0.6;">
+							<h3 class="plan-name">CLI + TURBO</h3>
+							<div class="price-display">
+								<div class="price">
 									<span class="currency">$</span>
-									<span class="amount">100</span>
-									<span style="font-size: 1.25rem; margin-left: 0.25rem;">/month</span>
+									<span class="amount">9</span>
+									<span class="period">/month</span>
 								</div>
-								<div style="font-size: 2rem; margin-top: 0.5rem; color: var(--faf-orange); font-weight: 900;">
-									FOUNDERS: $100/year
-								</div>
-								<div style="font-size: 0.9rem; margin-top: 0.25rem; color: var(--faf-gray-dark);">
-									(That's only $8.33/month!)
-								</div>
+								<div class="founders-lock">🔒 Lock in this rate forever</div>
 							</div>
 							<p class="plan-description">
-								91% OFF - Founders Deal<br>
-								<strong>GENUINE WIN/WIN</strong><br>
-								<span style="color: var(--faf-orange); font-weight: 700;">VERY LIMITED - WHEN IT'S GONE IT'S GONE</span>
+								Free CLI always. Add Turbo for first release access + premium features.
+							</p>
+							<p class="plan-description">
+								<strong>$100 ANNUAL - Be a Legend &<br/>Support the Founder</strong>
 							</p>
 						</div>
 						<ul class="features">
-							<li>✅ Full .faf toolkit</li>
-							<li>✅ Unlimited projects</li>
-							<li>✅ Context-Mirroring™</li>
-							<li>✅ Eternal-Sync™ ACTIVE</li>
-							<li>✅ Priority support</li>
-							<li>✅ Direct creator access</li>
-							<li>✅ All integrations</li>
-							<li>✅ White-glove onboarding</li>
-							<li>✅ 99.9% uptime SLA</li>
-							<li>✅ All future updates</li>
+							<li>⚡️ First release access</li>
+							<li>⚡️ Stack-check analyzer</li>
+							<li>⚡️ Project Orientation AI</li>
+							<li>⚡️ Build Turbo performance</li>
+							<li>⚡️ Priority support</li>
+							<li>⚡️ Direct creator access</li>
 						</ul>
 						<div class="button-group">
-							<div style="display: flex; flex-direction: column; gap: 1.5rem; width: 100%;">
-								<!-- $20/month Black Button -->
-								<div style="width: 100%;">
-									<div class="stripe-button-wrapper" style="width: 100%;">
-										{@html `<stripe-buy-button
-											buy-button-id="buy_btn_1SAisLRt8WbJblnRQzarT8jS"
-											publishable-key="pk_live_51RsYPuRt8WbJblnRhd7gwvTqkNie5A5GhGotKYbdYj6R18PtKzDpObayQdpUQ7sjSMt4b0381Je2yyphYot6ELYR00D50NnmJt"
-										></stripe-buy-button>`}
-									</div>
-									<div style="text-align: center; font-size: 0.9rem; font-weight: 900; color: var(--faf-black); margin-top: 0.5rem;">
-										LIMITED 🧡 WIN/WIN DEAL
-									</div>
-								</div>
+							<!-- Monthly Option -->
+							<div class="stripe-button-wrapper">
+								{@html `<stripe-buy-button
+									buy-button-id="buy_btn_1SAisLRt8WbJblnRQzarT8jS"
+									publishable-key="pk_live_51RsYPuRt8WbJblnRhd7gwvTqkNie5A5GhGotKYbdYj6R18PtKzDpObayQdpUQ7sjSMt4b0381Je2yyphYot6ELYR00D50NnmJt"
+								></stripe-buy-button>`}
+							</div>
 
-								<!-- Green FAF Delivers Box -->
-								<div style="text-align: center; padding: 1rem; background: linear-gradient(135deg, #f0fff4 0%, var(--faf-white) 100%); border-radius: 8px; border: 2px solid var(--faf-green);">
-									<div style="font-size: 1.25rem; font-weight: 900; color: var(--faf-black); margin-bottom: 0.5rem;">
-										⚡ .FAF Delivers Instantly
-									</div>
-									<div style="font-size: 1rem; font-weight: 700; color: var(--faf-green);">
-										GET LOCKED-IN NOW
-									</div>
-								</div>
+							<div class="divider-text">or</div>
 
-								<!-- $100/year Green Button -->
-								<div style="width: 100%;">
-									<div style="text-align: center; font-size: 1.3rem; font-weight: 900; color: var(--faf-black); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">
-										LEGENDS ONLY
-									</div>
-									<div class="stripe-button-wrapper" style="width: 100%;">
-										{@html `<stripe-buy-button
-											buy-button-id="buy_btn_1SAMYLRt8WbJblnRL4SoZiDY"
-											publishable-key="pk_live_51RsYPuRt8WbJblnRhd7gwvTqkNie5A5GhGotKYbdYj6R18PtKzDpObayQdpUQ7sjSMt4b0381Je2yyphYot6ELYR00D50NnmJt"
-										></stripe-buy-button>`}
-									</div>
-									<div style="text-align: center; font-size: 1rem; font-weight: 700; color: var(--faf-black); margin-top: 0.5rem;">
-										$100 ANNUAL 🏆 ($8.33/month)
-									</div>
+							<!-- Annual LEGENDS Option -->
+							<div class="legends-option">
+								<div class="legends-header">
+									<span class="legends-badge">🏆 LEGENDS</span>
+									<span class="legends-price">$100/year</span>
+								</div>
+								<p class="legends-description">
+									Be a Legend & Support the Founder<br/>
+									Get TURBO package + Thank You<br/>
+									+ 🏆 Legend badge
+								</p>
+								<div class="stripe-button-wrapper">
+									{@html `<stripe-buy-button
+										buy-button-id="buy_btn_1SAMYLRt8WbJblnRL4SoZiDY"
+										publishable-key="pk_live_51RsYPuRt8WbJblnRhd7gwvTqkNie5A5GhGotKYbdYj6R18PtKzDpObayQdpUQ7sjSMt4b0381Je2yyphYot6ELYR00D50NnmJt"
+									></stripe-buy-button>`}
 								</div>
 							</div>
 						</div>
-						<p class="urgency-text">
-							⚡ Real lock-ins • Real price bands • No BS
-						</p>
 					</div>
-					
-					<!-- Teams Plan -->
+
+					<!-- TEAMS - Green -->
 					<div class="pricing-card teams-card">
-						<div class="popular-badge" style="background: var(--faf-green); border-color: var(--faf-green);">PERMANENT DEALS</div>
+						<div class="coming-badge green-badge">LOCK IN NOW</div>
 						<div class="card-header">
-							<h3 class="plan-name">TEAMS</h3>
-							<div class="price">
-								<div style="display: flex; align-items: baseline; justify-content: center; gap: 0.25rem;">
-									<span class="currency" style="color: var(--faf-green);">$</span>
-									<span class="amount" style="color: var(--faf-green);">90</span>
-									<span style="font-size: 1.25rem; margin-left: 0.25rem; color: var(--faf-green);">/month</span>
+							<h3 class="plan-name">TEAMS (up to 5)</h3>
+							<div class="price-display">
+								<div class="price">
+									<span class="currency">$</span>
+									<span class="amount">29</span>
+									<span class="period">/month</span>
 								</div>
-								<div style="font-size: 1.5rem; color: var(--faf-gray-dark); margin-top: 0.5rem;">
-									per member - See table below
-								</div>
+								<div class="founders-lock">🔒 Lock in this rate forever</div>
 							</div>
 							<p class="plan-description">
-								Team discounts - up to 50% off
+								Boss? This is for you. Cloud sharing like Vercel, coming soon.
 							</p>
 						</div>
 						<ul class="features">
-							<li>✅ Everything in PRO</li>
+							<li>✅ Everything in CLI + TURBO</li>
+							<li>✅ Up to 5 Turbos</li>
 							<li>✅ Team management</li>
 							<li>✅ Centralized billing</li>
-							<li>✅ Usage analytics</li>
-							<li>✅ Team sync</li>
+							<li>🔜 Cloud sharing (Vercel-style)</li>
+							<li>🔜 Usage analytics</li>
 						</ul>
-						<div class="team-pricing-table">
-							<div style="font-weight: 700; margin-bottom: 0.5rem; text-align: center;">Team Pricing</div>
-							<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.9rem; background: #f9f9f9; padding: 1rem; border-radius: 8px;">
-								<div>2 members:</div><div style="text-align: right;">$90 each</div>
-								<div>3 members:</div><div style="text-align: right;">$80 each</div>
-								<div>5 members:</div><div style="text-align: right;">$70 each</div>
-								<div>10 members:</div><div style="text-align: right;">$60 each</div>
-								<div>20+ members:</div><div style="text-align: right;"><strong>$50 MAX</strong></div>
+						<div class="button-group">
+							<!-- Monthly Option -->
+							<div class="stripe-button-wrapper">
+								{@html `<stripe-buy-button
+									buy-button-id="buy_btn_1SF3YgRt8WbJblnRNiM7wqwk"
+									publishable-key="pk_live_51RsYPuRt8WbJblnRhd7gwvTqkNie5A5GhGotKYbdYj6R18PtKzDpObayQdpUQ7sjSMt4b0381Je2yyphYot6ELYR00D50NnmJt"
+								></stripe-buy-button>`}
+							</div>
+
+							<div class="divider-text">or</div>
+
+							<!-- Annual LEGENDS Option -->
+							<div class="legends-option legends-green">
+								<div class="legends-header">
+									<span class="legends-badge">🏆 LEGENDS TEAM</span>
+									<span class="legends-price">$300/year</span>
+								</div>
+								<p class="legends-description">
+									Be a Legend & Support the Team<br/>
+									Get TEAMS package + Thank You<br/>
+									+ 🏆 Legend Team badge
+								</p>
+								<div class="stripe-button-wrapper">
+									{@html `<stripe-buy-button
+										buy-button-id="buy_btn_1SF3IVRt8WbJblnRbHaGcaZo"
+										publishable-key="pk_live_51RsYPuRt8WbJblnRhd7gwvTqkNie5A5GhGotKYbdYj6R18PtKzDpObayQdpUQ7sjSMt4b0381Je2yyphYot6ELYR00D50NnmJt"
+									></stripe-buy-button>`}
+								</div>
 							</div>
 						</div>
-						<div style="margin-top: 1.5rem;">
-							<a href="mailto:support@faf.one?subject=Team%20Pricing%20Request" 
-							   class="btn btn-block" 
-							   style="background: var(--faf-green); color: var(--faf-white); border: 2px solid var(--faf-green); padding: 0.75rem 1.5rem; font-weight: 700; font-size: 1rem; border-radius: 8px; text-decoration: none; display: block; text-align: center; transition: all 0.2s ease;">
-								SECURE TEAM PRICING →
+					</div>
+
+					<!-- ENTERPRISE - Black -->
+					<div class="pricing-card enterprise-card">
+						<div class="coming-badge black-badge">PIONEERS ONLY</div>
+						<div class="card-header">
+							<h3 class="plan-name">ENTERPRISE</h3>
+							<div class="price-display">
+								<div class="price">
+									<span class="amount" style="font-size: 3rem;">$REWARD</span>
+								</div>
+								<div class="founders-lock">Enterprises who grow with us will be rewarded. Get in touch to be 1st</div>
+							</div>
+							<p class="plan-description">
+								Custom solutions for organizations at scale
+							</p>
+						</div>
+						<ul class="features">
+							<li>✅ Everything in TEAMS</li>
+							<li>✅ Custom contracts</li>
+							<li>✅ SLA guarantees</li>
+							<li>✅ On-premise option</li>
+							<li>✅ Dedicated support</li>
+							<li>✅ Training included</li>
+						</ul>
+						<div class="button-group">
+							<a href="mailto:enterprise@faf.one?subject=Enterprise%20Inquiry" class="btn btn-white">
+								Contact Sales →
 							</a>
 						</div>
 					</div>
 				</div>
-				
-				<!-- Enterprise Plan -->
-				<div class="pricing-card enterprise-card">
-					<div class="enterprise-content">
-						<div class="enterprise-left">
-							<h3 class="plan-name">ENTERPRISE</h3>
-							<p class="plan-description">Custom solutions for organizations that need proven reliability at scale</p>
-						</div>
-						<div class="enterprise-features">
-							<ul>
-								<li>✓ Everything in TEAMS</li>
-								<li>✓ Custom contracts</li>
-								<li>✓ SLA guarantees</li>
-							</ul>
-							<ul>
-								<li>✓ On-premise option</li>
-								<li>✓ Dedicated support</li>
-								<li>✓ Training included</li>
-							</ul>
-						</div>
-						<div class="enterprise-cta">
-							<a href="mailto:enterprise@faf.one?subject=Enterprise%20Inquiry" class="btn btn-ghost">Contact Sales</a>
-						</div>
+			</div>
+
+			<div class="trust-message">
+				<h3>Why We're Taking Our Time</h3>
+				<div class="trust-grid">
+					<div class="trust-item">
+						<div class="trust-icon">🏆</div>
+						<h4>Championship Standards</h4>
+						<p>We won't launch premium features until they meet the same quality bar as our open-source tools</p>
+					</div>
+					<div class="trust-item">
+						<div class="trust-icon">🧡</div>
+						<h4>Trust-Driven Development</h4>
+						<p>Every feature will be tested, validated, and proven before we ask you to pay for it</p>
+					</div>
+					<div class="trust-item">
+						<div class="trust-icon">⚡️</div>
+						<h4>CLI Always Free</h4>
+						<p>The core .faf CLI will always be free for all developers</p>
 					</div>
 				</div>
 			</div>
-			
-			<div class="guarantee">
-				<span class="guarantee-icon">🛡️</span>
-				<div class="guarantee-text">
-					<h4>30-Day Money Back Guarantee</h4>
-					<p>Try it risk-free. If .faf doesn't improve your workflow, we'll refund you. No questions asked.</p>
-				</div>
-			</div>
-			
-			<div class="roi-calculator">
-				<h3>ROI Calculator</h3>
-				<p>Use your own calculator.</p>
-				<p>IF average tech cost is <span class="highlight">$100 per hour</span>.</p>
-				<p>We charge <span class="highlight">$100 per month</span>.</p>
-				<p style="font-weight: 700; margin-top: 1rem;">What else do you want us to do!? ⚡️🏁</p>
+
+			<div class="cta-box">
+				<h3>Get Started Now</h3>
+				<p>The CLI has everything you need today. Premium features when they're ready.</p>
+				<a href="https://www.npmjs.com/package/faf-cli" class="btn btn-primary" target="_blank">
+					Install FAF CLI →
+				</a>
 			</div>
 		</div>
 	</div>
@@ -243,368 +226,491 @@
 		padding: 5rem 0;
 		background: linear-gradient(180deg, #FFFFFF 0%, #F5F5F5 100%);
 	}
-	
+
 	.content {
 		opacity: 0;
 		transform: translateY(30px);
 		transition: all 0.8s ease-out;
 	}
-	
+
 	.content.visible {
 		opacity: 1;
 		transform: translateY(0);
 	}
-	
-	.early-bird-banner {
-		background: var(--faf-orange);
-		color: var(--faf-white);
-		padding: 1rem 2rem;
-		border-radius: 12px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 1rem;
-		margin-bottom: 3rem;
-		font-weight: 600;
-		animation: pulse 2s ease-in-out infinite;
-	}
-	
-	.banner-icon {
-		font-size: 1.5rem;
-	}
-	
-	.countdown {
-		font-family: var(--font-mono);
-		font-size: 1.25rem;
-		margin-left: auto;
-	}
-	
-	.time {
-		background: rgba(255, 255, 255, 0.2);
-		padding: 0.25rem 0.5rem;
-		border-radius: 4px;
-	}
-	
+
 	.section-title {
 		text-align: center;
 		margin-bottom: 1rem;
+		font-size: 2.5rem;
 	}
-	
+
 	.section-subtitle {
 		text-align: center;
 		color: var(--faf-gray-dark);
 		font-size: 1.25rem;
 		margin-bottom: 3rem;
 	}
-	
+
+	.support-message {
+		text-align: center;
+		max-width: 800px;
+		margin: 0 auto 4rem;
+		padding: 2rem;
+		background: var(--faf-white);
+		border-radius: 12px;
+		border: 2px solid var(--faf-gray-light);
+	}
+
+	.support-message h3 {
+		font-size: 1.75rem;
+		margin-bottom: 1rem;
+		color: var(--faf-black);
+	}
+
+	.support-message p {
+		color: var(--faf-gray-dark);
+		font-size: 1.125rem;
+		line-height: 1.6;
+		margin: 0.75rem 0;
+	}
+
+	.rally-text {
+		margin-top: 1.5rem;
+		font-size: 1.25rem;
+		color: var(--faf-black);
+	}
+
+	.rally-text strong {
+		color: var(--faf-orange);
+	}
+
+	.pricing-options {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: var(--faf-black);
+		margin: 1rem 0 !important;
+	}
+
 	.pricing-wrapper {
 		max-width: 1200px;
 		margin: 0 auto;
 	}
-	
-	.pricing-grid-two {
+
+	.pricing-grid {
 		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-template-columns: repeat(3, 1fr);
 		gap: 2rem;
-		margin-bottom: 2rem;
-		align-items: start;
+		margin-bottom: 4rem;
 	}
-	
-	.pricing-grid-two .pricing-card {
-		display: flex;
-		flex-direction: column;
-		height: 100%;
-	}
-	
-	
+
 	.pricing-card {
-		background: var(--faf-white);
-		border: 2px solid var(--faf-gray-medium);
 		border-radius: 16px;
 		padding: 2rem;
 		position: relative;
 		transition: all 0.3s ease;
+		display: flex;
+		flex-direction: column;
+		border: 2px solid;
 	}
-	
+
 	.pricing-card:hover {
 		transform: translateY(-5px);
 		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 	}
-	
-	.pricing-card.featured {
+
+	/* Founders - Orange */
+	.founders-card {
+		background: var(--faf-orange);
 		border-color: var(--faf-orange);
-		box-shadow: 0 0 0 2px var(--faf-orange);
-		transition: all 0.3s ease;
+		color: var(--faf-white);
 	}
-	
-	.pricing-card.featured:hover {
-		transform: translateY(-5px);
-		box-shadow: 0 0 0 2px var(--faf-orange), 0 20px 40px rgba(255, 107, 53, 0.2);
+
+	.founders-card:hover {
+		box-shadow: 0 20px 40px rgba(255, 107, 53, 0.3);
 	}
-	
-	.popular-badge {
+
+	.founders-card .features li {
+		color: var(--faf-white);
+		border-bottom-color: rgba(255, 255, 255, 0.2);
+	}
+
+	.founders-card .plan-description {
+		color: var(--faf-white);
+	}
+
+	.founders-card .plan-name {
+		color: var(--faf-white);
+	}
+
+	.founders-card .card-header {
+		border-bottom-color: rgba(255, 255, 255, 0.2);
+	}
+
+	.orange-badge {
+		background: var(--faf-white);
+		color: var(--faf-orange);
+		border: 2px solid var(--faf-orange);
+	}
+
+	.orange-text {
+		color: var(--faf-white);
+	}
+
+	/* Teams - Green */
+	.teams-card {
+		background: var(--faf-green);
+		border-color: var(--faf-green);
+		color: var(--faf-white);
+	}
+
+	.teams-card:hover {
+		box-shadow: 0 20px 40px rgba(76, 175, 80, 0.3);
+	}
+
+	.teams-card .features li {
+		color: var(--faf-white);
+		border-bottom-color: rgba(255, 255, 255, 0.2);
+	}
+
+	.teams-card .plan-description {
+		color: var(--faf-white);
+	}
+
+	.teams-card .plan-name {
+		color: var(--faf-white);
+	}
+
+	.teams-card .card-header {
+		border-bottom-color: rgba(255, 255, 255, 0.2);
+	}
+
+	.green-badge {
+		background: var(--faf-white);
+		color: var(--faf-green);
+		border: 2px solid var(--faf-green);
+	}
+
+	.green-text {
+		color: var(--faf-white);
+	}
+
+	/* Enterprise - Black */
+	.enterprise-card {
+		background: var(--faf-black);
+		border-color: var(--faf-black);
+		color: var(--faf-white);
+	}
+
+	.enterprise-card:hover {
+		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+	}
+
+	.enterprise-card .features li {
+		color: var(--faf-white);
+		border-bottom-color: rgba(255, 255, 255, 0.2);
+	}
+
+	.enterprise-card .plan-description {
+		color: var(--faf-gray-light);
+	}
+
+	.black-badge {
+		background: var(--faf-white);
+		color: var(--faf-black);
+		border: 2px solid var(--faf-black);
+	}
+
+	.white-text {
+		color: var(--faf-white);
+	}
+
+	.coming-badge {
 		position: absolute;
 		top: -15px;
 		left: 50%;
 		transform: translateX(-50%);
-		background: var(--faf-orange);
-		color: var(--faf-white);
 		padding: 0.5rem 1rem;
 		border-radius: 999px;
 		font-size: 0.875rem;
 		font-weight: 600;
 	}
-	
+
 	.card-header {
 		text-align: center;
 		margin-bottom: 2rem;
 		padding-bottom: 2rem;
 		border-bottom: 1px solid var(--faf-gray-medium);
 	}
-	
+
+	.enterprise-card .card-header {
+		border-bottom-color: rgba(255, 255, 255, 0.2);
+	}
+
 	.plan-name {
 		font-size: 1.5rem;
 		margin-bottom: 1rem;
+		color: var(--faf-black);
 	}
-	
+
+	.enterprise-card .plan-name {
+		color: var(--faf-white);
+	}
+
+	.price-display {
+		margin: 1.5rem 0;
+	}
+
 	.price {
-		text-align: center;
-		margin-bottom: 1rem;
+		display: flex;
+		align-items: baseline;
+		justify-content: center;
+		gap: 0.25rem;
 	}
-	
+
 	.currency {
 		font-size: 1.5rem;
-		color: var(--faf-gray-dark);
+		color: var(--faf-white);
 	}
-	
+
 	.amount {
 		font-size: 4rem;
 		font-weight: 900;
-		color: var(--faf-black);
+		color: var(--faf-white);
 		line-height: 1;
 	}
-	
-	
-	
-	.plan-description {
-		color: var(--faf-gray-dark);
-		font-size: 0.875rem;
-	}
-	
-	
-	.features {
-		list-style: none;
-		padding: 0;
-		margin: 0 0 2rem;
-		flex-grow: 1;
-	}
-	
-	.features li {
-		padding: 0.75rem 0;
-		color: var(--faf-gray-dark);
-		border-bottom: 1px solid var(--faf-gray-light);
-	}
-	
-	.features li:last-child {
-		border-bottom: none;
-	}
-	
-	.btn-block {
-		width: 100%;
-		padding: 1rem;
-	}
-	
-	.urgency-text {
-		text-align: center;
-		color: var(--faf-orange);
-		font-size: 0.875rem;
-		font-weight: 600;
-		margin-top: 1rem;
-	}
-	
-	.button-group {
-		display: flex;
-		flex-direction: column;
-		gap: 0.75rem;
-		margin-top: 1rem;
+
+	.period {
+		font-size: 1.25rem;
+		color: var(--faf-white);
 	}
 
-	.btn-block {
-		width: 100%;
-		text-align: center;
-		display: block;
-		text-decoration: none;
+	.founders-lock {
+		margin-top: 0.5rem;
+		font-size: 0.9rem;
+		color: var(--faf-white);
+		opacity: 0.9;
 	}
-	
-	
+
+	.coming-text {
+		font-size: 1.5rem;
+		font-weight: 700;
+	}
+
 	.stripe-button-wrapper {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		width: 100%;
 	}
-	
+
 	.stripe-button-wrapper :global(stripe-buy-button) {
 		display: block;
 		margin: 0 auto;
 	}
-	
-	.teams-card {
-		border-color: var(--faf-green);
-		box-shadow: 0 0 0 2px var(--faf-green);
-	}
-	
-	.teams-card .card-header {
-		background: linear-gradient(135deg, #f0fff4 0%, #e6ffed 100%);
-	}
-	
-	.team-pricing-table {
-		margin-top: 1.5rem;
-		padding-top: 1.5rem;
-		border-top: 1px solid var(--faf-gray-light);
-	}
-	
-	.enterprise-card {
-		background: var(--faf-black);
+
+	.divider-text {
+		text-align: center;
 		color: var(--faf-white);
-		border-color: var(--faf-black);
-		padding: 2rem;
+		font-size: 0.875rem;
+		font-weight: 600;
+		margin: 1rem 0;
+		opacity: 0.7;
 	}
-	
-	.enterprise-content {
-		display: grid;
-		grid-template-columns: 1fr 2fr 1fr;
-		gap: 2rem;
-		align-items: center;
+
+	.legends-option {
+		background: rgba(255, 255, 255, 0.1);
+		border: 2px solid rgba(255, 255, 255, 0.3);
+		border-radius: 8px;
+		padding: 1rem;
+		margin-top: 1rem;
 	}
-	
-	.enterprise-left h3 {
-		color: var(--faf-white);
-		margin-bottom: 0.5rem;
-	}
-	
-	.enterprise-left p {
-		color: var(--faf-gray-light);
-		font-size: 0.9rem;
-	}
-	
-	.enterprise-features {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 2rem;
-	}
-	
-	.enterprise-features ul {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-	}
-	
-	.enterprise-features li {
-		color: var(--faf-white);
-		padding: 0.5rem 0;
-		font-size: 0.9rem;
-	}
-	
-	.enterprise-cta {
-		text-align: right;
-	}
-	
-	.enterprise-card .btn-ghost {
-		background: var(--faf-white);
-		color: var(--faf-black);
-		border: 2px solid var(--faf-white);
-	}
-	
-	.enterprise-card .btn-ghost:hover {
-		background: transparent;
-		color: var(--faf-white);
-	}
-	
-	.guarantee {
+
+	.legends-header {
 		display: flex;
 		align-items: center;
-		gap: 1.5rem;
-		background: var(--faf-white);
-		border: 2px solid var(--faf-gray-medium);
-		border-radius: 12px;
-		padding: 2rem;
-		max-width: 800px;
-		margin: 3rem auto;
+		justify-content: space-between;
+		margin-bottom: 0.75rem;
 	}
-	
-	.guarantee-icon {
-		font-size: 3rem;
+
+	.legends-badge {
+		font-size: 1rem;
+		font-weight: 700;
+		color: var(--faf-white);
 	}
-	
-	.guarantee-text h4 {
-		margin-bottom: 0.5rem;
+
+	.legends-price {
+		font-size: 1.25rem;
+		font-weight: 700;
+		color: var(--faf-white);
 	}
-	
-	.guarantee-text p {
+
+	.legends-description {
+		font-size: 0.875rem;
+		color: var(--faf-white);
+		margin-bottom: 1rem;
+		text-align: center;
+		line-height: 1.5;
+	}
+
+	.plan-description {
 		color: var(--faf-gray-dark);
+		font-size: 0.875rem;
+	}
+
+	.features {
+		list-style: none;
+		padding: 0;
+		margin: 0 0 2rem;
+		flex-grow: 1;
+	}
+
+	.features li {
+		padding: 0.75rem 0;
+		color: var(--faf-gray-dark);
+		border-bottom: 1px solid var(--faf-gray-light);
+	}
+
+	.features li:last-child {
+		border-bottom: none;
+	}
+
+	.button-group {
+		margin-top: auto;
+	}
+
+	.btn {
+		display: block;
+		width: 100%;
+		padding: 1rem;
+		text-align: center;
+		text-decoration: none;
+		border-radius: 8px;
+		font-weight: 700;
+		transition: all 0.2s ease;
+		border: 2px solid;
+	}
+
+	.btn-orange {
+		background: var(--faf-white);
+		color: var(--faf-orange);
+		border-color: var(--faf-white);
+	}
+
+	.btn-orange:hover {
+		background: transparent;
+		color: var(--faf-white);
+		border-color: var(--faf-white);
+	}
+
+	.btn-green {
+		background: var(--faf-white);
+		color: var(--faf-green);
+		border-color: var(--faf-white);
+	}
+
+	.btn-green:hover {
+		background: transparent;
+		color: var(--faf-white);
+		border-color: var(--faf-white);
+	}
+
+	.btn-white {
+		background: var(--faf-white);
+		color: var(--faf-black);
+		border-color: var(--faf-white);
+	}
+
+	.btn-white:hover {
+		background: transparent;
+		color: var(--faf-white);
+		border-color: var(--faf-white);
+	}
+
+	.trust-message {
+		margin: 4rem 0 3rem;
+		text-align: center;
+	}
+
+	.trust-message h3 {
+		font-size: 2rem;
+		margin-bottom: 2rem;
+	}
+
+	.trust-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2rem;
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+
+	.trust-item {
+		background: var(--faf-white);
+		padding: 2rem;
+		border-radius: 12px;
+		border: 2px solid var(--faf-gray-light);
+	}
+
+	.trust-icon {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.trust-item h4 {
+		font-size: 1.25rem;
+		margin-bottom: 0.5rem;
+		color: var(--faf-black);
+	}
+
+	.trust-item p {
+		color: var(--faf-gray-dark);
+		font-size: 0.9rem;
 		margin: 0;
 	}
-	
-	.roi-calculator {
+
+	.cta-box {
 		text-align: center;
 		background: var(--faf-white);
-		border: 2px solid var(--faf-gray-medium);
+		border: 2px solid var(--faf-orange);
 		border-radius: 12px;
-		padding: 2rem;
+		padding: 3rem 2rem;
 		max-width: 600px;
 		margin: 0 auto;
 	}
-	
-	.roi-calculator h3 {
+
+	.cta-box h3 {
+		font-size: 2rem;
 		margin-bottom: 1rem;
+		color: var(--faf-black);
 	}
-	
-	.roi-calculator p {
+
+	.cta-box p {
 		color: var(--faf-gray-dark);
-		margin: 0.5rem 0;
+		font-size: 1.125rem;
+		margin-bottom: 2rem;
 	}
-	
-	.highlight {
+
+	.btn-primary {
+		background: var(--faf-orange);
+		color: var(--faf-white);
+		border: 2px solid var(--faf-orange);
+		display: inline-block;
+		padding: 1rem 2rem;
+		font-size: 1.125rem;
+	}
+
+	.btn-primary:hover {
+		background: var(--faf-white);
 		color: var(--faf-orange);
-		font-weight: 700;
-		font-size: 1.25rem;
 	}
-	
-	@keyframes pulse {
-		0%, 100% { transform: scale(1); }
-		50% { transform: scale(1.02); }
-	}
-	
-	@media (max-width: 768px) {
-		.pricing-grid-two {
+
+	@media (max-width: 968px) {
+		.pricing-grid {
 			grid-template-columns: 1fr;
 		}
-		
-		.pricing-card.featured {
-			transform: none;
-		}
-		
-		.early-bird-banner {
-			flex-direction: column;
-			text-align: center;
-		}
-		
-		.countdown {
-			margin-left: 0;
-		}
-		
-		.enterprise-content {
+
+		.trust-grid {
 			grid-template-columns: 1fr;
-			text-align: center;
-		}
-		
-		.enterprise-features {
-			grid-template-columns: 1fr;
-		}
-		
-		.enterprise-cta {
-			text-align: center;
 		}
 	}
 </style>
