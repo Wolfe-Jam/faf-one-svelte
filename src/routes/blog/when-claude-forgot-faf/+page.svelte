@@ -35,6 +35,14 @@
 	</header>
 
 	<article class="post-content">
+		<div class="hero-image">
+			<img
+				src="https://cdn.jsdelivr.net/npm/faf-cli@latest/assets/faf-init-demo.gif"
+				alt="Running faf init - Claude character witnessing 344ms transformation"
+				class="full-width"
+			/>
+		</div>
+
 		<section class="intro">
 			<p class="lead">
 				We built FAF CLI together—Claude and I—across thousands of hours, hundreds of conversations,
@@ -372,7 +380,7 @@ faf log</code></pre>
 	}
 
 	.breadcrumb a {
-		color: #0CC0DF;
+		color: var(--faf-cyan-dark);
 		text-decoration: none;
 	}
 
@@ -408,7 +416,7 @@ faf log</code></pre>
 	}
 
 	.version {
-		color: #0CC0DF;
+		color: var(--faf-cyan-dark);
 		font-weight: 500;
 	}
 
@@ -506,12 +514,12 @@ faf log</code></pre>
 		border-radius: 4px;
 		font-family: 'Monaco', 'Courier New', monospace;
 		font-size: 0.9em;
-		color: #0CC0DF;
+		color: var(--faf-cyan-dark);
 	}
 
 	.code-block {
 		background: #1a1a1a;
-		color: #0CC0DF;
+		color: var(--faf-cyan-dark);
 		padding: 1.5rem;
 		border-radius: 8px;
 		margin: 1.5rem 0;
@@ -532,7 +540,7 @@ faf log</code></pre>
 	}
 
 	blockquote {
-		border-left: 4px solid #0CC0DF;
+		border-left: 4px solid var(--faf-cyan-dark);
 		padding-left: 1.5rem;
 		margin: 2rem 0;
 		font-size: 1.25rem;
@@ -559,7 +567,7 @@ faf log</code></pre>
 		content: "▸";
 		position: absolute;
 		left: 0;
-		color: #0CC0DF;
+		color: var(--faf-cyan-dark);
 		font-weight: bold;
 	}
 
@@ -567,14 +575,14 @@ faf log</code></pre>
 		background: linear-gradient(135deg, rgba(12, 192, 223, 0.1) 0%, rgba(255, 145, 77, 0.1) 100%);
 		padding: 2rem;
 		border-radius: 12px;
-		border: 2px solid #0CC0DF;
+		border: 2px solid var(--faf-cyan-dark);
 		text-align: center;
 		margin: 3rem 0;
 	}
 
 	.cta-box h3 {
 		margin-top: 0;
-		color: #0CC0DF;
+		color: var(--faf-cyan-dark);
 	}
 
 	.links {
@@ -669,7 +677,7 @@ faf log</code></pre>
 	}
 
 	.share-buttons a:hover {
-		background: #0CC0DF;
+		background: var(--faf-cyan-dark);
 		color: white;
 	}
 

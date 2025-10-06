@@ -2,6 +2,7 @@
 :root {
 	/* The FAF Core Colors - NEVER Change These */
 	--faf-orange: #ff6b35;       /* Human Trust/Manual 🧡 */
+	--faf-orange-dark: #FF5722;  /* Darker orange for hover states */
 	--faf-cyan: #00ffff;         /* AI-Happy/Tech 🩵 */
 	--faf-cyan-dark: #00d4d4;    /* Darker cyan for text readability */
 	--faf-green: #00bf63;        /* FAF Success/Safety 💚 */
@@ -132,8 +133,8 @@ pre code {
 }
 
 .btn-primary:hover {
-	background: #FF5722;
-	border-color: #FF5722;
+	background: var(--faf-orange-dark);
+	border-color: var(--faf-orange-dark);
 	transform: translateY(-1px);
 }
 
@@ -159,9 +160,9 @@ pre code {
 }
 
 .btn-cyan {
-	background: #00BCD4;
+	background: var(--faf-cyan-dark);
 	color: var(--faf-white);
-	border-color: #00BCD4;
+	border-color: var(--faf-cyan-dark);
 }
 
 .btn-cyan:hover {
@@ -177,8 +178,8 @@ pre code {
 }
 
 .btn-orange:hover {
-	background: #FF5722;
-	border-color: #FF5722;
+	background: var(--faf-orange-dark);
+	border-color: var(--faf-orange-dark);
 	transform: translateY(-1px);
 }
 
