@@ -26,7 +26,7 @@
 		<h1>When Claude Forgot FAF</h1>
 		<p class="subtitle">The meta-proof that proves the product</p>
 		<div class="meta">
-			<time datetime="2025-10-05">October 5, 2025</time>
+			<time datetime="2025-10-06">October 6, 2025</time>
 			<span class="separator">•</span>
 			<span class="version">faf-cli v2.5.4</span>
 			<span class="separator">•</span>
