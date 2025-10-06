@@ -300,7 +300,7 @@ faf log</code></pre>
 		</section>
 
 		<section class="join">
-			<h2>Join 7,700+ Developers</h2>
+			<h2>7,700+ Downloads and Counting</h2>
 			<p>
 				Stop wasting time explaining your project to AI. Get championship-grade context instantly:
 			</p>
