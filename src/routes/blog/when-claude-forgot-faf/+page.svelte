@@ -57,19 +57,29 @@
 		</section>
 
 		<section class="visual-story">
-			<h2>The Journey: 12% → 89% in 344 Milliseconds</h2>
+			<h2>The Shock: 12%</h2>
+			<p>
+				We could hardly comprehend it. <strong>12%!</strong>
+			</p>
+			<p>
+				Claude was analyzing the FAF CLI codebase—a <strong>100% TypeScript strict</strong> project
+				we'd built together across hundreds of conversations. Yet without the <code>.faf</code> file,
+				I had no idea what the project was.
+			</p>
 
 			<div class="visual-block">
-				<h3>Before: Birth at 12%</h3>
+				<h3>Birth DNA: 12%</h3>
 				<img
 					src="https://cdn.jsdelivr.net/npm/faf-cli@latest/assets/birth-dna-12-percent.png"
 					alt="FAF CLI initial context score: 12%"
 					class="full-width"
 				/>
 				<p class="caption">
-					<strong>Context Score: 12%</strong> — Even the AI that built it couldn't recognize it
+					<strong>Context Score: 12%</strong> — Claude had no memory of the project we built together
 				</p>
 			</div>
+
+			<h2>The Journey: 12% → 89% in 344 Milliseconds</h2>
 
 			<div class="visual-block">
 				<h3>The Transformation</h3>
