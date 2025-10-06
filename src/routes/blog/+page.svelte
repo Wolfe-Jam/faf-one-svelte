@@ -1,6 +1,15 @@
 <script>
 	const posts = [
 		{
+			slug: 'blog/when-claude-forgot-faf',
+			title: 'When Claude Forgot FAF',
+			date: 'October 5, 2025',
+			timestamp: '2025-10-05',
+			excerpt: 'The context quality crisis that led to Birth DNA and why generic names fail AI.',
+			emoji: '🧬',
+			category: 'Story'
+		},
+		{
 			slug: '68-minutes',
 			title: '68 Minutes: B&W to Technicolor',
 			date: 'October 1, 2025',

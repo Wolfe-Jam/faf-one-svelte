@@ -349,10 +349,7 @@ faf log</code></pre>
 		font-size: 3rem;
 		font-weight: 800;
 		margin: 0.5rem 0;
-		background: linear-gradient(135deg, #0CC0DF 0%, #FF914D 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
+		color: var(--faf-orange);
 	}
 
 	.subtitle {
@@ -456,10 +453,7 @@ faf log</code></pre>
 		display: block;
 		font-size: 3rem;
 		font-weight: 800;
-		background: linear-gradient(135deg, #0CC0DF 0%, #FF914D 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
+		color: var(--faf-orange);
 	}
 
 	.stat .label {

@@ -128,7 +128,7 @@
 
 				<div class="truth-item">
 					<h4>❌ No Marketing BS</h4>
-					<p>Every stat is real. 3,077 downloads (CLI 🏆 1,942 vs MCP 🤖 1,125+), 9.3/10 AI rating, 20min → 3min. No fluff.</p>
+					<p>Every stat is real. 🏎️⚡️7,400 downloads (CLI 🏆 4.4k vs MCP 🤖 3k), 9.3/10 AI rating, 20min → 3min. No fluff.</p>
 				</div>
 
 				<div class="truth-item">
