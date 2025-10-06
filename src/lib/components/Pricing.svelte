@@ -28,7 +28,7 @@
 	});
 </script>
 
-<section bind:this={sectionRef} class="pricing">
+<section bind:this={sectionRef} id="pricing" class="pricing">
 	<div class="container">
 		<div class="content" class:visible={isVisible}>
 			<h2 class="section-title">Built on Trust, Not Hype</h2>
