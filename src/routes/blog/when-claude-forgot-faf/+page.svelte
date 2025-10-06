@@ -139,6 +139,10 @@
 			<p>
 				<strong>Score: 89%</strong>
 			</p>
+			<p>
+				Remarkably, this is a <strong>641% improvement</strong> of 77 percentage points.
+				The project is instantly at <strong>Bronze Level</strong> (which starts at 85%).
+			</p>
 		</section>
 
 		<section class="claude-apology">
