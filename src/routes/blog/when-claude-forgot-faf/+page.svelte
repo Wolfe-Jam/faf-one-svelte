@@ -79,7 +79,7 @@
 					class="full-width"
 				/>
 				<p class="caption">
-					<code>faf init</code> — One command. Zero configuration. Project DNA created in 344ms.
+					<code>faf init --new</code> — Fresh start. Replace old .faf files. Project DNA created in 344ms.
 				</p>
 			</div>
 
@@ -121,7 +121,7 @@
 				<strong>Score: 12%</strong>
 			</p>
 			<p>
-				Then we ran <code>faf init</code>.
+				Then we ran <code>faf init --new</code> (fresh start - replaces old .faf files).
 			</p>
 			<p>
 				In 344 milliseconds, FAF:
