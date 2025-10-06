@@ -253,13 +253,13 @@ faf log</code></pre>
 					Then run <code>faf init</code> in any project and watch your AI context score transform.
 				</p>
 				<div class="links">
-					<a href="https://www.npmjs.com/package/faf-cli" class="link-button" target="_blank">
+					<a href="https://www.npmjs.com/package/faf-cli" class="link-button npm-button" target="_blank">
 						📦 View on NPM
 					</a>
-					<a href="https://github.com/Wolfe-Jam/faf" class="link-button" target="_blank">
+					<a href="https://github.com/Wolfe-Jam/faf" class="link-button github-button" target="_blank">
 						⭐ Star on GitHub
 					</a>
-					<a href="https://chromewebstore.google.com/detail/lnecebepmpjpilldfmndnaofbfjkjlkm" class="link-button" target="_blank">
+					<a href="https://chromewebstore.google.com/detail/lnecebepmpjpilldfmndnaofbfjkjlkm" class="link-button chrome-button" target="_blank">
 						🧩 Chrome Extension
 					</a>
 				</div>
@@ -398,7 +398,7 @@ faf log</code></pre>
 	}
 
 	section {
-		margin: 3rem 0;
+		margin: 1.5rem 0;
 	}
 
 	h2 {
@@ -553,7 +553,6 @@ faf log</code></pre>
 	.link-button {
 		display: inline-block;
 		padding: 0.75rem 1.5rem;
-		background: linear-gradient(135deg, #0CC0DF 0%, #FF914D 100%);
 		color: white;
 		text-decoration: none;
 		border-radius: 8px;
@@ -561,9 +560,31 @@ faf log</code></pre>
 		transition: transform 0.2s, box-shadow 0.2s;
 	}
 
-	.link-button:hover {
+	.npm-button {
+		background: #CB3837;
+	}
+
+	.npm-button:hover {
 		transform: translateY(-2px);
-		box-shadow: 0 4px 12px rgba(12, 192, 223, 0.3);
+		box-shadow: 0 4px 12px rgba(203, 56, 55, 0.3);
+	}
+
+	.github-button {
+		background: #6e5494;
+	}
+
+	.github-button:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(110, 84, 148, 0.3);
+	}
+
+	.chrome-button {
+		background: #4285F4;
+	}
+
+	.chrome-button:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
 	}
 
 	.post-footer {
