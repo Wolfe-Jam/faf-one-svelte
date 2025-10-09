@@ -79,7 +79,7 @@
 		<section class="open-source">
 			<h2>Open Source, Free Forever</h2>
 			<p>
-				<strong>MIT license.</strong> No paid tiers, no vendor lock-in.
+				<strong>MIT license.</strong> No vendor lock-in.
 			</p>
 			<p>
 				Built this after frustration with managing context across multiple AI tools. Tested with Google Gemini, Anthropic Claude, and OpenAI teams. Now approaching <strong>10,000 downloads</strong> across ecosystem (CLI + MCP combined).
