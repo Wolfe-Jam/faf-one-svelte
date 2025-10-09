@@ -62,7 +62,7 @@
 </script>
 
 <svelte:head>
-	<title>.faf = The JPEG for AI | FAST, TRUSTED 🧡⚡️</title>
+	<title>.faf = Project DNA ✨ for ANY AI | FAST, TRUSTED 🧡⚡️</title>
 	<script async src="https://js.stripe.com/v3/buy-button.js"></script>
 </svelte:head>
 
