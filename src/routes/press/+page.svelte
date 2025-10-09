@@ -17,7 +17,7 @@
 <div class="press-hero">
 	<div class="container">
 		<h1>📣 Press Kit</h1>
-		<p class="subtitle">Everything you need to cover .faf - The JPEG for AI™</p>
+		<p class="subtitle">Everything you need to cover .faf - Project DNA ✨ for ANY AI</p>
 		<div class="press-release-link">
 			<a href="/press-release" class="btn-press-release">📄 View Latest Press Release →</a>
 		</div>
@@ -140,30 +140,27 @@
 		<h2>Quotes</h2>
 		<div class="quotes-grid">
 			<div class="quote-card">
-				<h3>The Reality</h3>
+				<h3>The Format</h3>
 				<blockquote>
-					"99% of projects have sh*t AI context and we solved it. .faf gives AI the complete picture -
-					project structure, dependencies, intent, everything. It's the difference between AI guessing and AI knowing."
+					"package.json wasn't built for this, .faf was"
 				</blockquote>
-				<cite>- James Wolfe, Founder</cite>
+				<cite>— .faf Inventor</cite>
 			</div>
 
 			<div class="quote-card">
-				<h3>The Approach</h3>
+				<h3>The Difference</h3>
 				<blockquote>
-					"We're not selling software - we're establishing a format standard. JPEG didn't charge per image.
-					MP3 didn't charge per song. .faf won't charge per context. Standards win by adoption, not monetization."
+					"package.json gives me a list of dependencies, .faf shows me how to use them"
 				</blockquote>
-				<cite>- James Wolfe, Founder</cite>
+				<cite>— Claude Code (Anthropic)</cite>
 			</div>
 
 			<div class="quote-card">
-				<h3>The Impact</h3>
+				<h3>The Evolution</h3>
 				<blockquote>
-					"3000+ developers, 800 weekly downloads, zero marketing spend. Why? Because when something
-					actually works, developers tell each other. .faf isn't a nice-to-have, it's a must-have."
+					"README evolution for AI era"
 				</blockquote>
-				<cite>- James Wolfe, Founder</cite>
+				<cite>— Google Gemini CLI</cite>
 			</div>
 		</div>
 	</div>
