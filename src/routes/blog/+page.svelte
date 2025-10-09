@@ -1,6 +1,15 @@
 <script>
 	const posts = [
 		{
+			slug: 'blog/v3-launch',
+			title: 'AI CLI/MCP About to Hit 10k Goes OPEN-SOURCE',
+			date: 'October 9, 2025',
+			timestamp: '2025-10-09',
+			excerpt: 'FAF CLI v3.0.0 Championship Edition launches with TURBO-CAT discovery, C-Mirror sync, and universal AI compatibility. MIT licensed, free forever.',
+			emoji: '🏁',
+			category: 'Launch'
+		},
+		{
 			slug: 'blog/when-claude-forgot-faf',
 			title: 'When Claude Forgot FAF',
 			date: 'October 5, 2025',
@@ -163,6 +172,10 @@
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
 		margin-bottom: 1rem;
+	}
+
+	.post-card[href*="v3-launch"] .post-category {
+		background: var(--faf-cyan-dark);
 	}
 
 	.post-card[href*="68-minutes"] .post-category,
