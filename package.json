@@ -22,5 +22,9 @@
     "context-mirroring"
   ],
   "author": "wolfejam",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.75.0",
+    "resend": "^6.1.2"
+  }
 }

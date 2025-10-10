@@ -48,10 +48,13 @@
 							<div class="price-display">
 								<div class="price">
 									<span class="currency">$</span>
-									<span class="amount">9</span>
+									<span class="amount">30</span>
 									<span class="period">/month</span>
 								</div>
-								<div class="founders-lock">🔒 Lock in this rate forever</div>
+								<div class="founders-lock" style="font-size: 1.1rem; font-weight: 700; margin-top: 0.75rem;">
+									🏎️💨 Use code <strong>FAST</strong> for $10/month
+								</div>
+								<div class="founders-lock">🔒 Lock in your rate forever</div>
 							</div>
 							<p class="plan-description">
 								Free CLI always. Add Turbo for first release access + premium features.
@@ -72,7 +75,7 @@
 							<!-- Monthly Option -->
 							<div class="stripe-button-wrapper">
 								{@html `<stripe-buy-button
-									buy-button-id="buy_btn_1SAisLRt8WbJblnRQzarT8jS"
+									buy-button-id="buy_btn_1SGkyGRt8WbJblnRCVgSF8JY"
 									publishable-key="pk_live_51RsYPuRt8WbJblnRhd7gwvTqkNie5A5GhGotKYbdYj6R18PtKzDpObayQdpUQ7sjSMt4b0381Je2yyphYot6ELYR00D50NnmJt"
 								></stripe-buy-button>`}
 							</div>
