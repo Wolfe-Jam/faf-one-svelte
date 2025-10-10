@@ -25,6 +25,7 @@
   "license": "MIT",
   "dependencies": {
     "@supabase/supabase-js": "^2.75.0",
+    "@sveltejs/adapter-vercel": "^5.10.3",
     "resend": "^6.1.2"
   }
 }
