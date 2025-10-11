@@ -105,7 +105,7 @@
 							<div class="price-display">
 								<div class="price">
 									<span class="currency">$</span>
-									<span class="amount">29</span>
+									<span class="amount">75</span>
 									<span class="period">/month</span>
 								</div>
 								<div class="founders-lock">🔒 Lock in this rate forever</div>
