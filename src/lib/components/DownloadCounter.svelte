@@ -1,8 +1,8 @@
 <script>
 	import { onMount } from 'svelte';
 
-	let downloads = $state(1600);
-	let targetDownloads = 1600;
+	let downloads = $state(8200);
+	let targetDownloads = 8200;
 	let displayDownloads = $state(0);
 
 	onMount(() => {

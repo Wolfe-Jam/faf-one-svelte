@@ -6,6 +6,7 @@
 	import TrustVsHope from '$lib/components/TrustVsHope.svelte';
 	import LiveDemo from '$lib/components/LiveDemo.svelte';
 	import Journey from '$lib/components/Journey.svelte';
+	import AIAutomation from '$lib/components/AIAutomation.svelte';
 	import Pricing from '$lib/components/Pricing.svelte';
 	import Onboarding from '$lib/components/Onboarding.svelte';
 	import EmailCapture from '$lib/components/EmailCapture.svelte';
@@ -101,6 +102,9 @@
 	</div>
 	<div id="journey">
 		<Journey />
+	</div>
+	<div id="ai-automation">
+		<AIAutomation />
 	</div>
 	<div id="onboarding">
 		<Onboarding />

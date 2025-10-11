@@ -115,12 +115,9 @@
 							</p>
 						</div>
 						<ul class="features">
-							<li>✅ Everything in CLI + TURBO</li>
-							<li>✅ Up to 5 Turbos</li>
-							<li>✅ Team management</li>
-							<li>✅ Centralized billing</li>
-							<li>🔜 Cloud sharing (Vercel-style)</li>
-							<li>🔜 Usage analytics</li>
+							<li>☑️ Everything in CLI + TURBO</li>
+							<li>☑️ Up to 5 Turbos/Users</li>
+							<li style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2); text-align: center;">More features Coming Soon...<br/>Lock in your rate now</li>
 						</ul>
 						<div class="button-group">
 							<!-- Monthly Option -->
