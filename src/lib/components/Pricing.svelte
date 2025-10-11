@@ -68,6 +68,9 @@
 								<strong>$100 ANNUAL - Be a Legend &<br/>Support the Founder</strong>
 							</p>
 						</div>
+						<div class="features-header">
+							<h4>What You Get:</h4>
+						</div>
 						<ul class="features">
 							<li>⚡️ First release access</li>
 							<li>⚡️ Stack-check analyzer</li>
@@ -78,9 +81,6 @@
 						</ul>
 						<div class="button-group">
 							<!-- Monthly Option -->
-							<div class="checkout-reminder">
-								Enter code <strong>FAST</strong> at checkout for $10/month
-							</div>
 							<div class="stripe-button-wrapper">
 								{@html `<stripe-buy-button
 									buy-button-id="buy_btn_1SGkyGRt8WbJblnRCVgSF8JY"
@@ -657,6 +657,23 @@
 		font-size: 0.875rem;
 	}
 
+	.features-header {
+		text-align: center;
+		margin: 1.5rem 0 1rem;
+		padding: 0.75rem;
+		background: rgba(255, 255, 255, 0.2);
+		border-radius: 8px;
+	}
+
+	.features-header h4 {
+		margin: 0;
+		font-size: 1.1rem;
+		font-weight: 700;
+		color: var(--faf-white);
+		letter-spacing: 0.5px;
+		text-transform: uppercase;
+	}
+
 	.features {
 		list-style: none;
 		padding: 0;
@@ -676,27 +693,6 @@
 
 	.button-group {
 		margin-top: auto;
-	}
-
-	.checkout-reminder {
-		background: rgba(255, 255, 255, 0.2);
-		color: var(--faf-white);
-		padding: 0.75rem 1rem;
-		border-radius: 6px;
-		font-size: 0.95rem;
-		font-weight: 600;
-		text-align: center;
-		margin-bottom: 1rem;
-		border: 2px dashed rgba(255, 255, 255, 0.4);
-	}
-
-	.checkout-reminder strong {
-		font-size: 1.1rem;
-		letter-spacing: 1.5px;
-		background: var(--faf-white);
-		color: var(--faf-orange);
-		padding: 0.2rem 0.5rem;
-		border-radius: 3px;
 	}
 
 	.btn {
