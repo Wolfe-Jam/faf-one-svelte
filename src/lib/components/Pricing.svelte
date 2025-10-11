@@ -46,27 +46,13 @@
 						<div class="card-header">
 							<h3 class="plan-name">CLI + TURBO</h3>
 							<div class="price-display">
-								<div class="price-original-large">
-									<span class="currency">$</span>
-									<span class="amount">30</span>
-									<span class="period">/month</span>
-								</div>
-								<div class="savings-banner">
-									<div class="savings-text">SAVE $20 • 66.66% OFF</div>
-								</div>
-								<div class="price-final">
-									<div class="only-text">ONLY</div>
-									<div class="final-amount">$10<span class="per-month">/month</span></div>
-									<div class="code-instruction">🏎️💨 Use code <strong>FAST</strong> at checkout</div>
+								<div class="price-strikethrough">$30/month</div>
+								<div class="price-final-simple">
+									<div class="final-price-large">$10<span class="per-month-small">/month</span></div>
+									<div class="coupon-code-box">Use code <strong>FAST</strong></div>
 								</div>
 								<div class="founders-lock">🔒 Lock in this rate forever</div>
 							</div>
-							<p class="plan-description">
-								Free CLI always. Add Turbo for first release access + premium features.
-							</p>
-							<p class="plan-description">
-								<strong>$100 ANNUAL - Be a Legend &<br/>Support the Founder</strong>
-							</p>
 						</div>
 						<div class="features-header">
 							<h4>What You Get:</h4>
@@ -471,93 +457,48 @@
 		margin: 1.5rem 0;
 	}
 
-	/* Original Price - Strikethrough */
-	.price-original-large {
-		display: flex;
-		align-items: baseline;
-		justify-content: center;
-		gap: 0.25rem;
+	/* Simplified Pricing */
+	.price-strikethrough {
 		text-decoration: line-through;
 		opacity: 0.6;
-		margin-bottom: 0.5rem;
-	}
-
-	.price-original-large .currency {
-		font-size: 1rem;
 		color: var(--faf-white);
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
 	}
 
-	.price-original-large .amount {
-		font-size: 2rem;
-		font-weight: 700;
-		color: var(--faf-white);
-		line-height: 1;
-	}
-
-	.price-original-large .period {
-		font-size: 0.875rem;
-		color: var(--faf-white);
-	}
-
-	/* Savings Banner */
-	.savings-banner {
-		background: var(--faf-white);
-		color: var(--faf-orange);
-		padding: 0.5rem 1rem;
-		border-radius: 4px;
-		margin: 0.75rem auto;
-		display: inline-block;
-		width: fit-content;
-	}
-
-	.savings-text {
-		font-size: 1rem;
-		font-weight: 900;
-		letter-spacing: 0.5px;
-	}
-
-	/* Final Price - Prominent */
-	.price-final {
+	.price-final-simple {
 		margin: 1rem 0;
 	}
 
-	.only-text {
-		font-size: 0.875rem;
-		font-weight: 600;
-		color: var(--faf-white);
-		letter-spacing: 1px;
-		margin-bottom: 0.25rem;
-	}
-
-	.final-amount {
+	.final-price-large {
 		font-size: 4rem;
 		font-weight: 900;
 		color: var(--faf-white);
 		line-height: 1;
-		margin-bottom: 0.5rem;
+		margin-bottom: 0.75rem;
 	}
 
-	.per-month {
-		font-size: 1.25rem;
+	.per-month-small {
+		font-size: 1.5rem;
 		font-weight: 600;
-		margin-left: 0.25rem;
 	}
 
-	.code-instruction {
-		font-size: 1.1rem;
-		font-weight: 700;
-		color: var(--faf-white);
-		margin-top: 0.75rem;
-		background: rgba(255, 255, 255, 0.15);
+	.coupon-code-box {
+		background: rgba(255, 255, 255, 0.2);
 		padding: 0.5rem 1rem;
 		border-radius: 4px;
+		font-size: 1rem;
+		color: var(--faf-white);
 		display: inline-block;
 	}
 
-	.code-instruction strong {
-		font-size: 1.3rem;
+	.coupon-code-box strong {
+		font-size: 1.2rem;
 		letter-spacing: 2px;
-		text-decoration: underline;
+		background: var(--faf-white);
+		color: var(--faf-orange);
+		padding: 0.2rem 0.5rem;
+		border-radius: 3px;
 	}
 
 	.price {
