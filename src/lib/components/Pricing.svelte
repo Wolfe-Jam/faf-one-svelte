@@ -58,10 +58,10 @@
 							<h4>What You Get:</h4>
 						</div>
 						<ul class="features">
-							<li>⚡️ First release access</li>
-							<li>⚡️ Stack-check analyzer</li>
-							<li>⚡️ Project Orientation AI</li>
-							<li>⚡️ Build Turbo performance</li>
+							<li>⚡️ Workflow intelligence analysis</li>
+							<li>⚡️ Universal .faf generation</li>
+							<li>⚡️ Multi-platform support (n8n, Make, OpenAI, Opal)</li>
+							<li>⚡️ Server-side processing</li>
 							<li>⚡️ Priority support</li>
 							<li>⚡️ Direct creator access</li>
 						</ul>
