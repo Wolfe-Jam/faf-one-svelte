@@ -13,7 +13,7 @@ const resend = new Resend(process.env.RESEND_API_KEY || '');
  * Generate license email HTML
  */
 function generateLicenseEmailHTML(license: License): string {
-    const tierName = license.tier === 'legends' ? 'LEGENDS' : 'TURBO';
+    const tierName = license.tier === 'legends' ? '.FAF LEGENDS' : '.FAF TURBO';
     const tierEmoji = license.tier === 'legends' ? '👑' : '🏎️💨';
 
     return `
@@ -100,14 +100,14 @@ function generateLicenseEmailHTML(license: License): string {
 </head>
 <body>
     <div class="header">
-        <h1>${tierEmoji} Welcome to FAF ${tierName}!</h1>
+        <h1>${tierEmoji} Welcome to ${tierName}!</h1>
         <p>Your universal automation intelligence is ready</p>
     </div>
 
     <div class="content">
         <p>Hi there! 👋</p>
 
-        <p>Thanks for subscribing to <strong>FAF ${tierName}</strong>! You now have access to:</p>
+        <p>Thanks for subscribing to <strong>${tierName}</strong>! You now have access to:</p>
 
         <ul>
             <li>✅ Universal Intelligence Pattern</li>
@@ -120,12 +120,12 @@ function generateLicenseEmailHTML(license: License): string {
         <div class="license-box">
             <h2>🔑 Your License Key</h2>
             <div class="license-key">${license.key}</div>
-            <p style="color: #666; font-size: 14px;">Keep this safe - you'll need it to activate TURBO</p>
+            <p style="color: #666; font-size: 14px;">Keep this safe - you'll need it to activate .FAF TURBO</p>
         </div>
 
         <h3>Quick Start (2 minutes)</h3>
 
-        <p><strong>Step 1: Install FAF TURBO</strong></p>
+        <p><strong>Step 1: Install .FAF TURBO</strong></p>
         <div class="code-block">
 <span class="code-comment"># Install the CLI tool</span>
 npm install -g faf-turbo
@@ -163,11 +163,11 @@ faf-turbo analyze my-scenario.json
 
         <p>Happy building! 🏎️💨</p>
 
-        <p>— The FAF Team</p>
+        <p>— The .FAF Team</p>
     </div>
 
     <div class="footer">
-        <p>You're receiving this because you subscribed to FAF ${tierName}</p>
+        <p>You're receiving this because you subscribed to ${tierName}</p>
         <p><a href="https://faf.one">faf.one</a> | <a href="https://faf.one/pricing">Manage Subscription</a></p>
     </div>
 </body>
@@ -185,13 +185,14 @@ export async function sendLicenseEmail(license: License): Promise<{ success: boo
     }
 
     try {
-        const tierName = license.tier === 'legends' ? 'LEGENDS 👑' : 'TURBO 🏎️💨';
+        const tierName = license.tier === 'legends' ? '.FAF LEGENDS' : '.FAF TURBO';
+        const tierEmoji = license.tier === 'legends' ? '👑' : '🏎️💨';
 
         const { data, error } = await resend.emails.send({
             from: 'FAF TURBO <turbo@faf.one>',
             replyTo: 'faf@wolfejam.dev',
             to: license.email,
-            subject: `🏎️💨 Your FAF ${tierName} License Key`,
+            subject: `${tierEmoji} Your ${tierName} License Key`,
             html: generateLicenseEmailHTML(license)
         });
 
@@ -216,10 +217,10 @@ export async function sendLicenseEmail(license: License): Promise<{ success: boo
  * Plain text version (fallback)
  */
 function generateLicenseEmailText(license: License): string {
-    const tierName = license.tier === 'legends' ? 'LEGENDS' : 'TURBO';
+    const tierName = license.tier === 'legends' ? '.FAF LEGENDS' : '.FAF TURBO';
 
     return `
-Welcome to FAF ${tierName}!
+Welcome to ${tierName}!
 
 Your License Key: ${license.key}
 
@@ -237,6 +238,6 @@ Quick Start:
 Documentation: https://faf.one/docs
 Support: Reply to this email
 
-— The FAF Team
+— The .FAF Team
     `.trim();
 }
