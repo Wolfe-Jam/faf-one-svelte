@@ -26,6 +26,8 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.75.0",
     "@sveltejs/adapter-vercel": "^5.10.3",
-    "resend": "^6.1.2"
+    "faf-cli": "^3.0.1",
+    "resend": "^6.1.2",
+    "yaml": "^2.8.1"
   }
 }
