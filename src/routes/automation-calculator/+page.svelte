@@ -6,6 +6,7 @@
 	let workflows = $state(25); // Total workflows managed
 	let monthlyChanges = $state(10); // How many workflows change per month
 	let timePerChange = $state(45); // Minutes to understand + modify each workflow
+	let monthlyDebugHours = $state(8); // Hours spent debugging per month
 	let hourlyRate = $state(75); // Developer hourly rate
 	let teamSize = $state(3); // People who need to understand workflows
 
@@ -24,7 +25,14 @@
 	const trustAnnualHours = $derived(trustMonthlyHours * monthsPerYear);
 	const trustAnnualCost = $derived(Math.round(trustAnnualHours * hourlyRate));
 
-	// Savings
+	// Debugging costs (the hidden pain point)
+	const hopeAnnualDebugHours = $derived(monthlyDebugHours * monthsPerYear);
+	const trustAnnualDebugHours = $derived(Math.round(hopeAnnualDebugHours * 0.15)); // 85% faster debugging
+	const debugHoursSaved = $derived(hopeAnnualDebugHours - trustAnnualDebugHours);
+	const debugMoneySaved = $derived(Math.round(debugHoursSaved * hourlyRate));
+
+	// Total savings (changes + debugging)
+	const totalHoursSaved = $derived(Math.round((hopeAnnualHours - trustAnnualHours) + debugHoursSaved));
 	const hoursSaved = $derived(Math.round(hopeAnnualHours - trustAnnualHours));
 	const moneySaved = $derived(hopeAnnualCost - trustAnnualCost);
 	const percentSaved = $derived(Math.round(((hopeAnnualHours - trustAnnualHours) / hopeAnnualHours) * 100));
@@ -46,7 +54,7 @@
 	// ROI calculation
 	const turboCostRegular = 360; // $30/month regular price
 	const turboCostFast = 120; // $10/month with FAST code
-	const totalAnnualSavings = $derived(moneySaved + annualErrorCost);
+	const totalAnnualSavings = $derived(moneySaved + debugMoneySaved + annualErrorCost);
 	const netSavings = $derived(totalAnnualSavings - turboCostFast);
 	const roi = $derived(Math.round((netSavings / turboCostFast) * 100));
 
@@ -54,6 +62,7 @@
 		workflows = 25;
 		monthlyChanges = 10;
 		timePerChange = 45;
+		monthlyDebugHours = 8;
 		hourlyRate = 75;
 		teamSize = 3;
 	}
@@ -151,6 +160,17 @@
 			/>
 
 			<RiskSlider
+				label="Monthly Debugging Hours"
+				helpText="Hours per month debugging workflow errors (vague errors, silent failures)"
+				bind:value={monthlyDebugHours}
+				min={1}
+				max={40}
+				step={1}
+				displayValue="{monthlyDebugHours} hours/month"
+				color="red"
+			/>
+
+			<RiskSlider
 				label="Developer Hourly Rate"
 				helpText="Average cost per hour (including overhead)"
 				bind:value={hourlyRate}
@@ -175,6 +195,7 @@
 			<div class="insight-box">
 				<h4>📊 Hidden Costs</h4>
 				<ul>
+					<li><strong>{hopeAnnualDebugHours} hours/year</strong> debugging vague errors</li>
 					<li><strong>{undocumentedWorkflows}</strong> workflows likely undocumented</li>
 					<li><strong>{documentationHours} hours</strong> to document them manually</li>
 					<li><strong>{hopeOnboardingDays} days</strong> to onboard new team members</li>
@@ -207,13 +228,13 @@
 				<div class="savings-grid">
 					<div class="savings-item primary">
 						<div class="savings-label">Time Saved Annually</div>
-						<div class="savings-value">{hoursSaved} hours</div>
-						<div class="savings-subtext">{percentSaved}% reduction</div>
+						<div class="savings-value">{totalHoursSaved} hours</div>
+						<div class="savings-subtext">{percentSaved}% reduction in workflow changes</div>
 					</div>
 					<div class="savings-item primary">
-						<div class="savings-label">Money Saved Annually</div>
-						<div class="savings-value">${moneySaved.toLocaleString()}</div>
-						<div class="savings-subtext">Direct cost savings</div>
+						<div class="savings-label">Total Saved Annually</div>
+						<div class="savings-value">${totalAnnualSavings.toLocaleString()}</div>
+						<div class="savings-subtext">Including ${debugMoneySaved.toLocaleString()} from debugging</div>
 					</div>
 				</div>
 			</div>
@@ -252,11 +273,15 @@
 				<h3>Return on Investment</h3>
 				<div class="roi-breakdown">
 					<div class="roi-line">
-						<span>Annual Savings (Time)</span>
+						<span>Annual Savings (Workflow Changes)</span>
 						<span class="roi-value">${moneySaved.toLocaleString()}</span>
 					</div>
 					<div class="roi-line">
-						<span>Annual Savings (Quality)</span>
+						<span>Annual Savings (Debugging) 🔥</span>
+						<span class="roi-value">${debugMoneySaved.toLocaleString()}</span>
+					</div>
+					<div class="roi-line">
+						<span>Annual Savings (Fewer Errors)</span>
 						<span class="roi-value">${annualErrorCost.toLocaleString()}</span>
 					</div>
 					<div class="roi-line total">

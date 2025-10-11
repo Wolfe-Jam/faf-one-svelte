@@ -7,6 +7,7 @@
 	import LiveDemo from '$lib/components/LiveDemo.svelte';
 	import Journey from '$lib/components/Journey.svelte';
 	import AIAutomation from '$lib/components/AIAutomation.svelte';
+	import N8nPainPoints from '$lib/components/N8nPainPoints.svelte';
 	import Pricing from '$lib/components/Pricing.svelte';
 	import Onboarding from '$lib/components/Onboarding.svelte';
 	import EmailCapture from '$lib/components/EmailCapture.svelte';
@@ -105,6 +106,9 @@
 	</div>
 	<div id="ai-automation">
 		<AIAutomation />
+	</div>
+	<div id="n8n-pain-points">
+		<N8nPainPoints />
 	</div>
 	<div id="onboarding">
 		<Onboarding />
