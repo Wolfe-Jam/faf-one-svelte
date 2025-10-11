@@ -46,15 +46,20 @@
 						<div class="card-header">
 							<h3 class="plan-name">CLI + TURBO</h3>
 							<div class="price-display">
-								<div class="price">
+								<div class="price-original-large">
 									<span class="currency">$</span>
 									<span class="amount">30</span>
 									<span class="period">/month</span>
 								</div>
-								<div class="founders-lock" style="font-size: 1.1rem; font-weight: 700; margin-top: 0.75rem;">
-									🏎️💨 Use code <strong>FAST</strong> for $10/month
+								<div class="savings-banner">
+									<div class="savings-text">SAVE $20 • 66.66% OFF</div>
 								</div>
-								<div class="founders-lock">🔒 Lock in your rate forever</div>
+								<div class="price-final">
+									<div class="only-text">ONLY</div>
+									<div class="final-amount">$10<span class="per-month">/month</span></div>
+									<div class="code-instruction">🏎️💨 Use code <strong>FAST</strong> at checkout</div>
+								</div>
+								<div class="founders-lock">🔒 Lock in this rate forever</div>
 							</div>
 							<p class="plan-description">
 								Free CLI always. Add Turbo for first release access + premium features.
@@ -73,6 +78,9 @@
 						</ul>
 						<div class="button-group">
 							<!-- Monthly Option -->
+							<div class="checkout-reminder">
+								Enter code <strong>FAST</strong> at checkout for $10/month
+							</div>
 							<div class="stripe-button-wrapper">
 								{@html `<stripe-buy-button
 									buy-button-id="buy_btn_1SGkyGRt8WbJblnRCVgSF8JY"
@@ -463,6 +471,95 @@
 		margin: 1.5rem 0;
 	}
 
+	/* Original Price - Strikethrough */
+	.price-original-large {
+		display: flex;
+		align-items: baseline;
+		justify-content: center;
+		gap: 0.25rem;
+		text-decoration: line-through;
+		opacity: 0.6;
+		margin-bottom: 0.5rem;
+	}
+
+	.price-original-large .currency {
+		font-size: 1rem;
+		color: var(--faf-white);
+	}
+
+	.price-original-large .amount {
+		font-size: 2rem;
+		font-weight: 700;
+		color: var(--faf-white);
+		line-height: 1;
+	}
+
+	.price-original-large .period {
+		font-size: 0.875rem;
+		color: var(--faf-white);
+	}
+
+	/* Savings Banner */
+	.savings-banner {
+		background: var(--faf-white);
+		color: var(--faf-orange);
+		padding: 0.5rem 1rem;
+		border-radius: 4px;
+		margin: 0.75rem auto;
+		display: inline-block;
+		width: fit-content;
+	}
+
+	.savings-text {
+		font-size: 1rem;
+		font-weight: 900;
+		letter-spacing: 0.5px;
+	}
+
+	/* Final Price - Prominent */
+	.price-final {
+		margin: 1rem 0;
+	}
+
+	.only-text {
+		font-size: 0.875rem;
+		font-weight: 600;
+		color: var(--faf-white);
+		letter-spacing: 1px;
+		margin-bottom: 0.25rem;
+	}
+
+	.final-amount {
+		font-size: 4rem;
+		font-weight: 900;
+		color: var(--faf-white);
+		line-height: 1;
+		margin-bottom: 0.5rem;
+	}
+
+	.per-month {
+		font-size: 1.25rem;
+		font-weight: 600;
+		margin-left: 0.25rem;
+	}
+
+	.code-instruction {
+		font-size: 1.1rem;
+		font-weight: 700;
+		color: var(--faf-white);
+		margin-top: 0.75rem;
+		background: rgba(255, 255, 255, 0.15);
+		padding: 0.5rem 1rem;
+		border-radius: 4px;
+		display: inline-block;
+	}
+
+	.code-instruction strong {
+		font-size: 1.3rem;
+		letter-spacing: 2px;
+		text-decoration: underline;
+	}
+
 	.price {
 		display: flex;
 		align-items: baseline;
@@ -488,7 +585,7 @@
 	}
 
 	.founders-lock {
-		margin-top: 0.5rem;
+		margin-top: 0.75rem;
 		font-size: 0.9rem;
 		color: var(--faf-white);
 		opacity: 0.9;
@@ -579,6 +676,27 @@
 
 	.button-group {
 		margin-top: auto;
+	}
+
+	.checkout-reminder {
+		background: rgba(255, 255, 255, 0.2);
+		color: var(--faf-white);
+		padding: 0.75rem 1rem;
+		border-radius: 6px;
+		font-size: 0.95rem;
+		font-weight: 600;
+		text-align: center;
+		margin-bottom: 1rem;
+		border: 2px dashed rgba(255, 255, 255, 0.4);
+	}
+
+	.checkout-reminder strong {
+		font-size: 1.1rem;
+		letter-spacing: 1.5px;
+		background: var(--faf-white);
+		color: var(--faf-orange);
+		padding: 0.2rem 0.5rem;
+		border-radius: 3px;
 	}
 
 	.btn {
