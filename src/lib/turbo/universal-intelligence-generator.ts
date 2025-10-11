@@ -14,6 +14,8 @@
  * FOUNDATIONAL FIRST, UNIVERSAL BY DEFAULT
  */
 
+import yaml from 'yaml';
+
 export interface IntelligenceSource {
   type: SourceType;
   filePath: string;
@@ -160,7 +162,6 @@ export abstract class UniversalIntelligenceGenerator {
    * Helper: Convert structured intelligence → YAML
    */
   protected toYAML(intelligence: StructuredIntelligence): string {
-    const yaml = require('yaml');
     return yaml.stringify(intelligence);
   }
 
@@ -282,7 +283,6 @@ export class N8nIntelligenceGenerator extends UniversalIntelligenceGenerator {
     const fafYAML = await fs.readFile(outputPath, 'utf-8');
 
     // Parse back to structured format
-    const yaml = require('yaml');
     const structured = yaml.parse(fafYAML);
 
     return structured;
