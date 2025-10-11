@@ -20,7 +20,19 @@ import { isValidKeyFormat } from '$lib/license-generator';
 
 export const POST: RequestHandler = async ({ request }) => {
     try {
-        const { key } = await request.json();
+        // Parse JSON body
+        let body;
+        try {
+            body = await request.json();
+        } catch (parseError) {
+            // Malformed JSON
+            return json({
+                valid: false,
+                message: 'Invalid JSON in request body'
+            }, { status: 400 });
+        }
+
+        const { key } = body;
 
         // Validate format
         if (!isValidKeyFormat(key)) {

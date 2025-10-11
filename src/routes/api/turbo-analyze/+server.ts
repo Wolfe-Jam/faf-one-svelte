@@ -116,7 +116,17 @@ async function analyzeWithTURBO(
  */
 export const POST: RequestHandler = async ({ request }) => {
     try {
-        const body: AnalyzeRequest = await request.json();
+        // Parse JSON body
+        let body: AnalyzeRequest;
+        try {
+            body = await request.json();
+        } catch (parseError) {
+            // Malformed JSON
+            return json({
+                success: false,
+                error: 'Invalid JSON in request body'
+            } as AnalyzeResponse, { status: 400 });
+        }
 
         // Validate inputs
         if (!body.licenseKey) {

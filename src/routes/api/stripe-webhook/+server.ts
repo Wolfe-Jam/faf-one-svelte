@@ -30,7 +30,14 @@ export const POST: RequestHandler = async ({ request }) => {
 
         // In production, verify the webhook signature with Stripe SDK
         // For now, parse the event directly
-        const event = JSON.parse(body);
+        let event;
+        try {
+            event = JSON.parse(body);
+        } catch (parseError) {
+            // Malformed JSON
+            console.error('❌ Webhook malformed JSON:', parseError);
+            return json({ error: 'Invalid JSON in webhook payload' }, { status: 400 });
+        }
 
         console.log(`📨 Webhook received: ${event.type}`);
 
