@@ -126,7 +126,7 @@
 							<!-- Monthly Option -->
 							<div class="stripe-button-wrapper">
 								{@html `<stripe-buy-button
-									buy-button-id="buy_btn_1SF3YgRt8WbJblnRNiM7wqwk"
+									buy-button-id="buy_btn_1SGtXERt8WbJblnRvMfM3t80"
 									publishable-key="pk_live_51RsYPuRt8WbJblnRhd7gwvTqkNie5A5GhGotKYbdYj6R18PtKzDpObayQdpUQ7sjSMt4b0381Je2yyphYot6ELYR00D50NnmJt"
 								></stripe-buy-button>`}
 							</div>
