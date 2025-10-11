@@ -89,6 +89,13 @@ function generateLicenseEmailHTML(license: License): string {
             padding-top: 20px;
             border-top: 1px solid #ddd;
         }
+        a {
+            color: #FF6B35;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -161,7 +168,7 @@ faf-turbo analyze my-scenario.json
 
     <div class="footer">
         <p>You're receiving this because you subscribed to FAF ${tierName}</p>
-        <p><a href="https://faf.one">faf.one</a> | Manage subscription in your Stripe customer portal</p>
+        <p><a href="https://faf.one">faf.one</a> | <a href="https://faf.one/pricing">Manage Subscription</a></p>
     </div>
 </body>
 </html>
