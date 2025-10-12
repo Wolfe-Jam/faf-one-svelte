@@ -425,27 +425,7 @@
 		transform: scale(1.02);
 		box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
 	}
-	
-	.classic-tagline {
-		font-size: 1.75rem;
-		font-weight: 700;
-		color: var(--faf-black);
-		text-align: center;
-		margin-top: 3rem;
-		font-style: italic;
-		letter-spacing: -0.02em;
-		position: relative;
-		padding: 0 1rem;
-	}
-	
-	.classic-tagline::before,
-	.classic-tagline::after {
-		content: "—";
-		color: var(--faf-orange);
-		margin: 0 0.5rem;
-		font-weight: 400;
-	}
-	
+
 	/* Text blocks with scroll reveal */
 	.text-block {
 		margin: 2.5rem 0;
@@ -615,42 +595,6 @@
 		justify-content: center;
 		margin: 2rem 0;
 		animation: slideInUp 0.7s ease-out 0.35s backwards;
-	}
-
-	.npm-badge {
-		display: inline-flex;
-		align-items: center;
-		gap: 1rem;
-		padding: 1rem 2rem;
-		background: var(--faf-black);
-		color: white;
-		border-radius: 999px;
-		font-weight: 700;
-		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-		animation: pulse 2s ease-in-out infinite;
-	}
-
-	.npm-icon {
-		font-size: 2rem;
-	}
-
-	.npm-content {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-	}
-
-	.npm-number {
-		font-size: 1.75rem;
-		font-weight: 900;
-		line-height: 1;
-	}
-
-	.npm-label {
-		font-size: 0.875rem;
-		opacity: 0.95;
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
 	}
 
 	.testing-stats {

@@ -245,39 +245,6 @@
 		margin-bottom: 3rem;
 	}
 
-	.support-message {
-		text-align: center;
-		max-width: 800px;
-		margin: 0 auto 4rem;
-		padding: 2rem;
-		background: var(--faf-white);
-		border-radius: 12px;
-		border: 2px solid var(--faf-gray-light);
-	}
-
-	.support-message h3 {
-		font-size: 1.75rem;
-		margin-bottom: 1rem;
-		color: var(--faf-black);
-	}
-
-	.support-message p {
-		color: var(--faf-gray-dark);
-		font-size: 1.125rem;
-		line-height: 1.6;
-		margin: 0.75rem 0;
-	}
-
-	.rally-text {
-		margin-top: 1.5rem;
-		font-size: 1.25rem;
-		color: var(--faf-black);
-	}
-
-	.rally-text strong {
-		color: var(--faf-orange);
-	}
-
 	.pricing-options {
 		font-size: 1.5rem;
 		font-weight: 700;
@@ -346,10 +313,6 @@
 		border: 2px solid var(--faf-orange);
 	}
 
-	.orange-text {
-		color: var(--faf-white);
-	}
-
 	/* Teams - Green */
 	.teams-card {
 		background: var(--faf-green);
@@ -384,10 +347,6 @@
 		border: 2px solid var(--faf-green);
 	}
 
-	.green-text {
-		color: var(--faf-white);
-	}
-
 	/* Enterprise - Black */
 	.enterprise-card {
 		background: var(--faf-black);
@@ -412,10 +371,6 @@
 		background: var(--faf-white);
 		color: var(--faf-black);
 		border: 2px solid var(--faf-black);
-	}
-
-	.white-text {
-		color: var(--faf-white);
 	}
 
 	.coming-badge {
@@ -529,11 +484,6 @@
 		opacity: 0.9;
 	}
 
-	.coming-text {
-		font-size: 1.5rem;
-		font-weight: 700;
-	}
-
 	.stripe-button-wrapper {
 		display: flex;
 		justify-content: center;
@@ -643,30 +593,6 @@
 		font-weight: 700;
 		transition: all 0.2s ease;
 		border: 2px solid;
-	}
-
-	.btn-orange {
-		background: var(--faf-white);
-		color: var(--faf-orange);
-		border-color: var(--faf-white);
-	}
-
-	.btn-orange:hover {
-		background: transparent;
-		color: var(--faf-white);
-		border-color: var(--faf-white);
-	}
-
-	.btn-green {
-		background: var(--faf-white);
-		color: var(--faf-green);
-		border-color: var(--faf-white);
-	}
-
-	.btn-green:hover {
-		background: transparent;
-		color: var(--faf-white);
-		border-color: var(--faf-white);
 	}
 
 	.btn-white {
