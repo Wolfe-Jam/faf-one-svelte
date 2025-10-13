@@ -1,5 +1,24 @@
-# allow crawling everything by default
-User-agent: *
-Disallow:
+# robots.txt for faf.one
 
+# Allow all search engines
+User-agent: *
+Allow: /
+
+# Sitemap location
 Sitemap: https://faf.one/sitemap.xml
+
+# Block aggressive crawlers that waste resources
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: DotBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10
+
+User-agent: BLEXBot
+Disallow: /
