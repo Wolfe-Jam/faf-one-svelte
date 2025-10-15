@@ -2,14 +2,14 @@
 	const tools = [
 		{
 			name: 'FAF CLI',
-			tagline: 'Championship Edition',
-			description: 'The original. FREE FOREVER. 41 championship commands, <50ms speed.',
+			tagline: 'Championship Edition with TURBO-CAT 😽',
+			description: 'The original. FREE FOREVER. Powered by TURBO-CAT - The Catalytic Converter for your projects.',
 			features: [
+				'TURBO-CAT 😽 - The .faf Representative',
+				'Catalytic Converter: Raw files → AI context',
+				'154 formats (1 .faf + 153 in pyramid)',
 				'41 championship commands',
-				'Sub-50ms performance',
-				'TURBO-CAT format discovery (154 formats)',
-				'100% Strict TypeScript',
-				'Works with all AI tools'
+				'100% Strict TypeScript'
 			],
 			github: 'https://github.com/Wolfe-Jam/faf-cli',
 			npm: 'https://www.npmjs.com/package/faf-cli',
@@ -114,8 +114,13 @@
 <main class="ecosystem-page">
 	<header class="page-header">
 		<h1>🏎️ The FAF Ecosystem</h1>
-		<p class="lead">Universal AI context tools for developers. FREE FOREVER.</p>
-		<p class="subtitle">6 tools, one mission: Make AI context effortless for every developer.</p>
+		<p class="lead">Powered by TURBO-CAT 😽 - The Catalytic Converter</p>
+		<p class="subtitle">6 tools, one mission: Transform raw projects into clean AI context</p>
+		<div class="turbo-cat-intro">
+			<p><strong>Meet TURBO-CAT 😽</strong> - The .faf representative. Just like a catalytic converter transforms exhaust into clean emissions, TURBO-CAT transforms raw project files into clean, AI-ready context.</p>
+			<p class="purr-line"><strong>CATs keep themselves clean.</strong> He can make your Stack positively <strong>PURR</strong>. 😽</p>
+			<p class="pyramid-note"><strong>154 formats validated:</strong> 1 .faf at apex + 153 in the 17-level pyramid.</p>
+		</div>
 	</header>
 
 	<div class="tools-grid">
@@ -200,7 +205,7 @@
 			</div>
 			<div class="stat">
 				<div class="stat-value">154</div>
-				<div class="stat-label">Formats Validated</div>
+				<div class="stat-label">Formats (1+153 Pyramid)</div>
 			</div>
 			<div class="stat">
 				<div class="stat-value">100%</div>
@@ -315,7 +320,49 @@
 	.subtitle {
 		font-size: 1.125rem;
 		color: #888;
-		margin: 0.5rem 0;
+		margin: 0.5rem 0 1.5rem 0;
+	}
+
+	.turbo-cat-intro {
+		background: linear-gradient(135deg, #fff5f0 0%, white 100%);
+		border: 2px solid var(--faf-orange);
+		border-radius: 12px;
+		padding: 1.5rem 2rem;
+		margin: 1.5rem auto 0;
+		max-width: 800px;
+	}
+
+	.turbo-cat-intro p {
+		font-size: 1.125rem;
+		line-height: 1.7;
+		color: #333;
+		margin: 0 0 1rem 0;
+	}
+
+	.turbo-cat-intro p:last-child {
+		margin-bottom: 0;
+	}
+
+	.turbo-cat-intro strong {
+		color: var(--faf-orange);
+	}
+
+	.purr-line {
+		font-size: 1.25rem;
+		text-align: center;
+		font-style: italic;
+		background: rgba(255, 107, 53, 0.1);
+		padding: 1rem;
+		border-radius: 8px;
+		margin: 1rem 0 !important;
+	}
+
+	.pyramid-note {
+		font-size: 1rem;
+		color: #666;
+		border-top: 1px solid rgba(255, 107, 53, 0.2);
+		padding-top: 1rem;
+		margin-top: 1rem !important;
 	}
 
 	.tools-grid {
