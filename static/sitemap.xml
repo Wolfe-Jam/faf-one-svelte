@@ -20,6 +20,53 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Add more pages as discovered -->
+  <!-- Ecosystem -->
+  <url>
+    <loc>https://faf.one/ecosystem</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- External FAF Tools (referenced) -->
+  <!-- CLI -->
+  <url>
+    <loc>https://github.com/Wolfe-Jam/faf-cli</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- MCP Server -->
+  <url>
+    <loc>https://github.com/Wolfe-Jam/claude-faf-mcp</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Chrome Extension -->
+  <url>
+    <loc>https://github.com/Wolfe-Jam/faf-chrome-extension</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Dev Tools -->
+  <url>
+    <loc>https://github.com/Wolfe-Jam/faf-dev-tools</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Specification -->
+  <url>
+    <loc>https://github.com/Wolfe-Jam/faf</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
 </urlset>
