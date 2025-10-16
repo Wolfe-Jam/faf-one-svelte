@@ -316,8 +316,8 @@
 					<div class="price-strike">$30/month</div>
 					<div class="price-fast">$10/month with code <strong>FAST</strong></div>
 				</div>
-				<a href="/#pricing" class="btn-turbo">Get TURBO → Lock in $10/month Forever</a>
-				<p class="lock-in">🔒 Use code FAST at checkout. Limited time for fast movers.</p>
+				<a href="/#pricing" class="btn-turbo">Get TURBO → Lock in $10/month</a>
+				<p class="lock-in">🔒 Use code FAST at checkout. Limited availability.</p>
 			</div>
 		</div>
 	</div>
