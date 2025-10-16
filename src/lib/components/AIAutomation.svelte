@@ -32,105 +32,150 @@
 	<div class="container">
 		<div class="content" class:visible={isVisible}>
 			<div class="header-section">
-				<h2 class="section-title">AI-Automation Intelligence</h2>
+				<h2 class="section-title">n8n Workflows Are Powerful</h2>
 				<p class="section-subtitle">
-					The automation industry is fragmenting.<br/>
-					<strong>.faf is the universal standard.</strong>
+					But <strong>AI can't read them.</strong>
+				</p>
+				<p class="section-tagline">
+					.faf makes n8n workflows AI-native.
 				</p>
 			</div>
 
-			<div class="problem-section">
-				<h3 class="problem-title">The Problem</h3>
-				<div class="platform-grid">
-					<div class="platform-item">
-						<div class="platform-name">n8n</div>
-						<div class="platform-format">proprietary JSON</div>
+			<div class="comparison-grid">
+				<div class="comparison-column">
+					<div class="column-header before">
+						<h3>Before .faf</h3>
+						<div class="column-label">n8n JSON</div>
 					</div>
-					<div class="platform-item">
-						<div class="platform-name">Make.com</div>
-						<div class="platform-format">blueprint format</div>
-					</div>
-					<div class="platform-item">
-						<div class="platform-name">OpenAI</div>
-						<div class="platform-format">assistant schema</div>
-					</div>
-					<div class="platform-item">
-						<div class="platform-name">Google Opal</div>
-						<div class="platform-format">mini-app config</div>
-					</div>
-					<div class="platform-item">
-						<div class="platform-name">Zapier</div>
-						<div class="platform-format">zap format</div>
-					</div>
-					<div class="platform-item">
-						<div class="platform-name">+ 100s more</div>
-						<div class="platform-format">all different</div>
+					<div class="comparison-content">
+						<div class="code-block">
+							<pre><code>{`{
+  "nodes": [
+    {
+      "id": "8a4d5c6e",
+      "type": "httpRequest",
+      "parameters": {...}
+    }
+  ]
+}`}</code></pre>
+						</div>
+						<div class="comparison-issues">
+							<div class="issue-item">
+								<span class="issue-icon">❌</span>
+								<span class="issue-text">AI can't help</span>
+							</div>
+							<div class="issue-item">
+								<span class="issue-icon">❌</span>
+								<span class="issue-text">No search</span>
+							</div>
+							<div class="issue-item">
+								<span class="issue-icon">❌</span>
+								<span class="issue-text">Vague errors</span>
+							</div>
+							<div class="issue-item">
+								<span class="issue-icon">❌</span>
+								<span class="issue-text">Manual docs</span>
+							</div>
+						</div>
 					</div>
 				</div>
-				<p class="problem-statement">
-					Each platform has its own format. Your automation intelligence is trapped in silos.<br/>
-					<strong>AI can't help if it doesn't understand your workflows.</strong>
+
+				<div class="comparison-arrow">
+					<div class="arrow-symbol">→</div>
+					<div class="arrow-text">.faf</div>
+				</div>
+
+				<div class="comparison-column">
+					<div class="column-header after">
+						<h3>After .faf</h3>
+						<div class="column-label">.faf Universal Format</div>
+					</div>
+					<div class="comparison-content">
+						<div class="code-block">
+							<pre><code>{`# .faf - AI-Readable
+project:
+  name: "customer-onboarding"
+  platform: "n8n"
+
+context:
+  purpose: "Stripe → User → Email"
+  triggers: ["stripe-webhook"]
+
+automation:
+  nodes: [...]`}</code></pre>
+						</div>
+						<div class="comparison-benefits">
+							<div class="benefit-item">
+								<span class="benefit-icon">✅</span>
+								<span class="benefit-text">AI understands</span>
+							</div>
+							<div class="benefit-item">
+								<span class="benefit-icon">✅</span>
+								<span class="benefit-text">Instant search</span>
+							</div>
+							<div class="benefit-item">
+								<span class="benefit-icon">✅</span>
+								<span class="benefit-text">Smart debugging</span>
+							</div>
+							<div class="benefit-item">
+								<span class="benefit-icon">✅</span>
+								<span class="benefit-text">Auto-generated docs</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="n8n-quote">
+				<div class="quote-icon">"</div>
+				<p class="quote-text">
+					While n8n can integrate with AI services, it <strong>lacks native AI understanding.</strong>
 				</p>
-			</div>
-
-			<div class="solution-arrow">
-				<div class="arrow-symbol">↓</div>
-				<div class="arrow-text">.faf solves this</div>
-			</div>
-
-			<div class="solution-section">
-				<h3 class="solution-title">The Universal Adapter</h3>
-				<div class="adapter-visual">
-					<div class="adapter-input">
-						<div class="input-label">Any Platform</div>
-						<div class="input-formats">
-							n8n • Make • OpenAI • Opal • Zapier • etc.
-						</div>
-					</div>
-					<div class="adapter-arrow">→</div>
-					<div class="adapter-faf">
-						<div class="faf-box">.faf</div>
-						<div class="faf-tagline">Universal Format</div>
-					</div>
-					<div class="adapter-arrow">→</div>
-					<div class="adapter-output">
-						<div class="output-label">AI-Ready</div>
-						<div class="output-benefits">
-							Context • Search • Documentation • RAG
-						</div>
-					</div>
-				</div>
+				<p class="quote-source">— n8n Review, 2025</p>
+				<p class="quote-solution">.faf solves this.</p>
 			</div>
 
 			<div class="value-props">
 				<div class="value-card">
-					<div class="value-icon">🎯</div>
-					<h4 class="value-title">AI Context for Automations</h4>
+					<div class="value-icon">⚡️</div>
+					<h4 class="value-title">85% Faster Debugging</h4>
 					<p class="value-description">
-						Your automation projects are just projects. Give them the same AI context your code has.
+						AI reads your .faf workflows and helps diagnose issues instantly. No more 2AM guesswork.
 					</p>
 				</div>
 				<div class="value-card">
 					<div class="value-icon">🔍</div>
-					<h4 class="value-title">Cross-Platform Intelligence</h4>
+					<h4 class="value-title">Cross-Workflow Search</h4>
 					<p class="value-description">
-						Search, compare, and understand automations across any platform. No more silos.
+						"Which workflows use Stripe?" Get instant answers across all your n8n automations.
 					</p>
 				</div>
 				<div class="value-card">
 					<div class="value-icon">📚</div>
-					<h4 class="value-title">Template Library Access</h4>
+					<h4 class="value-title">Onboarding: Weeks → Days</h4>
 					<p class="value-description">
-						10,000+ automation templates become AI-searchable. Find patterns, learn approaches.
+						AI explains workflows to new team members. No more 45-minute manual explanations.
 					</p>
 				</div>
 				<div class="value-card">
-					<div class="value-icon">🚀</div>
-					<h4 class="value-title">Future-Proof Standard</h4>
+					<div class="value-icon">🤖</div>
+					<h4 class="value-title">Always-Current Documentation</h4>
 					<p class="value-description">
-						When the next automation platform launches, .faf is already the standard. Stay ahead.
+						The .faf file IS the documentation. Generated from source, never out of date.
 					</p>
 				</div>
+			</div>
+
+			<div class="platform-support">
+				<p class="platform-label">Also works with:</p>
+				<div class="platform-tags">
+					<span class="platform-tag">Make.com</span>
+					<span class="platform-tag">OpenAI Assistants</span>
+					<span class="platform-tag">Google Opal</span>
+					<span class="platform-tag">Zapier</span>
+					<span class="platform-tag">+ more</span>
+				</div>
+				<p class="platform-note">Universal format. One standard. Any automation platform.</p>
 			</div>
 
 			<div class="availability">
@@ -138,10 +183,10 @@
 					<span class="badge-icon">⚡️</span>
 					<span class="badge-text">NOW AVAILABLE</span>
 				</div>
-				<h3 class="availability-title">TURBO Automation</h3>
+				<h3 class="availability-title">TURBO for n8n</h3>
 				<p class="availability-description">
-					Server-side workflow intelligence for n8n, Make.com, OpenAI Assistants, and Google Opal.<br/>
-					More platforms coming soon.
+					Convert your n8n workflows to AI-readable .faf format in seconds.<br/>
+					Server-side processing. Secure. Fast.
 				</p>
 				<div class="availability-cta">
 					<a href="/automation-calculator" class="btn-calculator">
@@ -150,18 +195,8 @@
 					<a href="#pricing" class="btn-primary">
 						Get TURBO for $10/month →
 					</a>
-					<p class="cta-subtext">Lock in this rate forever. No BS.</p>
+					<p class="cta-subtext">Lock in $10/month forever with code <strong>FAST</strong></p>
 				</div>
-			</div>
-
-			<div class="future-teaser">
-				<div class="teaser-icon">🔮</div>
-				<h4 class="teaser-title">What's Next?</h4>
-				<p class="teaser-text">
-					RAG for automation intelligence is coming. Imagine searching across thousands of workflows,<br/>
-					finding patterns, asking "how do others solve this?" across every platform.<br/>
-					<strong>.faf makes this possible.</strong>
-				</p>
 			</div>
 		</div>
 	</div>
@@ -199,166 +234,200 @@
 	}
 
 	.section-subtitle {
-		font-size: 1.5rem;
+		font-size: 2rem;
 		color: var(--faf-gray-dark);
 		line-height: 1.4;
+		margin-bottom: 1rem;
 	}
 
 	.section-subtitle strong {
+		color: #FF6B35;
+	}
+
+	.section-tagline {
+		font-size: 1.5rem;
 		color: #019193;
+		font-weight: 700;
+		margin-top: 1rem;
 	}
 
-	.problem-section {
-		max-width: 900px;
-		margin: 0 auto 3rem;
-		text-align: center;
-	}
-
-	.problem-title {
-		font-size: 2rem;
-		font-weight: 900;
-		color: var(--faf-black);
-		margin-bottom: 2rem;
-	}
-
-	.platform-grid {
+	.comparison-grid {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 1rem;
-		margin-bottom: 2rem;
+		grid-template-columns: 1fr auto 1fr;
+		gap: 2rem;
+		max-width: 1200px;
+		margin: 0 auto 4rem;
+		align-items: start;
 	}
 
-	.platform-item {
+	.comparison-column {
 		background: var(--faf-white);
-		border: 2px solid var(--faf-gray-medium);
-		border-radius: 8px;
-		padding: 1rem;
+		border-radius: 16px;
+		overflow: hidden;
+		border: 3px solid var(--faf-gray-medium);
 		transition: all 0.3s ease;
 	}
 
-	.platform-item:hover {
-		transform: translateY(-2px);
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-		border-color: #019193;
+	.comparison-column:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 	}
 
-	.platform-name {
-		font-size: 1.125rem;
-		font-weight: 700;
-		color: var(--faf-black);
-		margin-bottom: 0.25rem;
-	}
-
-	.platform-format {
-		font-size: 0.875rem;
-		color: var(--faf-gray-dark);
-		font-family: var(--font-mono);
-	}
-
-	.problem-statement {
-		font-size: 1.125rem;
-		color: var(--faf-gray-dark);
-		line-height: 1.6;
-		margin-top: 2rem;
-	}
-
-	.problem-statement strong {
-		color: var(--faf-black);
-		font-weight: 700;
-	}
-
-	.solution-arrow {
+	.column-header {
+		padding: 1.5rem;
 		text-align: center;
-		margin: 3rem 0;
+	}
+
+	.column-header.before {
+		background: rgba(255, 107, 53, 0.1);
+		border-bottom: 3px solid #FF6B35;
+	}
+
+	.column-header.after {
+		background: rgba(1, 145, 147, 0.1);
+		border-bottom: 3px solid #019193;
+	}
+
+	.column-header h3 {
+		font-size: 1.5rem;
+		font-weight: 900;
+		color: var(--faf-black);
+		margin-bottom: 0.5rem;
+	}
+
+	.column-label {
+		font-size: 0.875rem;
+		font-family: var(--font-mono);
+		color: var(--faf-gray-dark);
+		font-weight: 600;
+	}
+
+	.comparison-content {
+		padding: 1.5rem;
+	}
+
+	.code-block {
+		background: #0a0a0a;
+		border-radius: 8px;
+		padding: 1rem;
+		margin-bottom: 1.5rem;
+		overflow-x: auto;
+	}
+
+	.code-block pre {
+		margin: 0;
+		font-family: var(--font-mono);
+		font-size: 0.8rem;
+		line-height: 1.5;
+	}
+
+	.code-block code {
+		color: #00D4D4;
+		white-space: pre;
+	}
+
+	.comparison-issues,
+	.comparison-benefits {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.issue-item,
+	.benefit-item {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-size: 1rem;
+		font-weight: 600;
+	}
+
+	.issue-icon {
+		font-size: 1.25rem;
+	}
+
+	.benefit-icon {
+		font-size: 1.25rem;
+	}
+
+	.issue-text {
+		color: #FF6B35;
+	}
+
+	.benefit-text {
+		color: #019193;
+	}
+
+	.comparison-arrow {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
 	}
 
 	.arrow-symbol {
-		font-size: 4rem;
+		font-size: 3rem;
 		color: #019193;
-		line-height: 1;
-		animation: bounce 2s infinite;
-	}
-
-	@keyframes bounce {
-		0%, 100% { transform: translateY(0); }
-		50% { transform: translateY(10px); }
+		font-weight: 900;
 	}
 
 	.arrow-text {
 		font-size: 1.5rem;
-		font-weight: 700;
-		color: #019193;
-		margin-top: 0.5rem;
-	}
-
-	.solution-section {
-		max-width: 1000px;
-		margin: 0 auto 4rem;
-	}
-
-	.solution-title {
-		font-size: 2rem;
-		font-weight: 900;
-		color: var(--faf-black);
-		text-align: center;
-		margin-bottom: 2rem;
-	}
-
-	.adapter-visual {
-		display: grid;
-		grid-template-columns: 1fr auto 1fr auto 1fr;
-		gap: 1.5rem;
-		align-items: center;
-		background: var(--faf-white);
-		border: 3px solid #019193;
-		border-radius: 16px;
-		padding: 2rem;
-		box-shadow: 0 8px 16px rgba(1, 145, 147, 0.2);
-	}
-
-	.adapter-input, .adapter-output {
-		text-align: center;
-	}
-
-	.input-label, .output-label {
-		font-size: 1.125rem;
-		font-weight: 700;
-		color: var(--faf-black);
-		margin-bottom: 0.5rem;
-	}
-
-	.input-formats, .output-benefits {
-		font-size: 0.875rem;
-		color: var(--faf-gray-dark);
-		line-height: 1.6;
-	}
-
-	.adapter-arrow {
-		font-size: 2rem;
-		color: #019193;
-		font-weight: 900;
-	}
-
-	.adapter-faf {
-		text-align: center;
-	}
-
-	.faf-box {
-		background: #019193;
-		color: var(--faf-white);
-		font-size: 2rem;
 		font-weight: 900;
 		font-family: var(--font-mono);
-		padding: 1rem 2rem;
-		border-radius: 12px;
-		border: 3px solid var(--faf-black);
-		box-shadow: 0 4px 12px rgba(1, 145, 147, 0.3);
-		margin-bottom: 0.5rem;
+		color: #019193;
+		background: var(--faf-white);
+		padding: 0.5rem 1rem;
+		border-radius: 8px;
+		border: 2px solid #019193;
 	}
 
-	.faf-tagline {
-		font-size: 0.875rem;
+	.n8n-quote {
+		max-width: 800px;
+		margin: 0 auto 4rem;
+		text-align: center;
+		background: var(--faf-white);
+		border-left: 6px solid #FF6B35;
+		border-radius: 12px;
+		padding: 2.5rem 2rem;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+		position: relative;
+	}
+
+	.quote-icon {
+		position: absolute;
+		top: -20px;
+		left: 50%;
+		transform: translateX(-50%);
+		font-size: 4rem;
+		color: #FF6B35;
+		line-height: 1;
+		opacity: 0.3;
+	}
+
+	.quote-text {
+		font-size: 1.5rem;
+		color: var(--faf-black);
+		line-height: 1.6;
+		margin-bottom: 1rem;
+		font-style: italic;
+	}
+
+	.quote-text strong {
+		color: #FF6B35;
 		font-weight: 700;
+	}
+
+	.quote-source {
+		font-size: 1rem;
+		color: var(--faf-gray-dark);
+		margin-bottom: 1.5rem;
+	}
+
+	.quote-solution {
+		font-size: 1.25rem;
+		font-weight: 900;
 		color: #019193;
 	}
 
@@ -404,9 +473,51 @@
 		margin: 0;
 	}
 
+	.platform-support {
+		max-width: 800px;
+		margin: 0 auto 4rem;
+		text-align: center;
+		padding: 2rem;
+		background: rgba(1, 145, 147, 0.05);
+		border-radius: 12px;
+		border: 2px dashed #019193;
+	}
+
+	.platform-label {
+		font-size: 1rem;
+		color: var(--faf-gray-dark);
+		margin-bottom: 1rem;
+		font-weight: 600;
+	}
+
+	.platform-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		justify-content: center;
+		margin-bottom: 1rem;
+	}
+
+	.platform-tag {
+		background: var(--faf-white);
+		color: #019193;
+		padding: 0.5rem 1rem;
+		border-radius: 999px;
+		font-size: 0.875rem;
+		font-weight: 600;
+		border: 2px solid #019193;
+	}
+
+	.platform-note {
+		font-size: 0.875rem;
+		color: var(--faf-gray-dark);
+		font-style: italic;
+		margin: 0;
+	}
+
 	.availability {
 		max-width: 600px;
-		margin: 0 auto 4rem;
+		margin: 0 auto;
 		text-align: center;
 		background: #019193;
 		color: var(--faf-white);
@@ -504,62 +615,49 @@
 		font-weight: 600;
 	}
 
-	.future-teaser {
-		max-width: 700px;
-		margin: 0 auto;
-		text-align: center;
-		padding: 2rem;
-		background: rgba(1, 145, 147, 0.05);
-		border: 2px dashed #019193;
-		border-radius: 12px;
+	.cta-subtext strong {
+		color: var(--faf-white);
+		font-weight: 900;
 	}
 
-	.teaser-icon {
-		font-size: 3rem;
-		margin-bottom: 1rem;
-	}
+	@media (max-width: 1024px) {
+		.comparison-grid {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+		}
 
-	.teaser-title {
-		font-size: 1.5rem;
-		font-weight: 700;
-		color: var(--faf-black);
-		margin-bottom: 1rem;
-	}
+		.comparison-arrow {
+			flex-direction: row;
+		}
 
-	.teaser-text {
-		font-size: 1rem;
-		color: var(--faf-gray-dark);
-		line-height: 1.6;
-		margin: 0;
-	}
-
-	.teaser-text strong {
-		color: #019193;
-		font-weight: 700;
+		.arrow-symbol {
+			transform: rotate(90deg);
+		}
 	}
 
 	@media (max-width: 768px) {
-		.platform-grid {
-			grid-template-columns: repeat(2, 1fr);
-		}
-
-		.adapter-visual {
-			grid-template-columns: 1fr;
-			gap: 1rem;
-		}
-
-		.adapter-arrow {
-			transform: rotate(90deg);
-		}
-
 		.value-props {
 			grid-template-columns: 1fr;
 		}
 
-		.section-subtitle,
-		.problem-statement,
-		.teaser-text {
-			font-size: 1rem;
+		.section-title {
+			font-size: 2rem;
+		}
+
+		.section-subtitle {
+			font-size: 1.5rem;
+		}
+
+		.code-block {
+			font-size: 0.75rem;
+		}
+
+		.quote-text {
+			font-size: 1.125rem;
+		}
+
+		.platform-tags {
+			gap: 0.5rem;
 		}
 	}
 </style>

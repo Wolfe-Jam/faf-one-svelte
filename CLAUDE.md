@@ -47,6 +47,53 @@
 - Status: Championship grade performance
 - All features must work properly before claiming they do
 
+## 🔧 Dev Server Issues (Common Problems)
+
+### Problem 1: Server Crashes (Exit Code 137)
+**Symptom:** `localhost refused to connect` or dev server stops responding
+
+**Fix:**
+```bash
+# Restart dev server
+cd /Users/wolfejam/FAF/faf-one-svelte-new && npm run dev
+```
+
+**Background Command:**
+If running in background, kill old process first, then restart with `run_in_background: true`
+
+### Problem 2: JSON Code Blocks Cause Syntax Errors
+**Symptom:** `[plugin:vite-plugin-svelte] Expected token }` when adding JSON examples
+
+**Wrong:**
+```svelte
+<code>{
+  "key": "value"
+}</code>
+```
+
+**Correct:**
+```svelte
+<code>{`{
+  "key": "value"
+}`}</code>
+```
+
+**Rule:** Always wrap JSON code blocks with template literals `{``}` in Svelte files
+
+### Problem 3: Hot Reload Fails
+**Symptom:** Changes don't appear after saving files
+
+**Fix:**
+1. Hard refresh browser (Cmd+Shift+R on macOS)
+2. If that fails, restart dev server
+3. Clear Vite cache: `rm -rf node_modules/.vite`
+
+### Dev Server Best Practices
+- Run dev server in background for long sessions
+- Watch for exit code 137 (out of memory)
+- Always escape curly braces in code examples
+- Test new blog posts in browser before committing
+
 ## 🏁 GOLDEN RULES - Professional Standards
 
 ### Git Commit Protocol (REQUIRED)

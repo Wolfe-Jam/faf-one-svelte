@@ -1,6 +1,15 @@
 <script>
 	const posts = [
 		{
+			slug: 'blog/mcp-registry-launch',
+			title: 'claude-faf-mcp Published to Official MCP Registry',
+			date: 'October 16, 2025',
+			timestamp: '2025-10-16',
+			excerpt: 'Project DNA ✨ for AI-Context, On-Demand - Now in the official MCP Registry with 33+ tools for universal AI context across Claude Desktop, Claude Code, VS Code, and ANY terminal/CLI.',
+			emoji: '🏪',
+			category: 'Launch'
+		},
+		{
 			slug: 'blog/v3-launch',
 			title: 'AI CLI/MCP About to Hit 10k Goes OPEN-SOURCE',
 			date: 'October 9, 2025',
@@ -172,6 +181,10 @@
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
 		margin-bottom: 1rem;
+	}
+
+	.post-card[href*="mcp-registry-launch"] .post-category {
+		background: #4A90E2;
 	}
 
 	.post-card[href*="v3-launch"] .post-category {

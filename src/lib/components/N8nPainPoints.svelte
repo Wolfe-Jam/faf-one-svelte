@@ -46,6 +46,46 @@
 				</p>
 			</div>
 
+			<!-- Championship Positioning -->
+			<div class="championship-hero">
+				<div class="championship-badge">
+					<div class="badge-icon">🏎️</div>
+					<div class="badge-content">
+						<h3 class="championship-title">The McLaren Mercedes of n8n</h3>
+						<p class="championship-subtitle">Championship-Grade AI Context for n8n Experts</p>
+					</div>
+				</div>
+				<p class="championship-description">
+					n8n is a great automation platform. <strong>.faf TURBO</strong> takes it to championship level.<br/>
+					Not competing with n8n — <span class="highlight-orange">elevating the n8n experience</span> to expert-grade performance.
+				</p>
+				<div class="championship-comparison-quick">
+					<div class="comparison-item">
+						<div class="item-icon">🔧</div>
+						<div class="item-text">
+							<strong>n8n</strong><br/>
+							Great Automation Tool
+						</div>
+					</div>
+					<div class="plus-symbol">+</div>
+					<div class="comparison-item">
+						<div class="item-icon">🏆</div>
+						<div class="item-text">
+							<strong>.faf TURBO</strong><br/>
+							Championship Engineering
+						</div>
+					</div>
+					<div class="equals-symbol">=</div>
+					<div class="comparison-item result">
+						<div class="item-icon">🏎️</div>
+						<div class="item-text">
+							<strong>McLaren Performance</strong><br/>
+							Expert-Grade Workflows
+						</div>
+					</div>
+				</div>
+			</div>
+
 			<div class="pain-grid">
 				<div class="pain-card">
 					<div class="pain-icon">😰</div>
@@ -196,6 +236,9 @@
 					<a href="/incident-calculator" class="btn-incident">
 						🔥 Calculate Incident Costs
 					</a>
+					<a href="https://fafdev.tools" class="btn-discover" target="_blank" rel="noopener noreferrer">
+						🍊 Try the .faf Tool →
+					</a>
 					<a href="#pricing" class="btn-primary">
 						Get TURBO for $10/month →
 					</a>
@@ -281,6 +324,124 @@
 	.section-subtitle strong {
 		color: #019193;
 		font-weight: 900;
+	}
+
+	/* Championship Positioning */
+	.championship-hero {
+		background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(1, 145, 147, 0.1) 100%);
+		border: 3px solid var(--faf-orange);
+		border-radius: 20px;
+		padding: 3rem 2rem;
+		margin: 3rem 0 4rem;
+		box-shadow: 0 12px 32px rgba(255, 107, 53, 0.2);
+	}
+
+	.championship-badge {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+		margin-bottom: 2rem;
+	}
+
+	.badge-icon {
+		font-size: 4rem;
+		line-height: 1;
+	}
+
+	.badge-content {
+		text-align: left;
+	}
+
+	.championship-title {
+		font-size: clamp(1.75rem, 4vw, 2.5rem);
+		font-weight: 900;
+		color: var(--faf-black);
+		margin: 0 0 0.5rem 0;
+		line-height: 1.2;
+	}
+
+	.championship-subtitle {
+		font-size: 1.125rem;
+		color: var(--faf-gray-dark);
+		margin: 0;
+		font-weight: 600;
+	}
+
+	.championship-description {
+		font-size: 1.25rem;
+		text-align: center;
+		color: var(--faf-gray-dark);
+		line-height: 1.6;
+		margin-bottom: 2rem;
+	}
+
+	.championship-description strong {
+		color: #019193;
+		font-weight: 700;
+	}
+
+	.highlight-orange {
+		color: var(--faf-orange);
+		font-weight: 900;
+		background: linear-gradient(180deg, transparent 60%, rgba(255, 107, 53, 0.2) 60%);
+	}
+
+	.championship-comparison-quick {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+		flex-wrap: wrap;
+		margin-top: 2rem;
+	}
+
+	.comparison-item {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		background: var(--faf-white);
+		padding: 1.25rem 1.5rem;
+		border-radius: 12px;
+		border: 2px solid var(--faf-gray-light);
+		transition: all 0.3s ease;
+		min-width: 200px;
+	}
+
+	.comparison-item:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	}
+
+	.comparison-item.result {
+		border-color: var(--faf-orange);
+		background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, var(--faf-white) 100%);
+		box-shadow: 0 4px 16px rgba(255, 107, 53, 0.3);
+	}
+
+	.item-icon {
+		font-size: 2.5rem;
+		line-height: 1;
+	}
+
+	.item-text {
+		font-size: 0.95rem;
+		line-height: 1.4;
+		color: var(--faf-gray-dark);
+	}
+
+	.item-text strong {
+		font-size: 1.125rem;
+		color: var(--faf-black);
+		display: block;
+		margin-bottom: 0.25rem;
+	}
+
+	.plus-symbol,
+	.equals-symbol {
+		font-size: 2rem;
+		font-weight: 900;
+		color: var(--faf-gray-medium);
 	}
 
 	.pain-grid {
@@ -550,6 +711,7 @@
 
 	.btn-calculator,
 	.btn-incident,
+	.btn-discover,
 	.btn-primary {
 		display: inline-block;
 		padding: 1rem 2rem;
@@ -587,6 +749,19 @@
 		color: #dc2626;
 		transform: translateY(-2px);
 		box-shadow: 0 6px 12px rgba(220, 38, 38, 0.3);
+	}
+
+	.btn-discover {
+		background: var(--faf-orange);
+		color: var(--faf-white);
+		border-color: var(--faf-orange);
+	}
+
+	.btn-discover:hover {
+		background: var(--faf-white);
+		color: var(--faf-orange);
+		transform: translateY(-2px);
+		box-shadow: 0 6px 12px rgba(255, 107, 53, 0.3);
 	}
 
 	.btn-primary {
@@ -632,6 +807,24 @@
 
 		.quote-mark {
 			font-size: 4rem;
+		}
+
+		.championship-badge {
+			flex-direction: column;
+			text-align: center;
+		}
+
+		.badge-content {
+			text-align: center;
+		}
+
+		.championship-comparison-quick {
+			flex-direction: column;
+		}
+
+		.plus-symbol,
+		.equals-symbol {
+			transform: rotate(90deg);
 		}
 	}
 </style>
