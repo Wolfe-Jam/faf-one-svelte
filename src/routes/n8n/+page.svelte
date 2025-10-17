@@ -1013,6 +1013,9 @@
 		border-radius: 12px;
 		padding: 2rem;
 		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
 	}
 
 	.example-card:hover {
@@ -1023,16 +1026,19 @@
 	.example-icon {
 		font-size: 3rem;
 		margin-bottom: 1rem;
+		text-align: center;
 	}
 
 	.example-title {
 		font-size: 1.5rem;
 		font-weight: 700;
 		margin-bottom: 1rem;
+		text-align: center;
 	}
 
 	.example-scenario {
 		margin-bottom: 1.5rem;
+		flex-grow: 1;
 	}
 
 	.scenario-before, .scenario-after {
@@ -1049,20 +1055,23 @@
 	.example-result {
 		display: flex;
 		align-items: center;
-		gap: 0.5rem;
+		gap: 0.75rem;
 		padding: 1rem;
 		background: rgba(10, 160, 208, 0.1);
 		border-radius: 8px;
 		border: 1px solid rgba(10, 160, 208, 0.3);
+		margin-top: auto;
 	}
 
 	.result-icon {
 		font-size: 1.5rem;
+		flex-shrink: 0;
 	}
 
 	.result-text {
 		font-weight: 600;
 		color: #0AA0D0;
+		line-height: 1.4;
 	}
 
 	/* Stats Section */
