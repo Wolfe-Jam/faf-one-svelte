@@ -19,7 +19,33 @@
 
 	let matrixRainColumns = $state([]);
 
+	// Hero message rotation
+	const heroMessages = [
+		{
+			title: "Power Tools for",
+			titleHighlight: "Power Builders",
+			subtitle: "Serious Automaters require Serious Tooling.",
+			subtitleStrong: "n8n.faf validates, fixes, and enables AI for your workflows."
+		},
+		{
+			title: "Serious Automaters require",
+			titleHighlight: "Serious Tooling",
+			subtitle: "Power Tools for Power Builders.",
+			subtitleStrong: "n8n.faf validates, fixes, and enables AI for your workflows."
+		},
+		{
+			title: "n8n Workflows",
+			titleHighlight: "AI actually understands",
+			subtitle: "Your n8n workflows are powerful. But AI can't read them.",
+			subtitleStrong: "n8n.faf fixes this."
+		}
+	];
+
+	let currentHero = $state(heroMessages[0]);
+
 	onMount(() => {
+		// Randomly select a hero message
+		currentHero = heroMessages[Math.floor(Math.random() * heroMessages.length)];
 		const observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach(entry => {
@@ -77,13 +103,12 @@
 					<span class="badge-text">n8n.faf</span>
 				</div>
 				<h1 class="hero-title">
-					Make n8n Workflows<br/>
-					<span class="gradient-text">AI-Readable</span>
+					{currentHero.title}<br/>
+					<span class="gradient-text">{currentHero.titleHighlight}</span>
 				</h1>
 				<p class="hero-subtitle">
-					Your n8n workflows are powerful.<br/>
-					But AI assistants can't understand them.<br/>
-					<strong>.faf solves this.</strong>
+					{currentHero.subtitle}<br/>
+					<strong>{currentHero.subtitleStrong}</strong>
 				</p>
 				<div class="hero-cta">
 					<a href="#pricing" class="btn-primary">
@@ -324,14 +349,14 @@
 		<div class="container">
 			<div class="how-content">
 				<h2 class="section-title">How n8n.faf Works</h2>
-				<p class="section-subtitle">Specialized n8n workflow intelligence in seconds</p>
+				<p class="section-subtitle">Fix, validate, and enable AI for your workflows</p>
 
 				<div class="steps-grid">
 					<div class="step-card">
 						<div class="step-number">1</div>
-						<h3 class="step-title">Export from n8n</h3>
+						<h3 class="step-title">Upload Workflow</h3>
 						<p class="step-description">
-							Export your workflow as JSON (or connect n8n API for auto-sync).
+							Export from n8n or connect API for auto-sync. We handle the rest.
 						</p>
 					</div>
 
@@ -339,9 +364,9 @@
 
 					<div class="step-card">
 						<div class="step-number">2</div>
-						<h3 class="step-title">Upload to n8n.faf</h3>
+						<h3 class="step-title">Fix & Validate</h3>
 						<p class="step-description">
-							Secure server-side processing. Your workflows never leave your control.
+							Auto-repair issues. Validate syntax in &lt;50ms. Ensure workflow quality.
 						</p>
 					</div>
 
@@ -349,9 +374,9 @@
 
 					<div class="step-card">
 						<div class="step-number">3</div>
-						<h3 class="step-title">Get .faf Format</h3>
+						<h3 class="step-title">Enable AI</h3>
 						<p class="step-description">
-							AI-readable YAML file with context, dependencies, and business logic.
+							Convert to .faf format. Store in cloud. Make your workflows AI-ready.
 						</p>
 					</div>
 
@@ -359,29 +384,29 @@
 
 					<div class="step-card">
 						<div class="step-number">4</div>
-						<h3 class="step-title">Use with Claude & Cursor</h3>
+						<h3 class="step-title">Use with Claude</h3>
 						<p class="step-description">
-							Works with Claude, Cursor, and other context-aware AI tools.
+							MCP connects Claude to your validated workflows. Ask anything.
 						</p>
 					</div>
 				</div>
 
 				<div class="how-features">
 					<div class="feature-item">
-						<span class="feature-icon">🔒</span>
-						<span class="feature-text"><strong>Secure:</strong> Server-side processing, no data retention</span>
+						<span class="feature-icon">🔧</span>
+						<span class="feature-text"><strong>Auto-Fix:</strong> Repairs syntax errors and validates structure</span>
 					</div>
 					<div class="feature-item">
 						<span class="feature-icon">⚡️</span>
-						<span class="feature-text"><strong>Fast:</strong> Process workflows in &lt;2 seconds</span>
+						<span class="feature-text"><strong>Instant:</strong> Validate workflows in &lt;50 milliseconds</span>
 					</div>
 					<div class="feature-item">
 						<span class="feature-icon">🔄</span>
-						<span class="feature-text"><strong>Auto-Sync:</strong> Connect n8n API for automatic updates</span>
+						<span class="feature-text"><strong>Auto-Sync:</strong> Connect n8n API for continuous validation</span>
 					</div>
 					<div class="feature-item">
-						<span class="feature-icon">🌍</span>
-						<span class="feature-text"><strong>Context-Aware:</strong> Works with Claude, Cursor, and similar tools</span>
+						<span class="feature-icon">🤖</span>
+						<span class="feature-text"><strong>AI-Ready:</strong> MCP server connects Claude to your workflows</span>
 					</div>
 				</div>
 			</div>
