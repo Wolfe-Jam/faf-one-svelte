@@ -19,33 +19,25 @@
 
 	let matrixRainColumns = $state([]);
 
-	// Hero message rotation
-	const heroMessages = [
+	// Hero subtitle rotation
+	const heroSubtitles = [
 		{
-			title: "Power Tools for",
-			titleHighlight: "Power Builders",
-			subtitle: "Serious Automaters require Serious Tooling.",
-			subtitleStrong: "n8n.faf validates, fixes, and enables AI for your workflows."
+			subtitle: "n8n workflows, AI optimized.",
+			subtitleStrong: "validates, debugs/fixes, enables → tracks!",
+			subtitleInfo: ""
 		},
 		{
-			title: "Serious Automaters require",
-			titleHighlight: "Serious Tooling",
-			subtitle: "Power Tools for Power Builders.",
-			subtitleStrong: "n8n.faf validates, fixes, and enables AI for your workflows."
-		},
-		{
-			title: "n8n Workflows",
-			titleHighlight: "AI actually understands",
-			subtitle: "Your n8n workflows are powerful. But AI can't read them.",
-			subtitleStrong: "n8n.faf fixes this."
+			subtitle: "AIAaaS* - Serious platform, serious outcomes.",
+			subtitleStrong: "Power builders deserve power tools.",
+			subtitleInfo: "AIAaaS - AI Automation as a Service™️ [for serious n8n architects]"
 		}
 	];
 
-	let currentHero = $state(heroMessages[0]);
+	let currentSubtitle = $state(heroSubtitles[0]);
 
 	onMount(() => {
-		// Randomly select a hero message
-		currentHero = heroMessages[Math.floor(Math.random() * heroMessages.length)];
+		// Randomly select a subtitle
+		currentSubtitle = heroSubtitles[Math.floor(Math.random() * heroSubtitles.length)];
 		const observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach(entry => {
@@ -103,12 +95,17 @@
 					<span class="badge-text">n8n.faf</span>
 				</div>
 				<h1 class="hero-title">
-					{currentHero.title}<br/>
-					<span class="gradient-text">{currentHero.titleHighlight}</span>
+					n8n workflows are so powerful,<br/>
+					<span class="gradient-text">we decided to tell AI about&nbsp;them</span>
 				</h1>
 				<p class="hero-subtitle">
-					{currentHero.subtitle}<br/>
-					<strong>{currentHero.subtitleStrong}</strong>
+					{currentSubtitle.subtitle}<br/>
+					{#if currentSubtitle.subtitleInfo}
+						<span class="subtitle-info">{currentSubtitle.subtitleInfo}</span><br/>
+					{/if}
+					{#if currentSubtitle.subtitleStrong}
+						<strong>{currentSubtitle.subtitleStrong}</strong>
+					{/if}
 				</p>
 				<div class="hero-cta">
 					<a href="#pricing" class="btn-primary">
@@ -488,6 +485,15 @@
 			</div>
 		</div>
 	</section>
+
+	<!-- Page Footer -->
+	<section class="page-footer">
+		<div class="container">
+			<p class="footer-attribution">
+				AIAaaS - AI Automation as a Service™️ [for serious n8n architects] © 2025 v1.0.0 🏎️⚡️wolfejam.dev
+			</p>
+		</div>
+	</section>
 </div>
 
 <style>
@@ -566,6 +572,13 @@
 	.hero-subtitle strong {
 		color: white;
 		font-weight: 700;
+	}
+
+	.subtitle-info {
+		font-size: 0.9rem;
+		color: #999;
+		font-style: italic;
+		font-weight: 400;
 	}
 
 	.hero-cta {
@@ -1418,6 +1431,22 @@
 
 	.partnership-description a:hover {
 		color: #FF4400;
+	}
+
+	/* Page Footer */
+	.page-footer {
+		padding: 2rem 0;
+		background: rgba(0, 0, 0, 0.3);
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	.footer-attribution {
+		text-align: center;
+		font-size: 0.85rem;
+		color: #666;
+		margin: 0;
+		font-family: var(--font-mono);
+		line-height: 1.6;
 	}
 
 	/* Responsive */
