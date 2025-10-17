@@ -230,7 +230,7 @@
 								<div class="visual-placeholder">
 									<div class="ai-noodles-box">
 										<div class="noodles-text">
-											AI 🤖 noodles on this 🍜<br/>
+											AI 🤖 noodles on this 🍜 yummy<br/>
 											<span class="context-subtext">☑️ 100% context ⚡️</span>
 										</div>
 									</div>
