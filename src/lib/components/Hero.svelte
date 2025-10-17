@@ -152,10 +152,13 @@
 
 			<!-- Official MCP Registry Badges -->
 			<div class="official-badges">
-				<h3 class="official-badges-title">Official MCP Format</h3>
+				<h3 class="official-badges-title">🏆 Official Anthropic MCP Registry</h3>
 				<div class="badges-row">
+					<a href="https://github.com/modelcontextprotocol/servers/pull/2759" class="official-badge official-merged" target="_blank" rel="noopener">
+						✅ MERGED Oct 17, 2025
+					</a>
 					<a href="https://github.com/modelcontextprotocol/servers" class="official-badge" target="_blank" rel="noopener">
-						☑️ MCP Registry (PR #2759 Pending)
+						🏁 View in Registry
 					</a>
 					<a href="https://npmjs.com/package/claude-faf-mcp" class="official-badge" target="_blank" rel="noopener">
 						📦 NPM Package
@@ -584,6 +587,27 @@
 		transform: translateY(-2px);
 		box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 		filter: brightness(1.1);
+	}
+
+	.official-badge.official-merged {
+		background: linear-gradient(135deg, var(--faf-orange) 0%, #ff8c4d 100%);
+		color: white;
+		font-weight: 700;
+		animation: pulse 2s ease-in-out infinite;
+		box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4);
+	}
+
+	.official-badge.official-merged:hover {
+		box-shadow: 0 6px 30px rgba(255, 107, 53, 0.6);
+	}
+
+	@keyframes pulse {
+		0%, 100% {
+			transform: scale(1);
+		}
+		50% {
+			transform: scale(1.02);
+		}
 	}
 
 	.cli-text {
