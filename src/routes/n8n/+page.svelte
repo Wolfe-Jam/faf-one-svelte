@@ -381,9 +381,9 @@
 
 					<div class="step-card">
 						<div class="step-number">4</div>
-						<h3 class="step-title">Use with Claude</h3>
+						<h3 class="step-title">Use with Claude/AI</h3>
 						<p class="step-description">
-							MCP connects Claude to your validated workflows. Ask anything.
+							MCP connects Claude to your validated workflows. Works with Cursor, Codex too.
 						</p>
 					</div>
 				</div>
@@ -479,7 +479,8 @@
 				<div class="partnership-logo">🤝</div>
 				<h2 class="partnership-title">Building with n8n</h2>
 				<p class="partnership-description">
-					We're working to make .faf the standard AI-context format for n8n workflows.<br/>
+					We're working to make .faf the standard AI-context format<br/>
+					for n8n workflows.<br/>
 					Interested in partnering? <a href="mailto:contact@faf.one">Let's talk.</a>
 				</p>
 			</div>
@@ -490,6 +491,9 @@
 	<section class="page-footer">
 		<div class="container">
 			<p class="footer-attribution">
+				Built with Claude for Claude. Yes its unapologetically Claude first, with major respect to and compatibility with all leading AI model variants.
+			</p>
+			<p class="footer-attribution" style="margin-top: 0.5rem; opacity: 0.7;">
 				AIAaaS - AI Automation as a Service™️ [for serious n8n architects] © 2025 v1.0.0 🏎️⚡️wolfejam.dev
 			</p>
 		</div>
