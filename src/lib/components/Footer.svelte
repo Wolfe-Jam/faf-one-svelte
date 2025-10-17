@@ -25,13 +25,14 @@
 					<li><a href="https://www.fafcli.dev/" target="_blank">.faf CLI</a></li>
 					<li><a href="https://chromewebstore.google.com/detail/lnecebepmpjpilldfmndnaofbfjkjlkm" target="_blank">Chrome Extension</a></li>
 					<li><a href="https://github.com/Wolfe-Jam/faf" target="_blank">⭐ MCP Server</a></li>
-					<li><a href="/docs">Documentation</a></li>
+					<li><a href="/n8n">TURBO for n8n</a></li>
 				</ul>
 			</div>
 			
 			<div class="footer-column">
 				<h4>Resources</h4>
 				<ul>
+					<li><a href="/docs">Documentation</a></li>
 					<li><a href="https://fafdev.tools/welcome.html" target="_blank">Links</a></li>
 					<li><a href="/support">Support</a></li>
 					<li><a href="/calculator">ROI Calculator</a></li>

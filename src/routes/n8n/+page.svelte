@@ -50,8 +50,8 @@
 </script>
 
 <svelte:head>
-	<title>TURBO for n8n - Make Workflows AI-Readable | .faf</title>
-	<meta name="description" content="n8n workflows are powerful, but AI can't read them. .faf makes n8n workflows AI-native. 85% faster debugging, cross-workflow search, instant onboarding." />
+	<title>n8n.faf - Make n8n Workflows AI-Readable | .faf</title>
+	<meta name="description" content="n8n workflows are powerful, but AI can't read them. n8n.faf makes workflows AI-native. Works with Claude, Cursor, Codex and other leading AI tools." />
 </svelte:head>
 
 <div class="n8n-page">
@@ -61,7 +61,7 @@
 			<div class="hero-content">
 				<div class="hero-badge">
 					<span class="badge-icon">⚡️</span>
-					<span class="badge-text">TURBO for n8n</span>
+					<span class="badge-text">n8n.faf</span>
 				</div>
 				<h1 class="hero-title">
 					Make n8n Workflows<br/>
@@ -74,14 +74,14 @@
 				</p>
 				<div class="hero-cta">
 					<a href="#pricing" class="btn-primary">
-						Get TURBO for $10/month →
+						Get n8n.faf for $15/month →
 					</a>
 					<a href="/automation-calculator" class="btn-secondary">
 						Calculate Your Savings
 					</a>
 				</div>
 				<p class="hero-note">
-					Lock in $10/month forever with code <strong>FAST</strong>
+					<span style="text-decoration: line-through; opacity: 0.6;">$30/month</span> → $15/month <strong>(Half price during development)</strong>
 				</p>
 			</div>
 		</div>
@@ -138,144 +138,109 @@
 		<div class="container">
 			<div class="solution-content">
 				<h2 class="section-title">The Solution</h2>
-				<p class="section-subtitle">.faf makes n8n workflows AI-native</p>
+				<p class="section-subtitle">n8n.faf makes n8n workflows AI-native</p>
 
-				<div class="comparison-grid">
+				<div class="outcome-grid">
 					<!-- Before Column -->
-					<div class="comparison-column">
-						<div class="column-header before">
-							<h3>Before .faf</h3>
-							<div class="column-label">n8n JSON Export</div>
+					<div class="outcome-column">
+						<div class="outcome-header before">
+							<h3>❌ Before n8n.faf</h3>
 						</div>
-						<div class="comparison-content">
-							<div class="code-block">
-								<pre><code>{`{
-  "nodes": [
-    {
-      "id": "8a4d5c6e-2f1b-4a9c-b3e7-1d4a5c6e7f8a",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.1,
-      "position": [250, 300],
-      "parameters": {
-        "url": "={{$json.webhook_url}}",
-        "authentication": "predefinedCredentialType",
-        "nodeCredentialType": "stripeApi",
-        "options": {}
-      },
-      "name": "Stripe Webhook Handler"
-    },
-    {
-      "id": "9b5e6d7f-3a2c-5b0d-c4f8-2e5b6d7f8a9b",
-      "type": "n8n-nodes-base.function",
-      "typeVersion": 1,
-      "position": [450, 300],
-      "parameters": {
-        "functionCode": "return items.map(item => ({
-          json: {
-            userId: item.json.customer,
-            email: item.json.email,
-            plan: item.json.plan_id
-          }
-        }));"
-      },
-      "name": "Transform Data"
-    }
-  ],
-  "connections": {
-    "8a4d5c6e-2f1b-4a9c-b3e7-1d4a5c6e7f8a": {
-      "main": [
-        [
-          {
-            "node": "9b5e6d7f-3a2c-5b0d-c4f8-2e5b6d7f8a9b",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    }
-  }
-}`}</code></pre>
+						<div class="outcome-content">
+							<div class="outcome-visual before-visual">
+								<div class="visual-placeholder">
+									<div class="json-mess">
+										<div class="mess-line"></div>
+										<div class="mess-line short"></div>
+										<div class="mess-line"></div>
+										<div class="mess-line medium"></div>
+										<div class="mess-line"></div>
+										<div class="mess-line short"></div>
+										<div class="mess-overlay">
+											<span class="overlay-text">AI can't understand this</span>
+										</div>
+									</div>
+								</div>
 							</div>
-							<div class="comparison-problems">
-								<p class="problems-label">AI sees this as:</p>
-								<ul class="problems-list">
-									<li>Random UUIDs</li>
-									<li>Nested parameter objects</li>
-									<li>Connection arrays with indexes</li>
-									<li>No clear business logic</li>
+							<div class="outcome-problems">
+								<ul class="outcome-list">
+									<li>❌ Claude sees random UUIDs and nested objects</li>
+									<li>❌ No way to search across workflows</li>
+									<li>❌ Manual debugging takes 30+ minutes</li>
+									<li>❌ Documentation out of sync</li>
 								</ul>
 							</div>
 						</div>
 					</div>
 
 					<!-- Arrow -->
-					<div class="comparison-arrow">
+					<div class="outcome-arrow">
 						<div class="arrow-symbol">→</div>
-						<div class="arrow-text">.faf</div>
+						<div class="arrow-text">n8n.faf</div>
 					</div>
 
 					<!-- After Column -->
-					<div class="comparison-column">
-						<div class="column-header after">
-							<h3>After .faf</h3>
-							<div class="column-label">.faf Universal Format</div>
+					<div class="outcome-column">
+						<div class="outcome-header after">
+							<h3>✅ After n8n.faf</h3>
 						</div>
-						<div class="comparison-content">
-							<div class="code-block">
-								<pre><code>{`# .faf - AI-Readable n8n Workflow
-project:
-  name: "customer-onboarding-automation"
-  platform: "n8n"
-  version: "1.2.0"
-
-context:
-  purpose: "Handle Stripe webhooks for new customer onboarding"
-  business_logic: "When customer subscribes → extract data → send to CRM"
-  triggers:
-    - type: "webhook"
-      source: "stripe"
-      event: "customer.subscription.created"
-
-automation:
-  workflow_steps:
-    - step: "receive_stripe_webhook"
-      action: "Listen for Stripe subscription events"
-      node_type: "httpRequest"
-      credentials: "stripeApi"
-
-    - step: "transform_customer_data"
-      action: "Extract userId, email, and plan from webhook payload"
-      input: "stripe_webhook_data"
-      output: "customer_profile"
-
-    - step: "send_to_crm"
-      action: "Create new contact in CRM system"
-      destination: "hubspot"
-
-dependencies:
-  external_services:
-    - stripe: "Webhook source"
-    - hubspot: "CRM destination"
-  credentials_required:
-    - "Stripe API Key"
-    - "HubSpot API Token"
-
-metadata:
-  created: "2024-10-15"
-  last_updated: "2025-01-10"
-  owner: "growth-team"
-  tags: ["onboarding", "stripe", "crm"]`}</code></pre>
+						<div class="outcome-content">
+							<div class="outcome-visual after-visual">
+								<div class="visual-placeholder">
+									<div class="ai-understands">
+										<div class="understand-item">
+											<span class="understand-icon">🎯</span>
+											<span class="understand-text">Business Purpose</span>
+										</div>
+										<div class="understand-item">
+											<span class="understand-icon">📊</span>
+											<span class="understand-text">Data Flow</span>
+										</div>
+										<div class="understand-item">
+											<span class="understand-icon">🔗</span>
+											<span class="understand-text">Dependencies</span>
+										</div>
+										<div class="understand-item">
+											<span class="understand-icon">📝</span>
+											<span class="understand-text">Full Context</span>
+										</div>
+									</div>
+								</div>
 							</div>
-							<div class="comparison-benefits">
-								<p class="benefits-label">AI understands:</p>
-								<ul class="benefits-list">
-									<li>✅ Business purpose</li>
-									<li>✅ Data flow</li>
-									<li>✅ Dependencies</li>
-									<li>✅ Context & history</li>
+							<div class="outcome-benefits">
+								<ul class="outcome-list">
+									<li>✅ Claude instantly understands workflow logic</li>
+									<li>✅ Cross-workflow search in seconds</li>
+									<li>✅ Debug issues in 2 minutes not 30</li>
+									<li>✅ Docs always current with workflows</li>
 								</ul>
 							</div>
 						</div>
+					</div>
+				</div>
+
+				<div class="outcome-proof">
+					<p class="proof-stat benefit">
+						<strong>Instant diagnostics. .faf can detect a missing syntax in &lt;50ms</strong><br/>
+						<strong>How long does it take you?</strong>
+					</p>
+					<p class="proof-stat compatibility">
+						Works with Claude, Cursor, Codex and other leading AI tools
+					</p>
+				</div>
+
+				<!-- Standard Format Callout -->
+				<div class="standard-format-callout">
+					<div class="callout-icon">📦</div>
+					<div class="callout-content">
+						<h3 class="callout-title">.faf is a Standard Format</h3>
+						<p class="callout-text">
+							<strong>We took years to arrive at .faf so you don't need to.</strong>
+						</p>
+						<p class="callout-comparison">
+							Just like you don't have to worry about dependencies with <code>package.json</code>,<br/>
+							now you don't have to worry about context with <code>.faf</code>
+						</p>
 					</div>
 				</div>
 			</div>
@@ -346,43 +311,12 @@ metadata:
 		</div>
 	</section>
 
-	<!-- Stats Section -->
-	<section bind:this={statsRef} class="stats" class:visible={statsVisible}>
-		<div class="container">
-			<div class="stats-content">
-				<h2 class="section-title">The Impact</h2>
-				<div class="stats-grid">
-					<div class="stat-card">
-						<div class="stat-number">85%</div>
-						<div class="stat-label">Faster Debugging</div>
-						<p class="stat-description">Minutes instead of hours to find and fix workflow issues.</p>
-					</div>
-					<div class="stat-card">
-						<div class="stat-number">82hrs</div>
-						<div class="stat-label">Saved Per Year</div>
-						<p class="stat-description">Average time saved per developer annually.</p>
-					</div>
-					<div class="stat-card">
-						<div class="stat-number">70%</div>
-						<div class="stat-label">Faster Onboarding</div>
-						<p class="stat-description">New team members productive in days, not weeks.</p>
-					</div>
-					<div class="stat-card">
-						<div class="stat-number">100%</div>
-						<div class="stat-label">Always Current</div>
-						<p class="stat-description">Documentation auto-updates with workflow changes.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
 	<!-- How It Works Section -->
 	<section bind:this={howItWorksRef} class="how-it-works" class:visible={howItWorksVisible}>
 		<div class="container">
 			<div class="how-content">
-				<h2 class="section-title">How TURBO Works</h2>
-				<p class="section-subtitle">Server-side workflow intelligence in seconds</p>
+				<h2 class="section-title">How n8n.faf Works</h2>
+				<p class="section-subtitle">Specialized n8n workflow intelligence in seconds</p>
 
 				<div class="steps-grid">
 					<div class="step-card">
@@ -397,7 +331,7 @@ metadata:
 
 					<div class="step-card">
 						<div class="step-number">2</div>
-						<h3 class="step-title">Upload to TURBO</h3>
+						<h3 class="step-title">Upload to n8n.faf</h3>
 						<p class="step-description">
 							Secure server-side processing. Your workflows never leave your control.
 						</p>
@@ -417,9 +351,9 @@ metadata:
 
 					<div class="step-card">
 						<div class="step-number">4</div>
-						<h3 class="step-title">Use with ANY AI</h3>
+						<h3 class="step-title">Use with Claude & Cursor</h3>
 						<p class="step-description">
-							Works with Claude, Cursor, ChatGPT, Copilot, or any AI assistant.
+							Works with Claude, Cursor, and other context-aware AI tools.
 						</p>
 					</div>
 				</div>
@@ -439,7 +373,7 @@ metadata:
 					</div>
 					<div class="feature-item">
 						<span class="feature-icon">🌍</span>
-						<span class="feature-text"><strong>Universal:</strong> Works with any AI tool, not locked to one vendor</span>
+						<span class="feature-text"><strong>Context-Aware:</strong> Works with Claude, Cursor, and similar tools</span>
 					</div>
 				</div>
 			</div>
@@ -451,20 +385,20 @@ metadata:
 		<div class="container">
 			<div class="pricing-content">
 				<h2 class="section-title">Pricing</h2>
-				<p class="section-subtitle">Lock in $10/month forever</p>
+				<p class="section-subtitle">Half price during development</p>
 
 				<div class="pricing-card">
 					<div class="pricing-badge">
 						<span class="badge-icon">🏎️</span>
-						<span class="badge-text">EARLY ACCESS</span>
+						<span class="badge-text">SPECIAL n8n MODULE</span>
 					</div>
-					<h3 class="pricing-title">TURBO for n8n</h3>
+					<h3 class="pricing-title">n8n.faf</h3>
 					<div class="pricing-price">
 						<span class="price-currency">$</span>
-						<span class="price-amount">10</span>
+						<span class="price-amount">15</span>
 						<span class="price-period">/month</span>
 					</div>
-					<p class="pricing-guarantee">Lock in this price forever with code <strong>FAST</strong></p>
+					<p class="pricing-guarantee"><span style="text-decoration: line-through; opacity: 0.6;">$30/month</span> → Half price while we build the best n8n tool we can</p>
 
 					<ul class="pricing-features">
 						<li class="pricing-feature">
@@ -485,7 +419,7 @@ metadata:
 						</li>
 						<li class="pricing-feature">
 							<span class="feature-check">✅</span>
-							<span class="feature-text">Works with ANY AI assistant</span>
+							<span class="feature-text">Works with Claude & Cursor</span>
 						</li>
 						<li class="pricing-feature">
 							<span class="feature-check">✅</span>
@@ -495,9 +429,9 @@ metadata:
 
 					<div class="pricing-cta">
 						<a href="https://faf.one/#pricing" class="btn-primary-large">
-							Get TURBO for $10/month →
+							Get n8n.faf for $15/month →
 						</a>
-						<p class="cta-subtext">Use code <strong>FAST</strong> at checkout</p>
+						<p class="cta-subtext">Special n8n module - half price during development</p>
 					</div>
 
 					<p class="pricing-note">
@@ -763,100 +697,183 @@ metadata:
 		margin-bottom: 3rem;
 	}
 
-	.comparison-grid {
+	.outcome-grid {
 		display: grid;
 		grid-template-columns: 1fr auto 1fr;
 		gap: 2rem;
 		align-items: start;
 	}
 
-	.comparison-column {
+	.outcome-column {
 		background: rgba(255, 255, 255, 0.03);
 		border: 1px solid rgba(255, 255, 255, 0.1);
 		border-radius: 12px;
 		overflow: hidden;
 	}
 
-	.column-header {
+	.outcome-header {
 		padding: 1.5rem;
 		text-align: center;
 	}
 
-	.column-header.before {
+	.outcome-header.before {
 		background: rgba(255, 77, 77, 0.1);
 		border-bottom: 2px solid rgba(255, 77, 77, 0.3);
 	}
 
-	.column-header.after {
+	.outcome-header.after {
 		background: rgba(10, 160, 208, 0.1);
 		border-bottom: 2px solid rgba(10, 160, 208, 0.3);
 	}
 
-	.column-header h3 {
+	.outcome-header h3 {
 		font-size: 1.5rem;
 		font-weight: 700;
-		margin-bottom: 0.5rem;
-	}
-
-	.column-label {
-		font-size: 0.9rem;
-		color: #808080;
-	}
-
-	.comparison-content {
-		padding: 1.5rem;
-	}
-
-	.code-block {
-		background: #0a0a0a;
-		border-radius: 8px;
-		padding: 1rem;
-		margin-bottom: 1rem;
-		overflow-x: auto;
-	}
-
-	.code-block pre {
 		margin: 0;
 	}
 
-	.code-block code {
-		font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
-		font-size: 0.85rem;
-		line-height: 1.5;
-		color: #d4d4d4;
+	.outcome-content {
+		padding: 2rem;
 	}
 
-	.comparison-problems, .comparison-benefits {
-		padding: 1rem;
+	.outcome-visual {
+		min-height: 200px;
+		margin-bottom: 1.5rem;
+	}
+
+	.visual-placeholder {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.json-mess {
+		width: 100%;
+		padding: 2rem;
+		background: #0a0a0a;
 		border-radius: 8px;
+		position: relative;
+		min-height: 200px;
 	}
 
-	.comparison-problems {
-		background: rgba(255, 77, 77, 0.05);
+	.mess-line {
+		height: 8px;
+		background: rgba(255, 77, 77, 0.3);
+		border-radius: 4px;
+		margin: 8px 0;
+		width: 100%;
 	}
 
-	.comparison-benefits {
-		background: rgba(10, 160, 208, 0.05);
+	.mess-line.short {
+		width: 60%;
 	}
 
-	.problems-label, .benefits-label {
-		font-weight: 600;
-		margin-bottom: 0.5rem;
+	.mess-line.medium {
+		width: 80%;
+	}
+
+	.mess-overlay {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+	}
+
+	.overlay-text {
+		background: rgba(255, 77, 77, 0.9);
+		color: white;
+		padding: 0.75rem 1.5rem;
+		border-radius: 8px;
+		font-weight: 700;
+		font-size: 1.1rem;
+	}
+
+	.ai-understands {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+		padding: 1rem;
+	}
+
+	.understand-item {
+		background: rgba(10, 160, 208, 0.1);
+		border: 1px solid rgba(10, 160, 208, 0.3);
+		border-radius: 8px;
+		padding: 1.5rem 1rem;
+		text-align: center;
+		transition: all 0.3s ease;
+	}
+
+	.understand-item:hover {
+		transform: translateY(-4px);
+		border-color: rgba(10, 160, 208, 0.5);
+	}
+
+	.understand-icon {
 		display: block;
+		font-size: 2rem;
+		margin-bottom: 0.5rem;
 	}
 
-	.problems-list, .benefits-list {
+	.understand-text {
+		display: block;
+		font-weight: 600;
+		color: #0AA0D0;
+		font-size: 0.9rem;
+	}
+
+	.outcome-list {
 		list-style: none;
 		padding: 0;
 		margin: 0;
 	}
 
-	.problems-list li, .benefits-list li {
-		padding: 0.25rem 0;
+	.outcome-list li {
+		padding: 0.75rem 0;
 		color: #b0b0b0;
+		line-height: 1.6;
+		font-size: 1rem;
 	}
 
-	.comparison-arrow {
+	.outcome-proof {
+		margin-top: 3rem;
+		text-align: center;
+		padding: 2rem;
+		background: rgba(10, 160, 208, 0.1);
+		border: 2px solid rgba(10, 160, 208, 0.3);
+		border-radius: 12px;
+	}
+
+	.proof-stat {
+		font-size: 1.25rem;
+		color: #b0b0b0;
+		margin: 0;
+	}
+
+	.proof-stat strong {
+		color: #0AA0D0;
+		font-weight: 700;
+	}
+
+	.proof-stat.benefit {
+		font-size: 1.5rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.proof-stat.benefit strong {
+		color: #FF4400;
+		font-weight: 800;
+	}
+
+	.proof-stat.compatibility {
+		font-size: 1rem;
+		color: #0AA0D0;
+	}
+
+	.outcome-arrow {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -874,6 +891,60 @@ metadata:
 		font-weight: 700;
 		color: #0AA0D0;
 		font-size: 1.2rem;
+	}
+
+	.standard-format-callout {
+		margin-top: 3rem;
+		padding: 2.5rem;
+		background: rgba(255, 145, 77, 0.05);
+		border: 2px solid rgba(255, 145, 77, 0.3);
+		border-radius: 16px;
+		display: flex;
+		gap: 2rem;
+		align-items: flex-start;
+	}
+
+	.callout-icon {
+		font-size: 3rem;
+		flex-shrink: 0;
+	}
+
+	.callout-content {
+		flex: 1;
+	}
+
+	.callout-title {
+		font-size: 1.75rem;
+		font-weight: 800;
+		margin-bottom: 1rem;
+		color: #FF914D;
+	}
+
+	.callout-text {
+		font-size: 1.25rem;
+		line-height: 1.6;
+		margin-bottom: 1rem;
+		color: white;
+	}
+
+	.callout-text strong {
+		color: #FF914D;
+		font-weight: 700;
+	}
+
+	.callout-comparison {
+		font-size: 1.1rem;
+		line-height: 1.8;
+		color: #b0b0b0;
+	}
+
+	.callout-comparison code {
+		background: rgba(0, 0, 0, 0.4);
+		padding: 0.25rem 0.5rem;
+		border-radius: 4px;
+		color: #0AA0D0;
+		font-family: var(--font-mono);
+		font-size: 1rem;
 	}
 
 	/* Examples Section */
@@ -1333,6 +1404,29 @@ metadata:
 
 		.stat-number {
 			font-size: 3rem;
+		}
+
+		.standard-format-callout {
+			flex-direction: column;
+			gap: 1rem;
+			padding: 2rem;
+			text-align: center;
+		}
+
+		.callout-icon {
+			margin: 0 auto;
+		}
+
+		.callout-title {
+			font-size: 1.5rem;
+		}
+
+		.callout-text {
+			font-size: 1.1rem;
+		}
+
+		.callout-comparison {
+			font-size: 1rem;
 		}
 	}
 </style>

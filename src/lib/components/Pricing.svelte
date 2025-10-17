@@ -58,9 +58,9 @@
 							<h4>What You Get:</h4>
 						</div>
 						<ul class="features">
-							<li>⚡️ Workflow intelligence analysis</li>
+							<li>⚡️ TURBO for n8n workflows</li>
 							<li>⚡️ Universal .faf generation</li>
-							<li>⚡️ Multi-platform support (n8n, Make, OpenAI, Opal)</li>
+							<li>⚡️ Also works with Make, OpenAI, Opal</li>
 							<li>⚡️ Server-side processing</li>
 							<li>⚡️ Priority support</li>
 							<li>⚡️ Direct creator access</li>
