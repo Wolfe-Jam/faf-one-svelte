@@ -252,7 +252,7 @@
 					<p class="proof-stat benefit">
 						<strong>Instant diagnostics.</strong><br/>
 						<strong class="white-text">.faf can detect a missing syntax in &lt;50 milliseconds</strong><br/>
-						<strong>How long does it take you?</strong>
+						<strong>🤨 How long does it take you?</strong>
 					</p>
 					<p class="proof-stat compatibility">
 						Works with Claude, Cursor, Codex and other leading AI tools
