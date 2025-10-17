@@ -17,6 +17,8 @@
 	let howItWorksRef = $state(null);
 	let pricingRef = $state(null);
 
+	let matrixRainColumns = $state([]);
+
 	onMount(() => {
 		const observer = new IntersectionObserver(
 			(entries) => {
@@ -40,6 +42,17 @@
 		refs.forEach(ref => {
 			if (ref) observer.observe(ref);
 		});
+
+		// Generate matrix rain columns
+		const characters = ['0', '1', '{', '}', '[', ']', 'a', 'b', 'c', 'd', 'e', 'f', ':', '"', ',', 'uuid', 'id', 'node', '4f3a', '8b2c', 'null'];
+		const numColumns = 8;
+
+		matrixRainColumns = Array.from({ length: numColumns }, (_, i) => ({
+			id: i,
+			chars: Array.from({ length: 10 }, () => characters[Math.floor(Math.random() * characters.length)]),
+			delay: Math.random() * 2,
+			duration: 4 + Math.random() * 2
+		}));
 
 		return () => {
 			refs.forEach(ref => {
@@ -150,12 +163,18 @@
 							<div class="outcome-visual before-visual">
 								<div class="visual-placeholder">
 									<div class="json-mess">
-										<div class="mess-line"></div>
-										<div class="mess-line short"></div>
-										<div class="mess-line"></div>
-										<div class="mess-line medium"></div>
-										<div class="mess-line"></div>
-										<div class="mess-line short"></div>
+										<div class="matrix-rain">
+											{#each matrixRainColumns as column (column.id)}
+												<div
+													class="rain-column"
+													style="animation-delay: {column.delay}s; animation-duration: {column.duration}s;"
+												>
+													{#each column.chars as char}
+														<div class="rain-char">{char}</div>
+													{/each}
+												</div>
+											{/each}
+										</div>
 										<div class="mess-overlay">
 											<span class="overlay-text">AI can't understand this</span>
 										</div>
@@ -182,37 +201,25 @@
 					<!-- After Column -->
 					<div class="outcome-column">
 						<div class="outcome-header after">
-							<h3>✅ After n8n.faf</h3>
+							<h3>☑️ After n8n.faf</h3>
 						</div>
 						<div class="outcome-content">
 							<div class="outcome-visual after-visual">
 								<div class="visual-placeholder">
-									<div class="ai-understands">
-										<div class="understand-item">
-											<span class="understand-icon">🎯</span>
-											<span class="understand-text">Business Purpose</span>
-										</div>
-										<div class="understand-item">
-											<span class="understand-icon">📊</span>
-											<span class="understand-text">Data Flow</span>
-										</div>
-										<div class="understand-item">
-											<span class="understand-icon">🔗</span>
-											<span class="understand-text">Dependencies</span>
-										</div>
-										<div class="understand-item">
-											<span class="understand-icon">📝</span>
-											<span class="understand-text">Full Context</span>
+									<div class="ai-noodles-box">
+										<div class="noodles-text">
+											AI 🤖 noodles on this 🍜<br/>
+											<span class="context-subtext">☑️ 100% context ⚡️</span>
 										</div>
 									</div>
 								</div>
 							</div>
 							<div class="outcome-benefits">
 								<ul class="outcome-list">
-									<li>✅ Claude instantly understands workflow logic</li>
-									<li>✅ Cross-workflow search in seconds</li>
-									<li>✅ Debug issues in 2 minutes not 30</li>
-									<li>✅ Docs always current with workflows</li>
+									<li>☑️ Claude instantly understands workflow logic</li>
+									<li>☑️ Cross-workflow search in seconds</li>
+									<li>☑️ Debug issues in 2 minutes not 30</li>
+									<li>☑️ Docs always current with workflows</li>
 								</ul>
 							</div>
 						</div>
@@ -221,7 +228,8 @@
 
 				<div class="outcome-proof">
 					<p class="proof-stat benefit">
-						<strong>Instant diagnostics. .faf can detect a missing syntax in &lt;50ms</strong><br/>
+						<strong>Instant diagnostics.</strong><br/>
+						<strong class="white-text">.faf can detect a missing syntax in &lt;50 milliseconds</strong><br/>
 						<strong>How long does it take you?</strong>
 					</p>
 					<p class="proof-stat compatibility">
@@ -402,27 +410,27 @@
 
 					<ul class="pricing-features">
 						<li class="pricing-feature">
-							<span class="feature-check">✅</span>
+							<span class="feature-check">☑️</span>
 							<span class="feature-text">Unlimited n8n workflow conversions</span>
 						</li>
 						<li class="pricing-feature">
-							<span class="feature-check">✅</span>
+							<span class="feature-check">☑️</span>
 							<span class="feature-text">Server-side processing (&lt;2 seconds)</span>
 						</li>
 						<li class="pricing-feature">
-							<span class="feature-check">✅</span>
+							<span class="feature-check">☑️</span>
 							<span class="feature-text">Auto-sync with n8n API</span>
 						</li>
 						<li class="pricing-feature">
-							<span class="feature-check">✅</span>
+							<span class="feature-check">☑️</span>
 							<span class="feature-text">Cross-workflow search</span>
 						</li>
 						<li class="pricing-feature">
-							<span class="feature-check">✅</span>
+							<span class="feature-check">☑️</span>
 							<span class="feature-text">Works with Claude & Cursor</span>
 						</li>
 						<li class="pricing-feature">
-							<span class="feature-check">✅</span>
+							<span class="feature-check">☑️</span>
 							<span class="feature-text">Priority support</span>
 						</li>
 					</ul>
@@ -756,22 +764,55 @@
 		border-radius: 8px;
 		position: relative;
 		min-height: 200px;
+		overflow: hidden;
 	}
 
-	.mess-line {
-		height: 8px;
-		background: rgba(255, 77, 77, 0.3);
-		border-radius: 4px;
-		margin: 8px 0;
+	.matrix-rain {
+		display: flex;
+		justify-content: space-evenly;
 		width: 100%;
+		height: 100%;
+		min-height: 200px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0.5;
+		pointer-events: none;
+		z-index: 1;
 	}
 
-	.mess-line.short {
-		width: 60%;
+	.rain-column {
+		display: flex;
+		flex-direction: column;
+		animation: rain-fall linear infinite;
+		font-family: var(--font-mono);
+		font-size: 0.7rem;
+		color: rgba(255, 255, 255, 0.9);
+		text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+		letter-spacing: 1px;
 	}
 
-	.mess-line.medium {
-		width: 80%;
+	.rain-char {
+		padding: 3px 0;
+		line-height: 1.3;
+		white-space: nowrap;
+	}
+
+	@keyframes rain-fall {
+		0% {
+			transform: translateY(-120%);
+			opacity: 0;
+		}
+		5% {
+			opacity: 0.8;
+		}
+		95% {
+			opacity: 0.8;
+		}
+		100% {
+			transform: translateY(320%);
+			opacity: 0;
+		}
 	}
 
 	.mess-overlay {
@@ -780,49 +821,43 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 		text-align: center;
+		z-index: 10;
 	}
 
 	.overlay-text {
-		background: rgba(255, 77, 77, 0.9);
+		background: rgba(255, 77, 77, 1);
 		color: white;
 		padding: 0.75rem 1.5rem;
 		border-radius: 8px;
 		font-weight: 700;
 		font-size: 1.1rem;
+		box-shadow: 0 4px 20px rgba(255, 77, 77, 0.6);
 	}
 
-	.ai-understands {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 1rem;
-		padding: 1rem;
-	}
-
-	.understand-item {
+	.ai-noodles-box {
+		width: 100%;
+		padding: 2rem;
 		background: rgba(10, 160, 208, 0.1);
-		border: 1px solid rgba(10, 160, 208, 0.3);
 		border-radius: 8px;
-		padding: 1.5rem 1rem;
+		min-height: 200px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 2px solid rgba(10, 160, 208, 0.3);
+	}
+
+	.noodles-text {
+		font-size: 1.75rem;
+		font-weight: 700;
+		color: white;
 		text-align: center;
-		transition: all 0.3s ease;
+		line-height: 1.4;
 	}
 
-	.understand-item:hover {
-		transform: translateY(-4px);
-		border-color: rgba(10, 160, 208, 0.5);
-	}
-
-	.understand-icon {
-		display: block;
-		font-size: 2rem;
-		margin-bottom: 0.5rem;
-	}
-
-	.understand-text {
-		display: block;
+	.context-subtext {
+		font-size: 1.1rem;
 		font-weight: 600;
-		color: #0AA0D0;
-		font-size: 0.9rem;
+		color: rgba(255, 255, 255, 0.85);
 	}
 
 	.outcome-list {
@@ -866,6 +901,10 @@
 	.proof-stat.benefit strong {
 		color: #FF4400;
 		font-weight: 800;
+	}
+
+	.proof-stat.benefit strong.white-text {
+		color: white;
 	}
 
 	.proof-stat.compatibility {
