@@ -13,7 +13,7 @@
 		{ label: 'Demo', href: '#demo' },
 		{ label: 'Journey', href: '#journey' },
 		{ label: 'Pricing', href: '#pricing' },
-		{ label: 'n8n', href: '/n8n' }
+		{ label: 'n8n.faf', href: '/n8n' }
 	];
 
 	onMount(() => {

@@ -162,7 +162,8 @@
 				<div class="compat-col">
 					<h3>Terminal/CLI</h3>
 					<ul class="compat-list">
-						<li>Claude Code (MCP)</li>
+						<li>Terminal/CLI</li>
+						<li>Claude Code</li>
 						<li>OpenAI Codex CLI</li>
 						<li>Gemini CLI</li>
 						<li>Warp</li>
